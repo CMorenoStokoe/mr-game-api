@@ -1,0 +1,222 @@
+{
+	"info": {
+		"_postman_id": "f6921136-b094-4eee-a0ae-12d34aa56645",
+		"name": "REST API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "/view<edges>",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "JWT eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1NTAwNzM4NTgsImlhdCI6MTU1MDA3MzU1OCwibmJmIjoxNTUwMDczNTU4LCJpZGVudGl0eSI6MX0.Wk7Jh1ai9FsK471RTG6tzogmcZw9PqG8p-v7TYtBlPs",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://127.0.0.1:5000/view/edges",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"view",
+						"edges"
+					]
+				},
+				"description": "gets all edges"
+			},
+			"response": []
+		},
+		{
+			"name": "/view<annotations>",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "JWT eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1NTAwNzM4NTgsImlhdCI6MTU1MDA3MzU1OCwibmJmIjoxNTUwMDczNTU4LCJpZGVudGl0eSI6MX0.Wk7Jh1ai9FsK471RTG6tzogmcZw9PqG8p-v7TYtBlPs"
+					},
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://127.0.0.1:5000/view/annotations",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"view",
+						"annotations"
+					]
+				},
+				"description": "gets all edges"
+			},
+			"response": []
+		},
+		{
+			"name": "/edge/<gene>",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://127.0.0.1:5000/edge/22479202-23128233",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"edge",
+						"22479202-23128233"
+					]
+				},
+				"description": "gets edges by gene 'gene'"
+			},
+			"response": []
+		},
+		{
+			"name": "/annotate/<gene>",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://127.0.0.1:5000/annotate/22479202-23128233",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"annotate",
+						"22479202-23128233"
+					]
+				},
+				"description": "gets edges by gene 'gene'"
+			},
+			"response": []
+		},
+		{
+			"name": "/annotate/<gene>",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"ref\": \"22479202-23128233\",\n    \"username\": \"chris\",\n    \"judgement\": 1,\n    \"annotation\": \"actually they are closely related\"\n}\n"
+				},
+				"url": {
+					"raw": "http://127.0.0.1:5000/annotate/22479202-23128233",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"annotate",
+						"22479202-23128233"
+					]
+				},
+				"description": "gets edges by gene 'gene'"
+			},
+			"response": []
+		},
+		{
+			"name": "/auth",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"username\" : \"chris\",\n\t\"password\" : \"pass\"\n}"
+				},
+				"url": {
+					"raw": "http://127.0.0.1:5000/auth",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"auth"
+					]
+				},
+				"description": "get auth GWT token"
+			},
+			"response": []
+		}
+	]
+}
