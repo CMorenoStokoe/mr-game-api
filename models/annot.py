@@ -32,6 +32,7 @@ class AnnotModel(db.Model):
 		return cls.query.filter_by(ref=ref).first()
 
 	#add find_by methods for each relevant paramater
+	#set annotID / ref so auto-increments
 
 	def save_to_db(self):
 		db.session.add(self)

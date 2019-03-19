@@ -3,6 +3,11 @@ from flask_restful import Resource, reqparse
 from flask_jwt import jwt_required
 from models.annot import AnnotModel
 
+class Home(Resource):
+	def get(self):
+		return "Hello, World!"
+
+
 class AnnotList(Resource):
 	def get(self):
 		return {'anntations': [annotation.json() for annotation in AnnotModel.query.all()]}
@@ -31,12 +36,14 @@ class Annot(Resource):
 		edge = AnnotModel.find_annots_by_ref(ref)
 		if edge:
 			return edge.json()
-		return {'message': '{} not found in db'.format(ref)}, 404
+		return {'message': "{} not found in db".format(ref)}, 404
 
 	@jwt_required()
 	def post(self, ref):
-		if AnnotModel.find_annots_by_ref(ref):
-			return {'message' : "An annotation with ref '{}' already exists.".format(ref)}, 400
+		#if AnnotModel.find_annots_by_ref(ref):
+		#	return {'message' : "An annotation with ref '{}' already exists.".format(ref)}, 400
+
+		#need to add proper post/put method
 
 		data = Annot.parser.parse_args()
 
@@ -46,6 +53,7 @@ class Annot(Resource):
 			annot.save_to_db()
 		except:
 			return {'message' : "An error occured inserting the annotation.".format(ref)}, 500
+
 
 	#delete annotation by ref
 	#@jwt_required()
