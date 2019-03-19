@@ -19,9 +19,9 @@ jwt = JWT(app, authenticate, identity)
 
 api.add_resource(Home, '/')
 api.add_resource(EdgeList, '/edges')
-api.add_resource(Edge, '/edges/<string:ref>')
+api.add_resource(Edge, '/edges/<int:ref>')
 api.add_resource(AnnotList, '/annotations')
-api.add_resource(Annot, '/annotations/<string:ref>')
+api.add_resource(Annot, '/annotations/<int:ref>')
 api.add_resource(UserRegister, '/register')
 
 if __name__ == '__main__':
