@@ -16,9 +16,6 @@ class AnnotList(Resource):
 class Annot(Resource):
 
 	parser = reqparse.RequestParser()
-	parser.add_argument('ref',
-	type=int,
-	)
 	parser.add_argument('username',
 	type=str,
 	)
@@ -47,12 +44,30 @@ class Annot(Resource):
 
 		data = Annot.parser.parse_args()
 
-		annot = AnnotModel(ref, data['username', 'judgement', 'comment'])
+		annotation = AnnotModel(ref, data['username', 'judgement', 'comment'])
 		
 		try:
-			annot.save_to_db()
+			annotation.save_to_db()
 		except:
 			return {'message' : "An error occured inserting the annotation.".format(ref)}, 500
+
+		return annotation.json()
+
+	def put(self, ref):
+		data = Annot.parser.parse_args()
+
+		annotation = AnnotModel.find_annots_by_ref(ref)
+
+		if annotation is None:
+			annotation = AnnotModel(ref, data['username', 'judgement', 'comment'])
+			annotation.save_to_db()
+		else:
+			annotation.judgement = data['judgement']
+			annotation.save_to_db()
+			annotation.comment = data['comment']
+			annotation.save_to_db()
+
+		return annotation.json()
 
 
 	#delete annotation by ref
@@ -63,18 +78,3 @@ class Annot(Resource):
 			annot.delete_from_db()
 
 		return {'message' : "Annotation deleted"}
-
-	def put(self, ref):
-		data = Annot.parser.parse_args()
-
-		annotation = AnnotModel.find_annots_by_ref(ref)
-
-		if annotation is None:
-			annotation = AnnotModel(ref, data['username', 'judgement', 'comment'])
-		else:
-			annotation.judgement = data['judgement']
-			annotation.save_to_db()
-			annotation.comment = data['comment']
-			annotation.save_to_db()
-
-		return annotation.json()
