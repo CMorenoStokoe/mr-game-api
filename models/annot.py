@@ -11,7 +11,7 @@ class AnnotModel(db.Model):
 
 	edge = db.relationship('EdgeModel')
 
-	def __init__(self, ref, username, judgement, comment):
+	def __init__(self, annotID, ref, username, judgement, comment):
 		self.annotID = annotID
 		self.ref = ref
 		self.username = username

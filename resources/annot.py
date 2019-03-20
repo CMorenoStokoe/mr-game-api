@@ -35,7 +35,8 @@ class Annot(Resource):
 			return edge.json()
 		return {'message': "{} not found in db".format(ref)}, 404
 
-	@jwt_required()
+	#@jwt_required()
+	#POST NOT WORKING
 	def post(self, ref):
 		#if AnnotModel.find_annots_by_ref(ref):
 		#	return {'message' : "An annotation with ref '{}' already exists.".format(ref)}, 400
@@ -44,7 +45,7 @@ class Annot(Resource):
 
 		data = Annot.parser.parse_args()
 
-		annotation = AnnotModel(ref, data['username', 'judgement', 'comment'])
+		annotation = AnnotModel(None, ref, data['username'], data['judgement'], data['comment'])
 		
 		try:
 			annotation.save_to_db()
@@ -59,7 +60,7 @@ class Annot(Resource):
 		annotation = AnnotModel.find_annots_by_ref(ref)
 
 		if annotation is None:
-			annotation = AnnotModel(ref, data['username', 'judgement', 'comment'])
+			annotation = AnnotModel(None, ref, data['username'], data['judgement'], data['comment'])
 			annotation.save_to_db()
 		else:
 			annotation.judgement = data['judgement']
