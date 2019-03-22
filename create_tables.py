@@ -15,8 +15,6 @@ users = [
 ]
 cursor.executemany(insert_query, users)
 
-print(users)
-
 create_table = "CREATE TABLE IF NOT EXISTS edges (ref INTEGER PRIMARY KEY, exposure int, exp_name text, outcome int, out_name text, MRestimate real)"
 cursor.execute(create_table)
 
@@ -32,8 +30,6 @@ edges = [
 ]
 cursor.executemany(insert_query, edges)
 
-print(edges)
-
 create_table = "CREATE TABLE IF NOT EXISTS annotations (annotID INTEGER PRIMARY KEY, ref int, username text, judgement int, comment text)"
 cursor.execute(create_table)
 
@@ -41,12 +37,14 @@ insert_query = "INSERT INTO annotations VALUES (NULL, ?, ?, ?, ?)"
 
 annotations = [
 	(1, 'chris', 0, 'cant be true'),
-	(1, 'chris', 1, 'actually it could be'),
-	(2, 'chris', 0, 'definitely not true')
+	(1, 'admin', 1, 'obviously true'),
+	(2, 'chris', 1, 'might be true'),
+	(3, 'chris', 0, 'definitely not true'),
+	(5, 'user1', 1, 'i dunno')
 ]
 cursor.executemany(insert_query, annotations)
 
-print(annotations)
+print("Message: data.db was created. WARNING: If existing, duplicate values were inserted.")
 
 connection.commit()
 connection.close()

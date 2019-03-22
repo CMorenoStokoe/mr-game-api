@@ -1,4 +1,4 @@
-import os
+import os, os.path
 
 from flask import Flask
 from flask_restful import Api
@@ -6,8 +6,8 @@ from flask_jwt import JWT
 
 from security import authenticate, identity
 from resources.user import UserRegister
-from resources.edges import EdgeList, Edge
-from resources.annot import AnnotList, Annot, Home
+from resources.edges import EdgeList, Edges, Edge
+from resources.annot import AnnotList, Annots, Annot, Home
 
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('DATABASE_URL','sqlite:///data.db')
@@ -19,10 +19,17 @@ jwt = JWT(app, authenticate, identity)
 
 api.add_resource(Home, '/')
 api.add_resource(EdgeList, '/edges')
-api.add_resource(Edge, '/edges/<int:ref>')
+api.add_resource(Edges, '/edges/<string:exp_name>')
+api.add_resource(Edge, '/edges/<string:exp_name>/<string:out_name>')
 api.add_resource(AnnotList, '/annotations')
-api.add_resource(Annot, '/annotations/<int:ref>')
+api.add_resource(Annots, '/annotations/<string:exp_name>')
+api.add_resource(Annot, '/annotations/<string:exp_name>/<string:out_name>')
 api.add_resource(UserRegister, '/register')
+
+if os.path.isfile("data.db"):
+	print("Message: data.db already exists.")
+else:
+	from create_tables import *
 
 if __name__ == '__main__':
 	from db import db
