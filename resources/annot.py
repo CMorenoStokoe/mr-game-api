@@ -11,7 +11,7 @@ class Home(Resource):
 
 class AnnotList(Resource):
 	def get(self):
-		return {'anntations': [annotation.json() for annotation in AnnotModel.query.all()]}
+		return {'annotations': [annotation.json() for annotation in AnnotModel.query.all()]}
 
 
 class Annots(Resource):
