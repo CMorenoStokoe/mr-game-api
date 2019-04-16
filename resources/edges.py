@@ -8,10 +8,17 @@ class EdgeList(Resource):
 		return {'edges': [edge.json() for edge in EdgeModel.query.all()]}
 
 
-class Edge(Resource):
-	def get(self,ref):
-		edge = EdgeModel.find_edges_by_ref(ref)
-		if edge:
-			return edge.json()
-		return {'message': '{} not found in db'.format(ref)}, 404
+class Edges(Resource):
+	def get(self,exp_name):
+		edges = EdgeModel.find_edges_by_expName(exp_name)
+		if edges:
+			return edges
+		return {'message': '{} not found in db'.format(exp_name)}, 404
 
+class Edge(Resource):
+	def get(self,exp_name,out_name, infoReq):
+		infoReq = Edges
+		edge = EdgeModel.find_edge_by_expNameAndOutName(exp_name,out_name,infoReq)
+		if edge:
+			return edge
+		return {'message': '{} not found in db'.format(exp_name)}, 404

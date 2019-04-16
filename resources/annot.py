@@ -2,18 +2,21 @@ import sqlite3
 from flask_restful import Resource, reqparse
 from flask_jwt import jwt_required
 from models.annot import AnnotModel
+from models.edges import EdgeModel
+
+class Home(Resource):
+	def get(self):
+		return "Hello, World!"
+
 
 class AnnotList(Resource):
 	def get(self):
 		return {'anntations': [annotation.json() for annotation in AnnotModel.query.all()]}
 
 
-class Annot(Resource):
+class Annots(Resource):
 
 	parser = reqparse.RequestParser()
-	parser.add_argument('ref',
-	type=int,
-	)
 	parser.add_argument('username',
 	type=str,
 	)
@@ -23,50 +26,53 @@ class Annot(Resource):
 	parser.add_argument('comment',
 	type=str,
 	)
-
-	#add find_by_methods e.g., get edge by exposure
 	
-	#gets annotations by ref
-	def get(self,ref):
-		edge = AnnotModel.find_annots_by_ref(ref)
+	def get(self, exp_name):
+		edge = AnnotModel.find_annots_by_expName(exp_name)
 		if edge:
-			return edge.json()
-		return {'message': '{} not found in db'.format(ref)}, 404
+			return edge
+		return {'message': "{} not found in db".format(exp_name)}, 404
 
-	@jwt_required()
-	def post(self, ref):
-		if AnnotModel.find_annots_by_ref(ref):
-			return {'message' : "An annotation with ref '{}' already exists.".format(ref)}, 400
-
+	#@jwt_required() - disabled for testing
+	#need to add proper post/put method
+	def post(self, exp_name):
 		data = Annot.parser.parse_args()
 
-		annot = AnnotModel(ref, data['username', 'judgement', 'comment'])
-		
-		try:
-			annot.save_to_db()
-		except:
-			return {'message' : "An error occured inserting the annotation.".format(ref)}, 500
+		ref = EdgeModel.expName_to_ref(exp_name)
+		username = data['username']
 
-	#delete annotation by ref
-	#@jwt_required()
-	def delete(self, ref):
-		annot = AnnotModel.find_annots_by_ref(ref)
-		if annot:
+		annotExists = AnnotModel.find_annots_by_refAndUsr(ref, username) 
+		if annotExists:
+			return {"Message": "Annotation already made by user {}, please use PUT to update instead".format(username), 'Existing annotation': annotExists}
+		newAnnot = AnnotModel(
+								None, 
+								ref, 
+								data['username'], 
+								data['judgement'], 
+								data['comment']
+						)
+		newAnnot.save_to_db()
+		return {'Message': "Annotation made successfully", 'Preview': newAnnot.json()}, 404
+
+	def put(self, exp_name):
+		data = Annot.parser.parse_args()
+
+		ref = EdgeModel.expName_to_ref(exp_name)
+		username = data['username']
+
+		return AnnotModel.update_annots_by_ref(ref, username)
+
+	def delete(self, exp_name):
+		edge = AnnotModel.find_annots_by_expName(exp_name)
+		if edge:
 			annot.delete_from_db()
+			return {'message' : "Annotation deleted"}
+		return {'message': "{} not found in db".format(exp_name)}, 404
 
-		return {'message' : "Annotation deleted"}
-
-	def put(self, ref):
-		data = Annot.parser.parse_args()
-
-		annotation = AnnotModel.find_annots_by_ref(ref)
-
-		if annotation is None:
-			annotation = AnnotModel(ref, data['username', 'judgement', 'comment'])
-		else:
-			annotation.judgement = data['judgement']
-			annotation.save_to_db()
-			annotation.comment = data['comment']
-			annotation.save_to_db()
-
-		return annotation.json()
+class Annot(Resource):
+	def get(self,exp_name,out_name, infoReq):
+		infoReq = Annotations
+		edge = EdgeModel.find_edge_by_expNameAndOutName(exp_name,out_name,infoReq)
+		if edge:
+			return edge
+		return {'message': '{} not found in db'.format(exp_name)}, 404

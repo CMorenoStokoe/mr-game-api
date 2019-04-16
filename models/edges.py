@@ -19,6 +19,7 @@ class EdgeModel(db.Model):
 		self.outcome = outcome
 		self.out_name = out_name
 		self.MRestimate = MRestimate
+		self.annotations = annotations
 
 	def json(self):
 		return {
@@ -32,5 +33,26 @@ class EdgeModel(db.Model):
 				}
 
 	@classmethod
-	def find_edges_by_ref(cls, ref):
-		return cls.query.filter_by(ref=ref).first()
+	def find_edges_by_expName(cls, exp_name):
+		return [edge.json() for edge in EdgeModel.query.filter_by(exp_name=exp_name).all()]
+
+	@classmethod
+	def expName_to_ref(cls, exp_name):
+		edge = EdgeModel.query.filter_by(exp_name=exp_name).first()
+		return edge.ref
+
+	@classmethod
+	def find_edge_by_expNameAndOutName(cls, exp_name, out_name, infoReq):
+		edge = EdgeModel.query.filter_by(exp_name=exp_name).filter_by(out_name=out_name).first()
+		if infoReq == annotations:
+			annots = edge.annots
+			return annots
+		else: 
+			return edge.json()
+
+	#add method to intialise
+	#@classmethod
+	#def initialise(cls,ref)
+		#edge = find_edges_by_ref(ref)
+		#edge.annotations = 'annotations':[]
+		#edge.save_to_db()
