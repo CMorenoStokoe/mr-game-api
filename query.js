@@ -1,11 +1,11 @@
 var edgeContainer = document.getElementById("edgeInfo");    
-var btn = document.getElementById("btn");
-var btnAll = document.getElementById("btnAll");
+var btnEdge = document.getElementById("btnEdge");
+var btnAllEdge = document.getElementById("btnAllEdge");
 var btnAllAnnot = document.getElementById("btnAllAnnot");
 var btnAnnot = document.getElementById("btnAnnot");
 
-/* Display one edge in sentance */
-btn.addEventListener("click", function() {
+/* Narrate one edge */
+btnEdge.addEventListener("click", function() {
     var ourRequest = new XMLHttpRequest();
     ourRequest.open('GET','http://127.0.0.1:5000/edges');
     ourRequest.onload = function() {
@@ -18,23 +18,21 @@ btn.addEventListener("click", function() {
 
 function renderHTML(data) {
     var htmlString = "";
-
-    
-    htmlString += "<p>Edge sentance:<br>" + "The edge with ref #" + data['ref'] + 
+    htmlString += "<p>Edge sentence:<br>" + "The edge with ref #" + data['ref'] + 
     " models the exposure " + data['exp_name'] + " against the outcome " + data['out_name'] 
     + " and has an MR estimate of " + data['MRestimate'] + "</p>";
 
     edgeContainer.insertAdjacentHTML('beforeend', htmlString);
 }
 
-/* Display all edges in edges list */
-btnAll.addEventListener("click", function() {
+/* List all edges */
+btnAllEdge.addEventListener("click", function() {
     var ourRequest = new XMLHttpRequest();
     ourRequest.open('GET','http://127.0.0.1:5000/edges');
     ourRequest.onload = function() {
         var ourData = JSON.parse(ourRequest.responseText);
         console.log(ourData['edges']);
-        renderHTML2(ourData['edges']);
+        ourData['edges'].forEach(renderHTML2);
     };
     ourRequest.send(); 
 });
@@ -42,12 +40,12 @@ btnAll.addEventListener("click", function() {
 function renderHTML2(data) {
     var htmlString = "";
     json = JSON.stringify(data, null, 2);
-    htmlString += "<p>List of edges:<br>" + json + "</p>";
+    htmlString += "<p>" + json + "</p>";
 
     edgeContainer.insertAdjacentHTML('beforeend', htmlString);
 }
 
-/* Display one annotation for an edge in sentance */
+/* Narrate one annotation for an edge */
 btnAnnot.addEventListener("click", function() {
     var ourRequest = new XMLHttpRequest();
     ourRequest.open('GET','http://127.0.0.1:5000/annotations');
@@ -64,21 +62,21 @@ function renderHTML4(data) {
     annotations  = "";
     json = JSON.stringify(data);
     annots = data
-    htmlString += "<p>Annotation sentance:<br>" + "The edge with ref #" + data['ref'] 
+    htmlString += "<p>Annotation sentence:<br>" + "The edge with ref #" + data['ref'] 
         + " received an annotation from user " + data['username'] + " who made the judgement " + data['judgement'] 
     + " where 0=false and 1=true, with the comment: that " + data['comment'] + "</p>";
 
     edgeContainer.insertAdjacentHTML('beforeend', htmlString);
 }
 
-/* Display all annotations for edge */
+/* List all annotations */
 btnAllAnnot.addEventListener("click", function() {
     var ourRequest = new XMLHttpRequest();
     ourRequest.open('GET','http://127.0.0.1:5000/annotations');
     ourRequest.onload = function() {
         var ourData = JSON.parse(ourRequest.responseText);
         console.log(ourData['annotations']);
-        renderHTML3(ourData['annotations']);
+        ourData['annotations'].forEach(renderHTML3);
     };
     ourRequest.send(); 
 });
@@ -88,10 +86,35 @@ function renderHTML3(data) {
     annotations  = "";
     json = JSON.stringify(data);
     annots = data
-    htmlString += "<p>List of annotations:<br>" + json + "</p>";
+    htmlString += "<p>" + json + "</p>";
 
     edgeContainer.insertAdjacentHTML('beforeend', htmlString);
 }
+
+/* Narrate all annotations for one edge */
+btnLoopyAnnot.addEventListener("click", function() {
+    var ourRequest = new XMLHttpRequest();
+    ourRequest.open('GET','http://127.0.0.1:5000/annotations/Adiponectin');
+    ourRequest.onload = function() {
+        var ourData = JSON.parse(ourRequest.responseText);
+        console.log(ourData['Adiponectin']);
+        ourData['Adiponectin'].forEach(renderHTML5);
+    };
+    ourRequest.send(); 
+});
+
+function renderHTML5(data) {
+    var htmlString = "";
+    annotations  = "";
+    json = JSON.stringify(data);
+    annots = data
+    htmlString += "<p>" + "The edge with ref #" + data['ref'] 
+        + " received an annotation from user " + data['username'] + " who made the judgement " + data['judgement'] 
+    + " where 0=false and 1=true, with the comment: that " + data['comment'] + "</p>";
+
+    edgeContainer.insertAdjacentHTML('beforeend', htmlString);
+}
+
 
 /* Loop to put all annots in sentence */
     /* for (i = 0; i < annots.length; i++) {
