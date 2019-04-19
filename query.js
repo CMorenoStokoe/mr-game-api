@@ -3,6 +3,9 @@ var btnEdge = document.getElementById("btnEdge");
 var btnAllEdge = document.getElementById("btnAllEdge");
 var btnAllAnnot = document.getElementById("btnAllAnnot");
 var btnAnnot = document.getElementById("btnAnnot");
+var btnFormAnnot = document.getElementById("btnFormAnnot");
+
+var formAnnot = document.getElementById("formAnnot");
 
 /* Narrate one edge */
 btnEdge.addEventListener("click", function() {
@@ -115,8 +118,11 @@ function renderHTML5(data) {
     edgeContainer.insertAdjacentHTML('beforeend', htmlString);
 }
 
+/* Make comment using form */
 
-/* Loop to put all annots in sentence */
-    /* for (i = 0; i < annots.length; i++) {
-        annotations += JSON.stringify(annots['comment']);
-    } */
+btnFormAnnot.addEventListener("click", function() {        
+    console.log(formAnnot);
+    var text = "";
+    text += formAnnot.elements[0].value + "<br>";
+    document.getElementById("commentInfo").innerHTML = text;
+});
