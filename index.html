@@ -4,23 +4,25 @@
     </head>
     
     <body>
-        <button id="btnEdge">GET one edge (sentence)</button>
-        <button id="btnAllEdge">GET all edges (list)</button>
-        <button id="btnAnnot">GET one annotation (sentence)</button>
-        <button id="btnAllAnnot">GET all annotations (list)</button>
-        <button id="btnLoopyAnnot">GET all annotations for one edge (sentence)</button>
+        <button id="btnEdge">GET one edge (sentence)</button><br>
+        <button id="btnAllEdge">GET all edges (list)</button><br>
+        <button id="btnAnnot">GET one annotation (sentence)</button><br>
+        <button id="btnAllAnnot">GET all annotations (list)</button><br>
+        <button id="btnLoopyAnnot">GET all annotations for one edge (sentence)</button><br>
         
-        <div id="edgeInfo"></div>
-        
+        <br>
+        <div style="border-style: solid; border-width: 2px;">
         <form id="formAnnot" action="#">
           Enter comment text here: <input type="text" name="fname" value="Type here"><br><br>
-          <input type="submit" value="Submit">
         </form> 
-
-        <p>Click "Try it" to display the value of each element in the form.</p>
-
-        <button id="btnFormAnnot">Try it</button>
-
+        <p>Click "Display form test" to display the value of the form (demo of accessing form values)</p>
+        <button id="btnFormAnnot">Display form text</button>
+        <button id="btnFormUser">Post new user</button>
+        </div>
+        <br>
+            
+        <h4>Output:</h4>
+        <div id="edgeInfo"></div>
         <p id="commentInfo"></p>
         
         

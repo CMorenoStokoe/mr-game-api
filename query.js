@@ -119,10 +119,37 @@ function renderHTML5(data) {
 }
 
 /* Make comment using form */
-
 btnFormAnnot.addEventListener("click", function() {        
     console.log(formAnnot);
     var text = "";
     text += formAnnot.elements[0].value + "<br>";
     document.getElementById("commentInfo").innerHTML = text;
 });
+
+/* Post new user */
+btnFormUser.addEventListener("click", function() {
+    var xhr = new XMLHttpRequest();
+    var url = "http://127.0.0.1:5000/register";
+    xhr.open("POST", url, true);
+    xhr.setRequestHeader("Content-Type", "application/json");
+    xhr.onreadystatechange = function () {
+        if (xhr.readyState === 4 && xhr.status === 200) {
+            var json = JSON.parse(xhr.responseText);
+            console.log(json.username + ", " + json.password);
+        }
+    };
+    var formTxtUser = JSON.stringify({"username": "test196", "password": "pass123"});
+    console.log(formTxtUser);
+    renderHTML6(formTxtUser);
+    xhr.send(formTxtUser);
+})
+
+function renderHTML6(data) {
+    var htmlString = "";
+    annotations  = "";
+    json = data;
+    annots = data;
+    htmlString += "<p>" + "Summary text here; username:" + data['username'] + ", password:" + data['password'] + "; indicates that the request was performed. Check console to see status, 400 returns when User Already Exists." + "</p>";
+
+    edgeContainer.insertAdjacentHTML('beforeend', htmlString);
+}
