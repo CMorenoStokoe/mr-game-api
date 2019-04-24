@@ -68,11 +68,3 @@ class Annots(Resource):
 			annot.delete_from_db()
 			return {'message' : "Annotation deleted"}
 		return {'message': "{} not found in db".format(exp_name)}, 404
-
-class Annot(Resource):
-	def get(self,exp_name,out_name, infoReq):
-		infoReq = Annotations
-		edge = EdgeModel.find_edge_by_expNameAndOutName(exp_name,out_name,infoReq)
-		if edge:
-			return edge
-		return {'message': '{} not found in db'.format(exp_name)}, 404

@@ -42,13 +42,9 @@ class EdgeModel(db.Model):
 		return edge.ref
 
 	@classmethod
-	def find_edge_by_expNameAndOutName(cls, exp_name, out_name, infoReq):
+	def find_edge_by_expNameAndOutName(cls, exp_name, out_name):
 		edge = EdgeModel.query.filter_by(exp_name=exp_name).filter_by(out_name=out_name).first()
-		if infoReq == annotations:
-			annots = edge.annots
-			return annots
-		else: 
-			return edge.json()
+		return {"edges" : edge.json()}
 
 	#add method to intialise
 	#@classmethod

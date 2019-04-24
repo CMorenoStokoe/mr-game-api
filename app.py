@@ -8,7 +8,7 @@ from flask_cors import CORS
 from security import authenticate, identity
 from resources.user import UserRegister
 from resources.edges import EdgeList, Edges, Edge
-from resources.annot import AnnotList, Annots, Annot, Home
+from resources.annot import AnnotList, Annots, Home
 
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('DATABASE_URL','sqlite:///data.db')
@@ -25,7 +25,6 @@ api.add_resource(Edges, '/edges/<string:exp_name>')
 api.add_resource(Edge, '/edges/<string:exp_name>/<string:out_name>')
 api.add_resource(AnnotList, '/annotations')
 api.add_resource(Annots, '/annotations/<string:exp_name>')
-api.add_resource(Annot, '/annotations/<string:exp_name>/<string:out_name>')
 api.add_resource(UserRegister, '/register')
 
 if os.path.isfile("data.db"):

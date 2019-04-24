@@ -3,30 +3,60 @@ var btnEdge = document.getElementById("btnEdge");
 var btnAllEdge = document.getElementById("btnAllEdge");
 var btnAllAnnot = document.getElementById("btnAllAnnot");
 var btnAnnot = document.getElementById("btnAnnot");
-var btnFormAnnot = document.getElementById("btnFormAnnot");
 
-var formAnnot = document.getElementById("formAnnot");
+var formExp = document.getElementById("formExp");
+var formOut = document.getElementById("formOut");
+var formComm = document.getElementById("formComm");
 
-/* Narrate one edge */
+
+/* Narrate multiple edges */
 btnEdge.addEventListener("click", function() {
     var ourRequest = new XMLHttpRequest();
-    ourRequest.open('GET','http://127.0.0.1:5000/edges');
+    var dictKey = "edges";
+    var kwrd = "";
+    var kwrd2 = "";
+    var URL = "";
+    
+    if (formExp.elements[0].value != "ALL") {
+        kwrd += "/" + formExp.elements[0].value;
+    };
+    if (formOut.elements[0].value != "") {
+        kwrd2 += "/" + formOut.elements[0].value;
+    
+    };
+    URL += "http://127.0.0.1:5000/edges" + kwrd + kwrd2;
+    
+    console.log(dictKey);
+    console.log(kwrd);
+    console.log(kwrd2);
+    console.log(formExp.elements[0].value);
+    console.log(URL);
+    
+    ourRequest.open('GET', URL);
     ourRequest.onload = function() {
         var ourData = JSON.parse(ourRequest.responseText);
-        console.log((ourData['edges'])[0]);
-        renderHTML((ourData['edges'])[0]);
+        console.log(ourData["edges"]);
+        if (kwrd2 != "") {
+            renderHTML(ourData["edges"]);
+        }
+        else {
+            ourData[dictKey].forEach(renderHTML);
+        }
+        
+        
     };
     ourRequest.send(); 
 });
 
 function renderHTML(data) {
     var htmlString = "";
-    htmlString += "<p>Edge sentence:<br>" + "The edge with ref #" + data['ref'] + 
+    htmlString += "<p>" + "The edge with ref #" + data['ref'] + 
     " models the exposure " + data['exp_name'] + " against the outcome " + data['out_name'] 
     + " and has an MR estimate of " + data['MRestimate'] + "</p>";
 
     edgeContainer.insertAdjacentHTML('beforeend', htmlString);
 }
+
 
 /* List all edges */
 btnAllEdge.addEventListener("click", function() {
@@ -48,29 +78,6 @@ function renderHTML2(data) {
     edgeContainer.insertAdjacentHTML('beforeend', htmlString);
 }
 
-/* Narrate one annotation for an edge */
-btnAnnot.addEventListener("click", function() {
-    var ourRequest = new XMLHttpRequest();
-    ourRequest.open('GET','http://127.0.0.1:5000/annotations');
-    ourRequest.onload = function() {
-        var ourData = JSON.parse(ourRequest.responseText);
-        console.log((ourData['annotations'])[0]);
-        renderHTML4((ourData['annotations'])[0]);
-    };
-    ourRequest.send(); 
-});
-
-function renderHTML4(data) {
-    var htmlString = "";
-    annotations  = "";
-    json = JSON.stringify(data);
-    annots = data
-    htmlString += "<p>Annotation sentence:<br>" + "The edge with ref #" + data['ref'] 
-        + " received an annotation from user " + data['username'] + " who made the judgement " + data['judgement'] 
-    + " where 0=false and 1=true, with the comment: that " + data['comment'] + "</p>";
-
-    edgeContainer.insertAdjacentHTML('beforeend', htmlString);
-}
 
 /* List all annotations */
 btnAllAnnot.addEventListener("click", function() {
@@ -94,23 +101,33 @@ function renderHTML3(data) {
     edgeContainer.insertAdjacentHTML('beforeend', htmlString);
 }
 
+
 /* Narrate all annotations for one edge */
 btnLoopyAnnot.addEventListener("click", function() {
     var ourRequest = new XMLHttpRequest();
-    ourRequest.open('GET','http://127.0.0.1:5000/annotations/Adiponectin');
+    
+    var kwrd = "";
+    var dictKey = "";
+    kwrd += "http://127.0.0.1:5000/annotations/" + formExp.elements[0].value;
+    dictKey += formExp.elements[0].value;
+    
+    if (formExp.elements[0].value == "ALL") {
+        kwrd = "http://127.0.0.1:5000/annotations";
+        dictKey = "annotations";
+    };
+    
+    ourRequest.open('GET', kwrd);
     ourRequest.onload = function() {
         var ourData = JSON.parse(ourRequest.responseText);
-        console.log(ourData['Adiponectin']);
-        ourData['Adiponectin'].forEach(renderHTML5);
+        console.log(ourData);
+        console.log(ourData[dictKey]);
+        ourData[dictKey].forEach(renderHTML5);
     };
     ourRequest.send(); 
 });
 
 function renderHTML5(data) {
     var htmlString = "";
-    annotations  = "";
-    json = JSON.stringify(data);
-    annots = data
     htmlString += "<p>" + "The edge with ref #" + data['ref'] 
         + " received an annotation from user " + data['username'] + " who made the judgement " + data['judgement'] 
     + " where 0=false and 1=true, with the comment: that " + data['comment'] + "</p>";
@@ -118,15 +135,10 @@ function renderHTML5(data) {
     edgeContainer.insertAdjacentHTML('beforeend', htmlString);
 }
 
-/* Make comment using form */
-btnFormAnnot.addEventListener("click", function() {        
-    console.log(formAnnot);
-    var text = "";
-    text += formAnnot.elements[0].value + "<br>";
-    document.getElementById("commentInfo").innerHTML = text;
-});
 
-/* Post new user */
+/*POST, PUT, DEL REQUESTS*/
+
+/* Post new user 
 btnFormUser.addEventListener("click", function() {
     var xhr = new XMLHttpRequest();
     var url = "http://127.0.0.1:5000/register";
@@ -153,3 +165,4 @@ function renderHTML6(data) {
 
     edgeContainer.insertAdjacentHTML('beforeend', htmlString);
 }
+*/
