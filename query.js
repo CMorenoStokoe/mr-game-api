@@ -3,10 +3,17 @@ var btnEdge = document.getElementById("btnEdge");
 var btnAllEdge = document.getElementById("btnAllEdge");
 var btnAllAnnot = document.getElementById("btnAllAnnot");
 var btnAnnot = document.getElementById("btnAnnot");
+var btnComm = document.getElementById("btnComm");
+var btnFormUser = document.getElementById("btnFormUser");
 
 var formExp = document.getElementById("formExp");
 var formOut = document.getElementById("formOut");
 var formComm = document.getElementById("formComm");
+var formUsr = document.getElementById("formUsr");
+var formPass = document.getElementById("formPass");
+var formCommRef = document.getElementById("formCommRef");
+var formCommUsr = document.getElementById("formCommUsr");
+var formCommJudg = document.getElementById("formCommJudg");
 
 
 /* Narrate multiple edges */
@@ -130,39 +137,77 @@ function renderHTML5(data) {
     var htmlString = "";
     htmlString += "<p>" + "The edge with ref #" + data['ref'] 
         + " received an annotation from user " + data['username'] + " who made the judgement " + data['judgement'] 
-    + " where 0=false and 1=true, with the comment: that " + data['comment'] + "</p>";
+    + " where 0=false and 1=true, with the comment: " + data['comment'] + "</p>";
 
     edgeContainer.insertAdjacentHTML('beforeend', htmlString);
 }
 
 
-/*POST, PUT, DEL REQUESTS*/
-
-/* Post new user 
+/*POST new user*/
 btnFormUser.addEventListener("click", function() {
     var xhr = new XMLHttpRequest();
-    var url = "http://127.0.0.1:5000/register";
-    xhr.open("POST", url, true);
-    xhr.setRequestHeader("Content-Type", "application/json");
+    var usr = formUsr.elements[0].value;
+    var pass = formPass.elements[0].value;
+    var err = "Error: Username already exists: ";
+    
+    xhr.open("POST", "http://127.0.0.1:5000/register", true);
+    xhr.setRequestHeader('Content-Type', 'application/json');
     xhr.onreadystatechange = function () {
-        if (xhr.readyState === 4 && xhr.status === 200) {
-            var json = JSON.parse(xhr.responseText);
-            console.log(json.username + ", " + json.password);
+        if (xhr.readyState === 4 && xhr.status === 201) {
+            renderHTML7(usr, pass);
         }
+        if (xhr.readyState === 4 && xhr.status === 303) {
+            renderHTML7(err, usr);
+        };
     };
-    var formTxtUser = JSON.stringify({"username": "test196", "password": "pass123"});
-    console.log(formTxtUser);
-    renderHTML6(formTxtUser);
-    xhr.send(formTxtUser);
-})
+    
+    xhr.send(JSON.stringify({
+    "username": usr,
+    "password": pass
+    }));
+});
 
-function renderHTML6(data) {
+function renderHTML7(data1, data2) {
     var htmlString = "";
-    annotations  = "";
-    json = data;
-    annots = data;
-    htmlString += "<p>" + "Summary text here; username:" + data['username'] + ", password:" + data['password'] + "; indicates that the request was performed. Check console to see status, 400 returns when User Already Exists." + "</p>";
+    htmlString += "<p> Registration outcome:" + data1 + data2 + "</p>";
 
     edgeContainer.insertAdjacentHTML('beforeend', htmlString);
 }
-*/
+
+/*POST comment*/
+btnFormComm.addEventListener("click", function() {
+    var xhr = new XMLHttpRequest();
+    var ref = formCommRef.elements[0].value;
+    var usr = formCommUsr.elements[0].value;
+    var comm = formComm.elements[0].value;
+    var judg = formCommJudg.elements[0].value;
+    var err = "Error: A comment already exists for that edge and username. Please update instead: ";
+    var URL = "";
+    URL += "http://127.0.0.1:5000/annotations/" + ref;
+    
+    var req = JSON.stringify({
+        "username": usr,
+        "judgement": judg,
+        "comment" : comm
+    })
+    
+    xhr.open("POST", URL , true);
+    xhr.setRequestHeader('Content-Type', 'application/json');
+    xhr.onreadystatechange = function () {
+        if (xhr.readyState === 4 && xhr.status === 201) {
+            renderHTML8(ref, usr, judg, comm);
+        }
+        if (xhr.readyState === 4 && xhr.status === 303) {
+             edgeContainer.insertAdjacentHTML('beforeend', "User has already made a comment for this edge, please update instead.");
+        }
+    };
+    
+    xhr.send(req);
+});
+
+function renderHTML8(data1, data2, data3, data4) {
+    var htmlString = "";
+    htmlString += "<p> Comment for edge " + data1 + " from user " + data2 + " with judgement " + data3 + " and has content: " + data4 + "</p>";
+
+    edgeContainer.insertAdjacentHTML('beforeend', htmlString);
+}

@@ -36,14 +36,14 @@ class Annots(Resource):
 	#@jwt_required() - disabled for testing
 	#need to add proper post/put method
 	def post(self, exp_name):
-		data = Annot.parser.parse_args()
+		data = Annots.parser.parse_args()
 
 		ref = EdgeModel.expName_to_ref(exp_name)
 		username = data['username']
 
 		annotExists = AnnotModel.find_annots_by_refAndUsr(ref, username) 
 		if annotExists:
-			return {"Message": "Annotation already made by user {}, please use PUT to update instead".format(username), 'Existing annotation': annotExists}
+			return {"Message": "Annotation already made by user {}, please use PUT to update instead".format(username), 'Existing annotation': annotExists}, 303
 		newAnnot = AnnotModel(
 								None, 
 								ref, 
@@ -52,7 +52,7 @@ class Annots(Resource):
 								data['comment']
 						)
 		newAnnot.save_to_db()
-		return {'Message': "Annotation made successfully", 'Preview': newAnnot.json()}, 404
+		return {'Message': "Annotation made successfully", 'Preview': newAnnot.json()}, 201
 
 	def put(self, exp_name):
 		data = Annot.parser.parse_args()
@@ -65,6 +65,6 @@ class Annots(Resource):
 	def delete(self, exp_name):
 		edge = AnnotModel.find_annots_by_expName(exp_name)
 		if edge:
-			annot.delete_from_db()
+			edge.delete_from_db()
 			return {'message' : "Annotation deleted"}
 		return {'message': "{} not found in db".format(exp_name)}, 404
