@@ -5,6 +5,8 @@ var btnAllAnnot = document.getElementById("btnAllAnnot");
 var btnAnnot = document.getElementById("btnAnnot");
 var btnComm = document.getElementById("btnComm");
 var btnFormUser = document.getElementById("btnFormUser");
+var btnFormComm = document.getElementById("btnFormComm");
+var btnFormUpdComm = document.getElementById("btnFormUpdComm");
 
 var formExp = document.getElementById("formExp");
 var formOut = document.getElementById("formOut");
@@ -14,6 +16,9 @@ var formPass = document.getElementById("formPass");
 var formCommRef = document.getElementById("formCommRef");
 var formCommUsr = document.getElementById("formCommUsr");
 var formCommJudg = document.getElementById("formCommJudg");
+var formDelUser = document.getElementById("formDelUser");
+var formDelExp = document.getElementById("formDelExp");
+var formDelOut = document.getElementById("formDelOut");
 
 
 /* Narrate multiple edges */
@@ -178,18 +183,19 @@ function renderHTML7(data1, data2) {
 btnFormComm.addEventListener("click", function() {
     var xhr = new XMLHttpRequest();
     var ref = formCommRef.elements[0].value;
+    var out = formCommOut.elements[0].value;
     var usr = formCommUsr.elements[0].value;
     var comm = formComm.elements[0].value;
     var judg = formCommJudg.elements[0].value;
     var err = "Error: A comment already exists for that edge and username. Please update instead: ";
     var URL = "";
-    URL += "http://127.0.0.1:5000/annotations/" + ref;
+    URL += "http://127.0.0.1:5000/annotations/" + ref + "/" + out;
     
     var req = JSON.stringify({
         "username": usr,
         "judgement": judg,
         "comment" : comm
-    })
+    });
     
     xhr.open("POST", URL , true);
     xhr.setRequestHeader('Content-Type', 'application/json');
@@ -207,7 +213,78 @@ btnFormComm.addEventListener("click", function() {
 
 function renderHTML8(data1, data2, data3, data4) {
     var htmlString = "";
-    htmlString += "<p> Comment for edge " + data1 + " from user " + data2 + " with judgement " + data3 + " and has content: " + data4 + "</p>";
+    htmlString += "<p> Annotation made for edge " + data1 + " from user " + data2 + " with judgement " + data3 + " and has content: " + data4 + "</p>";
+
+    edgeContainer.insertAdjacentHTML('beforeend', htmlString);
+}
+
+/*PUT comment*/
+btnFormUpdComm.addEventListener("click", function() {
+    var xhr = new XMLHttpRequest();
+    var ref = formCommRef.elements[0].value;
+    var out = formCommOut.elements[0].value;
+    var usr = formCommUsr.elements[0].value;
+    var comm = formComm.elements[0].value;
+    var judg = formCommJudg.elements[0].value;
+    
+    var URL = "";
+    URL += "http://127.0.0.1:5000/annotations/" + ref + "/" + out;
+    
+    var req = JSON.stringify({
+        "username": usr,
+        "judgement": judg,
+        "comment" : comm
+    });
+    
+    console.log(req);
+    
+    xhr.open("PUT", URL , true);
+    xhr.setRequestHeader('Content-Type', 'application/json');
+    xhr.onreadystatechange = function () {
+        if (xhr.readyState === 4 && xhr.status === 201) {
+            var resp = xhr.responseText;
+            console.log(resp);
+            renderHTML18(ref, out, usr, comm, judg);
+        }
+    };
+    
+    xhr.send(req);
+});
+
+function renderHTML18(ref, out, usr, comm, judg) {
+    var htmlString = "";
+    console.log(htmlString);
+    htmlString += "<p> Annotation updated for edge " +  ref + ", " + out + " from user " + usr + " with judgement " + judg + " and has content: " + comm + "</p>";
+
+    edgeContainer.insertAdjacentHTML('beforeend', htmlString);
+}
+
+/* DELETE edge */
+btnFormDel.addEventListener("click", function() {
+    var ourRequest = new XMLHttpRequest();
+    var user = formDelUser.elements[0].value;
+    var exp = formDelExp.elements[0].value;
+    var out = formDelOut.elements[0].value;
+    var URL = "";
+    
+    URL += "http://127.0.0.1:5000/annotations/del/" + exp + "/" + out + "/" + user;
+    
+    ourRequest.open('DELETE', URL);
+    ourRequest.onload = function() {
+        var ourData = JSON.parse(ourRequest.responseText);
+        console.log(ourData);
+        renderHTML13(ourData);
+    }
+        
+    ourRequest.send(); 
+});
+
+function renderHTML13(data) {
+    var htmlString = "";
+    annot = data;
+    annotations  = "";
+    json = JSON.stringify(data);
+    htmlString += "<p> Annotation by user " + annot['username'] + " with the judgement " + annot['judgement'] + " and comment " + annot['comment'] + " was deleted. </p>";
 
     edgeContainer.insertAdjacentHTML('beforeend', htmlString);
 }

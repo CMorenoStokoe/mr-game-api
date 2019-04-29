@@ -15,7 +15,7 @@
                 <br>
                 
                 <div style="border-style: solid; border-width: 2px;">
-                    <h3>Search function sentence generator</h3>
+                    <h3>Search function</h3>
                     <p>Enter search term(s) into this form and then press a search button to use this term in the search. <br>Note: This page will try to give you content based on what you type in the forms, if the exposure contains ALL it will list all edges; if outcome contains anything, if it contains another search term it will search for edges for that exposure; it will search for specific exposure-outcome pairs.<br><br>
                     Search terms (case sensitive): Adiponectin, Crohns_disease, Depressive_symptoms, Hip_circumfrance.
                     </p>
@@ -50,10 +50,13 @@
                 </div>
                 
                 <div style="border-style: solid; border-width: 2px;">
-                    <h3>Make new comment</h3>
+                    <h3>Make / update comment</h3>
                     <p>Enter comment into this form and then press an annotation button to post this comment to the database.</p>
                     <form id="formCommRef" action="">
-                      Exposure to comment on: <input type="text" name="fname" value=""><br><br>
+                      Exposure: <input type="text" name="fname" value=""><br><br>
+                    </form> 
+                    <form id="formCommOut" action="">
+                      Outcome: <input type="text" name="fname" value=""><br><br>
                     </form> 
                     <form id="formCommJudg" action="">
                       Judgement (1=true, 0=wrong): <input type="text" name="fname" value=""><br><br>
@@ -68,18 +71,33 @@
                     <button id="btnFormUpdComm">PUT updated comment</button>
                 </div>
                 
-        <br>
-        <h3>JSON list generator</h3>
-        <button id="btnAllEdge">GET ALL edges</button><br>
-        <button id="btnAllAnnot">GET ALL annotations</button><br>
+                <br>
+                <h3>JSON list generator</h3>
+                <button id="btnAllEdge">GET ALL edges</button><br>
+                <button id="btnAllAnnot">GET ALL annotations</button><br>
+            
+                <div style="border-style: solid; border-width: 2px;">
+                    <h3>Delete comment</h3>
+                    <p>Enter username, exposure and outcome to delete an annotation.</p>
+                    <form id="formDelUser" action="">
+                      Username: <input type="text" name="fname" value=""><br><br>
+                    </form> 
+                    <form id="formDelExp" action="">
+                      Exposure: <input type="text" name="fname" value=""><br><br>
+                    </form> 
+                    <form id="formDelOut" action="">
+                      Outcome: <input type="text" name="fname" value=""><br><br>
+                    </form> 
+                    <button id="btnFormDel">DELETE annotation</button>
+                </div>    
                 
-        </div>
+        </div> <!-- white div -->
             
         <div class="container-fluidd col-sm-12 col-md-8 col-lg-6 col-xl-6 outputL">
             <h4>Output:</h4>
             <div id="edgeInfo"></div>
             <p id="commentInfo"></p>
-        </div>
+        </div> <!-- black div -->
     </div>
     <script src="query.js"></script>
     </body>
