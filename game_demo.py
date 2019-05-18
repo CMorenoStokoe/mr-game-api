@@ -1,3 +1,12 @@
+import sys, subprocess
+
+if sys.version_info[:2] < (3, 0):
+    # FORCE PYTHON3
+    code = subprocess.check_call(['python3'] + sys.argv)
+    raise SystemExit(code)
+
+print("Using Python v%d.%d" % sys.version_info[:2])
+
 #Class for diseases, which each have risk factors (percentages which sum to 100%)
 class Diseases:
     def __init__(self, name, risk_smok, risk_drink, risk_diet, risk_exer):
@@ -69,11 +78,24 @@ azkyMoney =   [
                 "    ",
               ]
 
+azkyEndScrn = [
+                "[][][][][][][][]",
+                "[]  G A M E   []",
+                "[]  O V E R   []",
+                "[]            []",
+                "[] Out        []",
+                "[]    of      []",
+                "[]     money  []",
+                "[][][][][][][][]",
+                " ",
+                "Final scores below:"
+]
+
 validTargets = ["Smoking", "Drinking", "Diet", "Exercise"]
     
 intervention = ""
 
-money = 100000
+money = 10000
 
 for azkySprite in azkySprites:
     print(azkySprite)
@@ -92,42 +114,45 @@ while intervention != "end":
     
     for azkySprite in azkyDisease:
         print(azkySprite)
-    print("Lung Cancer : ", prev_LungCancer)
-    print("Heart Disease : ", prev_HeartDisease)
-    print("Liver Disease : ", prev_LiverDisease)
+    print("Lung Cancer : ", prev_LungCancer, " cases")
+    print("Heart Disease : ", prev_HeartDisease, " cases")
+    print("Liver Disease : ", prev_LiverDisease, " cases")
 
     for azkySprite in azkyBehav:
         print(azkySprite)
-    print("Smoking : ", prev_Smoking)
-    print("Drinking : ", prev_Drinking)
-    print("Diet : ", prev_Diet)
-    print("Exercise : ", prev_Exercise)
+    print("Smoking : ", prev_Smoking, " %")
+    print("Drinking : ", prev_Drinking, " %")
+    print("Diet : ", prev_Diet, " %")
+    print("Exercise : ", prev_Exercise, " %")
     
     for azkySprite in azkyMoney:
         print(azkySprite)
-    print("Budget remaining: ", money)
+    print("Budget remaining: $", money)
     print("")
     
-    intervention = input("Enter a behaviour to intervene upon (-10% prevalence) ")
+    intervention = input("Enter a behaviour to reduce by 20% (costs $2000)")
     
     if intervention == "Smoking":
-        prev_Smoking -= 10 
-        money -= 10000
+        prev_Smoking -= 20 
+        money -= 2000
     if intervention == "Drinking":
-        prev_Drinking -= 10 
-        money -= 10000
+        prev_Drinking -= 20 
+        money -= 2000
     if intervention == "Diet":
-        prev_Diet -= 10 
-        money -= 10000
+        prev_Diet -= 20 
+        money -= 2000
     if intervention == "Exercise":
-        prev_Exercise -= 10 
-        money -= 10000
+        prev_Exercise -= 20 
+        money -= 2000
     
-    if money == 0 :
-        print("!OUT OF BUDGET!#####Final scores below:#####!OUT OF BUDGET!")
-        print("Lung Cancer : ", prev_LungCancer)
-        print("Heart Disease : ", prev_HeartDisease)
-        print("Liver Disease : ", prev_LiverDisease)
+    if money <= 0 :
+        for azkySprite in azkySpacer:
+            print(azkySprite)
+        for azkySprite in azkyEndScrn:
+            print(azkySprite)
+        print("Lung Cancer : ", prev_LungCancer, " cases")
+        print("Heart Disease : ", prev_HeartDisease, " cases")
+        print("Liver Disease : ", prev_LiverDisease, " cases")
         break
    
     if intervention not in validTargets:
