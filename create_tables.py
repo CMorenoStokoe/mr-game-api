@@ -21,12 +21,12 @@ cursor.execute(create_table)
 insert_query = "INSERT INTO edges VALUES (NULL, ?, ?, ?, ?, ?)"
 
 edges = [
-	(1, 'Adiponectin', 10, 'Crohns_disease', 0.001),
-	(1, 'Adiponectin', 100, 'Hip_circumfrance', 0.002),
-	(1, 'Adiponectin', 1000, 'Depressive_symptoms', 0.003),
-	(10, 'Crohns_disease', 100, 'Hip_circumfrance', 0.004),
-	(10, 'Crohns_disease', 1000, 'Depressive_symptoms', 0.005),
-	(100, 'Hip_circumfrance', 1000, 'Depressive_symptoms', 0.006)	
+	(1, 'Adiponectin', 10, 'CrohnsDisease', 0.001),
+	(1, 'Adiponectin', 100, 'HipCircumfrance', 0.002),
+	(1, 'Adiponectin', 1000, 'DepressiveSymptoms', 0.003),
+	(10, 'CrohnsDisease', 100, 'HipCircumfrance', 0.004),
+	(10, 'CrohnsDisease', 1000, 'DepressiveSymptoms', 0.005),
+	(100, 'HipCircumfrance', 1000, 'DepressiveSymptoms', 0.006)	
 ]
 cursor.executemany(insert_query, edges)
 

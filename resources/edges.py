@@ -12,13 +12,12 @@ class Edges(Resource):
 	def get(self,exp_name):
 		edges = EdgeModel.find_edges_by_expName(exp_name)
 		if edges:
-			return edges
+			return {"edges" : edges}
 		return {'message': '{} not found in db'.format(exp_name)}, 404
 
 class Edge(Resource):
-	def get(self,exp_name,out_name, infoReq):
-		infoReq = Edges
-		edge = EdgeModel.find_edge_by_expNameAndOutName(exp_name,out_name,infoReq)
+	def get(self,exp_name,out_name):
+		edge = EdgeModel.find_edge_by_expNameAndOutName(exp_name,out_name)
 		if edge:
 			return edge
 		return {'message': '{} not found in db'.format(exp_name)}, 404

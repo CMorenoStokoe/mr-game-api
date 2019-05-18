@@ -1,18 +1,108 @@
 <html>
     <head>
-        
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
     </head>
     
     <body>
-        <button id="btn">GET one edge (sentance)</button>
-        <button id="btnAll">GET all edges (list)</button>
-        <button id="btnAnnot">GET one annotation (sentance)</button>
-        <button id="btnAllAnnot">GET all annotations (list)</button>
+        <div class="row">
+            <div class="container-fluidd col-sm-12 col-md-8 col-lg-6 col-xl-6">
+                <br>
+                
+                <div style="border-style: solid; border-width: 2px;">
+                    <h3>Search function</h3>
+                    <p>Enter search term(s) into this form and then press a search button to use this term in the search. <br>Note: This page will try to give you content based on what you type in the forms, if the exposure contains ALL it will list all edges; if outcome contains anything, if it contains another search term it will search for edges for that exposure; it will search for specific exposure-outcome pairs.<br><br>
+                    Search terms (case sensitive): Adiponectin, Crohns_disease, Depressive_symptoms, Hip_circumfrance.
+                    </p>
+                    <form id="formExp" action="">
+                      Exposure: <input type="text" name="fname" value="ALL">
+                    <br>
+                    <br>
+                    </form> 
+                    <form id="formOut" action="">
+                      Outcome: <input type="text" name="fname" value="">
+                    <br>
+                    <br>
+                    </form> 
+                    
+                    <button id="btnEdge">GET edges</button>
+                    <button id="btnAnnot">GET annotations</button>
+                </div>
+                
+                <br>
+                <br>
 
-        
-        <div id="edgeInfo"></div>
-        
-        <script src="query.js"></script>
+                <div style="border-style: solid; border-width: 2px;">
+                    <h3>Make new user</h3>
+                    <p>Enter a username and password to register.</p>
+                    <form id="formUsr" action="">
+                      Username: <input type="text" name="fname" value=""><br><br>
+                    </form> 
+                    <form id="formPass" action="">
+                      Password: <input type="text" name="fname" value=""><br><br>
+                    </form> 
+                    <button id="btnFormUser">POST new user</button>
+                </div>
+                
+                <br>
+                
+                <div style="border-style: solid; border-width: 2px;">
+                    <h3>Make / update comment</h3>
+                    <p>Enter comment into this form and then press an annotation button to post this comment to the database.</p>
+                    <form id="formCommRef" action="">
+                      Exposure: <input type="text" name="fname" value=""><br><br>
+                    </form> 
+                    <form id="formCommOut" action="">
+                      Outcome: <input type="text" name="fname" value=""><br><br>
+                    </form> 
+                    <form id="formCommJudg" action="">
+                      Judgement (1=true, 0=wrong): <input type="text" name="fname" value=""><br><br>
+                    </form> 
+                    <form id="formCommUsr" action="">
+                      Username: <input type="text" name="fname" value=""><br><br>
+                    </form> 
+                    <form id="formComm" action="">
+                      Comment: <input type="text" name="fname" value="Type comment here"><br><br>
+                    </form> 
+                    <button id="btnFormComm">POST comment</button>
+                    <button id="btnFormUpdComm">PUT updated comment</button>
+                </div>
+                
+                <br><!--
+                <h3>JSON list generator</h3>
+                <button id="btnAllEdge">GET ALL edges</button><br>
+                <button id="btnAllAnnot">GET ALL annotations</button>-->
+                <br>
+            
+                <div style="border-style: solid; border-width: 2px;">
+                    <h3>Delete comment</h3>
+                    <p>Enter username, exposure and outcome to delete an annotation.</p>
+                    <form id="formDelUser" action="">
+                      Username: <input type="text" name="fname" value=""><br><br>
+                    </form> 
+                    <form id="formDelExp" action="">
+                      Exposure: <input type="text" name="fname" value=""><br><br>
+                    </form> 
+                    <form id="formDelOut" action="">
+                      Outcome: <input type="text" name="fname" value=""><br><br>
+                    </form> 
+                    <button id="btnFormDel">DELETE annotation</button>
+                </div>    
+                
+        </div> <!-- white div -->
+            
+        <div class="container-fluidd col-sm-12 col-md-8 col-lg-6 col-xl-6 outputL">
+            <h4>Output:</h4>
+            <div id="edgeInfo"></div>
+            <p id="commentInfo"></p>
+        </div> <!-- black div -->
+    </div>
+    <script src="query.js"></script>
     </body>
     
 </html>
