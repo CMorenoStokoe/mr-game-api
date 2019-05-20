@@ -281,4 +281,10 @@ window.onload=function(){
 
         edgeContainer.insertAdjacentHTML('beforeend', htmlString);
     }
-};
+
+    function forceGraph(){
+        
+    }
+    
+}; /*Close on.load funct*/
+
