@@ -1,0 +1,13 @@
+.container-fluidd{
+    min-height: 200% !important;
+    max-height: 1000% !important;
+}
+.outputL{
+    background-color:black;
+    color:white;
+}
+.node{
+    fill: #ccc;
+    stroke: #ddd;
+    stroke-width: 5px;
+}
