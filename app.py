@@ -1,40 +1,25 @@
-import os, os.path
+#This file initialises the FLask app and sets resource locations (URLs)
 
-from flask import Flask
-from flask_restful import Api
-from flask_jwt import JWT
-from flask_cors import CORS
+#Import
+from flask import Flask #Flask app 
+from flask_restful import Api #Flask REST API
+from flask_cors import CORS #For local testing
 
-from security import authenticate, identity
-from resources.user import UserRegister
-from resources.edges import EdgeList, Edges, Edge
-from resources.annot import AnnotList, Annots, Home, AnnotDel
+from resources.simulation import * #App simulation model for setting resource URL
+from startup.init_values import Start_Values
 
-app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('DATABASE_URL','sqlite:///data.db')
-app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
-app.secret_key = 'authKey01'
-api = Api(app)
-CORS(app)
+#Initialise app
+app = Flask(__name__) #Flask APP
+api = Api(app) #Flask REST API
+CORS(app) #CORS for local testing
 
-jwt = JWT(app, authenticate, identity)
+#Initialise data
+Start_Values()
 
-api.add_resource(Home, '/')
-api.add_resource(EdgeList, '/edges')
-api.add_resource(Edges, '/edges/<string:exp_name>')
-api.add_resource(Edge, '/edges/<string:exp_name>/<string:out_name>')
-api.add_resource(AnnotList, '/annotations')
-api.add_resource(Annots, '/annotations/<string:exp_name>/<string:out_name>')
-api.add_resource(UserRegister, '/register')
-api.add_resource(AnnotDel, '/annotations/del/<string:exp_name>/<string:out_name>/<string:username>')
+#Resource locations
+api.add_resource(View_Data, '/simulation')
+api.add_resource(Intervene, '/intervene/<string:param>')
 
-if os.path.isfile("data.db"):
-	print("Message: data.db already exists.")
-else:
-	from create_tables import *
-
+#Only runs if current file is main (prevents feedback loops?)
 if __name__ == '__main__':
-	from db import db
-	db.init_app(app)
 	app.run(port=5000, debug=True)
-	
