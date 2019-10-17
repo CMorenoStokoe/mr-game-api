@@ -2,3 +2,4 @@ flask
 flask_restful
 flask_cors
 request
+networkx==2.4
