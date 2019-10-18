@@ -1,39 +1,47 @@
 window.onload=function(){
-
-    var info_intervention = document.getElementById("info_intervention");   
+ 
     var btn_intervention = document.getElementById("btn_intervention");
     var form_intervention = document.getElementById("form_intervention");
+    
+    /* Retrieve nodes in data */
+    var ourRequest = new XMLHttpRequest();
+        ourRequest.open('GET', "http://127.0.0.1:5000/simulation");
+        ourRequest.onload = function() {
+            var ourData = JSON.parse(ourRequest.responseText);
+            ourData["nodes"].forEach(renderBtn);
+        };
+        ourRequest.send();
+    
+    /* Automatically create buttons for nodes in data */
+    count=1
+    function renderBtn(node){
+        btnName = "btn"+count
+        var btn = document.createElement("BUTTON"); 
+        btn.innerHTML = node["id"]; 
+        btn.id = node["id"];
+        btn.className = "btn btn-warning btn-intervention";
+        btn.onclick = function(){
+            /* .onclick function POST request to API for intervention */
+            var xhr = new XMLHttpRequest();        
 
-    /* Intervention query to API */
+            var target = btn.id
 
-    /*POST new user*/
-    btn_intervention.addEventListener("click", function() {
-        var xhr = new XMLHttpRequest();        
-        
-        var URL = "";
-        var target = form_intervention.elements[0].value                              
-        URL += "http://127.0.0.1:5000/intervene/" + target;
-
-        xhr.open("POST", URL, true);
-        xhr.setRequestHeader('Content-Type', 'application/json');
-        xhr.onreadystatechange = function () {
-            if (xhr.readyState === 4 && xhr.status === 201) {
-                renderHTML(target);
+            xhr.open("POST", "http://127.0.0.1:5000/intervene", true);
+            xhr.setRequestHeader('Content-Type', 'application/json');
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState === 4 && xhr.status === 201) {
+                    console.log(4,201);
+                }
+                if (xhr.readyState === 4 && xhr.status === 303) {
+                    console.log(4,303);
+                }
             }
-            if (xhr.readyState === 4 && xhr.status === 303) {
-                renderHTML(target);
-            }
-        
-        }
-        xhr.send(JSON.stringify({
-        "target": target,
-        }));
-    });
-
-    function renderHTML(target) {
-        var htmlString = "";
-        htmlString += "<p> Registration outcome:" + target + "</p>";
-        info_intervention.insertAdjacentHTML('beforeend', htmlString);
+            xhr.send(JSON.stringify({
+            "id": target,
+            }));
+        };
+        document.body.appendChild(btn); 
+        count ++
     }
-
+        
 };

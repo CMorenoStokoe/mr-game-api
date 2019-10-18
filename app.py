@@ -19,7 +19,7 @@ Start_Values()
 
 #Resource locations
 api.add_resource(View_Data, '/simulation')
-api.add_resource(Intervene, '/intervene/<string:param>')
+api.add_resource(Intervene, '/intervene')
 
 #Only runs if current file is main (prevents feedback loops?)
 if __name__ == '__main__':
