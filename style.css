@@ -1,4 +1,49 @@
 .btn-intervention{
-    color:black !important;
     margin:1px;
+}
+.div-grp{
+    display:inline-block;    
+    vertical-align:top;
+}
+.span-intv{
+    display:inline-block;    
+    vertical-align:top;
+}
+.card{
+    width: 10rem !important;
+    display:inline-block !important;
+    vertical-align:top;
+    padding:4px;
+}
+#title{
+    text-align:center;
+}
+
+/*TEMPORARY: Automatically assign colours from groups in js*/
+#div-Disease{
+    background-color:cornflowerblue;
+}
+#div-Psychiatry{
+    background-color:lightcoral;
+}
+#div-Demographics{
+    background-color:lightcyan;
+}
+#div-Physical{
+    background-color:lightgreen;
+}
+#div-Familial{
+    background-color:lightgrey;
+}
+#div-Biochemistry{
+    background-color:lightpink;
+}
+#div-Psychology{
+    background-color:lightsalmon;
+}
+#div-Behaviour{
+    background-color:lightgoldenrodyellow;
+}
+#div-Nutrition{
+    background-color:lightseagreen;
 }

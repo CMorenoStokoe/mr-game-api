@@ -2810,464 +2810,464 @@
     ],
     "nodes": [
         {
-            "activation": 10,
-            "group": 7,
+            "activation": 1,
+            "group": "Disease",
             "id": "Gout",
             "shortName": "Gout"
         },
         {
             "activation": 1,
-            "group": 9,
+            "group": "Psychiatry",
             "id": "Schizophrenia",
             "shortName": "Schizophrenia"
         },
         {
             "activation": 1,
-            "group": 7,
+            "group": "Disease",
             "id": "Type 2 diabetes",
             "shortName": "Diabetes(T2)"
         },
         {
-            "activation": 3,
-            "group": 7,
+            "activation": 1,
+            "group": "Disease",
             "id": "Juvenile idiopathic arthritis",
             "shortName": "Arthritis(JIA)"
         },
         {
             "activation": 1,
-            "group": 7,
+            "group": "Disease",
             "id": "Psoriasis",
             "shortName": "Psoriasis"
         },
         {
             "activation": 1,
-            "group": 7,
+            "group": "Disease",
             "id": "Liver Disease(PBC)",
             "shortName": "Liver Disease(PBC)"
         },
         {
             "activation": 1,
-            "group": 7,
+            "group": "Disease",
             "id": "Systemic lupus erythematosus",
             "shortName": "Lupus(SLE)"
         },
         {
-            "activation": 3,
-            "group": 7,
+            "activation": 1,
+            "group": "Disease",
             "id": "Type 1 diabetes",
             "shortName": "Diabetes(T1)"
         },
         {
             "activation": 1,
-            "group": 7,
+            "group": "Disease",
             "id": "Alzheimer's disease",
             "shortName": "Alzheimer's"
         },
         {
             "activation": 1,
-            "group": 7,
+            "group": "Disease",
             "id": "Crohn's disease",
             "shortName": "Crohn's"
         },
         {
-            "activation": 2,
-            "group": 7,
+            "activation": 1,
+            "group": "Disease",
             "id": "Coronary heart disease",
             "shortName": "Heart disease(CHD)"
         },
         {
             "activation": 1,
-            "group": 7,
+            "group": "Disease",
             "id": "Melanoma",
             "shortName": "Melanoma"
         },
         {
             "activation": 1,
-            "group": 7,
+            "group": "Disease",
             "id": "Myocardial infarction",
             "shortName": "Heart disease(MCI)"
         },
         {
             "activation": 1,
-            "group": 9,
+            "group": "Psychiatry",
             "id": "Psychiatric disorders",
             "shortName": "Psychiatric disorders"
         },
         {
             "activation": 1,
-            "group": 7,
+            "group": "Disease",
             "id": "Pancreatic cancer",
             "shortName": "Pancreatic cancer"
         },
         {
             "activation": 1,
-            "group": 7,
+            "group": "Disease",
             "id": "Lung adenocarcinoma",
             "shortName": "Lung cancer(Adeno.)"
         },
         {
             "activation": 1,
-            "group": 7,
+            "group": "Disease",
             "id": "Lung cancer",
             "shortName": "Lung cancer(NOS)"
         },
         {
             "activation": 1,
-            "group": 7,
+            "group": "Disease",
             "id": "Squamous cell lung cancer",
             "shortName": "Lung cancer(Squam.)"
         },
         {
             "activation": 1,
-            "group": 9,
+            "group": "Psychiatry",
             "id": "Depressive symptoms",
             "shortName": "Depression(symps.)"
         },
         {
             "activation": 1,
-            "group": 8,
+            "group": "Demographics",
             "id": "Years of schooling",
             "shortName": "Education(Yrs)"
         },
         {
             "activation": 1,
-            "group": 3,
+            "group": "Biochemistry",
             "id": "Mean platelet volume",
             "shortName": "Platelets(vol)"
         },
         {
             "activation": 1,
-            "group": 4,
+            "group": "Psychology",
             "id": "Neuroticism",
             "shortName": "Neuroticism"
         },
         {
             "activation": 1,
-            "group": 3,
+            "group": "Biochemistry",
             "id": "Platelet count",
             "shortName": "Platelets(#)"
         },
         {
             "activation": 1,
-            "group": 4,
+            "group": "Psychology",
             "id": "Subjective well being",
             "shortName": "Well-being"
         },
         {
             "activation": 1,
-            "group": 3,
+            "group": "Biochemistry",
             "id": "C-reactive protein",
             "shortName": "CRP"
         },
         {
-            "activation": 2,
-            "group": 6,
+            "activation": 1,
+            "group": "Physical",
             "id": "Difference in height between childhood and adulthood",
             "shortName": "Height growth(3-adult)"
         },
         {
             "activation": 1,
-            "group": 6,
+            "group": "Physical",
             "id": "Difference in height between adolescence and adulthood",
             "shortName": "Height growth(13-adult)"
         },
         {
             "activation": 1,
-            "group": 6,
+            "group": "Physical",
             "id": "Intracranial volume",
             "shortName": "Brain volume(ICV)"
         },
         {
             "activation": 1,
-            "group": 2,
+            "group": "Nutrition",
             "id": "Iron",
             "shortName": "Iron"
         },
         {
             "activation": 1,
-            "group": 2,
+            "group": "Nutrition",
             "id": "Ferritin",
             "shortName": "Iron(Ferratin)"
         },
         {
             "activation": 1,
-            "group": 2,
+            "group": "Nutrition",
             "id": "Transferrin Saturation",
             "shortName": "Iron(Transferrin sat.)"
         },
         {
             "activation": 1,
-            "group": 2,
+            "group": "Nutrition",
             "id": "Transferrin",
             "shortName": "Iron(Transferrin)"
         },
         {
             "activation": 1,
-            "group": 3,
+            "group": "Biochemistry",
             "id": "Urate",
             "shortName": "Urate"
         },
         {
             "activation": 1,
-            "group": 6,
+            "group": "Physical",
             "id": "Sitting height ratio",
             "shortName": "Head/Trunk length(SHR)"
         },
         {
             "activation": 1,
-            "group": 2,
+            "group": "Nutrition",
             "id": "Zinc",
             "shortName": "Zinc"
         },
         {
             "activation": 1,
-            "group": 6,
+            "group": "Physical",
             "id": "Birth weight",
             "shortName": "Weight(birth)"
         },
         {
             "activation": 1,
-            "group": 5,
+            "group": "Behaviour",
             "id": "Sleep duration",
             "shortName": "Sleep(hrs)"
         },
         {
-            "activation": 2,
-            "group": 1,
+            "activation": 1,
+            "group": "Familial",
             "id": "Father's age at death",
             "shortName": "Paternal longevity(age)"
         },
         {
             "activation": 1,
-            "group": 6,
+            "group": "Physical",
             "id": "Age at menarche",
             "shortName": "Age at menarche"
         },
         {
             "activation": 1,
-            "group": 6,
+            "group": "Physical",
             "id": "Childhood obesity",
             "shortName": "Childhood obesity"
         },
         {
             "activation": 1,
-            "group": 7,
+            "group": "Disease",
             "id": "Microalbuminuria",
             "shortName": "Microalbuminuria"
         },
         {
             "activation": 1,
-            "group": 3,
+            "group": "Biochemistry",
             "id": "Serum creatinine (eGFRcrea)",
             "shortName": "Creatanine(eGFR)"
         },
         {
-            "activation": 2,
-            "group": 3,
+            "activation": 1,
+            "group": "Biochemistry",
             "id": "Serum cystatin C (eGFRcys)",
             "shortName": "Cystatin C(eGFR)"
         },
         {
             "activation": 1,
-            "group": 3,
+            "group": "Biochemistry",
             "id": "Urinary albumin-to-creatinine ratio",
             "shortName": "Albumin:Creatinine ratio"
         },
         {
             "activation": 1,
-            "group": 4,
+            "group": "Psychology",
             "id": "Conscientiousness",
             "shortName": "Conscientiousness"
         },
         {
             "activation": 1,
-            "group": 6,
+            "group": "Physical",
             "id": "Body mass index",
             "shortName": "BMI"
         },
         {
             "activation": 1,
-            "group": 3,
+            "group": "Biochemistry",
             "id": "Haemoglobin concentration",
             "shortName": "Haemoglobin(conc.)"
         },
         {
             "activation": 1,
-            "group": 3,
+            "group": "Biochemistry",
             "id": "Mean cell haemoglobin",
             "shortName": "Haemoglobin(mean cell)"
         },
         {
             "activation": 1,
-            "group": 3,
+            "group": "Biochemistry",
             "id": "Mean cell haemoglobin concentration",
             "shortName": "Haemoglobin(mean cell conc.)"
         },
         {
             "activation": 1,
-            "group": 3,
+            "group": "Biochemistry",
             "id": "Mean cell volume",
             "shortName": "Cell volume(mean)"
         },
         {
             "activation": 1,
-            "group": 3,
+            "group": "Biochemistry",
             "id": "Packed cell volume",
             "shortName": "Cell colume(packed)"
         },
         {
             "activation": 1,
-            "group": 3,
+            "group": "Biochemistry",
             "id": "Red blood cell count",
             "shortName": "Erythrocytes"
         },
         {
             "activation": 1,
-            "group": 3,
+            "group": "Biochemistry",
             "id": "HDL cholesterol",
             "shortName": "Cholesterol(HDL)"
         },
         {
             "activation": 1,
-            "group": 3,
+            "group": "Biochemistry",
             "id": "LDL cholesterol",
             "shortName": "Cholesterol(LDL)"
         },
         {
-            "activation": 2,
-            "group": 3,
+            "activation": 1,
+            "group": "Biochemistry",
             "id": "Total cholesterol",
             "shortName": "Cholesterol(Total)"
         },
         {
             "activation": 1,
-            "group": 3,
+            "group": "Biochemistry",
             "id": "Triglycerides",
             "shortName": "Triglycerides"
         },
         {
             "activation": 1,
-            "group": 6,
+            "group": "Physical",
             "id": "Hip circumference",
             "shortName": "Hip size(circ.)"
         },
         {
             "activation": 1,
-            "group": 6,
+            "group": "Physical",
             "id": "Waist circumference",
             "shortName": "Waist size(circ.)"
         },
         {
             "activation": 1,
-            "group": 6,
+            "group": "Physical",
             "id": "Waist-to-hip ratio",
             "shortName": "Waist:Hip ratio"
         },
         {
             "activation": 1,
-            "group": 3,
+            "group": "Biochemistry",
             "id": "2hr Glucose",
             "shortName": "Glucose tolerance(2hrGTT)"
         },
         {
             "activation": 1,
-            "group": 3,
+            "group": "Biochemistry",
             "id": "HbA1C",
             "shortName": "Glucose(HbA1C)"
         },
         {
             "activation": 1,
-            "group": 3,
+            "group": "Biochemistry",
             "id": "Corrected insulin response",
             "shortName": "Glucose tolerance(insulin resp.)"
         },
         {
-            "activation": 2,
-            "group": 3,
+            "activation": 1,
+            "group": "Biochemistry",
             "id": "Fasting proinsulin",
             "shortName": "Glucose tolerance(Proinsulin)"
         },
         {
             "activation": 1,
-            "group": 3,
+            "group": "Biochemistry",
             "id": "HOMA-B",
             "shortName": "Glucose tolerance(HOMA-B)"
         },
         {
             "activation": 1,
-            "group": 3,
+            "group": "Biochemistry",
             "id": "Fasting glucose",
             "shortName": "Glucose(fasting)"
         },
         {
             "activation": 1,
-            "group": 3,
+            "group": "Biochemistry",
             "id": "Fasting insulin",
             "shortName": "Insulin(fasting)"
         },
         {
             "activation": 1,
-            "group": 8,
+            "group": "Demographics",
             "id": "College completion",
             "shortName": "Education(college)"
         },
         {
             "activation": 1,
-            "group": 6,
+            "group": "Physical",
             "id": "Extreme body mass index",
             "shortName": "BMI(extreme)"
         },
         {
             "activation": 1,
-            "group": 6,
+            "group": "Physical",
             "id": "Extreme height",
             "shortName": "Height(extreme)"
         },
         {
             "activation": 1,
-            "group": 6,
+            "group": "Physical",
             "id": "Extreme waist-to-hip ratio",
             "shortName": "Waist:Hip ratio(extreme)"
         },
         {
             "activation": 1,
-            "group": 6,
+            "group": "Physical",
             "id": "Height",
             "shortName": "Height"
         },
         {
             "activation": 1,
-            "group": 6,
+            "group": "Physical",
             "id": "Obesity class 1",
             "shortName": "BMI(30-35)"
         },
         {
             "activation": 1,
-            "group": 6,
+            "group": "Physical",
             "id": "Obesity class 2",
             "shortName": "BMI(35-40)"
         },
         {
             "activation": 1,
-            "group": 6,
+            "group": "Physical",
             "id": "Obesity class 3",
             "shortName": "BMI(40+)"
         },
         {
             "activation": 1,
-            "group": 6,
+            "group": "Physical",
             "id": "Overweight",
             "shortName": "BMI(25-30)"
         },
         {
             "activation": 1,
-            "group": 5,
+            "group": "Behaviour",
             "id": "Cigarettes smoked per day",
             "shortName": "Smoking(cigs/d)"
         },
         {
             "activation": 1,
-            "group": 6,
+            "group": "Physical",
             "id": "Body fat",
             "shortName": "Body fat"
         }

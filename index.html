@@ -10,133 +10,32 @@
     
     <body>  <!-- input -->
         <div class="row">
-            <div class="container-fluidd col-sm-12 col-md-12 col-lg-12 col-xl-12">
+            <div class="container-fluidd col-sm-12 col-md-12 col-lg-6 col-xl-6" id="view-left">
                 <br>
                 
                 <div style="border-style: solid; border-width: 2px;">
-                    <h3>Intervention panel</h3>
+                    <h3 id="title">Untitled MR EvE Game (alpha version)</h3>
 
-                </div>    
+                </div>  
+                <svg width="900" height="700"></svg>
             </div>
+            
+            <div class="container-fluidd col-sm-12 col-md-12 col-lg-6 col-xl-6" id="view-right">
+                <br>
+                
+            </div>
+            
         </div>
-    <svg width="1400" height="800"></svg>
+    
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     <script src="https://d3js.org/d3.v5.min.js"></script>
-    <script>
-
-    //  d3.json("https://gist.githubusercontent.com/CMorenoStokoe/066933f94519f022028c20bda562f09c/raw/babb9efa108f4c44eec403ccadaeeca562ce5bab/playable_health_v5.json").then(function(data) {
-
-      let dataPromise = d3.json("http://127.0.0.1:5000/simulation")
-
-      dataPromise.then(function(data) {
-
-        const svg = d3.select("svg"),
-        width = +svg.attr("width"),
-        height = +svg.attr("height");
-
-        const color = d3.scaleOrdinal(d3.schemeCategory10);
-        const links = data.links.map(d => Object.create(d));
-        const nodes = data.nodes.map(d => Object.create(d));
-
-// Set up simulation
-        const simulation = d3.forceSimulation(nodes)
-            .force("link", d3.forceLink(links).id(d => d.id))
-            .force("charge", d3.forceManyBody().strength(-300))
-            .force("center", d3.forceCenter(width / 2, height / 2))
-            .force("x", d3.forceX())
-            .force("y", d3.forceY());
-
-        const link = svg.append("g")
-          .attr("class", "links")
-          .selectAll("line")
-          .data(links)
-          .join("line")
-          .attr("stroke-width", 1)
-          .attr("stroke", d => d.color)//edge color as function of beta weight sign//
-          .attr("stroke-opacity", d => Math.abs(d.value)/20)//edge opacity as function of beta weight value//
-          .attr("marker-end", "url(#end)");
-
-        const node = svg.append("g")
-          .attr("class", "nodes")
-          .selectAll("g")
-          .data(nodes)
-          .join("g")
-          .call(drag(simulation));
-
-        const circles = node.append("circle")
-          .attr("r", 5)
-          .attr("fill", d => color(d.group));
-
-        node.append("text")
-            .text(function(d) {
-              return d.shortName;
-            })
-            .attr('x', 6)
-            .attr('y', 3);
-
-        // From https://stackoverflow.com/questions/28050434/introducing-arrowdirected-in-force-directed-graph-d3
-        svg.append("svg:defs").selectAll("marker")//edge color as function of beta weight sign//
-            .data(["end"])      // Different link/path types can be defined here
-            .enter().append("svg:marker")    // This section adds in the arrows
-            .attr("id", String)
-            .attr("viewBox", "0 -5 10 10")
-            .attr("refX", 15)
-            .attr("refY", -1.5)
-            .attr("markerWidth", 5)
-            .attr("markerHeight", 5)
-            .attr("stroke", "#999")
-            .attr("fill", "#999")
-            .attr("orient", "auto")
-            .append("svg:path")
-            .attr("d", "M0,-5L10,0L0,5")
-
-        simulation
-            .on("tick", ticked);
-
-        function ticked() {
-          link
-              .attr("x1", d => d.source.x)
-              .attr("y1", d => d.source.y)
-              .attr("x2", d => d.target.x)
-              .attr("y2", d => d.target.y);
-
-          node
-              .attr("transform", d => `translate(${d.x}, ${d.y})`);
-        }
-
-        function drag(simulation) {
-
-          function dragstarted(d) {
-            if (!d3.event.active) simulation.alphaTarget(0.3).restart();
-            d.fx = d.x;
-            d.fy = d.y;
-          }
-
-          function dragged(d) {
-            d.fx = d3.event.x;
-            d.fy = d3.event.y;
-          }
-
-          function dragended(d) {
-            if (!d3.event.active) simulation.alphaTarget(0);
-            d.fx = null;
-            d.fy = null;
-          }
-
-          return d3.drag()
-              .on("start", dragstarted)
-              .on("drag", dragged)
-              .on("end", dragended);
-        }
-
-      });
-    </script>
+    <script src="visualisation.js"></script>
     <script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
-    <script src="query.js"></script>
+    <script src="intv_buttons.js"></script>
     
     </body>
     
