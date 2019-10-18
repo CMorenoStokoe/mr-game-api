@@ -2810,19 +2810,19 @@
     ],
     "nodes": [
         {
-            "activation": 1,
+            "activation": 13,
             "group": 7,
             "id": "Gout",
             "shortName": "Gout"
         },
         {
-            "activation": 1,
+            "activation": 6,
             "group": 9,
             "id": "Schizophrenia",
             "shortName": "Schizophrenia"
         },
         {
-            "activation": 1,
+            "activation": 2,
             "group": 7,
             "id": "Type 2 diabetes",
             "shortName": "Diabetes(T2)"
@@ -2888,7 +2888,7 @@
             "shortName": "Heart disease(MCI)"
         },
         {
-            "activation": 1,
+            "activation": 2,
             "group": 9,
             "id": "Psychiatric disorders",
             "shortName": "Psychiatric disorders"
