@@ -10,10 +10,11 @@ def Change_Values(param):
         for node in dat["nodes"]:
             if node["id"] == param:
                 node["activation"] += 1
-        recompiledNodes.append(node)
+                print("Intervention: ",node["id"],"-->",node["activation"])
+            recompiledNodes.append(node)
     changedDat = {"nodes":recompiledNodes, "links":dat["links"]}
     with open('models/data.json', 'w') as json_file:
-        json.dump(dat, json_file, indent=4, sort_keys=True)
+        json.dump(changedDat, json_file, indent=4, sort_keys=True)
 
 def Propagation(param):
     pass #convert javascript function to python

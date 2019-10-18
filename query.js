@@ -17,7 +17,7 @@ window.onload=function(){
     function renderBtn(node){
         btnName = "btn"+count
         var btn = document.createElement("BUTTON"); 
-        btn.innerHTML = node["id"]; 
+        btn.innerHTML = node["shortName"]; 
         btn.id = node["id"];
         btn.className = "btn btn-warning btn-intervention";
         btn.onclick = function(){

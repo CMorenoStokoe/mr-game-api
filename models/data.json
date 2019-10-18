@@ -2810,25 +2810,25 @@
     ],
     "nodes": [
         {
-            "activation": 13,
+            "activation": 10,
             "group": 7,
             "id": "Gout",
             "shortName": "Gout"
         },
         {
-            "activation": 6,
+            "activation": 1,
             "group": 9,
             "id": "Schizophrenia",
             "shortName": "Schizophrenia"
         },
         {
-            "activation": 2,
+            "activation": 1,
             "group": 7,
             "id": "Type 2 diabetes",
             "shortName": "Diabetes(T2)"
         },
         {
-            "activation": 1,
+            "activation": 3,
             "group": 7,
             "id": "Juvenile idiopathic arthritis",
             "shortName": "Arthritis(JIA)"
@@ -2852,7 +2852,7 @@
             "shortName": "Lupus(SLE)"
         },
         {
-            "activation": 1,
+            "activation": 3,
             "group": 7,
             "id": "Type 1 diabetes",
             "shortName": "Diabetes(T1)"
@@ -2870,7 +2870,7 @@
             "shortName": "Crohn's"
         },
         {
-            "activation": 1,
+            "activation": 2,
             "group": 7,
             "id": "Coronary heart disease",
             "shortName": "Heart disease(CHD)"
@@ -2888,7 +2888,7 @@
             "shortName": "Heart disease(MCI)"
         },
         {
-            "activation": 2,
+            "activation": 1,
             "group": 9,
             "id": "Psychiatric disorders",
             "shortName": "Psychiatric disorders"
@@ -2960,7 +2960,7 @@
             "shortName": "CRP"
         },
         {
-            "activation": 1,
+            "activation": 2,
             "group": 6,
             "id": "Difference in height between childhood and adulthood",
             "shortName": "Height growth(3-adult)"
@@ -3032,7 +3032,7 @@
             "shortName": "Sleep(hrs)"
         },
         {
-            "activation": 1,
+            "activation": 2,
             "group": 1,
             "id": "Father's age at death",
             "shortName": "Paternal longevity(age)"
@@ -3062,7 +3062,7 @@
             "shortName": "Creatanine(eGFR)"
         },
         {
-            "activation": 1,
+            "activation": 2,
             "group": 3,
             "id": "Serum cystatin C (eGFRcys)",
             "shortName": "Cystatin C(eGFR)"
@@ -3134,7 +3134,7 @@
             "shortName": "Cholesterol(LDL)"
         },
         {
-            "activation": 1,
+            "activation": 2,
             "group": 3,
             "id": "Total cholesterol",
             "shortName": "Cholesterol(Total)"
@@ -3182,7 +3182,7 @@
             "shortName": "Glucose tolerance(insulin resp.)"
         },
         {
-            "activation": 1,
+            "activation": 2,
             "group": 3,
             "id": "Fasting proinsulin",
             "shortName": "Glucose tolerance(Proinsulin)"

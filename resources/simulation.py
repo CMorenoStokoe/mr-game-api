@@ -14,5 +14,4 @@ class Intervene(Resource):
         parser = reqparse.RequestParser()
         parser.add_argument('id', type=str, help='id cannot be converted')
         args = parser.parse_args() 
-        print(args)
         Change_Values(args.id)
