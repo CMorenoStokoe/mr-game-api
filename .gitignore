@@ -19,3 +19,8 @@ models/__pycache__/simulation.cpython-37.pyc
 resources/__pycache__/simulation.cpython-37.pyc
 startup/__pycache__/init.cpython-37.pyc
 startup/__pycache__/init_values.cpython-37.pyc
+models/__pycache__/__init__.cpython-37.pyc
+resources/__pycache__/__init__.cpython-37.pyc
+startup/__pycache__/init.cpython-37.pyc
+resources/__pycache__/simulation.cpython-37.pyc
+models/data.json
