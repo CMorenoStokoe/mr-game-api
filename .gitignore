@@ -353,6 +353,9 @@ MigrationBackup/
 # Ionide (cross platform F# VS Code tools) working folder
 .ionide/
 
+# PyCharm Idea
+.idea
+
 ### Python template
 # Byte-compiled / optimized / DLL files
 __pycache__/
@@ -483,26 +486,4 @@ dmypy.json
 venv
 venv/
 venv/*
-/venv/
-/venv
-*.pyc
-__pycache__
-__pycache__/
-*.pyc
-resources/__pycache__/sim.cpython-37.pyc
-resources/__pycache__/simulation.cpython-37.pyc
-startup/__pycache__/init.cpython-37.pyc
-startup/__pycache__/init.cpython-37.pyc
-models/__pycache__/simulation.cpython-37.pyc
-resources/__pycache__/simulation.cpython-37.pyc
-startup/__pycache__/init.cpython-37.pyc
-models/data.json
-models/__pycache__/simulation.cpython-37.pyc
-resources/__pycache__/simulation.cpython-37.pyc
-startup/__pycache__/init.cpython-37.pyc
-startup/__pycache__/init_values.cpython-37.pyc
-models/__pycache__/__init__.cpython-37.pyc
-resources/__pycache__/__init__.cpython-37.pyc
-startup/__pycache__/init.cpython-37.pyc
-resources/__pycache__/simulation.cpython-37.pyc
 models/data.json
