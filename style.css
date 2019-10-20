@@ -1,0 +1,20 @@
+.btn-intervention{
+    margin:1px;
+}
+.div-grp{
+    display:inline-block;    
+    vertical-align:top;
+}
+.span-intv{
+    display:inline-block;    
+    vertical-align:top;
+}
+.card{
+    width: 10rem !important;
+    display:inline-block !important;
+    vertical-align:top;
+    padding:4px;
+}
+#title{
+    text-align:center;
+}
