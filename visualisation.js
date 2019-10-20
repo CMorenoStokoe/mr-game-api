@@ -37,7 +37,7 @@
 
     const circles = node.append("circle")
       .attr("r", 5)
-      .attr("fill", d => color(d.group));
+      .attr("fill", d => d.grpColor);
 
     node.append("text")
         .text(function(d) {

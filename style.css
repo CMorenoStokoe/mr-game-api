@@ -18,32 +18,3 @@
 #title{
     text-align:center;
 }
-
-/*TEMPORARY: Automatically assign colours from groups in js*/
-#div-Disease{
-    background-color:cornflowerblue;
-}
-#div-Psychiatry{
-    background-color:lightcoral;
-}
-#div-Demographics{
-    background-color:lightcyan;
-}
-#div-Physical{
-    background-color:lightgreen;
-}
-#div-Familial{
-    background-color:lightgrey;
-}
-#div-Biochemistry{
-    background-color:lightpink;
-}
-#div-Psychology{
-    background-color:lightsalmon;
-}
-#div-Behaviour{
-    background-color:lightgoldenrodyellow;
-}
-#div-Nutrition{
-    background-color:lightseagreen;
-}

@@ -3,6 +3,13 @@ window.onload=function(){
     var btn_intervention = document.getElementById("btn_intervention");
     var form_intervention = document.getElementById("form_intervention");
     
+    var btn_reset = document.getElementById("btn_reset");
+    btn_reset.addEventListener("click", function() {
+        var ourRequest = new XMLHttpRequest();
+            ourRequest.open('GET', "http://127.0.0.1:5000/reset");
+            ourRequest.send();
+    })
+                               
     /* Retrieve nodes in data */
     var ourRequest = new XMLHttpRequest();
         ourRequest.open('GET', "http://127.0.0.1:5000/init_buttons");
@@ -23,6 +30,7 @@ window.onload=function(){
         div.className = "div-grp, card";
         div.innerHTML = divHTML;
         document.getElementById("view-right").appendChild(div); 
+        document.getElementById(divName).style.backgroundColor = group["grpColor"];
         group["nodes"].forEach(renderBtn);
     }
     
