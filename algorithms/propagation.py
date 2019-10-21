@@ -1,7 +1,7 @@
 import networkx as nx
 from typing import Dict, Callable, List, Set, Sequence, Tuple
 from collections import defaultdict
-from traversal import BFS
+from .traversal import BFS
 
 # Typing for Documentation
 WeightMap = Dict[str, Dict[str, float]]
