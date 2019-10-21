@@ -21,7 +21,7 @@ class HelloWorld(Resource):
     def get(self):
         return {'hello': 'world'}
 #Resource locations
-api.add_resource(HelloWorld, '')
+api.add_resource(HelloWorld, '/')
 api.add_resource(View_Data, '/simulation')
 api.add_resource(Intervene, '/intervene')
 api.add_resource(Reset, '/reset')
