@@ -1,10 +1,12 @@
-  let dataPromise = d3.json("http://127.0.0.1:5000/simulation")
-
-  dataPromise.then(function(data) {
-
+function visualise (spell) {
+    
     const svg = d3.select("svg"),
     width = +svg.attr("width"),
     height = +svg.attr("height");
+    
+    let dataPromise = d3.json("http://127.0.0.1:5000/simulation")
+
+    dataPromise.then(function draw(data) {
 
     const color = d3.scaleOrdinal(d3.schemeCategory10);
     const links = data.links.map(d => Object.create(d));
@@ -25,7 +27,7 @@
       .join("line")
       .attr("stroke-width", 1)
       .attr("stroke", d => d.color)//edge color as function of beta weight sign//
-      .attr("stroke-opacity", d => Math.abs(d.value)/20)//edge opacity as function of beta weight value//
+      .attr("stroke-opacity", d => Math.abs(d.value)/5)//edge opacity as function of beta weight value//
       .attr("marker-end", "url(#end)");
 
     const node = svg.append("g")
@@ -36,7 +38,7 @@
       .call(drag(simulation));
 
     const circles = node.append("circle")
-      .attr("r", 5)
+      .attr("r", d => Math.abs(d.activation))
       .attr("fill", d => d.grpColor);
 
     node.append("text")
@@ -75,7 +77,16 @@
       node
           .attr("transform", d => `translate(${d.x}, ${d.y})`);
     }
-
+    
+    //Clear function
+    if (spell == "destruction"){    
+        svg.selectAll("*").remove();
+        console.log("removed");
+    };
+        
+    //var path = svg.selectAll("path"); 
+    //path.exit().remove();
+        
     function drag(simulation) {
 
       function dragstarted(d) {
@@ -99,6 +110,7 @@
           .on("start", dragstarted)
           .on("drag", dragged)
           .on("end", dragended);
-    }
-
+    }        
   });
+};
+visualise("creation");

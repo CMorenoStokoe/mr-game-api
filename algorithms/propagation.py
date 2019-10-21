@@ -1,7 +1,8 @@
 import networkx as nx
 from typing import Dict, Callable, List, Set, Sequence, Tuple
 from collections import defaultdict
-from traversal import BFS
+
+from .traversal import BFS
 
 # Typing for Documentation
 WeightMap = Dict[str, Dict[str, float]]
@@ -19,7 +20,6 @@ def agg_mean(l: List[float]) -> float:
     In future, it would be better to replace this with NumPy.
     """
     return sum(l) / len(l)
-
 
 def propagate(G: nx.DiGraph, n: str, activation: int,
               agg_fn: AggregationFn = agg_mean,
@@ -93,6 +93,7 @@ def propagate(G: nx.DiGraph, n: str, activation: int,
             # divide if the beta is negative.
             beta = 1 / abs(beta)
         weight = node_activations[u]
+        print(weight)
         propagation_path[v].append(weight * beta)
 
     # Finalise the weights for the remaining nodes

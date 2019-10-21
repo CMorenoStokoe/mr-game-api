@@ -5,9 +5,10 @@ window.onload=function(){
     
     var btn_reset = document.getElementById("btn_reset");
     btn_reset.addEventListener("click", function() {
-        var ourRequest = new XMLHttpRequest();
-            ourRequest.open('GET', "http://127.0.0.1:5000/reset");
-            ourRequest.send();
+        ourRequest.open('GET', "http://127.0.0.1:5000/reset");
+        ourRequest.send();
+        visualise("destruction");
+        visualise("creation");
     })
                                
     /* Retrieve nodes in data */
@@ -71,6 +72,9 @@ window.onload=function(){
             "valence": "+",
             "value": "1"
             }));
+            
+            visualise("destruction");
+            visualise("creation");
         };
         document.getElementById(spanName).appendChild(btn); 
        
@@ -100,6 +104,9 @@ window.onload=function(){
             "valence": "-",
             "value": "1"
             }));
+            
+            visualise("destruction");
+            visualise("creation");
         };
         document.getElementById(spanName).appendChild(btn); 
         

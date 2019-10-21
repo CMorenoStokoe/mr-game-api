@@ -1,11 +1,19 @@
 #Import
 import json #converting json objects in python
+import networkx as nx #All for network graph data startup
+from typing import Dict, Callable, List, Set, Sequence, Tuple
+from collections import defaultdict
+import os
+
+#from models.data import data
 
 def Start_Values(): #make copy of original start data
     with open("startup/playable_health_v5.json", "r") as json_file:
-        dat = json.load(json_file)
+        dat = json.load(json_file) 
     with open("models/data.json", "w") as json_file:
         json.dump(dat, json_file, indent=4, sort_keys=True)
+    #data = dat
+    #print(data)
         
 def Start_Buttons():
     nodeGroups = []
@@ -36,4 +44,3 @@ def Start_Buttons():
         btnDict.append({"group":group,"nodes":nodesInGroup,"length":len(nodesInGroup),"grpColor":colors[group]})
         nodesInGroup = sorted(btnDict, key=lambda k: k['length'])
     return ({"groups":nodesInGroup})
-        
