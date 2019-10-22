@@ -39,7 +39,6 @@ def Propagation(directive, newVal):
     intvValence=directive["valence"]
     intvValue= newVal #Pass through updated node value from change_values
     recompiledNodes=[]
-    print(newVal)
     
     #Init HealthG
     json_graph_data = os.path.join('models', 'data.json')
@@ -66,4 +65,4 @@ def Propagation(directive, newVal):
 #            print(node["id"],node["activation"])
 #        json.dump(dat, json_file, indent=4, sort_keys=True)
         
-    print("Intervention effects propagated through network: ",directive)
+    print("Intervention effects propagated through network: ",directive,newVal)

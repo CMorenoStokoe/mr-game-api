@@ -18,3 +18,13 @@
 #title{
     text-align:center;
 }
+text.shadow_v_collapsed{
+    stroke: white;
+    stroke-width: 0.5px;
+    opacity: 0.8;
+}
+text.shadow_v_normal{
+    stroke: white;
+    stroke-width: 0.1px;
+    opacity: 0.8;
+}

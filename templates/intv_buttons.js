@@ -7,8 +7,9 @@ window.onload=function(){
     btn_reset.addEventListener("click", function() {
         ourRequest.open('GET', "http://127.0.0.1:5000/reset");
         ourRequest.send();
-        visualise("destruction");
-        visualise("creation");
+        visualise("destruction", "http://127.0.0.1:5000/simulation");
+        visualise("destruction", "http://127.0.0.1:5000/simulation");
+        visualise("creation", "http://127.0.0.1:5000/simulation");
     })
                                
     /* Retrieve nodes in data */
@@ -73,11 +74,24 @@ window.onload=function(){
             "value": "1"
             }));
             
-            visualise("destruction");
-            visualise("creation");
+            visualise("destruction","http://127.0.0.1:5000/simulation");
+            visualise("creation","http://127.0.0.1:5000/simulation");
         };
         document.getElementById(spanName).appendChild(btn); 
-       
+        
+        /*create middle view! button */
+        var btn = document.createElement("BUTTON"); 
+        btn.innerHTML = "View!"; 
+        btn.id = node["id"];
+        btn.className = "btn btn-info btn-intervention";
+        btn.onclick = function(){
+            /* .onclick functiont o draw node view */
+            URL = "http://127.0.0.1:5000/simulation/"+node["id"];
+            visualise("destruction","http://127.0.0.1:5000/simulation");
+            visualise("creation",URL); 
+        };
+        document.getElementById(spanName).appendChild(btn); 
+        
         /*create btn2 */
         var btn = document.createElement("BUTTON"); 
         btn.innerHTML = "-"; 
@@ -105,8 +119,8 @@ window.onload=function(){
             "value": "1"
             }));
             
-            visualise("destruction");
-            visualise("creation");
+            visualise("destruction","http://127.0.0.1:5000/simulation");
+            visualise("creation","http://127.0.0.1:5000/simulation");
         };
         document.getElementById(spanName).appendChild(btn); 
         

@@ -1,7 +1,7 @@
 #This file initialises the FLask app and sets resource locations (URLs)
 
 #Import
-from flask import Flask #Flask app 
+from flask import Flask, render_template #Flask app 
 from flask_restful import Api #Flask REST API
 from flask_cors import CORS #For local testing
 
@@ -10,18 +10,15 @@ from resources.simulation import *
 from resources.init import *
 
 #Initialise app
-app = Flask(__name__) #Flask APP
+app = Flask(__name__, template_folder='templates') #Flask APP
 api = Api(app) #Flask REST API
 CORS(app) #CORS for local testing
 
 #Initialise data
 Start_Values()
 
-class HelloWorld(Resource):
-    def get(self):
-        return {'hello': 'world'}
 #Resource locations
-api.add_resource(HelloWorld, '/')
+api.add_resource(View_Node, '/simulation/<string:node>')
 api.add_resource(View_Data, '/simulation')
 api.add_resource(Intervene, '/intervene')
 api.add_resource(Reset, '/reset')
