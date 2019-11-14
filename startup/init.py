@@ -13,27 +13,7 @@ def Start_Values(): #make copy of original start data
     with open("startup/demo_interesting.json", "r") as json_file:
         dat = json.load(json_file) 
 
-# Pre-propagate (doesn't work because propagation gives different values depending on the path taken) 
-#        nodeList=[]
-#        for node in dat["nodes"]:
-#            val = Change_Values(
-#                                    {
-#                                        "id": node["id"],
-#                                        "valence": "+",
-#                                        "value": 0
-#                                    }
-#                )
-#            nodeList.append(
-#                                [
-#                                    {
-#                                        "id": node["id"],
-#                                        "valence": "+"
-#                                    },
-#                                    val
-#                                ]
-#            )
-#        for item in nodeList:
-#            Propagation(item[0],item[1])
+    # Pre-propagate - add me here (currently doesn't work because propagation gives different values depending on the path taken) 
         
     with open("models/data.json", "w") as json_file:
         json.dump(dat, json_file, indent=4, sort_keys=True)    
@@ -46,12 +26,28 @@ def Start_Buttons():
     with open('models/data.json') as json_file:
         data = json.load(json_file)
     
-    #Identify nodes & build dictionary for groups' colors
+    #Dicts for group activation colors
+    groupPrevs={}
+    groupPrevCols={}
+    #Identify nodes & build dictionary for groups' colors & activation colors
     for node in data["nodes"]:
         if node["group"] not in nodeGroups:
             nodeGroups.append(node["group"])
             colors[node["group"]]=node["grpColor"]
+            groupPrevs[node["group"]]=node["activation"]
+        elif node["group"] in nodeGroups:
+            groupPrevs[node["group"]]+=node["activation"]
     
+    #Colour groups according to activation
+    for group in groupPrevs: 
+        transparency = groupPrevs[group]/100
+        if transparency > 100:
+            transparency = 100
+        elif transparency < 0:
+            transparency = 0
+        color = "rgba(240, 25, 25, {})".format(transparency)
+        groupPrevCols[group] = color
+        
     #Format node list for grouping buttons
     for group in nodeGroups:
         nodesInGroup=[]
@@ -61,9 +57,10 @@ def Start_Buttons():
                         {
                             "id":node["id"],
                             "shortName":node["shortName"],
-                            "group":node["group"]
+                            "group":node["group"],
+                            "activation":node["activation"]
                         }
                 )
-        btnDict.append({"group":group,"nodes":nodesInGroup,"length":len(nodesInGroup),"grpColor":colors[group]})
+        btnDict.append({"group":group,"nodes":nodesInGroup,"length":len(nodesInGroup),"grpColor":colors[group],"activColor":groupPrevCols[group],"activation":groupPrevs[group]})
         nodesInGroup = sorted(btnDict, key=lambda k: k['length'])
     return ({"groups":nodesInGroup})

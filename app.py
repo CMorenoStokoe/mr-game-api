@@ -18,11 +18,13 @@ CORS(app) #CORS for local testing
 Start_Values()
 
 #Resource locations
-api.add_resource(View_Node, '/simulation/<string:node>')
+api.add_resource(View_Node, '/simulation/<string:centerNode>')
 api.add_resource(View_Data, '/simulation')
 api.add_resource(Intervene, '/intervene')
 api.add_resource(Reset, '/reset')
 api.add_resource(Init_Buttons, '/init_buttons')
+api.add_resource(Update, '/update')
+api.add_resource(View_DataNormal, '/simulation/normal')
 
 #Only runs if current file is main (prevents feedback loops?)
 if __name__ == '__main__':

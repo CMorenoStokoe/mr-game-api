@@ -93,7 +93,6 @@ def propagate(G: nx.DiGraph, n: str, activation: int,
             # divide if the beta is negative.
             beta = 1 / abs(beta)
         weight = node_activations[u]
-        print(weight)
         propagation_path[v].append(weight * beta)
 
     # Finalise the weights for the remaining nodes

@@ -9,6 +9,27 @@ from algorithms.propagation import propagate
 
 #from models.data import data
 
+def Overall_Stats(goalId, goalValue):
+    OverallActivation = 0
+    GoalActivation = 0
+    with open('models/data.json', 'r') as json_file:
+        dat = json.load(json_file)
+        for node in dat["nodes"]:
+            OverallActivation += node["activation"]
+            if node["id"] == goalId:
+                GoalActivation = node["activation"]
+        if OverallActivation > 2300:
+            OverallActivation = 2300
+        elif OverallActivation < 0:
+            OverallActivation = 0
+        OverallHealth = 2300-OverallActivation
+        OH_sliderVal = OverallHealth/2300*100 #FIX SO ACCURATE
+        if OH_sliderVal > 100:
+            OH_sliderVal = 100
+        elif OH_sliderVal < 0:
+            OH_sliderVal = 0
+        GoalHealth = GoalActivation/goalValue*100 #FIX SO ACCURATE
+    return(str(OverallHealth), goalId, str(GoalHealth), str(OH_sliderVal))
 
 def Change_Values(directive):
     nodeID=directive["id"]
@@ -65,4 +86,4 @@ def Propagation(directive, newVal):
 #            print(node["id"],node["activation"])
 #        json.dump(dat, json_file, indent=4, sort_keys=True)
         
-    print("Intervention effects propagated through network: ",directive,newVal)
+    print("Intervention effects propagated through network: ",directive["id"]," > ",newVal)

@@ -4,30 +4,204 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="css/style.css">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <link rel="stylesheet" href="css/all.css">
     </head>
     
     <body>  <!-- input -->
         <div class="row">
-            <div class="container-fluidd col-sm-12 col-md-12 col-lg-6 col-xl-6" id="view-left">
+            <div class="container-fluidd col-sm-12 col-md-12 col-lg-12 col-xl-12" id="homeContainer">
                 <br>
                 
                 <div style="border-style: solid; border-width: 2px;">
                     <h3 id="title">Untitled MR EvE Game (alpha version)</h3>
-
-                </div>  
-                <svg width="700" height="700"></svg>
-                <button class="btn btn-danger" id="btn_reset">Reset</button>
+                </div>
             </div>
-            
-            <div class="container-fluidd col-sm-12 col-md-12 col-lg-6 col-xl-6" id="view-right">
-                <br>
+            <div class="dropdown container-fluidd col-sm-12 col-md-12 col-lg-12 col-xl-12" id="div-dropdown">
                 
+                <div id="centerGUI">
+                    <strong>Total health</strong>
+                    <div  class="progress">
+                        <div class="progress-bar progress-bar-striped progress-bar-animated bg-warning" id="progress_total" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 75%">
+                             <span id="progress_totalTxt">*Unassigned*</span>
+                        </div>
+                    </div>
+                    <strong>Goal: <span id="progress_goalTxt">*Unassigned*</span></strong>
+                    <div class="progress">
+                        <div class="progress-bar progress-bar-striped progress-bar-animated bg-success" id="progress_goal" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 75%">
+                            <span id="progress_goalVal">*Unassigned*</span>
+                        </div>
+                    </div>
+                </div>
+ 
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" id="dropdown-menu">
+                </div>
             </div>
             
+            <div class="container-fluidd col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                <svg width="1250" height="600" id="svgMain"></svg>
+            </div>
+            
+            <div class="container-fluidd col-sm-6 col-md-6 col-lg-6 col-xl-6">
+                <div class="container" id="GUIcontainer"></div>
+            </div>
+                
         </div>
-    
+        
+        <div class="row">
+            <div class="container-fluidd col-sm-12 col-md-12 col-lg-12 col-xl-12" id="footContainer">
+                <br>
+                <button class="btn btn-danger" id="btn_reset">Reset</button>
+            </div> 
+        </div>
+        
+        
+        <!-- Hidden items for dropdown -->    
+        <div id="hiddenItems" style="display:none">
+            <div class="sliderDiv" id="div-slider1">
+                <button class="sliderBtn btn" id="slider1Txt" data-id="">Slider 1: </button>
+                <label class="sliderLabel" for="slider1" id="slider1Curr">#</label>
+                <input type="range" min="0" max="100" value="50" disabled="true" class="slider" id="slider1"><br>
+            </div>
+            <div class="sliderDiv" id="div-slider2">
+                <button class="sliderBtn btn" id="slider2Txt" data-id="">Slider 1: </button>
+                <label class="sliderLabel" for="slider2" id="slider2Curr">#</label>
+                <input type="range" min="0" max="100" value="50" disabled="true" class="slider" id="slider2"><br>
+            </div>
+            <div class="sliderDiv" id="div-slider3">
+                <button class="sliderBtn btn" id="slider3Txt" data-id="">Slider 1: </button>
+                <label class="sliderLabel" for="slider3" id="slider3Curr">#</label>
+                <input type="range" min="0" max="100" value="50" disabled="true" class="slider" id="slider3"><br>
+            </div>
+            <div class="sliderDiv" id="div-slider4">
+                <button class="sliderBtn btn" id="slider4Txt" data-id="">Slider 1: </button>
+                <label class="sliderLabel" for="slider4" id="slider4Curr">#</label>
+                <input type="range" min="0" max="100" value="50" disabled="true" class="slider" id="slider4"><br>
+            </div>
+            <div class="sliderDiv" id="div-slider5">
+                <button class="sliderBtn btn" id="slider5Txt" data-id="">Slider 1: </button>
+                <label class="sliderLabel" for="slider5" id="slider5Curr">#</label>
+                <input type="range" min="0" max="100" value="50" disabled="true" class="slider" id="slider5"><br>
+            </div>
+            <div class="sliderDiv" id="div-slider6">
+                <button class="sliderBtn btn" id="slider6Txt" data-id="">Slider 1: </button>
+                <label class="sliderLabel" for="slider6" id="slider6Curr">#</label>
+                <input type="range" min="0" max="100" value="50" disabled="true" class="slider" id="slider6"><br>
+            </div>
+            <div class="sliderDiv" id="div-slider7">
+                <button class="sliderBtn btn" id="slider7Txt" data-id="">Slider 1: </button>
+                <label class="sliderLabel" for="slider7" id="slider7Curr">#</label>
+                <input type="range" min="0" max="100" value="50" disabled="true" class="slider" id="slider7"><br>
+            </div>
+            <div class="sliderDiv" id="div-slider8">
+                <button class="sliderBtn btn" id="slider8Txt" data-id="">Slider 1: </button>
+                <label class="sliderLabel" for="slider8" id="slider8Curr">#</label>
+                <input type="range" min="0" max="100" value="50" disabled="true" class="slider" id="slider8"><br>
+            </div>
+            <div class="sliderDiv" id="div-slider9">
+                <button class="sliderBtn btn" id="slider9Txt" data-id="">Slider 1: </button>
+                <label class="sliderLabel" for="slider9" id="slider9Curr">#</label>
+                <input type="range" min="0" max="100" value="50" disabled="true" class="slider" id="slider9"><br>
+            </div>
+            <div class="sliderDiv" id="div-slider10">
+                <button class="sliderBtn btn" id="slider10Txt" data-id="">Slider 1: </button>
+                <label class="sliderLabel" for="slider10" id="slider10Curr">#</label>
+                <input type="range" min="0" max="100" value="50" disabled="true" class="slider" id="slider10"><br>
+            </div>
+        </div>
+        
+        <!-- Modal 1 -->
+        <div class="modal fade" id="modalTmpl" tabindex="-1" role="dialog" aria-labelledby="modalTitle" aria-hidden="true">
+          <div class="modal-dialog" role="document" id="modal-dialog-1">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h3 class="modal-title" id="modalTitle">Modal title</h3>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body" id="modalBody">
+                <div class = "row">
+                    <div class="container-fluidd col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 modalContainer" id="modalRight">
+                        
+                    </div>
+                </div>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary btn-close-footer" data-dismiss="modal">Close</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+         <!-- Modal 2 -->
+        <div class="modal fade" id="modalTmpl2" tabindex="-1" role="dialog" aria-labelledby="modalTitle" aria-hidden="true">
+          <div class="modal-dialog" role="document" id="modal-dialog-2">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h3 class="modal-title" id="modal2Title" data-btnId="">Modal 2 title</h3>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body" id="modalBody">
+                <div class = "row">
+                    <div class="container-fluidd col-xs-6 col-sm-6 col-md-6 col-lg-6 col-xl-6 modalContainer">
+                        <h4>Intervene!</h4>
+                        <button type="button" class="btn btn-warning" id="btn-intv+" data-id="" data-vale="+" data-value="10">
+                            <i class="fas fa-arrow-circle-up intvIco" id="intvIco-Up"></i>
+                            <br>
+                            Increase
+                        </button>
+                        <button type="button" class="btn btn-warning" id="btn-intv-" data-id="" data-vale="-" data-value="10">
+                            <i class="fas fa-arrow-circle-down intvIco" id="intvIco-Down"></i>
+                            <br>
+                            Reduce
+                        </button>
+                        <div class="spacer"></div>
+                        <h4>Prevalence</h4>
+                        <p id="prevalenceTxt">
+                        </p>
+                        <div class="modal2Left">
+                            <i class="fas fa-user-alt prevPop" id="prevPop1"></i>
+                            <i class="fas fa-user-alt prevPop" id="prevPop2"></i>
+                            <i class="fas fa-user-alt prevPop" id="prevPop3"></i>
+                            <i class="fas fa-user-alt prevPop" id="prevPop4"></i>
+                            <i class="fas fa-user-alt prevPop" id="prevPop5"></i>
+                            <br>
+                            <i class="fas fa-user-alt prevPop" id="prevPop6"></i>
+                            <i class="fas fa-user-alt prevPop" id="prevPop7"></i>
+                            <i class="fas fa-user-alt prevPop" id="prevPop8"></i>
+                            <i class="fas fa-user-alt prevPop" id="prevPop9"></i>
+                            <i class="fas fa-user-alt prevPop" id="prevPop10"></i>
+                        </div>
+                        <div class="spacer"></div>
+                        <h4>Neighbourhood</h4>
+                        <div id="modal2Right1">
+                            <svg width="300" height="250" id="svgM2"></svg>
+                        </div>
+                    </div>
+                    <div class="container-fluidd col-xs-6 col-sm-6 col-md-6 col-lg-6 col-xl-6 modalContainer" id="modal2Right">
+                        
+                        <div id="modal2Right2">
+                            <h4>Related traits</h4>
+                            <h5 class="trait_titles"><i class="fas fa-arrow-circle-right intvIco" id="intvIco-Right"></i>Affects:</h5>
+                            <div id="effectors"></div>
+                            <h5 class="trait_titles"><i class="fas fa-arrow-circle-left intvIco" id="intvIco-Left"></i>Affected by:</h5>
+                            <div id="effecteds"></div>
+                        </div>
+                    </div>
+                </div>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary btn-close-footer" data-dismiss="modal">Close</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
@@ -39,7 +213,6 @@
     <script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>    
         
     <script src="visualisation.js"></script>
-    <script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
     <script src="intv_buttons.js"></script>
     
     </body>

@@ -3,7 +3,6 @@ def Collapse_Groups(nodeList,linkList):
     collapsedLinksN=0
     counter3 = 1
     collapseGroupMembers = []
-
     #optional group collapse criteria
         #(edit this list to change which groups collapse)
         #(find group numbers from python console output from running main script once first)
@@ -32,17 +31,17 @@ def Collapse_Groups(nodeList,linkList):
         if node["group"] not in c:#Build one new node which represents all traits in a collapsed group
             c.append(node["group"])
             grpColor = "lightgray"
-            if node["activation"] <= 9:
-                if node["activation"] <= 5:
-                    if node["activation"] <= 2:
+            if node["activation"] <= 50:
+                if node["activation"] <= 25:
+                    if node["activation"] <= 10:
                         grpColor = "darkblue"
                     else:
                         grpColor = "cornflowerblue"
                 else:
                     grpColor = "lightblue"
-            elif node["activation"] >= 11:
-                if node["activation"] >= 15:
-                    if node["activation"] >= 20:
+            elif node["activation"] >= 51:
+                if node["activation"] >= 75:
+                    if node["activation"] >= 90:
                         grpColor = "red"
                     else:
                         grpColor = "coral"

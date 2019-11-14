@@ -1,0 +1,136 @@
+/*TOP*/
+#title{
+    text-align:center;
+}
+
+/*FOOT*/
+
+#footContainer{
+    position: fixed;
+    Width: 100%;
+    bottom: 0;
+}
+
+
+/*HOME*/
+
+    /* Center */
+
+#GUIcontainer{
+    width: 700px;
+    margin: 10% auto;
+}
+#GUIcenter{
+    height: 150px;
+    width: 250px;
+    display: inline-block;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 40px;
+    margin: 10px;
+    border: solid;
+    border-width: 5px;
+    border-color: black;
+}
+#centerGUI{
+    display:inline-block;
+}
+#div-dropdown{
+    vertical-align:top;
+}
+.progress{
+    width:240px;
+}
+
+    /* Group circles */
+.grpCircle {   
+    height: 150px;
+    width: 150px;
+    border-radius: 50% !important;
+    display: inline-block;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 150px;
+    margin: 10px;
+}
+.grpRect{
+    height: 75px;
+    width: 120px;
+    display: inline-block;
+    text-align: center;
+    vertical-align: top;
+    margin: 3px;
+    border-radius: 15% !important;
+}
+.grpCircleText{
+    font-size: 20pt;
+}
+.slideLabel{
+    text-align:center;
+}
+
+/*MODALS*/
+
+    /* All modals */
+.modal{
+    margin-left: 45% !important;
+}
+
+.modalContainer{
+    text-align: center;
+    vertical-align: middle;
+}
+.modal-backdrop {
+     background-color: rgba(0,0,0,.0001) !important;
+}
+
+    /* Modal 1 */
+.slider1Curr{
+    text-align:right;
+    float: right;
+    
+}.slider{
+    text-align: right;
+    float: right;
+    width: 175px;
+    height: 45px;
+}
+.sliderBtn{
+    float:left;
+    margin:5px;
+    height: 45px;
+    display: block;
+}
+.sliderDiv{
+    height:60px;
+}
+.spacer{
+    padding-bottom:50px;
+}
+
+    /* Modal 2 */
+#modal2Right{
+    height: 550px;
+}
+.trait_titles{
+    padding:10px;
+}
+
+
+/*FDG*/
+
+text.shadow_v_collapsed{
+    stroke: white;
+    stroke-width: 0.5px;
+    opacity: 0.8;
+}
+text.shadow_v_normal{
+    stroke: white;
+    stroke-width: 0.1px;
+    opacity: 0.8;
+}
+text.shadow_v_compact{
+    stroke: white;
+    stroke-width: 0.3px;
+    opacity: 0.8;
+}

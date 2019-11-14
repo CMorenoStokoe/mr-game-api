@@ -1,25 +1,34 @@
-function visualise (spell,URL) {
+function FDG (spell,URL,svgId,view) {
     
-    const svg = d3.select("svg"),
+    const svg = d3.select(svgId),
     width = +svg.attr("width"),
     height = +svg.attr("height");
     
-    //Views
-    var view = "collapsed";
-    //set values
+    //Views - set values
     var v_strength = -600;
     var v_swidth = 1;
     var v_fsize = "18px";
     var v_class = "shadow_v_normal";
     var v_nr = 1;
     if (view=="collapsed"){
-        v_strength = -6000;
+        v_strength = -5000;
         v_swidth = 5;
         v_fsize = "30px";
         v_class = "shadow_v_collapsed";
         v_nr = 2;
     };
+    if (view=="compact"){
+        v_strength = -800;
+        v_swidth = 4;
+        v_fsize = "18px";
+        v_class = "shadow_v_compact";
+        v_nr = 1;
+    };
     
+    /*setTimeout(function() {
+      //your code to be executed after 1 second
+    }, 200);
+    */
     let dataPromise = d3.json(URL);
 
     dataPromise.then(function draw(data) {
@@ -55,7 +64,7 @@ function visualise (spell,URL) {
       .call(drag(simulation));
 
     const circles = node.append("circle")
-      .attr("r", d => Math.abs(d.activation)*v_nr)
+      .attr("r", 10) //d => Math.abs(d.activation)*v_nr
       .attr("fill", d => d.grpColor);
 
     node.append("text")
@@ -101,7 +110,6 @@ function visualise (spell,URL) {
     //Clear function
     if (spell == "destruction"){    
         svg.selectAll("*").remove();
-        console.log("removed");
     };
         
     //var path = svg.selectAll("path"); 
@@ -130,7 +138,6 @@ function visualise (spell,URL) {
           .on("start", dragstarted)
           .on("drag", dragged)
           .on("end", dragended);
-    }        
+    }     
   });
 };
-visualise("creation","http://127.0.0.1:5000/simulation");
