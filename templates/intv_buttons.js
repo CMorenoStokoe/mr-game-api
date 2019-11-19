@@ -115,8 +115,8 @@ function loadGUI(){
         modalId = "#modal-"+group["group"];
         var btn = document.createElement("BUTTON");
         btn.id = btnName;
-        btn.className = "btn grpRect";
-        btn.innerHTML = btnHTML;
+        btn.className = "btn btn-secondary";
+        btn.innerHTML = btnHTML+"<span class=\"sr-only\">Toggle Dropright</span>";
         btn.setAttribute("data-toggle", "dropdown");
         
         document.getElementById("div-dropdown").appendChild(btn); 

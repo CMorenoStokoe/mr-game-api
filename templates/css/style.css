@@ -1,8 +1,29 @@
+/*ALL*/
+.centerTxts{
+    text-align: center;
+}
+
 /*TOP*/
 #title{
     text-align:center;
 }
-
+.navbar-brand{
+    margin-right: 50px !important;
+}
+#goalTxt{
+    font-size: 0.8em;
+}
+#div-goalTxt{
+    width:240px;
+}
+#div-goalTxt-title{
+    text-decoration:underline;
+    font-size:1.1em;
+}
+.div-progress-main-txt{
+    position: relative;
+    top:20px;
+}
 /*FOOT*/
 
 #footContainer{
@@ -14,7 +35,7 @@
 
 /*HOME*/
 
-    /* Center */
+    /* Main */
 
 #GUIcontainer{
     width: 700px;
@@ -32,14 +53,18 @@
     border-width: 5px;
     border-color: black;
 }
-#centerGUI{
-    display:inline-block;
-}
 #div-dropdown{
     vertical-align:top;
 }
 .progress{
     width:240px;
+}
+.progress-main{
+    margin-left: 10px;
+    margin-right: 10px;
+}
+.div-progress-main{
+    text-align:center;
 }
 
     /* Group circles */
@@ -60,7 +85,6 @@
     text-align: center;
     vertical-align: top;
     margin: 3px;
-    border-radius: 15% !important;
 }
 .grpCircleText{
     font-size: 20pt;

@@ -9,44 +9,48 @@
         <link rel="stylesheet" href="css/all.css">
     </head>
     
-    <body>  <!-- input -->
-        <div class="row">
-            <div class="container-fluidd col-sm-12 col-md-12 col-lg-12 col-xl-12" id="homeContainer">
-                <br>
-                
-                <div style="border-style: solid; border-width: 2px;">
-                    <h3 id="title">Untitled MR EvE Game (alpha version)</h3>
-                </div>
-            </div>
-            <div class="dropdown container-fluidd col-sm-12 col-md-12 col-lg-12 col-xl-12" id="div-dropdown">
-                
-                <div id="centerGUI">
-                    <strong>Total health</strong>
-                    <div  class="progress">
-                        <div class="progress-bar progress-bar-striped progress-bar-animated bg-warning" id="progress_total" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 75%">
-                             <span id="progress_totalTxt">*Unassigned*</span>
-                        </div>
+    <body>  <!-- input -->            
+            <nav class="navbar navbar-light bg-light">
+                <span class="navbar-brand mb-0 h1">Untitled MR EvE Game <em>alpha</em></span>
+                <div class="div-progress-main">
+                    <div id="div-goalTxt-title"><strong>Goal</strong></div> 
+                    <div id="div-goalTxt">
+                        <p id="goalTxt"><em>Increase prevalence of <strong><span id="progress_goalTxt">*Unassigned*</span></strong> to 100 units</em></p>
                     </div>
-                    <strong>Goal: <span id="progress_goalTxt">*Unassigned*</span></strong>
-                    <div class="progress">
+                </div>
+                <div class="div-progress-main">
+                    <div class="div-progress-main-txt"><strong>Goal progress</strong></div> 
+                    <div class="progress progress-main">
                         <div class="progress-bar progress-bar-striped progress-bar-animated bg-success" id="progress_goal" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 75%">
                             <span id="progress_goalVal">*Unassigned*</span>
                         </div>
                     </div>
+                </div><div class="div-progress-main">
+                    <div class="div-progress-main-txt"><strong>Total health</strong></div>
+                    <div class="progress progress-main">
+                        <div class="progress-bar progress-bar-striped progress-bar-animated bg-warning" id="progress_total" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 75%">
+                             <span id="progress_totalTxt">*Unassigned*</span>
+                        </div>
+                    </div>
                 </div>
- 
-                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" id="dropdown-menu">
-                </div>
-            </div>
+            </nav>
             
-            <div class="container-fluidd col-sm-12 col-md-12 col-lg-12 col-xl-12">
+            <div class="row">
+                <div class="container-fluidd col-sm-2 col-md-2 col-lg-2 col-xl-2">
+                    <div class="dropright container-fluidd col-sm-12 col-md-12 col-lg-12 col-xl-12" id="div-dropdown">
+                        <h3 class="centerTxts">Traits</h3>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" id="dropdown-menu"></div>
+                    </div>
+                </div>
+            <div class="container-fluidd col-sm-10 col-md-10 col-lg-10 col-xl-10">
                 <svg width="1250" height="600" id="svgMain"></svg>
             </div>
-            
+        </div>
+        
+        <div class="row">
             <div class="container-fluidd col-sm-6 col-md-6 col-lg-6 col-xl-6">
                 <div class="container" id="GUIcontainer"></div>
             </div>
-                
         </div>
         
         <div class="row">
