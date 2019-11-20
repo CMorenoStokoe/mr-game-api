@@ -22,7 +22,7 @@
 }
 .div-progress-main-txt{
     position: relative;
-    top:20px;
+    top:18px;
 }
 /*FOOT*/
 
@@ -108,7 +108,7 @@
      background-color: rgba(0,0,0,.0001) !important;
 }
 
-    /* Modal 1 */
+    /* Left GUI / Modal 1 */
 .slider1Curr{
     text-align:right;
     float: right;
@@ -120,10 +120,12 @@
     height: 45px;
 }
 .sliderBtn{
-    float:left;
-    margin:5px;
-    height: 45px;
-    display: block;
+    position: relative;
+    left: 32px;
+    height: 50px;
+    bottom: 7px;
+    width: 200px;
+    display: inline-block;
 }
 .sliderDiv{
     height:60px;
@@ -131,15 +133,33 @@
 .spacer{
     padding-bottom:50px;
 }
-
-    /* Modal 2 */
+#dropdown-menu{
+    width:250px;
+}
+.progress-mini{
+    display:inline-block;
+    position:relative;
+    top:25px;
+}
+#slider1{
+    background-color: red;
+}
+.vertical {
+  display: inline-block;
+  width: 20%;
+  height: 40px;
+  -webkit-transform: rotate(-90deg); /* Chrome, Safari, Opera */
+  transform: rotate(-90deg);
+}
+    /* RIGHT GUI / Modal 2 */
 #modal2Right{
-    height: 550px;
 }
 .trait_titles{
     padding:10px;
 }
-
+.hide-on-startup{
+    visibility:hidden;
+}
 
 /*FDG*/
 

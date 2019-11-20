@@ -1,6 +1,7 @@
 function loadGUI(){
     
     var numOfSliders=[1,2,3,4,5,6,7,8,9,10];
+    var focus={"id":"id", "shortName":"shortName", "activation":"activation"};
     
     /*##################
     MASTER FUNCTIONS
@@ -79,24 +80,19 @@ function loadGUI(){
                         //Title
                         groupId = document.getElementById("modalTitle").innerHTML;
                         //Sliders (if modal exists)
+                        group="";
                         for(var i in ourData["groups"]){
-                            group="";
                             if(ourData["groups"][i]["group"] == groupId){
                                 group = ourData["groups"][i];
+                                populateModal1(group);
                                 break; 
                             }
-                        }
-                        if (group != ""){
-                            populateModal1(group);
                         }
                 };
                 if (elements.includes("modal2")){
                     //Modal 2
                         //Pop vis
-                        btnId = document.getElementById("modal2Title").getAttribute('data-btnId');
-                        if (btnId != ""){
-                            setPopVis(btnId);
-                        }
+                        setPopVis(focus);
                 };
             };
             ourRequest.send();
@@ -115,17 +111,17 @@ function loadGUI(){
         modalId = "#modal-"+group["group"];
         var btn = document.createElement("BUTTON");
         btn.id = btnName;
-        btn.className = "btn btn-secondary";
-        btn.innerHTML = btnHTML+"<span class=\"sr-only\">Toggle Dropright</span>";
+        btn.className = "btn grpRect";
+        btn.innerHTML = btnHTML;
         btn.setAttribute("data-toggle", "dropdown");
         
         document.getElementById("div-dropdown").appendChild(btn); 
         $("#"+btnName).data("myAttribute");
         document.getElementById(btnName).style.border = "1px solid "+group["grpColor"];
-        document.getElementById(btnName).addEventListener("click", function(e) {
-                $('.dropdown-toggle').dropdown();
-                render("modal1",group);
-                update(["centerGUI","modal1"]);
+        document.getElementById(btnName).addEventListener("click", function(e) {   
+            render("modal1",group);
+            update(["centerGUI","modal1"]);
+            $('.dropdown-toggle').dropdown();
         });
         bundle = {"btnName":btnName,"activColor":group["activColor"],"activation":group["activation"]};
         colorGrp(bundle);
@@ -160,35 +156,46 @@ function loadGUI(){
     //MODAL 1: RENDER & RESET
     var sliderCount = 1;
     function populateModal1(group){
-        //document.getElementById("modalTitle").innerHTML = group["group"];
+        document.getElementById("modalTitle").innerHTML = group["group"];
         sliderCount = 1;
         group["nodes"].forEach(setSlider);
     };
     
     function setSlider(node){
         
-        slider =  document.getElementById("slider"+sliderCount);
-            slider.value = node["activation"];
-        sliderBtn = document.getElementById("slider"+sliderCount+"Txt");
-            sliderBtn.innerText = node["shortName"];
-            sliderBtn.setAttribute('data-id', node["id"]);
-        $("#slider"+sliderCount+"Curr").text(node["activation"]);
-        $("#slider"+sliderCount+"Min").text(0);
-        $("#slider"+sliderCount+"Max").text(100);
+        btnId = "#slider"+sliderCount+"Txt";
+        progressId = "#slider"+sliderCount;
+        progressTextId = "#slider"+sliderCount+"Curr";
         sliderDiv =  document.getElementById("div-slider"+sliderCount);
+        progressVal = Number(node["activation"]);
+        
+        //Assign progress color
+        if (progressVal > 100 || progressVal < 0){
+            color = "black";
+        }
+        else if (progressVal > 75 || progressVal < 25){
+            color = "red";
+        } else if (progressVal > 60 || progressVal < 40) {
+            color = "orange";
+        } else {
+            color = "green";       
+        }
+        
+        $(progressId).css('width', progressVal.toFixed(2)+"%").attr('aria-valuenow', progressVal.toFixed(2));
+        $(progressId).css('background-color', color); 
+        $(progressTextId).text(progressVal.toFixed(0));
+        $(btnId).text(node["shortName"]);
+        $(btnId).attr('data-id', node["id"]);
         document.getElementById("dropdown-menu").appendChild(sliderDiv);
+        
         sliderCount ++;
     }
 
     function resetModal1(){
-        document.getElementById("modalTitle").innerHTML = "";
         numOfSliders.forEach(resetSliders);
     }
     
     function resetSliders(sliderCount){
-        document.getElementById("slider"+sliderCount).value = 0;
-        document.getElementById("slider"+sliderCount+"Txt").innerText = "";
-        document.getElementById("slider"+sliderCount+"Txt").setAttribute('data-id', "");
         sliderDiv =  document.getElementById("div-slider"+sliderCount);
         document.getElementById("hiddenItems").appendChild(sliderDiv);
     }
@@ -200,13 +207,16 @@ function loadGUI(){
         document.getElementById(btnId).getAttribute('data-id');
         nodeName = document.getElementById(btnId).innerText;
         
-        //Set title
+        //Set title and subtitle
         document.getElementById("modal2Title").innerHTML = nodeName;
         document.getElementById("modal2Title").setAttribute('data-btnId', btnId);
+        document.getElementById("modal2Subtitle").innerHTML = nodeId;
         
         //Set sliderBtn data-id
-        document.getElementById("btn-intv+").setAttribute('data-id', nodeId);
-        document.getElementById("btn-intv-").setAttribute('data-id', nodeId);
+        document.getElementById("intvSlider").setAttribute('data-id', nodeId);
+        
+        //Set slider
+        setIntvSlider();
         
         //Set pop vis
         setPopVis(btnId);
@@ -216,8 +226,16 @@ function loadGUI(){
         FDG("destruction", URL, "#svgM2", "compact");
         FDG("creation", URL,"#svgM2", "compact");
         renderFdgTxt(nodeId);
-    }
         
+        document.getElementById("rightHeader").style.visibility = "visible";
+        document.getElementById("rightBody").style.visibility = "visible";
+        document.getElementById("rightFooter").style.visibility = "visible";
+    }
+    
+    function setIntvSlider(){
+        
+    };
+    
     function setPopVis(btnId){
         sliderId = btnId.replace('Txt','');
         activ_min = document.getElementById(sliderId).min;
@@ -260,7 +278,6 @@ function loadGUI(){
                 ourData["links"].forEach(scribe);
                 
                 function scribe (link){
-                    console.log(link);
                     //Identify whether link affects, or is affected by, the node
                     if (link["source"] == nodeId){
                         txtDiv = document.getElementById("effectors");
@@ -286,10 +303,8 @@ function loadGUI(){
                     } else if (link["color"] == "red"){
                         html = "<span style=\"color:red\"><i class=\"fas fa-chevron-circle-up\"></i>"+node+"</span><br>";
                     } else {
-                        console.log("break");
                         return;   
                     }
-                    console.log(html);
                     txtDiv.innerHTML += html;
                 }
                 
@@ -300,16 +315,19 @@ function loadGUI(){
     function renderBtnLinks(id){
         btnId = "slider"+id+"Txt";
         document.getElementById(btnId).addEventListener("click", function() {
-            $("#modalTmpl").modal('hide');
-            render("modal2",this.id);         
-            $("#modalTmpl2").modal();
+            focus = {}
+            render("modal2",this.id);
         });
     }
     
     function resetModal2(){
         document.getElementById("effectors").innerHTML = "";
+        document.getElementById("effecteds").innerHTML = "";
     }
   
+    
+    //depreciated button code 
+    /*
     //BUTTON: INTERVENE    
        function setIntvBtns(btnId){
         btn = document.getElementById(btnId);
@@ -339,7 +357,7 @@ function loadGUI(){
     }
     var intvBtnIds=["btn-intv+","btn-intv-"];
     intvBtnIds.forEach(setIntvBtns);
-    
+    */
     
     //GLOBAL BUTTON: RESET 
     var btn_reset = document.getElementById("btn_reset");

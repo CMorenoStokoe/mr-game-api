@@ -62,5 +62,5 @@ def Start_Buttons():
                         }
                 )
         btnDict.append({"group":group,"nodes":nodesInGroup,"length":len(nodesInGroup),"grpColor":colors[group],"activColor":groupPrevCols[group],"activation":groupPrevs[group]})
-        nodesInGroup = sorted(btnDict, key=lambda k: k['length'])
+        nodesInGroup = sorted(btnDict, key=lambda k: k['length'], reverse=True)
     return ({"groups":nodesInGroup})
