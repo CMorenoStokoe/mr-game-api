@@ -1,7 +1,7 @@
 function loadGUI(){
     
     var numOfSliders=[1,2,3,4,5,6,7,8,9,10];
-    var focus={"id":"id", "shortName":"shortName", "activation":"activation"};
+    var focus = {'id':null,'shortName':null,'activation':null,'funding':null};
     
     /*##################
     MASTER FUNCTIONS
@@ -24,10 +24,14 @@ function loadGUI(){
                 setMainSliders(statsData[0],statsData[1],statsData[2],statsData[3]);
                 numOfSliders.forEach(renderBtnLinks);
                     //Main FDG
-                FDG("creation", "http://127.0.0.1:5000/simulation", "#svgMain", "collapsed");
-            };
+                FDG("creation", "http://127.0.0.1:5000/simulation", "#svgMain", "normal");
+                    //Intervention slider /*
+                document.getElementById("intvSlider").addEventListener("change", function() {
+                    intervene(focus["id"], Number(this.value));
+                });
+            }
             ourRequest.send();
-        }
+    }
     init();
     
     function render(element, id){
@@ -39,6 +43,7 @@ function loadGUI(){
             //$("#modalTmpl").modal();
         } else if (element == "modal2") {
             btnId = id;
+            focus["id"] = $('#'+btnId).attr('data-id');
             resetModal2();
             populateModal2(btnId);
             //$("#modalTmpl2").modal();       
@@ -70,10 +75,11 @@ function loadGUI(){
                             activation = ourData["groups"][i]["activation"];
                             bundles.push({"btnName": btnName, "activColor": activColor, "activation": activation});
                         };
-                        bundles.forEach(colorGrp);
+                        bundles.forEach(updateGrpBtns);
+                        //bundles.forEach(colorGrp);
                         //FDG
-                        FDG("destruction", "http://127.0.0.1:5000/simulation", "#svgMain", "collapsed");
-                        FDG("creation", "http://127.0.0.1:5000/simulation", "#svgMain", "collapsed");
+                        FDG("destruction", "http://127.0.0.1:5000/simulation", "#svgMain", "normal");
+                        FDG("creation", "http://127.0.0.1:5000/simulation", "#svgMain", "normal");
                 };
                 if (elements.includes("modal1")){
                     //Modal 1
@@ -92,7 +98,17 @@ function loadGUI(){
                 if (elements.includes("modal2")){
                     //Modal 2
                         //Pop vis
-                        setPopVis(focus);
+                        id = focus;
+                        for(var i in ourData["nodes"]){
+                            if(ourData["nodes"][i]["id"] == id){
+                                funding=0
+                                //funding = ourData["nodes"][i]["funding"];
+                                focus_value = ourData["nodes"][i]["activation"];
+                                setIntvSlider(funding);
+                                setPopVis(focus_value);
+                                break; 
+                            }
+                        }
                 };
             };
             ourRequest.send();
@@ -107,24 +123,31 @@ function loadGUI(){
     function renderGrp(group){
         /*create div holding group of buttons*/
         btnName = "btn-"+group["group"];
-        btnHTML =  group["group"]+"<br>"+group["activation"].toFixed(0);
+        btnHTML =  group["group"]+"<br>"+"<span class=\"badge badge-danger btnAlert\" id=\""+btnName+"-alert\">"+group["activation"].toFixed(0)+"</span>";
+            
         modalId = "#modal-"+group["group"];
         var btn = document.createElement("BUTTON");
         btn.id = btnName;
-        btn.className = "btn grpRect";
+        btn.className = "btn btn-light grpBtn";
         btn.innerHTML = btnHTML;
         btn.setAttribute("data-toggle", "dropdown");
         
         document.getElementById("div-dropdown").appendChild(btn); 
         $("#"+btnName).data("myAttribute");
-        document.getElementById(btnName).style.border = "1px solid "+group["grpColor"];
+        //document.getElementById(btnName).style.border = "1px solid "+group["grpColor"];
         document.getElementById(btnName).addEventListener("click", function(e) {   
             render("modal1",group);
             update(["centerGUI","modal1"]);
             $('.dropdown-toggle').dropdown();
         });
-        bundle = {"btnName":btnName,"activColor":group["activColor"],"activation":group["activation"]};
-        colorGrp(bundle);
+        
+        if (group["activation"] >= 100){
+            document.getElementById(btnName+'-alert').style.visibility = "visible";
+        }
+            
+        
+        //bundle = {"btnName":btnName,"activColor":group["activColor"],"activation":group["activation"]};
+        //colorGrp(bundle);
     }
     
     function setMainSliders(total, goal, goalPct, totalPct){
@@ -139,6 +162,26 @@ function loadGUI(){
         
     }
     
+    function updateGrpBtns(bundle){
+        
+        btnId = '#'+bundle["btnName"];
+        btnAlertId = bundle["btnName"]+'-alert';
+        color = bundle["activColor"];
+        activation = bundle["activation"];
+        //{%}Dynamic values bookmark
+        if (activation >= 100 || activation < 10){
+            document.getElementById(btnAlertId).style.visibility = "visible";
+        } else {
+            document.getElementById(btnAlertId).style.visibility = "hidden";
+        }
+
+        activationRnd = Number(activation);
+        text = activationRnd.toFixed(0);
+        $('#'+btnAlertId).text(text);
+        $('#'+btnAlertId).css('background-color', color);
+    }
+    
+    /*
     function colorGrp(bundle){
         //Color
         btnId = '#'+bundle["btnName"];
@@ -152,6 +195,7 @@ function loadGUI(){
         html = groupname+"<br>"+activationRnd.toFixed(0);
         $(btnId).html(html);
     }
+    */
     
     //MODAL 1: RENDER & RESET
     var sliderCount = 1;
@@ -185,7 +229,10 @@ function loadGUI(){
         $(progressId).css('background-color', color); 
         $(progressTextId).text(progressVal.toFixed(0));
         $(btnId).text(node["shortName"]);
+        
         $(btnId).attr('data-id', node["id"]);
+        $(btnId).attr('data-activation', node["activation"]);
+        
         document.getElementById("dropdown-menu").appendChild(sliderDiv);
         
         sliderCount ++;
@@ -203,9 +250,11 @@ function loadGUI(){
     //MODAL2: RENDER & RESET    
     function populateModal2(btnId){
         
-        nodeId = 
-        document.getElementById(btnId).getAttribute('data-id');
+        nodeId = document.getElementById(btnId).getAttribute('data-id');
         nodeName = document.getElementById(btnId).innerText;
+        
+        focus['id']=nodeId;
+        focus['shortName']=nodeName;
         
         //Set title and subtitle
         document.getElementById("modal2Title").innerHTML = nodeName;
@@ -216,10 +265,13 @@ function loadGUI(){
         document.getElementById("intvSlider").setAttribute('data-id', nodeId);
         
         //Set slider
-        setIntvSlider();
+        setIntvSlider(0);
         
         //Set pop vis
-        setPopVis(btnId);
+        
+        progressTxtId = '#'+btnId.replace('Txt','')+"Curr";
+        focus_value = $(progressTxtId).html();
+        setPopVis(focus_value);
         
         //Set FDG      
         URL = "http://127.0.0.1:5000/simulation/" + nodeId;
@@ -232,19 +284,10 @@ function loadGUI(){
         document.getElementById("rightFooter").style.visibility = "visible";
     }
     
-    function setIntvSlider(){
+    function setPopVis(focus_value){
+        number = Math.floor(focus_value/10);
+        percent = focus_value+'%'
         
-    };
-    
-    function setPopVis(btnId){
-        sliderId = btnId.replace('Txt','');
-        activ_min = document.getElementById(sliderId).min;
-        activ_max = document.getElementById(sliderId).max;
-        activ_curr = document.getElementById(sliderId).value;
-        activ_pct = (activ_curr / (activ_max - activ_min)) *100;
-        popN = (activ_pct/10).toFixed(0);
-        resetPops();
-        colorPops(popN);
             function resetPops(){
                 count = 1;
                 while (count <= 10) {
@@ -253,17 +296,16 @@ function loadGUI(){
                 } 
             }
             function colorPops(affected){
-                healthy = affected+1;
-                while (healthy <= 10) {
-                    document.getElementById("prevPop"+healthy).style.color = "black";
-                    healthy++;
-                } 
                 while (affected >= 1) {
-                    document.getElementById("prevPop"+affected).style.color = "red";
+                    $('#prevPop'+affected).css('color', 'red');
                     affected--;
                 }
             }
-        document.getElementById("prevalenceTxt").innerText = activ_pct.toFixed(2)+"%";
+        
+        resetPops();
+        colorPops(number);
+        
+        document.getElementById("prevalenceTxt").innerText = percent;
     }
     
     function renderFdgTxt(nodeId){
@@ -315,30 +357,39 @@ function loadGUI(){
     function renderBtnLinks(id){
         btnId = "slider"+id+"Txt";
         document.getElementById(btnId).addEventListener("click", function() {
-            focus = {}
             render("modal2",this.id);
         });
     }
+    
+    function setIntvSlider(focus_intv){
+        intvSlider =  document.getElementById("div-intvSlider");
+        
+        header = document.getElementById("intvSliderHider").appendChild(intvSlider);
+        
+        $('#intvSlider').attr('value', focus_intv);
+        document.getElementById("intvSlider").value = focus_intv
+        document.getElementById("intvSliderValue").value = focus_intv
+        
+        header = document.getElementById("rightHeader").appendChild(intvSlider);    
+        
+    };
     
     function resetModal2(){
         document.getElementById("effectors").innerHTML = "";
         document.getElementById("effecteds").innerHTML = "";
     }
-  
+
     
-    //depreciated button code 
-    /*
-    //BUTTON: INTERVENE    
-       function setIntvBtns(btnId){
-        btn = document.getElementById(btnId);
-        btn.onclick = function(){
-        me = document.getElementById(this.id);
-            target = me.getAttribute('data-id');
-            valence = me.getAttribute("data-vale");
-            value = me.getAttribute("data-value");
-            
-            //Send intervention request to API
-            var xhr = new XMLHttpRequest();        
+    function intervene(target, funding){
+        
+        if (funding < 0){
+            valence = '-';
+        }else if (funding >= 0){
+            valence = '+';
+        }
+        value = Math.abs(funding * 10);
+        
+        var xhr = new XMLHttpRequest();        
 
             xhr.open("POST", "http://127.0.0.1:5000/intervene", true);
             xhr.setRequestHeader('Content-Type', 'application/json');
@@ -352,7 +403,22 @@ function loadGUI(){
                                         "id": target,
                                         "valence": valence,
                                         "value": value
-            }));            
+            }));     
+    }
+    
+    //depreciated button code 
+    /*
+    //BUTTON: INTERVENE    
+       function setIntvBtns(btnId){
+        btn = document.getElementById(btnId);
+        btn.onclick = function(){
+        me = document.getElementById(this.id);
+            target = me.getAttribute('data-id');
+            valence = me.getAttribute("data-vale");
+            value = me.getAttribute("data-value");
+            
+            //Send intervention request to API
+                   
         };
     }
     var intvBtnIds=["btn-intv+","btn-intv-"];
@@ -364,7 +430,7 @@ function loadGUI(){
     btn_reset.addEventListener("click", function() {
         resetRequest = new XMLHttpRequest();
         resetRequest.open('GET', "http://127.0.0.1:5000/reset");
-        resetRequest.onload = function(){update(["centerGUI","modal1"])};
+        resetRequest.onload = function(){update(["centerGUI","modal1","modal2"])};
         resetRequest.send();
     })
     

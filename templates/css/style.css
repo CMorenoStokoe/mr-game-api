@@ -86,11 +86,22 @@
     vertical-align: top;
     margin: 3px;
 }
+.grpBtn{
+    height: 75px;
+    width: 90%;
+    display: inline-block;
+    text-align: center;
+    vertical-align: top;
+    margin: 3px;
+}
 .grpCircleText{
     font-size: 20pt;
 }
 .slideLabel{
-    text-align:center;
+    text-align: center;
+}
+.btnAlert{
+    visibility: hidden;
 }
 
 /*MODALS*/
@@ -151,6 +162,9 @@
   -webkit-transform: rotate(-90deg); /* Chrome, Safari, Opera */
   transform: rotate(-90deg);
 }
+#leftBody{
+    padding:0;
+}
     /* RIGHT GUI / Modal 2 */
 #modal2Right{
 }
@@ -159,6 +173,11 @@
 }
 .hide-on-startup{
     visibility:hidden;
+}
+#intvSliderCurr{
+    position: relative;
+    left:275px;
+    bottom: 35px;
 }
 
 /*FDG*/

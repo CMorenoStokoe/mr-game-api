@@ -39,11 +39,18 @@
         
         <!--GUIs-->
         <div class="row">
-            <!-- left GUI --> 
+            <!-- left GUI -->
+            
             <div class="container-fluidd col-sm-2 col-md-2 col-lg-2 col-xl-2">
-                <div class="dropright container-fluidd col-sm-12 col-md-12 col-lg-12 col-xl-12" id="div-dropdown">
-                    <h3 class="centerTxts">Traits</h3>
-                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" id="dropdown-menu"></div>
+                <div class="card">
+                    <div class="card-header">
+                        <h3 class="centerTxts">Domains</h3>
+                    </div>
+                    <div class="dropright" id="div-dropdown">
+                        <div class="card-body" id="leftBody">
+                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" id="dropdown-menu"></div>
+                        </div>
+                    </div>
                 </div>
             </div>
 
@@ -60,8 +67,8 @@
                             <h3 id="modal2Title" data-btnId="">Trait view (no trait selected)</h3>
                             <em id="modal2Subtitle">ID</em>
                             <div class="intvSliderDiv" id="div-intvSlider">
-                                <label class="sliderLabel" for="intvSlider" id="intvSliderCurr">#</label>
-                                <input type="range" min="-5" max="5" value="0" class="slider" id="intvSlider"><br>
+                                <input type="range" class="custom-range" value="0" min="-3" max="3" step="1" id="intvSlider" oninput="intvSliderValue.value=this.value" />
+                                <input id="intvSliderValue" type="number" disabled="true" value="0" min="-3" max="3" />
                             </div>
                         </div>
                     </div>
@@ -79,8 +86,7 @@
                                     Reduce
                                 </button>-->
                                 <h5>Prevalence</h5>
-                                <p id="prevalenceTxt">
-                                </p>
+                                <p id="prevalenceTxt"></p>
                                 <div class="modal2Left">
                                     <i class="fas fa-user-alt prevPop" id="prevPop1"></i>
                                     <i class="fas fa-user-alt prevPop" id="prevPop2"></i>
@@ -128,10 +134,12 @@
         <div id="hiddenItems" style="display:none">
             <!-- Trait title (used to store intervention target name)-->
             <h3 class="modal-title" id="modalTitle">Modal title</h3>
-            <!--Sliders-->
+            <!--Intv Slider-->
+            <div id="intvSliderHider"></div>
+            <!--Progress bars-->
             <div class="sliderDiv" id="div-slider1">
                 <div class="progress vertical progress-mini">
-                    <div class="progress-bar progress-bar-striped" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" id="slider1">
+                    <div class="progress-bar" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" id="slider1">
                         <span id="slider1Curr"></span>
                     </div>
                 </div>
@@ -139,7 +147,7 @@
             </div>
             <div class="sliderDiv" id="div-slider2">
                 <div class="progress vertical progress-mini">
-                    <div class="progress-bar progress-bar-striped" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" id="slider2">
+                    <div class="progress-bar" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" id="slider2">
                         <span id="slider2Curr"></span>
                     </div>
                 </div>
@@ -147,7 +155,7 @@
             </div>
             <div class="sliderDiv" id="div-slider3">
                 <div class="progress vertical progress-mini">
-                    <div class="progress-bar progress-bar-striped" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" id="slider3">
+                    <div class="progress-bar" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" id="slider3">
                         <span id="slider3Curr"></span>
                     </div>
                 </div>
@@ -155,7 +163,7 @@
             </div>
             <div class="sliderDiv" id="div-slider4">
                 <div class="progress vertical progress-mini">
-                    <div class="progress-bar progress-bar-striped" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" id="slider4">
+                    <div class="progress-bar" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" id="slider4">
                         <span id="slider4Curr"></span>
                     </div>
                 </div>
@@ -163,7 +171,7 @@
             </div>
             <div class="sliderDiv" id="div-slider5">
                 <div class="progress vertical progress-mini">
-                    <div class="progress-bar progress-bar-striped" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" id="slider5">
+                    <div class="progress-bar" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" id="slider5">
                         <span id="slider5Curr"></span>
                     </div>
                 </div>
@@ -171,7 +179,7 @@
             </div>
             <div class="sliderDiv" id="div-slider6">
                 <div class="progress vertical progress-mini">
-                    <div class="progress-bar progress-bar-striped" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" id="slider6">
+                    <div class="progress-bar" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" id="slider6">
                         <span id="slider6Curr"></span>
                     </div>
                 </div>
@@ -179,7 +187,7 @@
             </div>
             <div class="sliderDiv" id="div-slider7">
                 <div class="progress vertical progress-mini">
-                    <div class="progress-bar progress-bar-striped" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" id="slider7">
+                    <div class="progress-bar" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" id="slider7">
                         <span id="slider7Curr"></span>
                     </div>
                 </div>
@@ -187,7 +195,7 @@
             </div>
             <div class="sliderDiv" id="div-slider8">
                 <div class="progress vertical progress-mini">
-                    <div class="progress-bar progress-bar-striped" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" id="slider8">
+                    <div class="progress-bar" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" id="slider8">
                         <span id="slider8Curr"></span>
                     </div>
                 </div>
@@ -195,7 +203,7 @@
             </div>
             <div class="sliderDiv" id="div-slider9">
                 <div class="progress vertical progress-mini">
-                    <div class="progress-bar progress-bar-striped" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" id="slider9">
+                    <div class="progress-bar" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" id="slider9">
                         <span id="slider9Curr"></span>
                     </div>
                 </div>
@@ -203,7 +211,7 @@
             </div>
             <div class="sliderDiv" id="div-slider10">
                 <div class="progress vertical progress-mini">
-                    <div class="progress-bar progress-bar-striped" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" id="slider10">
+                    <div class="progress-bar" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" id="slider10">
                         <span id="slider10Curr"></span>
                     </div>
                 </div>

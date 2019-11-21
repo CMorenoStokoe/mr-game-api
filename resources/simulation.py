@@ -18,7 +18,7 @@ class View_Data(Resource):
             data = json.load(json_file)
         
         #Views
-        view="collapsed"
+        view="normal"
         #set values (test -- revise)
         if view == "collapsed":
             dataview = Collapse_Groups(data["nodes"],data["links"])
@@ -26,6 +26,8 @@ class View_Data(Resource):
         elif view == "normal":
             return data 
         elif view == "node":
+            return data
+        elif view == "activeLinks":
             return data
 
 class View_DataNormal(Resource):

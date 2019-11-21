@@ -1,0 +1,3317 @@
+{
+  "goals": [
+    {
+      "id": "91784e95-0a31-44ad-84ea-4b55726c2a59",
+      "name": "Gout",
+      "short_name": "Gout",
+      "activation_amount": 0,
+      "leakage": 0,
+      "max_amount": 0,
+      "group":"Disease",
+      "balance": 0,
+      "connections": []
+    },
+    {
+      "id": "4f831927-79e5-4bb7-bcef-d1d234a85bc4",
+      "name": "Schizophrenia",
+      "short_name": "Schizophrenia",
+      "activation_amount": 0,
+      "leakage": 0,
+      "max_amount": 0,
+      "group":"Psychiatry",
+      "balance": 0,
+      "connections": []
+    },
+    {
+      "id": "96918891-7093-456b-bb40-099c775c1df7",
+      "name": "Type 2 diabetes",
+      "short_name": "Diabetes(T2)",
+      "activation_amount": 0,
+      "leakage": 0,
+      "max_amount": 0,
+      "group":"Disease",
+      "balance": 0,
+      "connections": []
+    },
+    {
+      "id": "399c25c1-bce9-4a69-8b5b-40b86598604a",
+      "name": "Juvenile idiopathic arthritis",
+      "short_name": "Arthritis(JIA)",
+      "activation_amount": 0,
+      "leakage": 0,
+      "max_amount": 0,
+      "group":"Disease",
+      "balance": 0,
+      "connections": []
+    },
+    {
+      "id": "4d1edfe9-b8ec-4f2b-8b50-fa6ff1373457",
+      "name": "Psoriasis",
+      "short_name": "Psoriasis",
+      "activation_amount": 0,
+      "leakage": 0,
+      "max_amount": 0,
+      "group":"Disease",
+      "balance": 0,
+      "connections": []
+    },
+    {
+      "id": "17d023cc-8385-4cf2-8af3-95970e6921e5",
+      "name": "Liver Disease(PBC)",
+      "short_name": "Liver Disease(PBC)",
+      "activation_amount": 0,
+      "leakage": 0,
+      "max_amount": 0,
+      "group":"Disease",
+      "balance": 0,
+      "connections": []
+    },
+    {
+      "id": "4bd11360-b043-4a2d-8c8b-b0b782d3b76f",
+      "name": "Systemic lupus erythematosus",
+      "short_name": "Lupus(SLE)",
+      "activation_amount": 0,
+      "leakage": 0,
+      "max_amount": 0,
+      "group":"Disease",
+      "balance": 0,
+      "connections": []
+    },
+    {
+      "id": "69a02a74-ab46-42e5-951e-914f79d6de5f",
+      "name": "Type 1 diabetes",
+      "short_name": "Diabetes(T1)",
+      "activation_amount": 0,
+      "leakage": 0,
+      "max_amount": 0,
+      "group":"Disease",
+      "balance": 0,
+      "connections": []
+    },
+    {
+      "id": "931a0110-beb5-4476-9165-c4680718743e",
+      "name": "Alzheimer's disease",
+      "short_name": "Alzheimer's",
+      "activation_amount": 0,
+      "leakage": 0,
+      "max_amount": 0,
+      "group":"Disease",
+      "balance": 0,
+      "connections": []
+    },
+    {
+      "id": "4dc55284-2f17-4f08-9cca-6b9fb866f097",
+      "name": "Crohn's disease",
+      "short_name": "Crohn's",
+      "activation_amount": 0,
+      "leakage": 0,
+      "max_amount": 0,
+      "group":"Disease",
+      "balance": 0,
+      "connections": []
+    },
+    {
+      "id": "ed3f073e-4af5-4a87-bc80-997b64c59869",
+      "name": "Coronary heart disease",
+      "short_name": "Heart disease(CHD)",
+      "activation_amount": 0,
+      "leakage": 0,
+      "max_amount": 0,
+      "group":"Disease",
+      "balance": 0,
+      "connections": []
+    },
+    {
+      "id": "f3fe732a-e7ee-4f09-97a5-e96f8b357632",
+      "name": "Melanoma",
+      "short_name": "Melanoma",
+      "activation_amount": 0,
+      "leakage": 0,
+      "max_amount": 0,
+      "group":"Disease",
+      "balance": 0,
+      "connections": []
+    },
+    {
+      "id": "93c4b46e-f1a4-4b2b-af09-05e5e2c2e41b",
+      "name": "Myocardial infarction",
+      "short_name": "Heart disease(MCI)",
+      "activation_amount": 0,
+      "leakage": 0,
+      "max_amount": 0,
+      "group":"Disease",
+      "balance": 0,
+      "connections": []
+    },
+    {
+      "id": "9e41273c-acdb-46b8-b502-06dcb3ebdc83",
+      "name": "Psychiatric disorders",
+      "short_name": "Psychiatric disorders",
+      "activation_amount": 0,
+      "leakage": 0,
+      "max_amount": 0,
+      "group":"Psychiatry",
+      "balance": 0,
+      "connections": []
+    },
+    {
+      "id": "8e73b276-afaa-4fec-9c7e-3f4fdd04a5b6",
+      "name": "Pancreatic cancer",
+      "short_name": "Pancreatic cancer",
+      "activation_amount": 0,
+      "leakage": 0,
+      "max_amount": 0,
+      "group":"Disease",
+      "balance": 0,
+      "connections": []
+    },
+    {
+      "id": "06ee3a11-bbc6-42f6-aec6-69ec14d0bab3",
+      "name": "Lung adenocarcinoma",
+      "short_name": "Lung cancer(Adeno.)",
+      "activation_amount": 0,
+      "leakage": 0,
+      "max_amount": 0,
+      "group":"Disease",
+      "balance": 0,
+      "connections": []
+    },
+    {
+      "id": "00a700d1-c572-4218-8b28-3f1c70a7d196",
+      "name": "Lung cancer",
+      "short_name": "Lung cancer(NOS)",
+      "activation_amount": 0,
+      "leakage": 0,
+      "max_amount": 0,
+      "group":"Disease",
+      "balance": 0,
+      "connections": []
+    },
+    {
+      "id": "8e8c2fb1-fb9a-403d-a749-9cdfee445f22",
+      "name": "Squamous cell lung cancer",
+      "short_name": "Lung cancer(Squam.)",
+      "activation_amount": 0,
+      "leakage": 0,
+      "max_amount": 0,
+      "group":"Disease",
+      "balance": 0,
+      "connections": []
+    }
+  ],
+  "policies": [
+    {
+      "id": "ee1d1d8a-aba3-493f-99f8-011665afaf72",
+      "name": "Depressive symptoms",
+      "short_name": "Depression(symps.)",
+      "activation_amount": 0.02,
+      "leakage": 0,
+      "max_amount": 0,
+      "group":"Psychiatry",
+      "balance": 0,
+      "connections": [
+        {
+          "id": "861384d1-ac4f-4dca-adb6-88b101a431bf",
+          "weight": 1.8155,
+          "from_id": "ee1d1d8a-aba3-493f-99f8-011665afaf72",
+          "to_id": "4eac5526-f4f9-4988-9898-84ea0fdfa566"
+        }
+      ]
+    },
+    {
+      "id": "9866d4da-6570-4080-8fe9-e391c1c35f26",
+      "name": "Years of schooling",
+      "short_name": "Education(Yrs)",
+      "activation_amount": 0.02,
+      "leakage": 0,
+      "max_amount": 0,
+      "group":"Demographics",
+      "balance": 0,
+      "connections": [
+        {
+          "id": "377076ba-5f75-4ac1-ac8f-b2d819a70650",
+          "weight": -1.0419,
+          "from_id": "9866d4da-6570-4080-8fe9-e391c1c35f26",
+          "to_id": "931a0110-beb5-4476-9165-c4680718743e"
+        },
+        {
+          "id": "6f74bca0-16b1-429d-9e4e-322e94ad7570",
+          "weight": -1.4145,
+          "from_id": "9866d4da-6570-4080-8fe9-e391c1c35f26",
+          "to_id": "d3c02659-5d7e-479c-a8db-06b01b60c810"
+        },
+        {
+          "id": "172def8c-2e7e-48a8-a33e-3a18b5d10c26",
+          "weight": -1.1203,
+          "from_id": "9866d4da-6570-4080-8fe9-e391c1c35f26",
+          "to_id": "403840ae-c20d-473b-9c44-91f60e139732"
+        },
+        {
+          "id": "0653b6c6-ba48-4617-8402-45434ab05ded",
+          "weight": 5.1019,
+          "from_id": "9866d4da-6570-4080-8fe9-e391c1c35f26",
+          "to_id": "25c49796-8e23-4a3d-9a23-9a63b007d4e3"
+        },
+        {
+          "id": "c50b2677-a7c7-4ad9-b560-e14235f60a25",
+          "weight": 1.8066,
+          "from_id": "9866d4da-6570-4080-8fe9-e391c1c35f26",
+          "to_id": "4dc55284-2f17-4f08-9cca-6b9fb866f097"
+        },
+        {
+          "id": "fad39b5c-e6eb-4db2-8a7d-c853fe597c06",
+          "weight": -2.2895,
+          "from_id": "9866d4da-6570-4080-8fe9-e391c1c35f26",
+          "to_id": "ee1d1d8a-aba3-493f-99f8-011665afaf72"
+        },
+        {
+          "id": "e41e10cb-6878-42ed-8554-82a0989eb842",
+          "weight": 1.1155,
+          "from_id": "9866d4da-6570-4080-8fe9-e391c1c35f26",
+          "to_id": "ca2ccbd8-bd4d-40b6-b99f-0b7e692264ae"
+        },
+        {
+          "id": "a2b0d92e-c58d-4fc3-91ab-1cc58d4b3ebb",
+          "weight": -1.1196,
+          "from_id": "9866d4da-6570-4080-8fe9-e391c1c35f26",
+          "to_id": "00a700d1-c572-4218-8b28-3f1c70a7d196"
+        },
+        {
+          "id": "b91d1936-a640-43a7-a905-596e21815b3f",
+          "weight": -1.0415,
+          "from_id": "9866d4da-6570-4080-8fe9-e391c1c35f26",
+          "to_id": "93c4b46e-f1a4-4b2b-af09-05e5e2c2e41b"
+        },
+        {
+          "id": "dbdb82ab-c62f-45dd-a7b4-973c24bf6f46",
+          "weight": -2.7211,
+          "from_id": "9866d4da-6570-4080-8fe9-e391c1c35f26",
+          "to_id": "efc52e16-908a-40fd-a451-a2e9ec9e857b"
+        },
+        {
+          "id": "1342d475-a503-4136-a0a4-f8081ca70ba9",
+          "weight": -1.5672,
+          "from_id": "9866d4da-6570-4080-8fe9-e391c1c35f26",
+          "to_id": "dad287be-f49c-4e56-9ae6-a53f66fef626"
+        },
+        {
+          "id": "ab9aec05-98e4-466f-8c6d-16c03478f75d",
+          "weight": -1.9871,
+          "from_id": "9866d4da-6570-4080-8fe9-e391c1c35f26",
+          "to_id": "16efa6bd-6c5b-4bcc-a5cb-4a66f44a6eb4"
+        }
+      ]
+    },
+    {
+      "id": "400fed2f-7ee1-4a65-bbc5-6d4808459eef",
+      "name": "Mean platelet volume",
+      "short_name": "Platelets(vol)",
+      "activation_amount": 0.02,
+      "leakage": 0,
+      "max_amount": 0,
+      "group":"Biochemistry",
+      "balance": 0,
+      "connections": [
+        {
+          "id": "cbdfbf59-e462-47e8-8906-1e88d542a3d1",
+          "weight": -2.8539,
+          "from_id": "400fed2f-7ee1-4a65-bbc5-6d4808459eef",
+          "to_id": "fb91d08b-6d98-4915-aed6-b3f13a89b12a"
+        }
+      ]
+    },
+    {
+      "id": "4eac5526-f4f9-4988-9898-84ea0fdfa566",
+      "name": "Neuroticism",
+      "short_name": "Neuroticism",
+      "activation_amount": 0.02,
+      "leakage": 0,
+      "max_amount": 0,
+      "group":"Psychology",
+      "balance": 0,
+      "connections": []
+    },
+    {
+      "id": "fb91d08b-6d98-4915-aed6-b3f13a89b12a",
+      "name": "Platelet count",
+      "short_name": "Platelets(#)",
+      "activation_amount": 0.02,
+      "leakage": 0,
+      "max_amount": 0,
+      "group":"Biochemistry",
+      "balance": 0,
+      "connections": [
+        {
+          "id": "f9f581e7-cb68-4214-9f33-123d23eefff4",
+          "weight": -44.5886,
+          "from_id": "fb91d08b-6d98-4915-aed6-b3f13a89b12a",
+          "to_id": "400fed2f-7ee1-4a65-bbc5-6d4808459eef"
+        }
+      ]
+    },
+    {
+      "id": "fbb8b7d7-0416-4cb9-bb91-04c5662988d9",
+      "name": "Subjective well being",
+      "short_name": "Well-being",
+      "activation_amount": 0.02,
+      "leakage": 0,
+      "max_amount": 0,
+      "group":"Psychology",
+      "balance": 0,
+      "connections": [
+        {
+          "id": "a18c5b7d-cd63-41c2-9bb4-2cdbabdb404b",
+          "weight": -1.3814,
+          "from_id": "fbb8b7d7-0416-4cb9-bb91-04c5662988d9",
+          "to_id": "7828e0dc-9793-491c-82ad-e30331b4893f"
+        },
+        {
+          "id": "21e5f636-dee1-4f5e-b87d-71bca9179ef5",
+          "weight": -3.1574,
+          "from_id": "fbb8b7d7-0416-4cb9-bb91-04c5662988d9",
+          "to_id": "137ab7b0-8777-49e7-8416-bea9be51c448"
+        },
+        {
+          "id": "69272ecb-dda9-4d79-93a3-c33575d33e3f",
+          "weight": -1.3682,
+          "from_id": "fbb8b7d7-0416-4cb9-bb91-04c5662988d9",
+          "to_id": "9866d4da-6570-4080-8fe9-e391c1c35f26"
+        }
+      ]
+    },
+    {
+      "id": "188363f4-e3fd-4dae-87af-d50fba824cb4",
+      "name": "C-reactive protein",
+      "short_name": "CRP",
+      "activation_amount": 0.02,
+      "leakage": 0,
+      "max_amount": 0,
+      "group":"Biochemistry",
+      "balance": 0,
+      "connections": [
+        {
+          "id": "f9b392a5-ba48-4c7b-a0d4-1c276dc5cb1a",
+          "weight": -1.2888,
+          "from_id": "188363f4-e3fd-4dae-87af-d50fba824cb4",
+          "to_id": "8e73b276-afaa-4fec-9c7e-3f4fdd04a5b6"
+        }
+      ]
+    },
+    {
+      "id": "95c844ea-df97-4c14-952f-cbe698f4dc29",
+      "name": "Difference in height between childhood and adulthood",
+      "short_name": "Height growth(3-adult)",
+      "activation_amount": 0.02,
+      "leakage": 0,
+      "max_amount": 0,
+      "group":"Physical",
+      "balance": 0,
+      "connections": [
+        {
+          "id": "3897cc2b-66a2-4e87-91cd-439dfe4d86a5",
+          "weight": 2.2718,
+          "from_id": "95c844ea-df97-4c14-952f-cbe698f4dc29",
+          "to_id": "ca5e7a36-5dd4-45ab-bec8-8d4c29971b5f"
+        }
+      ]
+    },
+    {
+      "id": "124b2b07-8f3e-42ea-af2a-9b380bad810c",
+      "name": "Difference in height between adolescence and adulthood",
+      "short_name": "Height growth(13-adult)",
+      "activation_amount": 0.02,
+      "leakage": 0,
+      "max_amount": 0,
+      "group":"Physical",
+      "balance": 0,
+      "connections": [
+        {
+          "id": "c21b4046-2599-4860-8703-c7866411dfcf",
+          "weight": 11.7031,
+          "from_id": "124b2b07-8f3e-42ea-af2a-9b380bad810c",
+          "to_id": "ca5e7a36-5dd4-45ab-bec8-8d4c29971b5f"
+        },
+        {
+          "id": "530bc248-69ab-40ab-a816-b451afe4f914",
+          "weight": 1.1466,
+          "from_id": "124b2b07-8f3e-42ea-af2a-9b380bad810c",
+          "to_id": "2da09bab-551e-492f-ae7a-e4d123311874"
+        },
+        {
+          "id": "1fb226f8-9975-467d-9812-63071a2308af",
+          "weight": 2.0298,
+          "from_id": "124b2b07-8f3e-42ea-af2a-9b380bad810c",
+          "to_id": "7828e0dc-9793-491c-82ad-e30331b4893f"
+        },
+        {
+          "id": "884225d4-2c9a-4395-a39a-856059c172d5",
+          "weight": 4.3414,
+          "from_id": "124b2b07-8f3e-42ea-af2a-9b380bad810c",
+          "to_id": "137ab7b0-8777-49e7-8416-bea9be51c448"
+        },
+        {
+          "id": "ca586c15-3059-46ea-9f4a-1689294fdb90",
+          "weight": 1.1094,
+          "from_id": "124b2b07-8f3e-42ea-af2a-9b380bad810c",
+          "to_id": "37a11f81-45ca-4e64-835b-cef1f7c0e7cc"
+        },
+        {
+          "id": "18b8d640-1c5c-4bab-a521-cac27e099e7e",
+          "weight": 1.1502,
+          "from_id": "124b2b07-8f3e-42ea-af2a-9b380bad810c",
+          "to_id": "4f831927-79e5-4bb7-bcef-d1d234a85bc4"
+        },
+        {
+          "id": "9c8cc381-afc3-4c46-91be-f0671913f935",
+          "weight": -1.1367,
+          "from_id": "124b2b07-8f3e-42ea-af2a-9b380bad810c",
+          "to_id": "9b453101-515b-4f51-b426-24e9cceef386"
+        }
+      ]
+    },
+    {
+      "id": "ca2ccbd8-bd4d-40b6-b99f-0b7e692264ae",
+      "name": "Intracranial volume",
+      "short_name": "Brain volume(ICV)",
+      "activation_amount": 0.02,
+      "leakage": 0,
+      "max_amount": 0,
+      "group":"Physical",
+      "balance": 0,
+      "connections": [
+        {
+          "id": "8ce1e894-c40a-41e1-ace0-6afd75b26030",
+          "weight": 1.3156,
+          "from_id": "ca2ccbd8-bd4d-40b6-b99f-0b7e692264ae",
+          "to_id": "0e1a6abf-afd6-4b74-b57a-c1b73d2d6724"
+        },
+        {
+          "id": "73f41f9c-4ec6-476a-be93-6149a80ff085",
+          "weight": 1.184,
+          "from_id": "ca2ccbd8-bd4d-40b6-b99f-0b7e692264ae",
+          "to_id": "25c49796-8e23-4a3d-9a23-9a63b007d4e3"
+        },
+        {
+          "id": "447697ab-7cdf-48eb-a6b4-964ed6d1eb3a",
+          "weight": -1.065,
+          "from_id": "ca2ccbd8-bd4d-40b6-b99f-0b7e692264ae",
+          "to_id": "ed3f073e-4af5-4a87-bc80-997b64c59869"
+        },
+        {
+          "id": "86061e91-ec28-4f31-8e22-61dc3a36edd6",
+          "weight": 1.1678,
+          "from_id": "ca2ccbd8-bd4d-40b6-b99f-0b7e692264ae",
+          "to_id": "4dc55284-2f17-4f08-9cca-6b9fb866f097"
+        },
+        {
+          "id": "4b57b95b-7ebd-4b3c-8735-c1de81cb0b7c",
+          "weight": -1.0525,
+          "from_id": "ca2ccbd8-bd4d-40b6-b99f-0b7e692264ae",
+          "to_id": "6ea25c6c-fe51-4b8e-a89e-04a423bba1d2"
+        },
+        {
+          "id": "38e5a929-9327-4ace-9897-b75eb22aed78",
+          "weight": 1.0651,
+          "from_id": "ca2ccbd8-bd4d-40b6-b99f-0b7e692264ae",
+          "to_id": "f86db065-16ec-427e-a3e7-fddec552692f"
+        },
+        {
+          "id": "8956a115-81f2-4fde-9c14-9e7716d27584",
+          "weight": -1.6887,
+          "from_id": "ca2ccbd8-bd4d-40b6-b99f-0b7e692264ae",
+          "to_id": "d5e86995-948d-4e58-a7e1-153ff1c5c905"
+        },
+        {
+          "id": "089cd033-d34c-4bda-80b1-45dfab9be41c",
+          "weight": 1.4033,
+          "from_id": "ca2ccbd8-bd4d-40b6-b99f-0b7e692264ae",
+          "to_id": "137ab7b0-8777-49e7-8416-bea9be51c448"
+        },
+        {
+          "id": "cf8db0ad-8771-44fc-9d5f-54de53d65b82",
+          "weight": -1.0826,
+          "from_id": "ca2ccbd8-bd4d-40b6-b99f-0b7e692264ae",
+          "to_id": "93c4b46e-f1a4-4b2b-af09-05e5e2c2e41b"
+        },
+        {
+          "id": "c9f8fb64-33d3-449f-bb49-38f1be86a307",
+          "weight": -1.9734,
+          "from_id": "ca2ccbd8-bd4d-40b6-b99f-0b7e692264ae",
+          "to_id": "4eac5526-f4f9-4988-9898-84ea0fdfa566"
+        },
+        {
+          "id": "320eae7b-cd19-4b18-9465-90ad9b47c26b",
+          "weight": -1.5514,
+          "from_id": "ca2ccbd8-bd4d-40b6-b99f-0b7e692264ae",
+          "to_id": "01998aa0-597d-4d86-ae59-0d366be81799"
+        },
+        {
+          "id": "cacf7a34-5ace-49fd-81c9-25c2c471c8cc",
+          "weight": 1.6856,
+          "from_id": "ca2ccbd8-bd4d-40b6-b99f-0b7e692264ae",
+          "to_id": "17d023cc-8385-4cf2-8af3-95970e6921e5"
+        },
+        {
+          "id": "dab7ece6-04b4-4efc-95e8-0a331ef5d9f3",
+          "weight": -1.9552,
+          "from_id": "ca2ccbd8-bd4d-40b6-b99f-0b7e692264ae",
+          "to_id": "e8666a6d-e324-45e3-9eba-ab9f2509eebe"
+        },
+        {
+          "id": "41ef1f51-4c77-4e8c-a176-fdbf9e21743c",
+          "weight": 1.2187,
+          "from_id": "ca2ccbd8-bd4d-40b6-b99f-0b7e692264ae",
+          "to_id": "9866d4da-6570-4080-8fe9-e391c1c35f26"
+        },
+        {
+          "id": "063e83fc-c115-491e-a8cb-126e5ecc3baf",
+          "weight": 1.7892,
+          "from_id": "ca2ccbd8-bd4d-40b6-b99f-0b7e692264ae",
+          "to_id": "9866d4da-6570-4080-8fe9-e391c1c35f26"
+        }
+      ]
+    },
+    {
+      "id": "8b312045-65dc-460f-b976-6f967aa29956",
+      "name": "Iron",
+      "short_name": "Iron",
+      "activation_amount": 0.02,
+      "leakage": 0,
+      "max_amount": 0,
+      "group":"Nutrition",
+      "balance": 0,
+      "connections": [
+        {
+          "id": "409aa341-d135-4e16-b1a4-de4332cd86dd",
+          "weight": 1.2564,
+          "from_id": "8b312045-65dc-460f-b976-6f967aa29956",
+          "to_id": "3c158559-6eaf-4f14-b3ea-c2576a3b3bf9"
+        },
+        {
+          "id": "fd4d42e3-1b73-420a-b037-925604a7782b",
+          "weight": 1.4667,
+          "from_id": "8b312045-65dc-460f-b976-6f967aa29956",
+          "to_id": "01998aa0-597d-4d86-ae59-0d366be81799"
+        }
+      ]
+    },
+    {
+      "id": "a75bdc4b-788c-4aa8-9fca-252a65ffe4db",
+      "name": "Ferritin",
+      "short_name": "Iron(Ferratin)",
+      "activation_amount": 0.02,
+      "leakage": 0,
+      "max_amount": 0,
+      "group":"Nutrition",
+      "balance": 0,
+      "connections": [
+        {
+          "id": "ffde5b6a-709a-4186-b6e6-1ee2c5ccf784",
+          "weight": 4.0935,
+          "from_id": "a75bdc4b-788c-4aa8-9fca-252a65ffe4db",
+          "to_id": "d5e86995-948d-4e58-a7e1-153ff1c5c905"
+        },
+        {
+          "id": "c55560be-36a8-44a0-b87d-c8bc812db8f7",
+          "weight": -6.6884,
+          "from_id": "a75bdc4b-788c-4aa8-9fca-252a65ffe4db",
+          "to_id": "1b270e3c-8b26-4c41-ab33-06d1984fc066"
+        },
+        {
+          "id": "98f7ab72-7b26-4a14-b8fb-2bacced79ed7",
+          "weight": 5.5512,
+          "from_id": "a75bdc4b-788c-4aa8-9fca-252a65ffe4db",
+          "to_id": "137ab7b0-8777-49e7-8416-bea9be51c448"
+        },
+        {
+          "id": "f7cad863-628e-46f3-9f70-0c58059e1bb3",
+          "weight": 22.8593,
+          "from_id": "a75bdc4b-788c-4aa8-9fca-252a65ffe4db",
+          "to_id": "8b312045-65dc-460f-b976-6f967aa29956"
+        },
+        {
+          "id": "b4d3dae0-6dd8-44e0-af9c-c07701fd233b",
+          "weight": -10.7514,
+          "from_id": "a75bdc4b-788c-4aa8-9fca-252a65ffe4db",
+          "to_id": "cc4d96c8-f8d0-490c-90ba-4778a2d1c704"
+        },
+        {
+          "id": "e92563e3-e063-4332-bc9c-808991f5b52a",
+          "weight": 17.9256,
+          "from_id": "a75bdc4b-788c-4aa8-9fca-252a65ffe4db",
+          "to_id": "09da1258-c904-4ba9-a908-5956aa47a712"
+        },
+        {
+          "id": "b9fe9a22-9610-4104-b927-4c5e076c1bcf",
+          "weight": 14.273,
+          "from_id": "a75bdc4b-788c-4aa8-9fca-252a65ffe4db",
+          "to_id": "c0ef77f8-1079-49c5-90d3-e5f53fa09093"
+        },
+        {
+          "id": "95d84f4a-0958-4658-98aa-533febfa0a0c",
+          "weight": -9.5056,
+          "from_id": "a75bdc4b-788c-4aa8-9fca-252a65ffe4db",
+          "to_id": "e468d658-975c-45b6-a764-fe1c3836f2f0"
+        },
+        {
+          "id": "7a873f0a-cb7f-415a-a510-a4d301c9cee6",
+          "weight": -44.3575,
+          "from_id": "a75bdc4b-788c-4aa8-9fca-252a65ffe4db",
+          "to_id": "cebc4a88-6997-4b38-82e8-9d4ac057cfb9"
+        },
+        {
+          "id": "2bdbe97e-6f72-4e13-ae42-5a303db8e448",
+          "weight": 51.7054,
+          "from_id": "a75bdc4b-788c-4aa8-9fca-252a65ffe4db",
+          "to_id": "deb8bbc7-b21c-4ea0-915f-f62b53c743db"
+        }
+      ]
+    },
+    {
+      "id": "deb8bbc7-b21c-4ea0-915f-f62b53c743db",
+      "name": "Transferrin Saturation",
+      "short_name": "Iron(Transferrin sat.)",
+      "activation_amount": 0.02,
+      "leakage": 0,
+      "max_amount": 0,
+      "group":"Nutrition",
+      "balance": 0,
+      "connections": [
+        {
+          "id": "8b05eb88-e15b-4096-a549-4c1504484b74",
+          "weight": 3.2993,
+          "from_id": "deb8bbc7-b21c-4ea0-915f-f62b53c743db",
+          "to_id": "a75bdc4b-788c-4aa8-9fca-252a65ffe4db"
+        },
+        {
+          "id": "4747d632-5df4-4570-9770-e7ccc62cd44d",
+          "weight": -3.0231,
+          "from_id": "deb8bbc7-b21c-4ea0-915f-f62b53c743db",
+          "to_id": "1b270e3c-8b26-4c41-ab33-06d1984fc066"
+        },
+        {
+          "id": "e5ef67f3-6d74-4061-bde3-aa13ec64fd22",
+          "weight": 2.2541,
+          "from_id": "deb8bbc7-b21c-4ea0-915f-f62b53c743db",
+          "to_id": "09da1258-c904-4ba9-a908-5956aa47a712"
+        },
+        {
+          "id": "be58af53-218b-42da-9c64-d318d71f1173",
+          "weight": 2.1646,
+          "from_id": "deb8bbc7-b21c-4ea0-915f-f62b53c743db",
+          "to_id": "c0ef77f8-1079-49c5-90d3-e5f53fa09093"
+        },
+        {
+          "id": "e52ad94b-116c-4452-bc6f-9e8e5f5a94ac",
+          "weight": -1.2,
+          "from_id": "deb8bbc7-b21c-4ea0-915f-f62b53c743db",
+          "to_id": "e8666a6d-e324-45e3-9eba-ab9f2509eebe"
+        },
+        {
+          "id": "70fc0a7f-b385-4acc-aeab-759fd7e2b837",
+          "weight": -1.1195,
+          "from_id": "deb8bbc7-b21c-4ea0-915f-f62b53c743db",
+          "to_id": "69a02a74-ab46-42e5-951e-914f79d6de5f"
+        }
+      ]
+    },
+    {
+      "id": "cebc4a88-6997-4b38-82e8-9d4ac057cfb9",
+      "name": "Transferrin",
+      "short_name": "Iron(Transferrin)",
+      "activation_amount": 0.02,
+      "leakage": 0,
+      "max_amount": 0,
+      "group":"Nutrition",
+      "balance": 0,
+      "connections": [
+        {
+          "id": "bddde554-9f60-48a7-8ea2-dc3e4ce7d01d",
+          "weight": -3.3774,
+          "from_id": "cebc4a88-6997-4b38-82e8-9d4ac057cfb9",
+          "to_id": "137ab7b0-8777-49e7-8416-bea9be51c448"
+        },
+        {
+          "id": "c26197fe-97e3-4dc1-bbeb-4fbf5d169ca8",
+          "weight": 1.1512,
+          "from_id": "cebc4a88-6997-4b38-82e8-9d4ac057cfb9",
+          "to_id": "e8666a6d-e324-45e3-9eba-ab9f2509eebe"
+        },
+        {
+          "id": "8932f772-a139-43d8-a185-d27012693c8d",
+          "weight": -1.4303,
+          "from_id": "cebc4a88-6997-4b38-82e8-9d4ac057cfb9",
+          "to_id": "deb8bbc7-b21c-4ea0-915f-f62b53c743db"
+        }
+      ]
+    },
+    {
+      "id": "06148d1e-92df-49ef-9eb0-15a834f7bb1f",
+      "name": "Urate",
+      "short_name": "Urate",
+      "activation_amount": 0.02,
+      "leakage": 0,
+      "max_amount": 0,
+      "group":"Biochemistry",
+      "balance": 0,
+      "connections": [
+        {
+          "id": "9f89dcc0-621b-403d-9bb4-16a862212957",
+          "weight": 3.4631,
+          "from_id": "06148d1e-92df-49ef-9eb0-15a834f7bb1f",
+          "to_id": "91784e95-0a31-44ad-84ea-4b55726c2a59"
+        },
+        {
+          "id": "0a28274f-d952-4272-8598-76d710e29b17",
+          "weight": 1.3121,
+          "from_id": "06148d1e-92df-49ef-9eb0-15a834f7bb1f",
+          "to_id": "d5e86995-948d-4e58-a7e1-153ff1c5c905"
+        },
+        {
+          "id": "218915f3-99e9-4a5f-a1a4-48aea98e10b5",
+          "weight": 1.1392,
+          "from_id": "06148d1e-92df-49ef-9eb0-15a834f7bb1f",
+          "to_id": "01998aa0-597d-4d86-ae59-0d366be81799"
+        },
+        {
+          "id": "b055b3ed-591e-4178-9cf2-a3fd291ac072",
+          "weight": 1.318,
+          "from_id": "06148d1e-92df-49ef-9eb0-15a834f7bb1f",
+          "to_id": "e8666a6d-e324-45e3-9eba-ab9f2509eebe"
+        }
+      ]
+    },
+    {
+      "id": "9b453101-515b-4f51-b426-24e9cceef386",
+      "name": "Sitting height ratio",
+      "short_name": "Head/Trunk length(SHR)",
+      "activation_amount": 0.02,
+      "leakage": 0,
+      "max_amount": 0,
+      "group":"Physical",
+      "balance": 0,
+      "connections": [
+        {
+          "id": "c8381fdb-92c0-4ceb-82da-f8edc9d15479",
+          "weight": -15.2452,
+          "from_id": "9b453101-515b-4f51-b426-24e9cceef386",
+          "to_id": "137ab7b0-8777-49e7-8416-bea9be51c448"
+        }
+      ]
+    },
+    {
+      "id": "e1cec5d5-7e91-48e6-96e6-8bfbe698f27b",
+      "name": "Zinc",
+      "short_name": "Zinc",
+      "activation_amount": 0.02,
+      "leakage": 0,
+      "max_amount": 0,
+      "group":"Nutrition",
+      "balance": 0,
+      "connections": [
+        {
+          "id": "72d38f9f-fd44-43f0-8b44-d39c0f2110ed",
+          "weight": 1.1378,
+          "from_id": "e1cec5d5-7e91-48e6-96e6-8bfbe698f27b",
+          "to_id": "c0ef77f8-1079-49c5-90d3-e5f53fa09093"
+        }
+      ]
+    },
+    {
+      "id": "2da09bab-551e-492f-ae7a-e4d123311874",
+      "name": "Birth weight",
+      "short_name": "Weight(birth)",
+      "activation_amount": 0.02,
+      "leakage": 0,
+      "max_amount": 0,
+      "group":"Physical",
+      "balance": 0,
+      "connections": [
+        {
+          "id": "422b37a8-fa01-40d3-8341-63948982e928",
+          "weight": 1.1423,
+          "from_id": "2da09bab-551e-492f-ae7a-e4d123311874",
+          "to_id": "ca5e7a36-5dd4-45ab-bec8-8d4c29971b5f"
+        },
+        {
+          "id": "c42b8e63-3e6d-4fe6-927f-a72524fa985b",
+          "weight": -1.5585,
+          "from_id": "2da09bab-551e-492f-ae7a-e4d123311874",
+          "to_id": "ed3f073e-4af5-4a87-bc80-997b64c59869"
+        },
+        {
+          "id": "7106fa0e-cb23-41bb-95ab-32f8e3136b1b",
+          "weight": 1.2182,
+          "from_id": "2da09bab-551e-492f-ae7a-e4d123311874",
+          "to_id": "137ab7b0-8777-49e7-8416-bea9be51c448"
+        },
+        {
+          "id": "7497d4f7-be7c-4fa4-b99e-2105263f1f58",
+          "weight": -1.5532,
+          "from_id": "2da09bab-551e-492f-ae7a-e4d123311874",
+          "to_id": "cc4d96c8-f8d0-490c-90ba-4778a2d1c704"
+        },
+        {
+          "id": "64108f22-1514-42da-8dec-619c9fc7f46f",
+          "weight": -2.9499,
+          "from_id": "2da09bab-551e-492f-ae7a-e4d123311874",
+          "to_id": "93c4b46e-f1a4-4b2b-af09-05e5e2c2e41b"
+        },
+        {
+          "id": "ffb80533-c47f-469d-bbad-cec69c441b6b",
+          "weight": 1.8981,
+          "from_id": "2da09bab-551e-492f-ae7a-e4d123311874",
+          "to_id": "d15aca22-d67b-40df-a56a-a573fcb8bd48"
+        }
+      ]
+    },
+    {
+      "id": "7ff00169-0f9e-4b74-a558-acc9ec670035",
+      "name": "Sleep duration",
+      "short_name": "Sleep(hrs)",
+      "activation_amount": 0.02,
+      "leakage": 0,
+      "max_amount": 0,
+      "group":"Behaviour",
+      "balance": 0,
+      "connections": [
+        {
+          "id": "1cb3c642-ef93-491e-94ea-38d6e840d71c",
+          "weight": 1.0745,
+          "from_id": "7ff00169-0f9e-4b74-a558-acc9ec670035",
+          "to_id": "9866d4da-6570-4080-8fe9-e391c1c35f26"
+        }
+      ]
+    },
+    {
+      "id": "eebfb8de-44b0-4491-86bd-eb50c7fdb867",
+      "name": "Father's age at death",
+      "short_name": "Paternal longevity(age)",
+      "activation_amount": 0.02,
+      "leakage": 0,
+      "max_amount": 0,
+      "group":"Family",
+      "balance": 0,
+      "connections": [
+        {
+          "id": "9eec8da9-bfb0-4f51-ac01-f31ac91e5d8f",
+          "weight": -5.4133,
+          "from_id": "eebfb8de-44b0-4491-86bd-eb50c7fdb867",
+          "to_id": "403840ae-c20d-473b-9c44-91f60e139732"
+        },
+        {
+          "id": "60dffda2-5def-4d51-b4c7-37e72fd23d25",
+          "weight": -3.5366,
+          "from_id": "eebfb8de-44b0-4491-86bd-eb50c7fdb867",
+          "to_id": "4312cc24-cd8e-4f42-a302-57628e5921d4"
+        },
+        {
+          "id": "734444bb-ecd7-4b12-a672-62634c110110",
+          "weight": -2.4472,
+          "from_id": "eebfb8de-44b0-4491-86bd-eb50c7fdb867",
+          "to_id": "06ee3a11-bbc6-42f6-aec6-69ec14d0bab3"
+        },
+        {
+          "id": "5baa02f4-7d06-4223-b1ff-9a6e446171ff",
+          "weight": -3.8206,
+          "from_id": "eebfb8de-44b0-4491-86bd-eb50c7fdb867",
+          "to_id": "00a700d1-c572-4218-8b28-3f1c70a7d196"
+        },
+        {
+          "id": "c9e2f07a-525b-45f9-aca6-06f294ad9747",
+          "weight": -2.3784,
+          "from_id": "eebfb8de-44b0-4491-86bd-eb50c7fdb867",
+          "to_id": "8e8c2fb1-fb9a-403d-a749-9cdfee445f22"
+        }
+      ]
+    },
+    {
+      "id": "ca5e7a36-5dd4-45ab-bec8-8d4c29971b5f",
+      "name": "Age at menarche",
+      "short_name": "Age at menarche",
+      "activation_amount": 0.02,
+      "leakage": 0,
+      "max_amount": 0,
+      "group":"Physical",
+      "balance": 0,
+      "connections": [
+        {
+          "id": "dc9ea2e4-a63a-4841-9519-3e724a3c4eff",
+          "weight": -1.383,
+          "from_id": "ca5e7a36-5dd4-45ab-bec8-8d4c29971b5f",
+          "to_id": "931a0110-beb5-4476-9165-c4680718743e"
+        },
+        {
+          "id": "7132ca2f-e63f-4eed-bbb3-08804205a0eb",
+          "weight": 10.7499,
+          "from_id": "ca5e7a36-5dd4-45ab-bec8-8d4c29971b5f",
+          "to_id": "403840ae-c20d-473b-9c44-91f60e139732"
+        },
+        {
+          "id": "5475c3e6-ede5-40a7-9dfb-8089e66b8578",
+          "weight": 1.4215,
+          "from_id": "ca5e7a36-5dd4-45ab-bec8-8d4c29971b5f",
+          "to_id": "124b2b07-8f3e-42ea-af2a-9b380bad810c"
+        },
+        {
+          "id": "bbdc6929-26e9-4319-b5a8-24b6151ddf7a",
+          "weight": 2.555,
+          "from_id": "ca5e7a36-5dd4-45ab-bec8-8d4c29971b5f",
+          "to_id": "95c844ea-df97-4c14-952f-cbe698f4dc29"
+        },
+        {
+          "id": "a3ee4ad2-13ab-4a39-a736-2a4c9c4d2c7b",
+          "weight": 1.1348,
+          "from_id": "ca5e7a36-5dd4-45ab-bec8-8d4c29971b5f",
+          "to_id": "137ab7b0-8777-49e7-8416-bea9be51c448"
+        },
+        {
+          "id": "f52a32ea-146f-4cd9-b1db-a4f7f63a0b2f",
+          "weight": 2.2111,
+          "from_id": "ca5e7a36-5dd4-45ab-bec8-8d4c29971b5f",
+          "to_id": "06ee3a11-bbc6-42f6-aec6-69ec14d0bab3"
+        },
+        {
+          "id": "7ef2d297-05d2-49cc-bb89-ad31727497af",
+          "weight": 1.2862,
+          "from_id": "ca5e7a36-5dd4-45ab-bec8-8d4c29971b5f",
+          "to_id": "8e8c2fb1-fb9a-403d-a749-9cdfee445f22"
+        },
+        {
+          "id": "30fda9b4-5926-4455-8358-ba79cb91beec",
+          "weight": 1.1563,
+          "from_id": "ca5e7a36-5dd4-45ab-bec8-8d4c29971b5f",
+          "to_id": "96918891-7093-456b-bb40-099c775c1df7"
+        }
+      ]
+    },
+    {
+      "id": "403840ae-c20d-473b-9c44-91f60e139732",
+      "name": "Childhood obesity",
+      "short_name": "Childhood obesity",
+      "activation_amount": 0.02,
+      "leakage": 0,
+      "max_amount": 0,
+      "group":"Physical",
+      "balance": 0,
+      "connections": [
+        {
+          "id": "c9d6cc2c-7454-4179-9c91-e371008f458f",
+          "weight": -2.5111,
+          "from_id": "403840ae-c20d-473b-9c44-91f60e139732",
+          "to_id": "ca5e7a36-5dd4-45ab-bec8-8d4c29971b5f"
+        },
+        {
+          "id": "bf620cfc-21e3-4f65-a7a2-d760f9534fc4",
+          "weight": 11.887,
+          "from_id": "403840ae-c20d-473b-9c44-91f60e139732",
+          "to_id": "11debed3-7d57-4983-a886-e24e64a096e0"
+        },
+        {
+          "id": "2ff47c22-1ae3-47f9-896a-826c9df9fc0c",
+          "weight": 78.6061,
+          "from_id": "403840ae-c20d-473b-9c44-91f60e139732",
+          "to_id": "d3c02659-5d7e-479c-a8db-06b01b60c810"
+        },
+        {
+          "id": "16b890c0-68c6-47a5-8428-6f43dcff42aa",
+          "weight": -3.322,
+          "from_id": "403840ae-c20d-473b-9c44-91f60e139732",
+          "to_id": "eebfb8de-44b0-4491-86bd-eb50c7fdb867"
+        },
+        {
+          "id": "f6458476-7aca-419f-87b1-653da1bbac14",
+          "weight": -5.0443,
+          "from_id": "403840ae-c20d-473b-9c44-91f60e139732",
+          "to_id": "3d0b3ffe-af3f-4c8e-91e0-f8a0ac001026"
+        },
+        {
+          "id": "011ba112-793d-4233-97f0-d000d437413f",
+          "weight": -3.1284,
+          "from_id": "403840ae-c20d-473b-9c44-91f60e139732",
+          "to_id": "137ab7b0-8777-49e7-8416-bea9be51c448"
+        },
+        {
+          "id": "8b846896-a5e8-4b0d-a964-656fd6999c46",
+          "weight": 30.4812,
+          "from_id": "403840ae-c20d-473b-9c44-91f60e139732",
+          "to_id": "37a11f81-45ca-4e64-835b-cef1f7c0e7cc"
+        },
+        {
+          "id": "f46ebd8f-dcbc-4765-894f-79d742e69933",
+          "weight": 24.4756,
+          "from_id": "403840ae-c20d-473b-9c44-91f60e139732",
+          "to_id": "efc52e16-908a-40fd-a451-a2e9ec9e857b"
+        },
+        {
+          "id": "3960e719-761d-4cfd-92da-3a5dcad1caba",
+          "weight": 19.7392,
+          "from_id": "403840ae-c20d-473b-9c44-91f60e139732",
+          "to_id": "dad287be-f49c-4e56-9ae6-a53f66fef626"
+        },
+        {
+          "id": "f0e2419f-7e7c-4419-bc95-b00aad4ec8a9",
+          "weight": 8.6524,
+          "from_id": "403840ae-c20d-473b-9c44-91f60e139732",
+          "to_id": "e4e726ca-04b7-44c1-9314-b687bfa5b223"
+        },
+        {
+          "id": "88385637-5a3f-4673-95cc-38efa81a14d6",
+          "weight": 18.6155,
+          "from_id": "403840ae-c20d-473b-9c44-91f60e139732",
+          "to_id": "6b6c1c52-6d82-41f3-963c-56173a244a29"
+        },
+        {
+          "id": "e2afe0e2-24e2-4f8e-aea0-9a48cc2d29a7",
+          "weight": 7.1162,
+          "from_id": "403840ae-c20d-473b-9c44-91f60e139732",
+          "to_id": "96918891-7093-456b-bb40-099c775c1df7"
+        },
+        {
+          "id": "dc73b71b-28fd-49f5-8152-38486979deb4",
+          "weight": 3.2121,
+          "from_id": "403840ae-c20d-473b-9c44-91f60e139732",
+          "to_id": "06148d1e-92df-49ef-9eb0-15a834f7bb1f"
+        },
+        {
+          "id": "e0eecdff-0c26-433a-9abc-e712165af346",
+          "weight": 38.9445,
+          "from_id": "403840ae-c20d-473b-9c44-91f60e139732",
+          "to_id": "d15aca22-d67b-40df-a56a-a573fcb8bd48"
+        },
+        {
+          "id": "6b90b68e-a1a4-4880-b78d-5d8a22b5c3f3",
+          "weight": 15.1066,
+          "from_id": "403840ae-c20d-473b-9c44-91f60e139732",
+          "to_id": "16efa6bd-6c5b-4bcc-a5cb-4a66f44a6eb4"
+        }
+      ]
+    },
+    {
+      "id": "f0975286-d6eb-4815-b4f5-bb4d5f855009",
+      "name": "Microalbuminuria",
+      "short_name": "Microalbuminuria",
+      "activation_amount": 0.02,
+      "leakage": 0,
+      "max_amount": 0,
+      "group":"Disease",
+      "balance": 0,
+      "connections": [
+        {
+          "id": "f9b34325-7ccf-4fd2-ba5d-610e6cf6e2ec",
+          "weight": 9.8662,
+          "from_id": "f0975286-d6eb-4815-b4f5-bb4d5f855009",
+          "to_id": "ca5e7a36-5dd4-45ab-bec8-8d4c29971b5f"
+        },
+        {
+          "id": "c9957c19-e767-4689-9e72-34674a595009",
+          "weight": 19.9685,
+          "from_id": "f0975286-d6eb-4815-b4f5-bb4d5f855009",
+          "to_id": "403840ae-c20d-473b-9c44-91f60e139732"
+        },
+        {
+          "id": "70fcaeb2-cf52-4ec5-aa21-bbdb0be71566",
+          "weight": 5.37,
+          "from_id": "f0975286-d6eb-4815-b4f5-bb4d5f855009",
+          "to_id": "06ee3a11-bbc6-42f6-aec6-69ec14d0bab3"
+        },
+        {
+          "id": "5b0da33e-fa6a-4888-894d-2049c87ff956",
+          "weight": 13.9102,
+          "from_id": "f0975286-d6eb-4815-b4f5-bb4d5f855009",
+          "to_id": "00a700d1-c572-4218-8b28-3f1c70a7d196"
+        },
+        {
+          "id": "6f5286df-fa37-4dc3-9f0f-3e18ca2b4f33",
+          "weight": 7.6323,
+          "from_id": "f0975286-d6eb-4815-b4f5-bb4d5f855009",
+          "to_id": "8e8c2fb1-fb9a-403d-a749-9cdfee445f22"
+        },
+        {
+          "id": "fda3d0f1-44a1-444e-94db-023986c27d9a",
+          "weight": 42.8367,
+          "from_id": "f0975286-d6eb-4815-b4f5-bb4d5f855009",
+          "to_id": "4bd11360-b043-4a2d-8c8b-b0b782d3b76f"
+        },
+        {
+          "id": "500e2e4e-cfea-420b-b97a-4664a62eae5e",
+          "weight": 2.0063,
+          "from_id": "f0975286-d6eb-4815-b4f5-bb4d5f855009",
+          "to_id": "a6eb91cd-9391-415b-b9f2-148b57e0b552"
+        }
+      ]
+    },
+    {
+      "id": "f652851d-1cdf-4af0-879c-d53f5d14b2e3",
+      "name": "Serum creatinine (eGFRcrea)",
+      "short_name": "Creatanine(eGFR)",
+      "activation_amount": 0.02,
+      "leakage": 0,
+      "max_amount": 0,
+      "group":"Biochemistry",
+      "balance": 0,
+      "connections": [
+        {
+          "id": "2b39a7bb-f8b0-4554-9fee-70199652024f",
+          "weight": 3.1361,
+          "from_id": "f652851d-1cdf-4af0-879c-d53f5d14b2e3",
+          "to_id": "42e488bb-08d9-4ba9-b76d-7560144ddd6a"
+        }
+      ]
+    },
+    {
+      "id": "42e488bb-08d9-4ba9-b76d-7560144ddd6a",
+      "name": "Serum cystatin C (eGFRcys)",
+      "short_name": "Cystatin C(eGFR)",
+      "activation_amount": 0.02,
+      "leakage": 0,
+      "max_amount": 0,
+      "group":"Biochemistry",
+      "balance": 0,
+      "connections": [
+        {
+          "id": "f34d644d-2f57-45a2-9003-f75b4bd0c045",
+          "weight": -2.8027,
+          "from_id": "42e488bb-08d9-4ba9-b76d-7560144ddd6a",
+          "to_id": "ed3f073e-4af5-4a87-bc80-997b64c59869"
+        },
+        {
+          "id": "5dab862d-c88b-4271-97ab-6a12ae0a8464",
+          "weight": -3.3026,
+          "from_id": "42e488bb-08d9-4ba9-b76d-7560144ddd6a",
+          "to_id": "d5e86995-948d-4e58-a7e1-153ff1c5c905"
+        },
+        {
+          "id": "0a983a7f-19ad-425b-b8d9-8dc241eb2d3f",
+          "weight": -1.3826,
+          "from_id": "42e488bb-08d9-4ba9-b76d-7560144ddd6a",
+          "to_id": "399c25c1-bce9-4a69-8b5b-40b86598604a"
+        },
+        {
+          "id": "2b3f621d-5e3b-4b5c-993e-f2a01ebfc8f4",
+          "weight": -3.1346,
+          "from_id": "42e488bb-08d9-4ba9-b76d-7560144ddd6a",
+          "to_id": "01998aa0-597d-4d86-ae59-0d366be81799"
+        },
+        {
+          "id": "9b3118e1-c1f5-4df6-bd8c-ccd6ce7e38c9",
+          "weight": -3.5554,
+          "from_id": "42e488bb-08d9-4ba9-b76d-7560144ddd6a",
+          "to_id": "fb91d08b-6d98-4915-aed6-b3f13a89b12a"
+        },
+        {
+          "id": "98d3f8b7-8989-4a1c-a8f4-f544fa71e5bb",
+          "weight": -1.2902,
+          "from_id": "42e488bb-08d9-4ba9-b76d-7560144ddd6a",
+          "to_id": "4d1edfe9-b8ec-4f2b-8b50-fa6ff1373457"
+        },
+        {
+          "id": "37927920-088a-40de-9b12-2f1413b50e71",
+          "weight": 24.8877,
+          "from_id": "42e488bb-08d9-4ba9-b76d-7560144ddd6a",
+          "to_id": "f652851d-1cdf-4af0-879c-d53f5d14b2e3"
+        },
+        {
+          "id": "c56abe10-fac4-4ca5-b4a2-3e9a28d2e789",
+          "weight": -3.4034,
+          "from_id": "42e488bb-08d9-4ba9-b76d-7560144ddd6a",
+          "to_id": "06148d1e-92df-49ef-9eb0-15a834f7bb1f"
+        }
+      ]
+    },
+    {
+      "id": "a6eb91cd-9391-415b-b9f2-148b57e0b552",
+      "name": "Urinary albumin-to-creatinine ratio",
+      "short_name": "Albumin:Creatinine ratio",
+      "activation_amount": 0.02,
+      "leakage": 0,
+      "max_amount": 0,
+      "group":"Biochemistry",
+      "balance": 0,
+      "connections": [
+        {
+          "id": "0ece6b81-e70b-4fff-8c2b-f3824768091d",
+          "weight": 2.037,
+          "from_id": "a6eb91cd-9391-415b-b9f2-148b57e0b552",
+          "to_id": "f0975286-d6eb-4815-b4f5-bb4d5f855009"
+        }
+      ]
+    },
+    {
+      "id": "db6abbcc-8e63-49ae-b1fe-2ad3013dec23",
+      "name": "Conscientiousness",
+      "short_name": "Conscientiousness",
+      "activation_amount": 0.02,
+      "leakage": 0,
+      "max_amount": 0,
+      "group":"Psychology",
+      "balance": 0,
+      "connections": [
+        {
+          "id": "458546a5-e1e2-48db-acb1-8e29c298fcff",
+          "weight": 1.2211,
+          "from_id": "db6abbcc-8e63-49ae-b1fe-2ad3013dec23",
+          "to_id": "ca5e7a36-5dd4-45ab-bec8-8d4c29971b5f"
+        },
+        {
+          "id": "3c019596-3302-4b3a-8c84-d0b3cc816846",
+          "weight": 1.3591,
+          "from_id": "db6abbcc-8e63-49ae-b1fe-2ad3013dec23",
+          "to_id": "25c49796-8e23-4a3d-9a23-9a63b007d4e3"
+        },
+        {
+          "id": "6bf91358-aad8-4e76-895d-0f2c9071d971",
+          "weight": 1.097,
+          "from_id": "db6abbcc-8e63-49ae-b1fe-2ad3013dec23",
+          "to_id": "17d023cc-8385-4cf2-8af3-95970e6921e5"
+        },
+        {
+          "id": "e4103c26-90a2-436f-b050-1c9f32586e63",
+          "weight": 1.1656,
+          "from_id": "db6abbcc-8e63-49ae-b1fe-2ad3013dec23",
+          "to_id": "4f831927-79e5-4bb7-bcef-d1d234a85bc4"
+        },
+        {
+          "id": "d89830a5-667e-45b4-9c20-1aea939590ce",
+          "weight": 1.2135,
+          "from_id": "db6abbcc-8e63-49ae-b1fe-2ad3013dec23",
+          "to_id": "9866d4da-6570-4080-8fe9-e391c1c35f26"
+        },
+        {
+          "id": "df76eb5f-a295-42b3-9c0c-d10f50579783",
+          "weight": 1.263,
+          "from_id": "db6abbcc-8e63-49ae-b1fe-2ad3013dec23",
+          "to_id": "9866d4da-6570-4080-8fe9-e391c1c35f26"
+        }
+      ]
+    },
+    {
+      "id": "d3c02659-5d7e-479c-a8db-06b01b60c810",
+      "name": "Body mass index",
+      "short_name": "BMI",
+      "activation_amount": 0.02,
+      "leakage": 0,
+      "max_amount": 0,
+      "group":"Physical",
+      "balance": 0,
+      "connections": [
+        {
+          "id": "1ec6e7c0-9905-4e6e-b0d4-4ef1d66b1dc3",
+          "weight": -2.5898,
+          "from_id": "d3c02659-5d7e-479c-a8db-06b01b60c810",
+          "to_id": "ca5e7a36-5dd4-45ab-bec8-8d4c29971b5f"
+        },
+        {
+          "id": "587bc33b-0370-4c4a-9dbb-f084802a3c8b",
+          "weight": 1.101,
+          "from_id": "d3c02659-5d7e-479c-a8db-06b01b60c810",
+          "to_id": "2da09bab-551e-492f-ae7a-e4d123311874"
+        },
+        {
+          "id": "57434828-078a-4781-92b7-ad50c4ee64ca",
+          "weight": 5.8853,
+          "from_id": "d3c02659-5d7e-479c-a8db-06b01b60c810",
+          "to_id": "11debed3-7d57-4983-a886-e24e64a096e0"
+        },
+        {
+          "id": "e04b359d-f9df-4bf0-a780-50163b05e2ba",
+          "weight": 8.9072,
+          "from_id": "d3c02659-5d7e-479c-a8db-06b01b60c810",
+          "to_id": "403840ae-c20d-473b-9c44-91f60e139732"
+        },
+        {
+          "id": "29747055-bccf-41a6-9837-1599ab37e15d",
+          "weight": 1.3148,
+          "from_id": "d3c02659-5d7e-479c-a8db-06b01b60c810",
+          "to_id": "4312cc24-cd8e-4f42-a302-57628e5921d4"
+        },
+        {
+          "id": "b7337e45-78e7-4979-9f8b-2c42da3e21e5",
+          "weight": 12.2307,
+          "from_id": "d3c02659-5d7e-479c-a8db-06b01b60c810",
+          "to_id": "b9492bf7-14d1-43b4-a3bc-c033f7c5dae7"
+        },
+        {
+          "id": "e47461f7-8b74-45a9-86bb-c104df49564f",
+          "weight": 5.143,
+          "from_id": "d3c02659-5d7e-479c-a8db-06b01b60c810",
+          "to_id": "f2e26dea-8775-466c-a90c-ae9e3b5895a2"
+        },
+        {
+          "id": "e36f18ca-ffa1-4243-bff0-4367c4a7780f",
+          "weight": 1.0396,
+          "from_id": "d3c02659-5d7e-479c-a8db-06b01b60c810",
+          "to_id": "91784e95-0a31-44ad-84ea-4b55726c2a59"
+        },
+        {
+          "id": "c71a394d-ef43-4973-97e5-587ca2849f85",
+          "weight": -1.2513,
+          "from_id": "d3c02659-5d7e-479c-a8db-06b01b60c810",
+          "to_id": "3d0b3ffe-af3f-4c8e-91e0-f8a0ac001026"
+        },
+        {
+          "id": "be2dbaa8-bb07-4e1b-8371-14eeb23d7c31",
+          "weight": 14.5662,
+          "from_id": "d3c02659-5d7e-479c-a8db-06b01b60c810",
+          "to_id": "37a11f81-45ca-4e64-835b-cef1f7c0e7cc"
+        },
+        {
+          "id": "d4d1a2e0-a9b4-4662-8074-c9df05e83697",
+          "weight": 2.9025,
+          "from_id": "d3c02659-5d7e-479c-a8db-06b01b60c810",
+          "to_id": "a6d51b3a-34c0-4b06-9fcb-f69a6f4a2b44"
+        },
+        {
+          "id": "7ce421db-561a-41fe-ab51-026757f03092",
+          "weight": 15.438,
+          "from_id": "d3c02659-5d7e-479c-a8db-06b01b60c810",
+          "to_id": "efc52e16-908a-40fd-a451-a2e9ec9e857b"
+        },
+        {
+          "id": "93a77ce6-f9a3-4bf9-9f33-9d72e6cf77d1",
+          "weight": 5.9234,
+          "from_id": "d3c02659-5d7e-479c-a8db-06b01b60c810",
+          "to_id": "dad287be-f49c-4e56-9ae6-a53f66fef626"
+        },
+        {
+          "id": "e6c74746-deba-4fef-9ec9-e3f0d9fd1492",
+          "weight": 4.5251,
+          "from_id": "d3c02659-5d7e-479c-a8db-06b01b60c810",
+          "to_id": "e4e726ca-04b7-44c1-9314-b687bfa5b223"
+        },
+        {
+          "id": "8842a17f-a3e5-470e-9499-9514c045cec3",
+          "weight": 4.3228,
+          "from_id": "d3c02659-5d7e-479c-a8db-06b01b60c810",
+          "to_id": "6b6c1c52-6d82-41f3-963c-56173a244a29"
+        },
+        {
+          "id": "3991d067-6223-4e17-b485-714d6b634aa6",
+          "weight": -1.9067,
+          "from_id": "d3c02659-5d7e-479c-a8db-06b01b60c810",
+          "to_id": "42e488bb-08d9-4ba9-b76d-7560144ddd6a"
+        },
+        {
+          "id": "5b4555ec-863f-422f-9b20-cf42ea3a1bea",
+          "weight": 2.4542,
+          "from_id": "d3c02659-5d7e-479c-a8db-06b01b60c810",
+          "to_id": "faedbbea-69de-4237-be0b-0a7e3dada135"
+        },
+        {
+          "id": "323fb478-a3e4-4ab0-90f2-09354fb005f3",
+          "weight": 2.6792,
+          "from_id": "d3c02659-5d7e-479c-a8db-06b01b60c810",
+          "to_id": "96918891-7093-456b-bb40-099c775c1df7"
+        },
+        {
+          "id": "9072a6a5-0fae-428d-8c6a-762d5780f099",
+          "weight": 1.8304,
+          "from_id": "d3c02659-5d7e-479c-a8db-06b01b60c810",
+          "to_id": "06148d1e-92df-49ef-9eb0-15a834f7bb1f"
+        },
+        {
+          "id": "18c8120e-3fa8-491c-b3bd-b7b10299f09e",
+          "weight": 16.5961,
+          "from_id": "d3c02659-5d7e-479c-a8db-06b01b60c810",
+          "to_id": "d15aca22-d67b-40df-a56a-a573fcb8bd48"
+        },
+        {
+          "id": "57acb8da-34de-4719-a7f3-98e759419b06",
+          "weight": 12.3514,
+          "from_id": "d3c02659-5d7e-479c-a8db-06b01b60c810",
+          "to_id": "16efa6bd-6c5b-4bcc-a5cb-4a66f44a6eb4"
+        }
+      ]
+    },
+    {
+      "id": "d5e86995-948d-4e58-a7e1-153ff1c5c905",
+      "name": "Haemoglobin concentration",
+      "short_name": "Haemoglobin(conc.)",
+      "activation_amount": 0.02,
+      "leakage": 0,
+      "max_amount": 0,
+      "group":"Biochemistry",
+      "balance": 0,
+      "connections": [
+        {
+          "id": "b8aa183f-4a82-43e0-bb10-99c8fbc704c4",
+          "weight": -1.6071,
+          "from_id": "d5e86995-948d-4e58-a7e1-153ff1c5c905",
+          "to_id": "1b270e3c-8b26-4c41-ab33-06d1984fc066"
+        },
+        {
+          "id": "87822358-ad92-48fb-ab91-deffafd6939c",
+          "weight": -6.0118,
+          "from_id": "d5e86995-948d-4e58-a7e1-153ff1c5c905",
+          "to_id": "cc4d96c8-f8d0-490c-90ba-4778a2d1c704"
+        },
+        {
+          "id": "d95f3fbb-376e-4862-8c39-93f9bb4c3668",
+          "weight": 3.1618,
+          "from_id": "d5e86995-948d-4e58-a7e1-153ff1c5c905",
+          "to_id": "01998aa0-597d-4d86-ae59-0d366be81799"
+        },
+        {
+          "id": "03b96006-12f5-454e-8c53-e1d4b95fcead",
+          "weight": 2.7351,
+          "from_id": "d5e86995-948d-4e58-a7e1-153ff1c5c905",
+          "to_id": "e8666a6d-e324-45e3-9eba-ab9f2509eebe"
+        }
+      ]
+    },
+    {
+      "id": "09da1258-c904-4ba9-a908-5956aa47a712",
+      "name": "Mean cell haemoglobin",
+      "short_name": "Haemoglobin(mean cell)",
+      "activation_amount": 0.02,
+      "leakage": 0,
+      "max_amount": 0,
+      "group":"Biochemistry",
+      "balance": 0,
+      "connections": [
+        {
+          "id": "7fe70d4f-2f04-45a4-a9ea-1baca9ce049f",
+          "weight": -1.154,
+          "from_id": "09da1258-c904-4ba9-a908-5956aa47a712",
+          "to_id": "cc4d96c8-f8d0-490c-90ba-4778a2d1c704"
+        },
+        {
+          "id": "d0bcc963-993a-47d3-9ce7-07f7f2fd0808",
+          "weight": 2.1305,
+          "from_id": "09da1258-c904-4ba9-a908-5956aa47a712",
+          "to_id": "3c158559-6eaf-4f14-b3ea-c2576a3b3bf9"
+        },
+        {
+          "id": "83853ed4-2adc-4db8-8ed4-6ada67968fb0",
+          "weight": 16.4991,
+          "from_id": "09da1258-c904-4ba9-a908-5956aa47a712",
+          "to_id": "c0ef77f8-1079-49c5-90d3-e5f53fa09093"
+        },
+        {
+          "id": "13bf7167-bdf3-47e3-9404-fed70fcea3a7",
+          "weight": -1.5264,
+          "from_id": "09da1258-c904-4ba9-a908-5956aa47a712",
+          "to_id": "e8666a6d-e324-45e3-9eba-ab9f2509eebe"
+        }
+      ]
+    },
+    {
+      "id": "3c158559-6eaf-4f14-b3ea-c2576a3b3bf9",
+      "name": "Mean cell haemoglobin concentration",
+      "short_name": "Haemoglobin(mean cell conc.)",
+      "activation_amount": 0.02,
+      "leakage": 0,
+      "max_amount": 0,
+      "group":"Biochemistry",
+      "balance": 0,
+      "connections": [
+        {
+          "id": "4e274e4b-1a2f-48bd-9fa7-7a479458e8d4",
+          "weight": -1.9193,
+          "from_id": "3c158559-6eaf-4f14-b3ea-c2576a3b3bf9",
+          "to_id": "1b270e3c-8b26-4c41-ab33-06d1984fc066"
+        },
+        {
+          "id": "f83b171b-487a-48e2-aa84-2447c0d80793",
+          "weight": -1.3334,
+          "from_id": "3c158559-6eaf-4f14-b3ea-c2576a3b3bf9",
+          "to_id": "cc4d96c8-f8d0-490c-90ba-4778a2d1c704"
+        },
+        {
+          "id": "e79597c4-3798-46b1-9c7b-bd60966244e3",
+          "weight": -2.266,
+          "from_id": "3c158559-6eaf-4f14-b3ea-c2576a3b3bf9",
+          "to_id": "c0ef77f8-1079-49c5-90d3-e5f53fa09093"
+        },
+        {
+          "id": "45552587-4fe8-4377-9bab-f7ec2b85d16c",
+          "weight": -2.2315,
+          "from_id": "3c158559-6eaf-4f14-b3ea-c2576a3b3bf9",
+          "to_id": "e468d658-975c-45b6-a764-fe1c3836f2f0"
+        }
+      ]
+    },
+    {
+      "id": "c0ef77f8-1079-49c5-90d3-e5f53fa09093",
+      "name": "Mean cell volume",
+      "short_name": "Cell volume(mean)",
+      "activation_amount": 0.02,
+      "leakage": 0,
+      "max_amount": 0,
+      "group":"Biochemistry",
+      "balance": 0,
+      "connections": [
+        {
+          "id": "7d41c16e-be6e-4d92-b38c-77bcd2c4cba1",
+          "weight": -1.1402,
+          "from_id": "c0ef77f8-1079-49c5-90d3-e5f53fa09093",
+          "to_id": "1b270e3c-8b26-4c41-ab33-06d1984fc066"
+        },
+        {
+          "id": "4751d1ca-5300-49c8-8a82-c8c87d5f6511",
+          "weight": 10.8826,
+          "from_id": "c0ef77f8-1079-49c5-90d3-e5f53fa09093",
+          "to_id": "09da1258-c904-4ba9-a908-5956aa47a712"
+        },
+        {
+          "id": "eba18778-a680-4729-b15a-3637d5f64577",
+          "weight": -1.1925,
+          "from_id": "c0ef77f8-1079-49c5-90d3-e5f53fa09093",
+          "to_id": "cebc4a88-6997-4b38-82e8-9d4ac057cfb9"
+        },
+        {
+          "id": "37ccb01f-aade-4360-94de-364818816d6e",
+          "weight": 1.1449,
+          "from_id": "c0ef77f8-1079-49c5-90d3-e5f53fa09093",
+          "to_id": "faedbbea-69de-4237-be0b-0a7e3dada135"
+        }
+      ]
+    },
+    {
+      "id": "01998aa0-597d-4d86-ae59-0d366be81799",
+      "name": "Packed cell volume",
+      "short_name": "Cell colume(packed)",
+      "activation_amount": 0.02,
+      "leakage": 0,
+      "max_amount": 0,
+      "group":"Biochemistry",
+      "balance": 0,
+      "connections": [
+        {
+          "id": "d9fe85bd-cffc-4aca-aacf-045504ee89c1",
+          "weight": 1.5409,
+          "from_id": "01998aa0-597d-4d86-ae59-0d366be81799",
+          "to_id": "91784e95-0a31-44ad-84ea-4b55726c2a59"
+        },
+        {
+          "id": "f602923d-2df7-4921-adab-e441f8053d44",
+          "weight": 3.7475,
+          "from_id": "01998aa0-597d-4d86-ae59-0d366be81799",
+          "to_id": "d5e86995-948d-4e58-a7e1-153ff1c5c905"
+        },
+        {
+          "id": "b4631485-4480-4760-9853-e97ae87825ea",
+          "weight": 3.0256,
+          "from_id": "01998aa0-597d-4d86-ae59-0d366be81799",
+          "to_id": "e8666a6d-e324-45e3-9eba-ab9f2509eebe"
+        }
+      ]
+    },
+    {
+      "id": "e8666a6d-e324-45e3-9eba-ab9f2509eebe",
+      "name": "Red blood cell count",
+      "short_name": "Erythrocytes",
+      "activation_amount": 0.02,
+      "leakage": 0,
+      "max_amount": 0,
+      "group":"Biochemistry",
+      "balance": 0,
+      "connections": [
+        {
+          "id": "c5d8e077-11a7-48c1-a4b5-264bf8a9d869",
+          "weight": 1.2773,
+          "from_id": "e8666a6d-e324-45e3-9eba-ab9f2509eebe",
+          "to_id": "d5e86995-948d-4e58-a7e1-153ff1c5c905"
+        },
+        {
+          "id": "b4a42374-70ef-4fab-850d-fbf26309b4d6",
+          "weight": 1.3096,
+          "from_id": "e8666a6d-e324-45e3-9eba-ab9f2509eebe",
+          "to_id": "1b270e3c-8b26-4c41-ab33-06d1984fc066"
+        },
+        {
+          "id": "a00d1f0f-432d-43b8-9cdb-2e65769bb7a3",
+          "weight": -8.4392,
+          "from_id": "e8666a6d-e324-45e3-9eba-ab9f2509eebe",
+          "to_id": "09da1258-c904-4ba9-a908-5956aa47a712"
+        },
+        {
+          "id": "a3985afa-ebe6-4881-8ca7-70d7b5856a7b",
+          "weight": -1.2167,
+          "from_id": "e8666a6d-e324-45e3-9eba-ab9f2509eebe",
+          "to_id": "3c158559-6eaf-4f14-b3ea-c2576a3b3bf9"
+        },
+        {
+          "id": "4d319156-f32d-40e2-87ed-ebd804c0d5ed",
+          "weight": -3.8986,
+          "from_id": "e8666a6d-e324-45e3-9eba-ab9f2509eebe",
+          "to_id": "c0ef77f8-1079-49c5-90d3-e5f53fa09093"
+        },
+        {
+          "id": "e288c02d-6d70-49a8-8e6e-0ad5008a8aac",
+          "weight": 4.5884,
+          "from_id": "e8666a6d-e324-45e3-9eba-ab9f2509eebe",
+          "to_id": "01998aa0-597d-4d86-ae59-0d366be81799"
+        },
+        {
+          "id": "4751cad9-a2ac-4bb4-8da1-9c34059beff0",
+          "weight": 1.4443,
+          "from_id": "e8666a6d-e324-45e3-9eba-ab9f2509eebe",
+          "to_id": "9e41273c-acdb-46b8-b502-06dcb3ebdc83"
+        },
+        {
+          "id": "8dcac32c-9d11-42cf-b82f-0aa456faed2d",
+          "weight": -1.9748,
+          "from_id": "e8666a6d-e324-45e3-9eba-ab9f2509eebe",
+          "to_id": "deb8bbc7-b21c-4ea0-915f-f62b53c743db"
+        }
+      ]
+    },
+    {
+      "id": "3d0b3ffe-af3f-4c8e-91e0-f8a0ac001026",
+      "name": "HDL cholesterol",
+      "short_name": "Cholesterol(HDL)",
+      "activation_amount": 0.02,
+      "leakage": 0,
+      "max_amount": 0,
+      "group":"Biochemistry",
+      "balance": 0,
+      "connections": [
+        {
+          "id": "bce80524-ab0b-49ce-b753-5ab4cc957f4d",
+          "weight": 1.6662,
+          "from_id": "3d0b3ffe-af3f-4c8e-91e0-f8a0ac001026",
+          "to_id": "e468d658-975c-45b6-a764-fe1c3836f2f0"
+        },
+        {
+          "id": "b00c20f7-f0d6-437e-b9ad-c8abf9c2cc8f",
+          "weight": -1.2472,
+          "from_id": "3d0b3ffe-af3f-4c8e-91e0-f8a0ac001026",
+          "to_id": "faedbbea-69de-4237-be0b-0a7e3dada135"
+        },
+        {
+          "id": "d131f14c-4c8d-4ad8-8e60-46b1a6f6c1ea",
+          "weight": -1.1138,
+          "from_id": "3d0b3ffe-af3f-4c8e-91e0-f8a0ac001026",
+          "to_id": "a6eb91cd-9391-415b-b9f2-148b57e0b552"
+        }
+      ]
+    },
+    {
+      "id": "cc4d96c8-f8d0-490c-90ba-4778a2d1c704",
+      "name": "LDL cholesterol",
+      "short_name": "Cholesterol(LDL)",
+      "activation_amount": 0.02,
+      "leakage": 0,
+      "max_amount": 0,
+      "group":"Biochemistry",
+      "balance": 0,
+      "connections": [
+        {
+          "id": "fba93d35-6022-46a9-ad00-1518956849e2",
+          "weight": -1.1104,
+          "from_id": "cc4d96c8-f8d0-490c-90ba-4778a2d1c704",
+          "to_id": "d3c02659-5d7e-479c-a8db-06b01b60c810"
+        },
+        {
+          "id": "27eecfb7-9c49-421b-a14f-77583e02c569",
+          "weight": 2.4743,
+          "from_id": "cc4d96c8-f8d0-490c-90ba-4778a2d1c704",
+          "to_id": "ed3f073e-4af5-4a87-bc80-997b64c59869"
+        },
+        {
+          "id": "e668fc5d-63ed-4b5d-a78d-34eb862c1d5e",
+          "weight": -1.0937,
+          "from_id": "cc4d96c8-f8d0-490c-90ba-4778a2d1c704",
+          "to_id": "eebfb8de-44b0-4491-86bd-eb50c7fdb867"
+        },
+        {
+          "id": "379e15d9-ea5c-4f5e-a36c-496c943cbc3f",
+          "weight": -2.1928,
+          "from_id": "cc4d96c8-f8d0-490c-90ba-4778a2d1c704",
+          "to_id": "3d0b3ffe-af3f-4c8e-91e0-f8a0ac001026"
+        },
+        {
+          "id": "1185ec7b-44fe-46c3-a073-f3fcc8c9b408",
+          "weight": 1.226,
+          "from_id": "cc4d96c8-f8d0-490c-90ba-4778a2d1c704",
+          "to_id": "93c4b46e-f1a4-4b2b-af09-05e5e2c2e41b"
+        },
+        {
+          "id": "574ab6e0-535e-4e00-8819-e04468a6a1c3",
+          "weight": 11.8217,
+          "from_id": "cc4d96c8-f8d0-490c-90ba-4778a2d1c704",
+          "to_id": "e468d658-975c-45b6-a764-fe1c3836f2f0"
+        },
+        {
+          "id": "5e5742ae-bbad-4508-854a-d9b7ac0259d2",
+          "weight": -1.0464,
+          "from_id": "cc4d96c8-f8d0-490c-90ba-4778a2d1c704",
+          "to_id": "96918891-7093-456b-bb40-099c775c1df7"
+        },
+        {
+          "id": "26a26ad8-b8b3-4fc7-9949-bd91c6b8216c",
+          "weight": -1.2839,
+          "from_id": "cc4d96c8-f8d0-490c-90ba-4778a2d1c704",
+          "to_id": "d15aca22-d67b-40df-a56a-a573fcb8bd48"
+        }
+      ]
+    },
+    {
+      "id": "e468d658-975c-45b6-a764-fe1c3836f2f0",
+      "name": "Total cholesterol",
+      "short_name": "Cholesterol(Total)",
+      "activation_amount": 0.02,
+      "leakage": 0,
+      "max_amount": 0,
+      "group":"Biochemistry",
+      "balance": 0,
+      "connections": [
+        {
+          "id": "8e9101d7-1d22-43f8-97de-35db466cfb5c",
+          "weight": -1.2114,
+          "from_id": "e468d658-975c-45b6-a764-fe1c3836f2f0",
+          "to_id": "d3c02659-5d7e-479c-a8db-06b01b60c810"
+        },
+        {
+          "id": "d4215f76-38d8-4885-93ca-89db72a17432",
+          "weight": 2.5263,
+          "from_id": "e468d658-975c-45b6-a764-fe1c3836f2f0",
+          "to_id": "ed3f073e-4af5-4a87-bc80-997b64c59869"
+        },
+        {
+          "id": "f7234821-cae1-4b86-b1cf-1c3a5cfe1aac",
+          "weight": -1.2181,
+          "from_id": "e468d658-975c-45b6-a764-fe1c3836f2f0",
+          "to_id": "c9b17590-329e-4c90-9fdb-93b85971f037"
+        },
+        {
+          "id": "482f40c7-0599-4c23-afe5-a2b3e69a5f57",
+          "weight": -1.298,
+          "from_id": "e468d658-975c-45b6-a764-fe1c3836f2f0",
+          "to_id": "eebfb8de-44b0-4491-86bd-eb50c7fdb867"
+        },
+        {
+          "id": "5bfeceb8-112d-4b2c-a55a-adb0ca6a4e5d",
+          "weight": -1.3816,
+          "from_id": "e468d658-975c-45b6-a764-fe1c3836f2f0",
+          "to_id": "37a11f81-45ca-4e64-835b-cef1f7c0e7cc"
+        },
+        {
+          "id": "9b7ed5bf-b9d2-4432-babc-18717f1a4915",
+          "weight": 8.5331,
+          "from_id": "e468d658-975c-45b6-a764-fe1c3836f2f0",
+          "to_id": "cc4d96c8-f8d0-490c-90ba-4778a2d1c704"
+        },
+        {
+          "id": "c87e08e0-b50e-4f33-8778-df616e5d8dc3",
+          "weight": 2.4808,
+          "from_id": "e468d658-975c-45b6-a764-fe1c3836f2f0",
+          "to_id": "93c4b46e-f1a4-4b2b-af09-05e5e2c2e41b"
+        },
+        {
+          "id": "54451c64-fed9-48b9-9240-49b2d23d04ee",
+          "weight": -1.3501,
+          "from_id": "e468d658-975c-45b6-a764-fe1c3836f2f0",
+          "to_id": "d15aca22-d67b-40df-a56a-a573fcb8bd48"
+        },
+        {
+          "id": "b43e4742-0713-4f81-94fa-f011256deebd",
+          "weight": -1.3206,
+          "from_id": "e468d658-975c-45b6-a764-fe1c3836f2f0",
+          "to_id": "16efa6bd-6c5b-4bcc-a5cb-4a66f44a6eb4"
+        }
+      ]
+    },
+    {
+      "id": "faedbbea-69de-4237-be0b-0a7e3dada135",
+      "name": "Triglycerides",
+      "short_name": "Triglycerides",
+      "activation_amount": 0.02,
+      "leakage": 0,
+      "max_amount": 0,
+      "group":"Biochemistry",
+      "balance": 0,
+      "connections": [
+        {
+          "id": "8bb1caee-55c6-4d92-b5b3-560a4d741546",
+          "weight": -4.7911,
+          "from_id": "faedbbea-69de-4237-be0b-0a7e3dada135",
+          "to_id": "3d0b3ffe-af3f-4c8e-91e0-f8a0ac001026"
+        },
+        {
+          "id": "06989289-a7fa-4ad7-b51a-70fce4289375",
+          "weight": -1.5213,
+          "from_id": "faedbbea-69de-4237-be0b-0a7e3dada135",
+          "to_id": "137ab7b0-8777-49e7-8416-bea9be51c448"
+        },
+        {
+          "id": "61c1eda1-0945-4d73-b35d-c6919d64048a",
+          "weight": 1.3885,
+          "from_id": "faedbbea-69de-4237-be0b-0a7e3dada135",
+          "to_id": "f0975286-d6eb-4815-b4f5-bb4d5f855009"
+        },
+        {
+          "id": "2271f72c-e779-4523-b422-ba6d4eae791a",
+          "weight": 1.1234,
+          "from_id": "faedbbea-69de-4237-be0b-0a7e3dada135",
+          "to_id": "93c4b46e-f1a4-4b2b-af09-05e5e2c2e41b"
+        },
+        {
+          "id": "37088868-6030-4f7e-bed3-d608767b153d",
+          "weight": 6.1855,
+          "from_id": "faedbbea-69de-4237-be0b-0a7e3dada135",
+          "to_id": "e468d658-975c-45b6-a764-fe1c3836f2f0"
+        },
+        {
+          "id": "1ae69c3c-ec97-40f6-9754-2d5a8d358cdd",
+          "weight": 1.4303,
+          "from_id": "faedbbea-69de-4237-be0b-0a7e3dada135",
+          "to_id": "06148d1e-92df-49ef-9eb0-15a834f7bb1f"
+        },
+        {
+          "id": "70248b70-9bfd-4162-a1bc-d919b792e169",
+          "weight": 1.3436,
+          "from_id": "faedbbea-69de-4237-be0b-0a7e3dada135",
+          "to_id": "16efa6bd-6c5b-4bcc-a5cb-4a66f44a6eb4"
+        }
+      ]
+    },
+    {
+      "id": "37a11f81-45ca-4e64-835b-cef1f7c0e7cc",
+      "name": "Hip circumference",
+      "short_name": "Hip size(circ.)",
+      "activation_amount": 0.02,
+      "leakage": 0,
+      "max_amount": 0,
+      "group":"Physical",
+      "balance": 0,
+      "connections": [
+        {
+          "id": "a9fa832d-0e2f-40d2-90ac-7832ec44a2a0",
+          "weight": 3.1502,
+          "from_id": "37a11f81-45ca-4e64-835b-cef1f7c0e7cc",
+          "to_id": "11debed3-7d57-4983-a886-e24e64a096e0"
+        },
+        {
+          "id": "4fee89a0-2c75-4af9-9edc-98737bcb23f1",
+          "weight": 4.4325,
+          "from_id": "37a11f81-45ca-4e64-835b-cef1f7c0e7cc",
+          "to_id": "d3c02659-5d7e-479c-a8db-06b01b60c810"
+        },
+        {
+          "id": "7bb204c3-a39f-488f-9f9d-0f8ba0745405",
+          "weight": 1.3324,
+          "from_id": "37a11f81-45ca-4e64-835b-cef1f7c0e7cc",
+          "to_id": "403840ae-c20d-473b-9c44-91f60e139732"
+        },
+        {
+          "id": "fedb36b3-7a2a-4296-92cb-d5d9a0f2c119",
+          "weight": 2.7514,
+          "from_id": "37a11f81-45ca-4e64-835b-cef1f7c0e7cc",
+          "to_id": "ed3f073e-4af5-4a87-bc80-997b64c59869"
+        },
+        {
+          "id": "3a3d30be-3081-4af5-9ef8-755e79a15007",
+          "weight": 3.8321,
+          "from_id": "37a11f81-45ca-4e64-835b-cef1f7c0e7cc",
+          "to_id": "b9492bf7-14d1-43b4-a3bc-c033f7c5dae7"
+        },
+        {
+          "id": "602f01c4-75e7-4c8b-8b23-a770359307b3",
+          "weight": -1.1163,
+          "from_id": "37a11f81-45ca-4e64-835b-cef1f7c0e7cc",
+          "to_id": "6ea25c6c-fe51-4b8e-a89e-04a423bba1d2"
+        },
+        {
+          "id": "4a39e89d-a636-454c-ae26-a597320d4265",
+          "weight": 1.4889,
+          "from_id": "37a11f81-45ca-4e64-835b-cef1f7c0e7cc",
+          "to_id": "f2e26dea-8775-466c-a90c-ae9e3b5895a2"
+        },
+        {
+          "id": "650f07c0-0307-4f5d-8e29-dc1812630f83",
+          "weight": -2.0765,
+          "from_id": "37a11f81-45ca-4e64-835b-cef1f7c0e7cc",
+          "to_id": "3d0b3ffe-af3f-4c8e-91e0-f8a0ac001026"
+        },
+        {
+          "id": "abaf042f-e671-45a3-ae48-1190ead42f46",
+          "weight": 1.8595,
+          "from_id": "37a11f81-45ca-4e64-835b-cef1f7c0e7cc",
+          "to_id": "a6d51b3a-34c0-4b06-9fcb-f69a6f4a2b44"
+        },
+        {
+          "id": "1d1bc97c-4ae1-47b1-a644-dbad7c1aa9ae",
+          "weight": 2.5178,
+          "from_id": "37a11f81-45ca-4e64-835b-cef1f7c0e7cc",
+          "to_id": "efc52e16-908a-40fd-a451-a2e9ec9e857b"
+        },
+        {
+          "id": "6ab70cfb-6d69-46c9-b3d4-685c6b4a4554",
+          "weight": 1.7711,
+          "from_id": "37a11f81-45ca-4e64-835b-cef1f7c0e7cc",
+          "to_id": "dad287be-f49c-4e56-9ae6-a53f66fef626"
+        },
+        {
+          "id": "6905e287-e906-4779-9dec-184439754ab9",
+          "weight": 1.2957,
+          "from_id": "37a11f81-45ca-4e64-835b-cef1f7c0e7cc",
+          "to_id": "e4e726ca-04b7-44c1-9314-b687bfa5b223"
+        },
+        {
+          "id": "d19d2a54-cd1b-4e0f-ab0b-e0a7311d5b65",
+          "weight": 1.3472,
+          "from_id": "37a11f81-45ca-4e64-835b-cef1f7c0e7cc",
+          "to_id": "faedbbea-69de-4237-be0b-0a7e3dada135"
+        },
+        {
+          "id": "b2ad0e8c-0a74-4773-861a-3dc904cb0486",
+          "weight": 6.5431,
+          "from_id": "37a11f81-45ca-4e64-835b-cef1f7c0e7cc",
+          "to_id": "d15aca22-d67b-40df-a56a-a573fcb8bd48"
+        },
+        {
+          "id": "f06eb79d-49a3-42c3-9043-f76756de9620",
+          "weight": 3.5649,
+          "from_id": "37a11f81-45ca-4e64-835b-cef1f7c0e7cc",
+          "to_id": "16efa6bd-6c5b-4bcc-a5cb-4a66f44a6eb4"
+        }
+      ]
+    },
+    {
+      "id": "d15aca22-d67b-40df-a56a-a573fcb8bd48",
+      "name": "Waist circumference",
+      "short_name": "Waist size(circ.)",
+      "activation_amount": 0.02,
+      "leakage": 0,
+      "max_amount": 0,
+      "group":"Physical",
+      "balance": 0,
+      "connections": [
+        {
+          "id": "e2499555-a00b-48cf-9340-555c219d03ca",
+          "weight": 2.7315,
+          "from_id": "d15aca22-d67b-40df-a56a-a573fcb8bd48",
+          "to_id": "11debed3-7d57-4983-a886-e24e64a096e0"
+        },
+        {
+          "id": "5c6e843b-2e36-4d00-b6f2-b65ece70b875",
+          "weight": 7.8778,
+          "from_id": "d15aca22-d67b-40df-a56a-a573fcb8bd48",
+          "to_id": "d3c02659-5d7e-479c-a8db-06b01b60c810"
+        },
+        {
+          "id": "83099f83-fdf5-4ff4-9352-d75f06d1bf89",
+          "weight": 2.7166,
+          "from_id": "d15aca22-d67b-40df-a56a-a573fcb8bd48",
+          "to_id": "403840ae-c20d-473b-9c44-91f60e139732"
+        },
+        {
+          "id": "a9ae6bfd-8940-4c68-95df-c75fb080fa20",
+          "weight": 1.623,
+          "from_id": "d15aca22-d67b-40df-a56a-a573fcb8bd48",
+          "to_id": "ed3f073e-4af5-4a87-bc80-997b64c59869"
+        },
+        {
+          "id": "86a42704-1c69-4f9c-84a9-305236e8db2f",
+          "weight": -1.3186,
+          "from_id": "d15aca22-d67b-40df-a56a-a573fcb8bd48",
+          "to_id": "124b2b07-8f3e-42ea-af2a-9b380bad810c"
+        },
+        {
+          "id": "7a9ee8e1-f6d2-4bc8-a394-48f61ced4dde",
+          "weight": -1.8063,
+          "from_id": "d15aca22-d67b-40df-a56a-a573fcb8bd48",
+          "to_id": "95c844ea-df97-4c14-952f-cbe698f4dc29"
+        },
+        {
+          "id": "d158ac2d-207c-4b34-a519-617012b3db0e",
+          "weight": 4.1768,
+          "from_id": "d15aca22-d67b-40df-a56a-a573fcb8bd48",
+          "to_id": "b9492bf7-14d1-43b4-a3bc-c033f7c5dae7"
+        },
+        {
+          "id": "bd0e64f3-fefe-4c38-9ea8-5ce37ed47294",
+          "weight": 2.0338,
+          "from_id": "d15aca22-d67b-40df-a56a-a573fcb8bd48",
+          "to_id": "f2e26dea-8775-466c-a90c-ae9e3b5895a2"
+        },
+        {
+          "id": "cf696f4c-7603-4afc-93ee-89fbe06696cb",
+          "weight": -1.8421,
+          "from_id": "d15aca22-d67b-40df-a56a-a573fcb8bd48",
+          "to_id": "3d0b3ffe-af3f-4c8e-91e0-f8a0ac001026"
+        },
+        {
+          "id": "74b773cd-d443-41a2-8ebd-b63e0a35e59b",
+          "weight": 7.6653,
+          "from_id": "d15aca22-d67b-40df-a56a-a573fcb8bd48",
+          "to_id": "37a11f81-45ca-4e64-835b-cef1f7c0e7cc"
+        },
+        {
+          "id": "03778065-cc82-4882-b021-95e97a9d3386",
+          "weight": 4.3932,
+          "from_id": "d15aca22-d67b-40df-a56a-a573fcb8bd48",
+          "to_id": "efc52e16-908a-40fd-a451-a2e9ec9e857b"
+        },
+        {
+          "id": "7ed86803-94c3-4546-8328-ac9d63932243",
+          "weight": 4.2207,
+          "from_id": "d15aca22-d67b-40df-a56a-a573fcb8bd48",
+          "to_id": "dad287be-f49c-4e56-9ae6-a53f66fef626"
+        },
+        {
+          "id": "883dd7af-9615-4d74-96b6-64ec270398ac",
+          "weight": 3.4271,
+          "from_id": "d15aca22-d67b-40df-a56a-a573fcb8bd48",
+          "to_id": "e4e726ca-04b7-44c1-9314-b687bfa5b223"
+        },
+        {
+          "id": "7ab4a9d2-d7b6-4f2d-a626-4da07e54d241",
+          "weight": 5.9415,
+          "from_id": "d15aca22-d67b-40df-a56a-a573fcb8bd48",
+          "to_id": "6b6c1c52-6d82-41f3-963c-56173a244a29"
+        },
+        {
+          "id": "38d30121-2c99-4b46-8035-93bbd04cbbb1",
+          "weight": -1.4061,
+          "from_id": "d15aca22-d67b-40df-a56a-a573fcb8bd48",
+          "to_id": "42e488bb-08d9-4ba9-b76d-7560144ddd6a"
+        },
+        {
+          "id": "c3816342-1136-4480-a2e5-cee5cb1e1fca",
+          "weight": -1.9044,
+          "from_id": "d15aca22-d67b-40df-a56a-a573fcb8bd48",
+          "to_id": "fbb8b7d7-0416-4cb9-bb91-04c5662988d9"
+        },
+        {
+          "id": "22f35ad0-3a1d-4e7e-887b-577a315ff118",
+          "weight": 1.7038,
+          "from_id": "d15aca22-d67b-40df-a56a-a573fcb8bd48",
+          "to_id": "faedbbea-69de-4237-be0b-0a7e3dada135"
+        },
+        {
+          "id": "f0a019ae-5054-47a0-81d5-69d8f2409661",
+          "weight": 2.6927,
+          "from_id": "d15aca22-d67b-40df-a56a-a573fcb8bd48",
+          "to_id": "96918891-7093-456b-bb40-099c775c1df7"
+        },
+        {
+          "id": "1d9c4b9e-7c5a-4ab6-bc6e-0af2abbf7cd3",
+          "weight": 1.258,
+          "from_id": "d15aca22-d67b-40df-a56a-a573fcb8bd48",
+          "to_id": "06148d1e-92df-49ef-9eb0-15a834f7bb1f"
+        },
+        {
+          "id": "cdc27e91-6a69-42a6-9773-f36419df8738",
+          "weight": 2.9785,
+          "from_id": "d15aca22-d67b-40df-a56a-a573fcb8bd48",
+          "to_id": "16efa6bd-6c5b-4bcc-a5cb-4a66f44a6eb4"
+        },
+        {
+          "id": "73aee7f1-8103-4423-bc08-cce062bc94e8",
+          "weight": -1.3323,
+          "from_id": "d15aca22-d67b-40df-a56a-a573fcb8bd48",
+          "to_id": "9866d4da-6570-4080-8fe9-e391c1c35f26"
+        }
+      ]
+    },
+    {
+      "id": "16efa6bd-6c5b-4bcc-a5cb-4a66f44a6eb4",
+      "name": "Waist-to-hip ratio",
+      "short_name": "Waist:Hip ratio",
+      "activation_amount": 0.02,
+      "leakage": 0,
+      "max_amount": 0,
+      "group":"Physical",
+      "balance": 0,
+      "connections": [
+        {
+          "id": "fbe272b0-615a-4eae-8059-fda42e8fcf9a",
+          "weight": 6.9916,
+          "from_id": "16efa6bd-6c5b-4bcc-a5cb-4a66f44a6eb4",
+          "to_id": "b9492bf7-14d1-43b4-a3bc-c033f7c5dae7"
+        },
+        {
+          "id": "94494305-2faa-40bc-8dec-a084d2e15253",
+          "weight": 1.4914,
+          "from_id": "16efa6bd-6c5b-4bcc-a5cb-4a66f44a6eb4",
+          "to_id": "1b270e3c-8b26-4c41-ab33-06d1984fc066"
+        },
+        {
+          "id": "618675ad-e47c-44dc-bb43-37d373b1a884",
+          "weight": -1.6061,
+          "from_id": "16efa6bd-6c5b-4bcc-a5cb-4a66f44a6eb4",
+          "to_id": "137ab7b0-8777-49e7-8416-bea9be51c448"
+        },
+        {
+          "id": "2eebc88d-301b-43fb-8572-b50b26624477",
+          "weight": 1.9496,
+          "from_id": "16efa6bd-6c5b-4bcc-a5cb-4a66f44a6eb4",
+          "to_id": "faedbbea-69de-4237-be0b-0a7e3dada135"
+        },
+        {
+          "id": "94bfab7f-5d49-4164-a6e0-06de10667926",
+          "weight": 1.5418,
+          "from_id": "16efa6bd-6c5b-4bcc-a5cb-4a66f44a6eb4",
+          "to_id": "d15aca22-d67b-40df-a56a-a573fcb8bd48"
+        }
+      ]
+    },
+    {
+      "id": "0e1a6abf-afd6-4b74-b57a-c1b73d2d6724",
+      "name": "2hr Glucose",
+      "short_name": "Glucose tolerance(2hrGTT)",
+      "activation_amount": 0.02,
+      "leakage": 0,
+      "max_amount": 0,
+      "group":"Biochemistry",
+      "balance": 0,
+      "connections": [
+        {
+          "id": "062b831f-4364-4993-9b3d-fa1519c832c5",
+          "weight": -1.4478,
+          "from_id": "0e1a6abf-afd6-4b74-b57a-c1b73d2d6724",
+          "to_id": "d3c02659-5d7e-479c-a8db-06b01b60c810"
+        },
+        {
+          "id": "5732c799-e547-4232-81ca-ee4248334f59",
+          "weight": 1.7541,
+          "from_id": "0e1a6abf-afd6-4b74-b57a-c1b73d2d6724",
+          "to_id": "c9b17590-329e-4c90-9fdb-93b85971f037"
+        },
+        {
+          "id": "88e3672c-ae03-4db7-92b0-54fd7dd00638",
+          "weight": -1.536,
+          "from_id": "0e1a6abf-afd6-4b74-b57a-c1b73d2d6724",
+          "to_id": "f2e26dea-8775-466c-a90c-ae9e3b5895a2"
+        },
+        {
+          "id": "7ee2e21d-25eb-43a0-975d-eb1a94eb72cb",
+          "weight": 2.4692,
+          "from_id": "0e1a6abf-afd6-4b74-b57a-c1b73d2d6724",
+          "to_id": "f86db065-16ec-427e-a3e7-fddec552692f"
+        },
+        {
+          "id": "883ed101-94b2-4d98-b392-919452649c15",
+          "weight": 1.3045,
+          "from_id": "0e1a6abf-afd6-4b74-b57a-c1b73d2d6724",
+          "to_id": "1b270e3c-8b26-4c41-ab33-06d1984fc066"
+        },
+        {
+          "id": "a5acb6a8-c0d5-4ffe-bec5-8ac62f49315b",
+          "weight": -1.3001,
+          "from_id": "0e1a6abf-afd6-4b74-b57a-c1b73d2d6724",
+          "to_id": "37a11f81-45ca-4e64-835b-cef1f7c0e7cc"
+        },
+        {
+          "id": "dfa6ae9a-be58-4b73-8871-c7fafccf22e7",
+          "weight": -1.5382,
+          "from_id": "0e1a6abf-afd6-4b74-b57a-c1b73d2d6724",
+          "to_id": "a6d51b3a-34c0-4b06-9fcb-f69a6f4a2b44"
+        },
+        {
+          "id": "6aa6b48d-ec27-4547-a156-781b1648399e",
+          "weight": -1.1051,
+          "from_id": "0e1a6abf-afd6-4b74-b57a-c1b73d2d6724",
+          "to_id": "efc52e16-908a-40fd-a451-a2e9ec9e857b"
+        },
+        {
+          "id": "f8d138d4-374f-472e-a401-b8ac8c68f39e",
+          "weight": -1.2479,
+          "from_id": "0e1a6abf-afd6-4b74-b57a-c1b73d2d6724",
+          "to_id": "dad287be-f49c-4e56-9ae6-a53f66fef626"
+        },
+        {
+          "id": "a7010eb4-89b2-4289-9d70-509c2e8b5800",
+          "weight": -1.0781,
+          "from_id": "0e1a6abf-afd6-4b74-b57a-c1b73d2d6724",
+          "to_id": "e4e726ca-04b7-44c1-9314-b687bfa5b223"
+        },
+        {
+          "id": "7c9f0d50-d05f-40a8-9a6f-ec2f886487a4",
+          "weight": 5.2752,
+          "from_id": "0e1a6abf-afd6-4b74-b57a-c1b73d2d6724",
+          "to_id": "96918891-7093-456b-bb40-099c775c1df7"
+        },
+        {
+          "id": "1b211cb8-62b3-4ab9-b83b-4b96a5e50e22",
+          "weight": -1.1182,
+          "from_id": "0e1a6abf-afd6-4b74-b57a-c1b73d2d6724",
+          "to_id": "d15aca22-d67b-40df-a56a-a573fcb8bd48"
+        }
+      ]
+    },
+    {
+      "id": "1b270e3c-8b26-4c41-ab33-06d1984fc066",
+      "name": "HbA1C",
+      "short_name": "Glucose(HbA1C)",
+      "activation_amount": 0.02,
+      "leakage": 0,
+      "max_amount": 0,
+      "group":"Biochemistry",
+      "balance": 0,
+      "connections": [
+        {
+          "id": "20dd85ff-43e1-4afa-865f-8ec9fb92961e",
+          "weight": -7.1467,
+          "from_id": "1b270e3c-8b26-4c41-ab33-06d1984fc066",
+          "to_id": "01998aa0-597d-4d86-ae59-0d366be81799"
+        },
+        {
+          "id": "fcb2007c-bc94-400a-bccb-3579016a236b",
+          "weight": 1.2154,
+          "from_id": "1b270e3c-8b26-4c41-ab33-06d1984fc066",
+          "to_id": "fb91d08b-6d98-4915-aed6-b3f13a89b12a"
+        }
+      ]
+    },
+    {
+      "id": "818f3fb4-a081-4286-9fe5-ddc9951422d1",
+      "name": "Corrected insulin response",
+      "short_name": "Glucose tolerance(insulin resp.)",
+      "activation_amount": 0.02,
+      "leakage": 0,
+      "max_amount": 0,
+      "group":"Biochemistry",
+      "balance": 0,
+      "connections": [
+        {
+          "id": "b32955ff-e5c8-4485-8be9-73d248ccfa79",
+          "weight": 1.4474,
+          "from_id": "818f3fb4-a081-4286-9fe5-ddc9951422d1",
+          "to_id": "2da09bab-551e-492f-ae7a-e4d123311874"
+        },
+        {
+          "id": "b1292b74-01d4-4b6a-af65-dac9dded2882",
+          "weight": 1.1459,
+          "from_id": "818f3fb4-a081-4286-9fe5-ddc9951422d1",
+          "to_id": "d3c02659-5d7e-479c-a8db-06b01b60c810"
+        },
+        {
+          "id": "e947d735-4799-4ed6-9b9f-5dd7dd9c190f",
+          "weight": -2.335,
+          "from_id": "818f3fb4-a081-4286-9fe5-ddc9951422d1",
+          "to_id": "1b270e3c-8b26-4c41-ab33-06d1984fc066"
+        },
+        {
+          "id": "ab9301e4-3da6-42e1-af31-07d76faa5e94",
+          "weight": -1.0823,
+          "from_id": "818f3fb4-a081-4286-9fe5-ddc9951422d1",
+          "to_id": "f3fe732a-e7ee-4f09-97a5-e96f8b357632"
+        },
+        {
+          "id": "14e9eb39-8639-4118-a5bb-900dd77d7c16",
+          "weight": -4.739,
+          "from_id": "818f3fb4-a081-4286-9fe5-ddc9951422d1",
+          "to_id": "96918891-7093-456b-bb40-099c775c1df7"
+        }
+      ]
+    },
+    {
+      "id": "f86db065-16ec-427e-a3e7-fddec552692f",
+      "name": "Fasting proinsulin",
+      "short_name": "Glucose tolerance(Proinsulin)",
+      "activation_amount": 0.02,
+      "leakage": 0,
+      "max_amount": 0,
+      "group":"Biochemistry",
+      "balance": 0,
+      "connections": [
+        {
+          "id": "18273f4b-53f0-43ef-a465-314a454e9d3e",
+          "weight": 1.3575,
+          "from_id": "f86db065-16ec-427e-a3e7-fddec552692f",
+          "to_id": "c9b17590-329e-4c90-9fdb-93b85971f037"
+        }
+      ]
+    },
+    {
+      "id": "a6d51b3a-34c0-4b06-9fcb-f69a6f4a2b44",
+      "name": "HOMA-B",
+      "short_name": "Glucose tolerance(HOMA-B)",
+      "activation_amount": 0.02,
+      "leakage": 0,
+      "max_amount": 0,
+      "group":"Biochemistry",
+      "balance": 0,
+      "connections": [
+        {
+          "id": "24155b6f-8afa-46cd-b92a-690239cea73d",
+          "weight": -4.4323,
+          "from_id": "a6d51b3a-34c0-4b06-9fcb-f69a6f4a2b44",
+          "to_id": "c9b17590-329e-4c90-9fdb-93b85971f037"
+        },
+        {
+          "id": "56248e56-5e71-4cd7-b525-9a369bafe81a",
+          "weight": -1.357,
+          "from_id": "a6d51b3a-34c0-4b06-9fcb-f69a6f4a2b44",
+          "to_id": "1b270e3c-8b26-4c41-ab33-06d1984fc066"
+        },
+        {
+          "id": "eea69fce-cd8b-4bc3-816a-c6647757c9fc",
+          "weight": -1.1874,
+          "from_id": "a6d51b3a-34c0-4b06-9fcb-f69a6f4a2b44",
+          "to_id": "fb91d08b-6d98-4915-aed6-b3f13a89b12a"
+        }
+      ]
+    },
+    {
+      "id": "c9b17590-329e-4c90-9fdb-93b85971f037",
+      "name": "Fasting glucose",
+      "short_name": "Glucose(fasting)",
+      "activation_amount": 0.02,
+      "leakage": 0,
+      "max_amount": 0,
+      "group":"Biochemistry",
+      "balance": 0,
+      "connections": [
+        {
+          "id": "a35f4db3-64cf-43c4-9303-0dc0a440202d",
+          "weight": -1.5195,
+          "from_id": "c9b17590-329e-4c90-9fdb-93b85971f037",
+          "to_id": "2da09bab-551e-492f-ae7a-e4d123311874"
+        },
+        {
+          "id": "6a961a94-fc6f-4328-9eff-6962248a980d",
+          "weight": 1.9861,
+          "from_id": "c9b17590-329e-4c90-9fdb-93b85971f037",
+          "to_id": "1b270e3c-8b26-4c41-ab33-06d1984fc066"
+        },
+        {
+          "id": "8affe5be-fce4-4336-b383-d812e0fa45c7",
+          "weight": -3.8715,
+          "from_id": "c9b17590-329e-4c90-9fdb-93b85971f037",
+          "to_id": "a6d51b3a-34c0-4b06-9fcb-f69a6f4a2b44"
+        },
+        {
+          "id": "8cb55199-218d-433e-bb54-01839192121d",
+          "weight": 1.7268,
+          "from_id": "c9b17590-329e-4c90-9fdb-93b85971f037",
+          "to_id": "faedbbea-69de-4237-be0b-0a7e3dada135"
+        }
+      ]
+    },
+    {
+      "id": "f2e26dea-8775-466c-a90c-ae9e3b5895a2",
+      "name": "Fasting insulin",
+      "short_name": "Insulin(fasting)",
+      "activation_amount": 0.02,
+      "leakage": 0,
+      "max_amount": 0,
+      "group":"Biochemistry",
+      "balance": 0,
+      "connections": [
+        {
+          "id": "1f4ce2d4-1621-4958-a193-2759b3de3856",
+          "weight": 12.9363,
+          "from_id": "f2e26dea-8775-466c-a90c-ae9e3b5895a2",
+          "to_id": "c9b17590-329e-4c90-9fdb-93b85971f037"
+        },
+        {
+          "id": "9ec679cb-139e-437b-b6a6-6c6f9f682050",
+          "weight": -12.5211,
+          "from_id": "f2e26dea-8775-466c-a90c-ae9e3b5895a2",
+          "to_id": "3d0b3ffe-af3f-4c8e-91e0-f8a0ac001026"
+        },
+        {
+          "id": "5e4f05a7-0873-49ef-af38-ef4e8831ac36",
+          "weight": -13.843,
+          "from_id": "f2e26dea-8775-466c-a90c-ae9e3b5895a2",
+          "to_id": "cc4d96c8-f8d0-490c-90ba-4778a2d1c704"
+        },
+        {
+          "id": "7887949a-3d1b-413b-9b07-b1758ec533de",
+          "weight": -33.9604,
+          "from_id": "f2e26dea-8775-466c-a90c-ae9e3b5895a2",
+          "to_id": "e468d658-975c-45b6-a764-fe1c3836f2f0"
+        },
+        {
+          "id": "811153aa-3944-4064-b488-c7214b4f298b",
+          "weight": -80,
+          "from_id": "f2e26dea-8775-466c-a90c-ae9e3b5895a2",
+          "to_id": "faedbbea-69de-4237-be0b-0a7e3dada135"
+        },
+        {
+          "id": "8a4a37ba-1c7e-4822-917a-9f219cce9ef8",
+          "weight": -12.2445,
+          "from_id": "f2e26dea-8775-466c-a90c-ae9e3b5895a2",
+          "to_id": "06148d1e-92df-49ef-9eb0-15a834f7bb1f"
+        }
+      ]
+    },
+    {
+      "id": "25c49796-8e23-4a3d-9a23-9a63b007d4e3",
+      "name": "College completion",
+      "short_name": "Education(college)",
+      "activation_amount": 0.02,
+      "leakage": 0,
+      "max_amount": 0,
+      "group":"Demographics",
+      "balance": 0,
+      "connections": [
+        {
+          "id": "6ce1a493-7405-49fa-a97f-4dc268cb2752",
+          "weight": 1.3055,
+          "from_id": "25c49796-8e23-4a3d-9a23-9a63b007d4e3",
+          "to_id": "db6abbcc-8e63-49ae-b1fe-2ad3013dec23"
+        },
+        {
+          "id": "2cf94d9e-d60a-4c7c-aafa-81c1a159e2ce",
+          "weight": -1.2413,
+          "from_id": "25c49796-8e23-4a3d-9a23-9a63b007d4e3",
+          "to_id": "16efa6bd-6c5b-4bcc-a5cb-4a66f44a6eb4"
+        },
+        {
+          "id": "312dac67-2ed2-4bbe-b752-6641db122a86",
+          "weight": 3.0429,
+          "from_id": "25c49796-8e23-4a3d-9a23-9a63b007d4e3",
+          "to_id": "9866d4da-6570-4080-8fe9-e391c1c35f26"
+        },
+        {
+          "id": "093d6a7c-3049-4937-8624-3d80a2dc051d",
+          "weight": 2.2583,
+          "from_id": "25c49796-8e23-4a3d-9a23-9a63b007d4e3",
+          "to_id": "9866d4da-6570-4080-8fe9-e391c1c35f26"
+        }
+      ]
+    },
+    {
+      "id": "b9492bf7-14d1-43b4-a3bc-c033f7c5dae7",
+      "name": "Extreme body mass index",
+      "short_name": "BMI(extreme)",
+      "activation_amount": 0.02,
+      "leakage": 0,
+      "max_amount": 0,
+      "group":"Physical",
+      "balance": 0,
+      "connections": [
+        {
+          "id": "f0dcd21b-66a7-44df-a051-2a9f6e2aac7d",
+          "weight": -2.323,
+          "from_id": "b9492bf7-14d1-43b4-a3bc-c033f7c5dae7",
+          "to_id": "ca5e7a36-5dd4-45ab-bec8-8d4c29971b5f"
+        },
+        {
+          "id": "fc09682a-8a19-4fa8-a130-ac78522e4f94",
+          "weight": 6.2159,
+          "from_id": "b9492bf7-14d1-43b4-a3bc-c033f7c5dae7",
+          "to_id": "11debed3-7d57-4983-a886-e24e64a096e0"
+        },
+        {
+          "id": "4720e0fb-1141-4596-9af3-d357de858b61",
+          "weight": 35.5917,
+          "from_id": "b9492bf7-14d1-43b4-a3bc-c033f7c5dae7",
+          "to_id": "d3c02659-5d7e-479c-a8db-06b01b60c810"
+        },
+        {
+          "id": "75561539-2b7f-48dc-8e46-c77f5ad386e4",
+          "weight": 2.2925,
+          "from_id": "b9492bf7-14d1-43b4-a3bc-c033f7c5dae7",
+          "to_id": "403840ae-c20d-473b-9c44-91f60e139732"
+        },
+        {
+          "id": "dd34aa19-29b2-40c8-ab5a-3d48a6650955",
+          "weight": -1.747,
+          "from_id": "b9492bf7-14d1-43b4-a3bc-c033f7c5dae7",
+          "to_id": "3d0b3ffe-af3f-4c8e-91e0-f8a0ac001026"
+        },
+        {
+          "id": "458d2dae-25da-4a2a-8406-8e68f4724515",
+          "weight": 22.4922,
+          "from_id": "b9492bf7-14d1-43b4-a3bc-c033f7c5dae7",
+          "to_id": "37a11f81-45ca-4e64-835b-cef1f7c0e7cc"
+        },
+        {
+          "id": "f5af5df2-2e21-4e6f-b0a6-a6119ba8c9f2",
+          "weight": 1.1564,
+          "from_id": "b9492bf7-14d1-43b4-a3bc-c033f7c5dae7",
+          "to_id": "a6d51b3a-34c0-4b06-9fcb-f69a6f4a2b44"
+        },
+        {
+          "id": "e220e7a2-ed4a-4e84-9231-9f597fc1ed10",
+          "weight": 1.8978,
+          "from_id": "b9492bf7-14d1-43b4-a3bc-c033f7c5dae7",
+          "to_id": "93c4b46e-f1a4-4b2b-af09-05e5e2c2e41b"
+        },
+        {
+          "id": "cb6282e3-cbb7-4377-b0f7-8072f10b5e9f",
+          "weight": 3.1178,
+          "from_id": "b9492bf7-14d1-43b4-a3bc-c033f7c5dae7",
+          "to_id": "efc52e16-908a-40fd-a451-a2e9ec9e857b"
+        },
+        {
+          "id": "a7928d2a-198b-47f2-9af6-7ec48ba60786",
+          "weight": 9.9057,
+          "from_id": "b9492bf7-14d1-43b4-a3bc-c033f7c5dae7",
+          "to_id": "dad287be-f49c-4e56-9ae6-a53f66fef626"
+        },
+        {
+          "id": "16e78f46-7caf-4d47-a3f8-1d90db2a3451",
+          "weight": 2.2309,
+          "from_id": "b9492bf7-14d1-43b4-a3bc-c033f7c5dae7",
+          "to_id": "e4e726ca-04b7-44c1-9314-b687bfa5b223"
+        },
+        {
+          "id": "56cbdeee-6b5f-4e70-b527-61089e8e7532",
+          "weight": 10.395,
+          "from_id": "b9492bf7-14d1-43b4-a3bc-c033f7c5dae7",
+          "to_id": "6b6c1c52-6d82-41f3-963c-56173a244a29"
+        },
+        {
+          "id": "790425ff-2eb1-453b-9e78-c02db99a1246",
+          "weight": 1.885,
+          "from_id": "b9492bf7-14d1-43b4-a3bc-c033f7c5dae7",
+          "to_id": "faedbbea-69de-4237-be0b-0a7e3dada135"
+        },
+        {
+          "id": "5b600c97-0c05-4e32-9c90-ee113be1f091",
+          "weight": 1.9103,
+          "from_id": "b9492bf7-14d1-43b4-a3bc-c033f7c5dae7",
+          "to_id": "96918891-7093-456b-bb40-099c775c1df7"
+        },
+        {
+          "id": "5f51b045-171f-4745-9b6c-1b7deb9c0f53",
+          "weight": 7.3117,
+          "from_id": "b9492bf7-14d1-43b4-a3bc-c033f7c5dae7",
+          "to_id": "d15aca22-d67b-40df-a56a-a573fcb8bd48"
+        },
+        {
+          "id": "fd310524-ab08-479c-952d-41ae861437b7",
+          "weight": 8.5933,
+          "from_id": "b9492bf7-14d1-43b4-a3bc-c033f7c5dae7",
+          "to_id": "16efa6bd-6c5b-4bcc-a5cb-4a66f44a6eb4"
+        }
+      ]
+    },
+    {
+      "id": "7828e0dc-9793-491c-82ad-e30331b4893f",
+      "name": "Extreme height",
+      "short_name": "Height(extreme)",
+      "activation_amount": 0.02,
+      "leakage": 0,
+      "max_amount": 0,
+      "group":"Physical",
+      "balance": 0,
+      "connections": [
+        {
+          "id": "12960ac3-e63a-4657-b12a-97c0a4f4fae9",
+          "weight": -1.1709,
+          "from_id": "7828e0dc-9793-491c-82ad-e30331b4893f",
+          "to_id": "ed3f073e-4af5-4a87-bc80-997b64c59869"
+        },
+        {
+          "id": "32250919-d310-4063-82b4-1c61386239d0",
+          "weight": 3.0486,
+          "from_id": "7828e0dc-9793-491c-82ad-e30331b4893f",
+          "to_id": "95c844ea-df97-4c14-952f-cbe698f4dc29"
+        },
+        {
+          "id": "042481ab-c659-4151-855d-6aaf81b6a9be",
+          "weight": 2.5898,
+          "from_id": "7828e0dc-9793-491c-82ad-e30331b4893f",
+          "to_id": "95c844ea-df97-4c14-952f-cbe698f4dc29"
+        },
+        {
+          "id": "71c9f022-c63d-4c3e-868d-43842a2dd8c5",
+          "weight": 8.9293,
+          "from_id": "7828e0dc-9793-491c-82ad-e30331b4893f",
+          "to_id": "137ab7b0-8777-49e7-8416-bea9be51c448"
+        },
+        {
+          "id": "a9aa11a9-47b5-4b22-9cec-cec0158aa75e",
+          "weight": 2.3988,
+          "from_id": "7828e0dc-9793-491c-82ad-e30331b4893f",
+          "to_id": "37a11f81-45ca-4e64-835b-cef1f7c0e7cc"
+        },
+        {
+          "id": "94178340-8845-4739-91d1-02d33f8eb246",
+          "weight": -1.914,
+          "from_id": "7828e0dc-9793-491c-82ad-e30331b4893f",
+          "to_id": "16efa6bd-6c5b-4bcc-a5cb-4a66f44a6eb4"
+        }
+      ]
+    },
+    {
+      "id": "6ea25c6c-fe51-4b8e-a89e-04a423bba1d2",
+      "name": "Extreme waist-to-hip ratio",
+      "short_name": "Waist:Hip ratio(extreme)",
+      "activation_amount": 0.02,
+      "leakage": 0,
+      "max_amount": 0,
+      "group":"Physical",
+      "balance": 0,
+      "connections": [
+        {
+          "id": "1aa10c01-e4fe-4682-b826-456d5fd95e52",
+          "weight": -2.0599,
+          "from_id": "6ea25c6c-fe51-4b8e-a89e-04a423bba1d2",
+          "to_id": "37a11f81-45ca-4e64-835b-cef1f7c0e7cc"
+        },
+        {
+          "id": "5a853df1-fb8f-4754-887b-37dfc00189ee",
+          "weight": 3.0959,
+          "from_id": "6ea25c6c-fe51-4b8e-a89e-04a423bba1d2",
+          "to_id": "16efa6bd-6c5b-4bcc-a5cb-4a66f44a6eb4"
+        }
+      ]
+    },
+    {
+      "id": "137ab7b0-8777-49e7-8416-bea9be51c448",
+      "name": "Height",
+      "short_name": "Height",
+      "activation_amount": 0.02,
+      "leakage": 0,
+      "max_amount": 0,
+      "group":"Physical",
+      "balance": 0,
+      "connections": [
+        {
+          "id": "23efd3e4-3235-437e-8af7-49dd70174348",
+          "weight": 1.4325,
+          "from_id": "137ab7b0-8777-49e7-8416-bea9be51c448",
+          "to_id": "2da09bab-551e-492f-ae7a-e4d123311874"
+        },
+        {
+          "id": "72214ad1-e0fd-4f8c-b858-75e116675be0",
+          "weight": -1.3002,
+          "from_id": "137ab7b0-8777-49e7-8416-bea9be51c448",
+          "to_id": "11debed3-7d57-4983-a886-e24e64a096e0"
+        },
+        {
+          "id": "e475d2bc-6a8a-4bc0-a1cd-687ab68ec559",
+          "weight": 1.992,
+          "from_id": "137ab7b0-8777-49e7-8416-bea9be51c448",
+          "to_id": "95c844ea-df97-4c14-952f-cbe698f4dc29"
+        },
+        {
+          "id": "ddc76612-54b8-4fea-b7eb-985a5a7e891a",
+          "weight": 1.576,
+          "from_id": "137ab7b0-8777-49e7-8416-bea9be51c448",
+          "to_id": "95c844ea-df97-4c14-952f-cbe698f4dc29"
+        },
+        {
+          "id": "5f461c52-81bd-4a0f-9f5e-54bc2d677123",
+          "weight": -1.87,
+          "from_id": "137ab7b0-8777-49e7-8416-bea9be51c448",
+          "to_id": "b9492bf7-14d1-43b4-a3bc-c033f7c5dae7"
+        },
+        {
+          "id": "61b5df0f-0ade-4273-8316-88cdafa1b525",
+          "weight": 1.5815,
+          "from_id": "137ab7b0-8777-49e7-8416-bea9be51c448",
+          "to_id": "7828e0dc-9793-491c-82ad-e30331b4893f"
+        },
+        {
+          "id": "97e83a97-1931-4c87-8daa-6c7486998785",
+          "weight": -1.3177,
+          "from_id": "137ab7b0-8777-49e7-8416-bea9be51c448",
+          "to_id": "d5e86995-948d-4e58-a7e1-153ff1c5c905"
+        },
+        {
+          "id": "b7f9f27d-ea05-44ac-96ca-f97be0d8a30f",
+          "weight": 2.9829,
+          "from_id": "137ab7b0-8777-49e7-8416-bea9be51c448",
+          "to_id": "37a11f81-45ca-4e64-835b-cef1f7c0e7cc"
+        },
+        {
+          "id": "e81faa5b-4b8f-4b6e-a28c-5359b903e848",
+          "weight": 1.2977,
+          "from_id": "137ab7b0-8777-49e7-8416-bea9be51c448",
+          "to_id": "ca2ccbd8-bd4d-40b6-b99f-0b7e692264ae"
+        },
+        {
+          "id": "362ade59-d46f-445b-9bf0-507b444038f7",
+          "weight": -1.341,
+          "from_id": "137ab7b0-8777-49e7-8416-bea9be51c448",
+          "to_id": "cc4d96c8-f8d0-490c-90ba-4778a2d1c704"
+        },
+        {
+          "id": "b794899e-e36a-4b14-bb39-32e5a9465a0b",
+          "weight": -1.1181,
+          "from_id": "137ab7b0-8777-49e7-8416-bea9be51c448",
+          "to_id": "93c4b46e-f1a4-4b2b-af09-05e5e2c2e41b"
+        },
+        {
+          "id": "eb45a077-7c24-4371-8571-94f7e35a1b5e",
+          "weight": -1.7669,
+          "from_id": "137ab7b0-8777-49e7-8416-bea9be51c448",
+          "to_id": "dad287be-f49c-4e56-9ae6-a53f66fef626"
+        },
+        {
+          "id": "36b54ceb-b869-4f9d-9c7f-56c547f05f3d",
+          "weight": -2.327,
+          "from_id": "137ab7b0-8777-49e7-8416-bea9be51c448",
+          "to_id": "6b6c1c52-6d82-41f3-963c-56173a244a29"
+        },
+        {
+          "id": "4c4ebfd4-f1bf-45e5-bb37-c3b2934fc001",
+          "weight": -1.1425,
+          "from_id": "137ab7b0-8777-49e7-8416-bea9be51c448",
+          "to_id": "cebc4a88-6997-4b38-82e8-9d4ac057cfb9"
+        },
+        {
+          "id": "fd85e943-3653-4654-b697-f135bb474669",
+          "weight": 3.6963,
+          "from_id": "137ab7b0-8777-49e7-8416-bea9be51c448",
+          "to_id": "d15aca22-d67b-40df-a56a-a573fcb8bd48"
+        }
+      ]
+    },
+    {
+      "id": "efc52e16-908a-40fd-a451-a2e9ec9e857b",
+      "name": "Obesity class 1",
+      "short_name": "BMI(30-35)",
+      "activation_amount": 0.02,
+      "leakage": 0,
+      "max_amount": 0,
+      "group":"Physical",
+      "balance": 0,
+      "connections": [
+        {
+          "id": "558dc6a7-6098-4e88-940e-416c50037627",
+          "weight": -2.7922,
+          "from_id": "efc52e16-908a-40fd-a451-a2e9ec9e857b",
+          "to_id": "ca5e7a36-5dd4-45ab-bec8-8d4c29971b5f"
+        },
+        {
+          "id": "84e9e6f1-f3fc-44c7-b1de-86e8fe3df39f",
+          "weight": 3.9427,
+          "from_id": "efc52e16-908a-40fd-a451-a2e9ec9e857b",
+          "to_id": "11debed3-7d57-4983-a886-e24e64a096e0"
+        },
+        {
+          "id": "fb0c91e1-4819-4fd2-b828-65f3683e9afc",
+          "weight": 11.1116,
+          "from_id": "efc52e16-908a-40fd-a451-a2e9ec9e857b",
+          "to_id": "d3c02659-5d7e-479c-a8db-06b01b60c810"
+        },
+        {
+          "id": "5d1c4939-5020-41fe-b50a-69a70020c432",
+          "weight": 2.7129,
+          "from_id": "efc52e16-908a-40fd-a451-a2e9ec9e857b",
+          "to_id": "403840ae-c20d-473b-9c44-91f60e139732"
+        },
+        {
+          "id": "77aede88-2e2f-4026-98ca-78ddffac9b79",
+          "weight": 1.3158,
+          "from_id": "efc52e16-908a-40fd-a451-a2e9ec9e857b",
+          "to_id": "ee1d1d8a-aba3-493f-99f8-011665afaf72"
+        },
+        {
+          "id": "8a4be3c8-023c-48c0-9398-f24a2d64b8c1",
+          "weight": -1.1869,
+          "from_id": "efc52e16-908a-40fd-a451-a2e9ec9e857b",
+          "to_id": "95c844ea-df97-4c14-952f-cbe698f4dc29"
+        },
+        {
+          "id": "3bc65d6a-65ef-4528-b82c-db5d0f3256ce",
+          "weight": 5.683,
+          "from_id": "efc52e16-908a-40fd-a451-a2e9ec9e857b",
+          "to_id": "b9492bf7-14d1-43b4-a3bc-c033f7c5dae7"
+        },
+        {
+          "id": "74e15e08-b148-47c6-8729-ffda2a4d1cfc",
+          "weight": 1.8549,
+          "from_id": "efc52e16-908a-40fd-a451-a2e9ec9e857b",
+          "to_id": "f2e26dea-8775-466c-a90c-ae9e3b5895a2"
+        },
+        {
+          "id": "addf7307-18b2-4389-bf9f-48793eb4fbc9",
+          "weight": -1.8903,
+          "from_id": "efc52e16-908a-40fd-a451-a2e9ec9e857b",
+          "to_id": "3d0b3ffe-af3f-4c8e-91e0-f8a0ac001026"
+        },
+        {
+          "id": "d98d9d11-e35c-4505-ab2a-4bafc07d40e0",
+          "weight": 8.1639,
+          "from_id": "efc52e16-908a-40fd-a451-a2e9ec9e857b",
+          "to_id": "37a11f81-45ca-4e64-835b-cef1f7c0e7cc"
+        },
+        {
+          "id": "0c272a44-55c0-45e2-8bd6-4953e35fa54b",
+          "weight": 5.2877,
+          "from_id": "efc52e16-908a-40fd-a451-a2e9ec9e857b",
+          "to_id": "dad287be-f49c-4e56-9ae6-a53f66fef626"
+        },
+        {
+          "id": "6488fc96-c30b-459f-ab99-36a561eba9e0",
+          "weight": 5.2863,
+          "from_id": "efc52e16-908a-40fd-a451-a2e9ec9e857b",
+          "to_id": "e4e726ca-04b7-44c1-9314-b687bfa5b223"
+        },
+        {
+          "id": "44e3d7b2-86b6-415a-8a7f-4c8de17e2e52",
+          "weight": 5.1377,
+          "from_id": "efc52e16-908a-40fd-a451-a2e9ec9e857b",
+          "to_id": "6b6c1c52-6d82-41f3-963c-56173a244a29"
+        },
+        {
+          "id": "cf81c55b-a11b-403a-9368-428e9f1bdd45",
+          "weight": 3.4045,
+          "from_id": "efc52e16-908a-40fd-a451-a2e9ec9e857b",
+          "to_id": "faedbbea-69de-4237-be0b-0a7e3dada135"
+        },
+        {
+          "id": "fde5e599-4f2e-458e-8b34-e40a8da83ff3",
+          "weight": 3.7869,
+          "from_id": "efc52e16-908a-40fd-a451-a2e9ec9e857b",
+          "to_id": "96918891-7093-456b-bb40-099c775c1df7"
+        },
+        {
+          "id": "8a9b24e7-2e93-480d-a7b1-9f9e3c983c77",
+          "weight": 1.8093,
+          "from_id": "efc52e16-908a-40fd-a451-a2e9ec9e857b",
+          "to_id": "06148d1e-92df-49ef-9eb0-15a834f7bb1f"
+        },
+        {
+          "id": "0998c06d-cfc7-46ca-84bc-d1563c565402",
+          "weight": 3.9514,
+          "from_id": "efc52e16-908a-40fd-a451-a2e9ec9e857b",
+          "to_id": "d15aca22-d67b-40df-a56a-a573fcb8bd48"
+        },
+        {
+          "id": "3d373657-3069-4097-bfcb-a856998bde3f",
+          "weight": 3.4799,
+          "from_id": "efc52e16-908a-40fd-a451-a2e9ec9e857b",
+          "to_id": "16efa6bd-6c5b-4bcc-a5cb-4a66f44a6eb4"
+        }
+      ]
+    },
+    {
+      "id": "dad287be-f49c-4e56-9ae6-a53f66fef626",
+      "name": "Obesity class 2",
+      "short_name": "BMI(35-40)",
+      "activation_amount": 0.02,
+      "leakage": 0,
+      "max_amount": 0,
+      "group":"Physical",
+      "balance": 0,
+      "connections": [
+        {
+          "id": "2254dc60-4056-4a1d-93a2-0602b02a9f65",
+          "weight": -2.859,
+          "from_id": "dad287be-f49c-4e56-9ae6-a53f66fef626",
+          "to_id": "ca5e7a36-5dd4-45ab-bec8-8d4c29971b5f"
+        },
+        {
+          "id": "9b889b59-45b5-4ea5-a060-3c303e351a67",
+          "weight": 5.2956,
+          "from_id": "dad287be-f49c-4e56-9ae6-a53f66fef626",
+          "to_id": "11debed3-7d57-4983-a886-e24e64a096e0"
+        },
+        {
+          "id": "f6475157-615b-4620-8055-0cd05f15e37c",
+          "weight": 3.4028,
+          "from_id": "dad287be-f49c-4e56-9ae6-a53f66fef626",
+          "to_id": "d3c02659-5d7e-479c-a8db-06b01b60c810"
+        },
+        {
+          "id": "92739f45-5bfb-4d5e-a5d4-39a743951469",
+          "weight": 2.484,
+          "from_id": "dad287be-f49c-4e56-9ae6-a53f66fef626",
+          "to_id": "403840ae-c20d-473b-9c44-91f60e139732"
+        },
+        {
+          "id": "59c18753-6158-416a-a4a4-3a337932c358",
+          "weight": 1.1052,
+          "from_id": "dad287be-f49c-4e56-9ae6-a53f66fef626",
+          "to_id": "ed3f073e-4af5-4a87-bc80-997b64c59869"
+        },
+        {
+          "id": "794dc69c-7796-4324-b568-ad7767c0e473",
+          "weight": 3.3049,
+          "from_id": "dad287be-f49c-4e56-9ae6-a53f66fef626",
+          "to_id": "b9492bf7-14d1-43b4-a3bc-c033f7c5dae7"
+        },
+        {
+          "id": "86e02cbc-14ca-49e6-89a8-4db9159669f2",
+          "weight": 1.5178,
+          "from_id": "dad287be-f49c-4e56-9ae6-a53f66fef626",
+          "to_id": "f2e26dea-8775-466c-a90c-ae9e3b5895a2"
+        },
+        {
+          "id": "e67e968e-282c-4266-a740-b6dd8d5ba743",
+          "weight": -1.6625,
+          "from_id": "dad287be-f49c-4e56-9ae6-a53f66fef626",
+          "to_id": "3d0b3ffe-af3f-4c8e-91e0-f8a0ac001026"
+        },
+        {
+          "id": "a7c1abc6-e287-4d42-a5f8-597c5d240123",
+          "weight": 4.224,
+          "from_id": "dad287be-f49c-4e56-9ae6-a53f66fef626",
+          "to_id": "37a11f81-45ca-4e64-835b-cef1f7c0e7cc"
+        },
+        {
+          "id": "72810209-a2fe-4155-b86a-a5411edf396e",
+          "weight": 4.0854,
+          "from_id": "dad287be-f49c-4e56-9ae6-a53f66fef626",
+          "to_id": "efc52e16-908a-40fd-a451-a2e9ec9e857b"
+        },
+        {
+          "id": "9633fc3e-10c1-4e4d-a729-826709e2949a",
+          "weight": 4.5891,
+          "from_id": "dad287be-f49c-4e56-9ae6-a53f66fef626",
+          "to_id": "e4e726ca-04b7-44c1-9314-b687bfa5b223"
+        },
+        {
+          "id": "caedff1d-aac6-4a50-8a4c-0d08319fa715",
+          "weight": 8.6768,
+          "from_id": "dad287be-f49c-4e56-9ae6-a53f66fef626",
+          "to_id": "6b6c1c52-6d82-41f3-963c-56173a244a29"
+        },
+        {
+          "id": "b359f72f-536c-4891-801b-a50e7125ead5",
+          "weight": -1.1301,
+          "from_id": "dad287be-f49c-4e56-9ae6-a53f66fef626",
+          "to_id": "42e488bb-08d9-4ba9-b76d-7560144ddd6a"
+        },
+        {
+          "id": "650d0f70-78e2-4387-bb95-e1715d9a9f7d",
+          "weight": -2.2914,
+          "from_id": "dad287be-f49c-4e56-9ae6-a53f66fef626",
+          "to_id": "fbb8b7d7-0416-4cb9-bb91-04c5662988d9"
+        },
+        {
+          "id": "2a1ff5c3-f559-4f9b-a7c8-bf277aafbc35",
+          "weight": 1.7344,
+          "from_id": "dad287be-f49c-4e56-9ae6-a53f66fef626",
+          "to_id": "faedbbea-69de-4237-be0b-0a7e3dada135"
+        },
+        {
+          "id": "a73a7ef8-e496-4d32-92eb-2dbad8f76cc6",
+          "weight": 1.6995,
+          "from_id": "dad287be-f49c-4e56-9ae6-a53f66fef626",
+          "to_id": "96918891-7093-456b-bb40-099c775c1df7"
+        },
+        {
+          "id": "97895fe3-0afd-416e-adc1-899bb412398c",
+          "weight": 1.691,
+          "from_id": "dad287be-f49c-4e56-9ae6-a53f66fef626",
+          "to_id": "06148d1e-92df-49ef-9eb0-15a834f7bb1f"
+        },
+        {
+          "id": "746b95df-8194-4643-976c-a69fa8cb3612",
+          "weight": 18.0957,
+          "from_id": "dad287be-f49c-4e56-9ae6-a53f66fef626",
+          "to_id": "d15aca22-d67b-40df-a56a-a573fcb8bd48"
+        },
+        {
+          "id": "9d5cf6b0-4104-47aa-bca3-9c3958f69aa4",
+          "weight": 3.578,
+          "from_id": "dad287be-f49c-4e56-9ae6-a53f66fef626",
+          "to_id": "16efa6bd-6c5b-4bcc-a5cb-4a66f44a6eb4"
+        }
+      ]
+    },
+    {
+      "id": "e4e726ca-04b7-44c1-9314-b687bfa5b223",
+      "name": "Obesity class 3",
+      "short_name": "BMI(40+)",
+      "activation_amount": 0.02,
+      "leakage": 0,
+      "max_amount": 0,
+      "group":"Physical",
+      "balance": 0,
+      "connections": [
+        {
+          "id": "cc53a8d6-2d77-4b7b-a856-c1c89db3b54b",
+          "weight": -2.3205,
+          "from_id": "e4e726ca-04b7-44c1-9314-b687bfa5b223",
+          "to_id": "ca5e7a36-5dd4-45ab-bec8-8d4c29971b5f"
+        },
+        {
+          "id": "22311b78-26ee-45e3-9c48-005308ba8990",
+          "weight": 1.0477,
+          "from_id": "e4e726ca-04b7-44c1-9314-b687bfa5b223",
+          "to_id": "11debed3-7d57-4983-a886-e24e64a096e0"
+        },
+        {
+          "id": "979f533a-d5f0-4165-8aa5-0dcf3a5440ed",
+          "weight": 1.8749,
+          "from_id": "e4e726ca-04b7-44c1-9314-b687bfa5b223",
+          "to_id": "d3c02659-5d7e-479c-a8db-06b01b60c810"
+        },
+        {
+          "id": "5544c8ee-cc61-44e0-9804-83eeefbeb282",
+          "weight": 2.5774,
+          "from_id": "e4e726ca-04b7-44c1-9314-b687bfa5b223",
+          "to_id": "403840ae-c20d-473b-9c44-91f60e139732"
+        },
+        {
+          "id": "27482f8f-0941-4850-a8c0-51429486ab89",
+          "weight": 2.9179,
+          "from_id": "e4e726ca-04b7-44c1-9314-b687bfa5b223",
+          "to_id": "b9492bf7-14d1-43b4-a3bc-c033f7c5dae7"
+        },
+        {
+          "id": "746b1f31-d231-415e-b26d-35adda4db73d",
+          "weight": 1.4902,
+          "from_id": "e4e726ca-04b7-44c1-9314-b687bfa5b223",
+          "to_id": "f2e26dea-8775-466c-a90c-ae9e3b5895a2"
+        },
+        {
+          "id": "f5106011-ee5b-4a54-b3e1-973dbcf845ea",
+          "weight": -1.8044,
+          "from_id": "e4e726ca-04b7-44c1-9314-b687bfa5b223",
+          "to_id": "3d0b3ffe-af3f-4c8e-91e0-f8a0ac001026"
+        },
+        {
+          "id": "865484c4-23c2-477b-9d39-b0a1ee418545",
+          "weight": 1.7233,
+          "from_id": "e4e726ca-04b7-44c1-9314-b687bfa5b223",
+          "to_id": "37a11f81-45ca-4e64-835b-cef1f7c0e7cc"
+        },
+        {
+          "id": "547ca9bf-2ba3-4a1a-b519-7bd48bc62287",
+          "weight": 2.0338,
+          "from_id": "e4e726ca-04b7-44c1-9314-b687bfa5b223",
+          "to_id": "efc52e16-908a-40fd-a451-a2e9ec9e857b"
+        },
+        {
+          "id": "3f11c232-978e-472d-bb6d-b0883ff944ff",
+          "weight": 3.7161,
+          "from_id": "e4e726ca-04b7-44c1-9314-b687bfa5b223",
+          "to_id": "dad287be-f49c-4e56-9ae6-a53f66fef626"
+        },
+        {
+          "id": "622961fa-3733-41d0-b59e-ea49bf38d6b9",
+          "weight": 1.8854,
+          "from_id": "e4e726ca-04b7-44c1-9314-b687bfa5b223",
+          "to_id": "6b6c1c52-6d82-41f3-963c-56173a244a29"
+        },
+        {
+          "id": "5bb073f4-49f1-441f-a6d6-c7c08436398c",
+          "weight": 1.8243,
+          "from_id": "e4e726ca-04b7-44c1-9314-b687bfa5b223",
+          "to_id": "faedbbea-69de-4237-be0b-0a7e3dada135"
+        },
+        {
+          "id": "7b888252-f288-4508-99c3-cd33961c87e6",
+          "weight": 2.1094,
+          "from_id": "e4e726ca-04b7-44c1-9314-b687bfa5b223",
+          "to_id": "96918891-7093-456b-bb40-099c775c1df7"
+        },
+        {
+          "id": "7ab7ab51-7adf-4831-8f71-399e694151f1",
+          "weight": 1.7447,
+          "from_id": "e4e726ca-04b7-44c1-9314-b687bfa5b223",
+          "to_id": "d15aca22-d67b-40df-a56a-a573fcb8bd48"
+        },
+        {
+          "id": "529df199-2df4-40c6-868c-ef47e0374e98",
+          "weight": 1.349,
+          "from_id": "e4e726ca-04b7-44c1-9314-b687bfa5b223",
+          "to_id": "16efa6bd-6c5b-4bcc-a5cb-4a66f44a6eb4"
+        }
+      ]
+    },
+    {
+      "id": "6b6c1c52-6d82-41f3-963c-56173a244a29",
+      "name": "Overweight",
+      "short_name": "BMI(25-30)",
+      "activation_amount": 0.02,
+      "leakage": 0,
+      "max_amount": 0,
+      "group":"Physical",
+      "balance": 0,
+      "connections": [
+        {
+          "id": "cb78a2ac-588f-4cf8-9b6d-9a0f491681b9",
+          "weight": -3.0565,
+          "from_id": "6b6c1c52-6d82-41f3-963c-56173a244a29",
+          "to_id": "ca5e7a36-5dd4-45ab-bec8-8d4c29971b5f"
+        },
+        {
+          "id": "c9591429-e252-424d-9d49-7b951d2d1c9c",
+          "weight": 1.1134,
+          "from_id": "6b6c1c52-6d82-41f3-963c-56173a244a29",
+          "to_id": "2da09bab-551e-492f-ae7a-e4d123311874"
+        },
+        {
+          "id": "d9136055-254b-4e87-863f-ac8aa13bebee",
+          "weight": 3.8516,
+          "from_id": "6b6c1c52-6d82-41f3-963c-56173a244a29",
+          "to_id": "11debed3-7d57-4983-a886-e24e64a096e0"
+        },
+        {
+          "id": "cbd4dce3-3620-424c-b40b-d9edb9e52679",
+          "weight": 5.7211,
+          "from_id": "6b6c1c52-6d82-41f3-963c-56173a244a29",
+          "to_id": "d3c02659-5d7e-479c-a8db-06b01b60c810"
+        },
+        {
+          "id": "e03501d6-2726-48e5-a72d-053c563a46d5",
+          "weight": 2.9459,
+          "from_id": "6b6c1c52-6d82-41f3-963c-56173a244a29",
+          "to_id": "403840ae-c20d-473b-9c44-91f60e139732"
+        },
+        {
+          "id": "b6ed4dbc-dabd-41c0-81d8-ae98d5f875c8",
+          "weight": 6.799,
+          "from_id": "6b6c1c52-6d82-41f3-963c-56173a244a29",
+          "to_id": "b9492bf7-14d1-43b4-a3bc-c033f7c5dae7"
+        },
+        {
+          "id": "7dc16979-097b-458a-b792-d69c7993ae95",
+          "weight": 1.6374,
+          "from_id": "6b6c1c52-6d82-41f3-963c-56173a244a29",
+          "to_id": "f2e26dea-8775-466c-a90c-ae9e3b5895a2"
+        },
+        {
+          "id": "68475ee5-17f0-45b3-a833-20f4d509cee5",
+          "weight": -1.47,
+          "from_id": "6b6c1c52-6d82-41f3-963c-56173a244a29",
+          "to_id": "3d0b3ffe-af3f-4c8e-91e0-f8a0ac001026"
+        },
+        {
+          "id": "ca360468-0a39-45e9-816d-b688dd971b0e",
+          "weight": 5.1209,
+          "from_id": "6b6c1c52-6d82-41f3-963c-56173a244a29",
+          "to_id": "37a11f81-45ca-4e64-835b-cef1f7c0e7cc"
+        },
+        {
+          "id": "a0dcd9b9-07f7-440b-b00b-86751346c052",
+          "weight": 1.1178,
+          "from_id": "6b6c1c52-6d82-41f3-963c-56173a244a29",
+          "to_id": "93c4b46e-f1a4-4b2b-af09-05e5e2c2e41b"
+        },
+        {
+          "id": "b2c8a16d-40d7-4dcc-8410-188bc7781e7e",
+          "weight": 8.5422,
+          "from_id": "6b6c1c52-6d82-41f3-963c-56173a244a29",
+          "to_id": "efc52e16-908a-40fd-a451-a2e9ec9e857b"
+        },
+        {
+          "id": "4834b6fe-62bf-4132-bc74-a437622ece08",
+          "weight": 8.538,
+          "from_id": "6b6c1c52-6d82-41f3-963c-56173a244a29",
+          "to_id": "dad287be-f49c-4e56-9ae6-a53f66fef626"
+        },
+        {
+          "id": "d477bced-d587-4c99-831a-2f727ba4ce23",
+          "weight": 3.3449,
+          "from_id": "6b6c1c52-6d82-41f3-963c-56173a244a29",
+          "to_id": "e4e726ca-04b7-44c1-9314-b687bfa5b223"
+        },
+        {
+          "id": "c0a15dc9-2e96-4c7e-9cec-43b63beef8f9",
+          "weight": 1.6798,
+          "from_id": "6b6c1c52-6d82-41f3-963c-56173a244a29",
+          "to_id": "faedbbea-69de-4237-be0b-0a7e3dada135"
+        },
+        {
+          "id": "42704f6a-2e90-448d-8b29-b599cddd7cc2",
+          "weight": 1.9331,
+          "from_id": "6b6c1c52-6d82-41f3-963c-56173a244a29",
+          "to_id": "96918891-7093-456b-bb40-099c775c1df7"
+        },
+        {
+          "id": "53525af6-c425-4081-8b06-04c49880e9eb",
+          "weight": 2.8637,
+          "from_id": "6b6c1c52-6d82-41f3-963c-56173a244a29",
+          "to_id": "06148d1e-92df-49ef-9eb0-15a834f7bb1f"
+        },
+        {
+          "id": "144b5d64-cf21-4e97-a4b7-0ce80076af11",
+          "weight": 6.3229,
+          "from_id": "6b6c1c52-6d82-41f3-963c-56173a244a29",
+          "to_id": "d15aca22-d67b-40df-a56a-a573fcb8bd48"
+        },
+        {
+          "id": "9d587c83-8f6a-4d8a-8b43-11fcb01c979a",
+          "weight": 3.11,
+          "from_id": "6b6c1c52-6d82-41f3-963c-56173a244a29",
+          "to_id": "16efa6bd-6c5b-4bcc-a5cb-4a66f44a6eb4"
+        }
+      ]
+    },
+    {
+      "id": "4312cc24-cd8e-4f42-a302-57628e5921d4",
+      "name": "Cigarettes smoked per day",
+      "short_name": "Smoking(cigs/d)",
+      "activation_amount": 0.02,
+      "leakage": 0,
+      "max_amount": 0,
+      "group":"Behaviour",
+      "balance": 0,
+      "connections": [
+        {
+          "id": "2a084086-8c0e-4105-a253-8c5cfcc2665d",
+          "weight": -1.0735,
+          "from_id": "4312cc24-cd8e-4f42-a302-57628e5921d4",
+          "to_id": "d3c02659-5d7e-479c-a8db-06b01b60c810"
+        },
+        {
+          "id": "95c9e7c0-5423-41be-84f8-4ef36d5dcf82",
+          "weight": -1.262,
+          "from_id": "4312cc24-cd8e-4f42-a302-57628e5921d4",
+          "to_id": "eebfb8de-44b0-4491-86bd-eb50c7fdb867"
+        },
+        {
+          "id": "20689889-f7ca-4a01-b375-9e94da0f2a86",
+          "weight": 2.4349,
+          "from_id": "4312cc24-cd8e-4f42-a302-57628e5921d4",
+          "to_id": "06ee3a11-bbc6-42f6-aec6-69ec14d0bab3"
+        },
+        {
+          "id": "afee580c-b6b6-49f1-99f0-788f50ae22ac",
+          "weight": 3.8853,
+          "from_id": "4312cc24-cd8e-4f42-a302-57628e5921d4",
+          "to_id": "00a700d1-c572-4218-8b28-3f1c70a7d196"
+        },
+        {
+          "id": "d64a400b-8ced-4025-a7a7-e383d0caf9fd",
+          "weight": 1.068,
+          "from_id": "4312cc24-cd8e-4f42-a302-57628e5921d4",
+          "to_id": "c0ef77f8-1079-49c5-90d3-e5f53fa09093"
+        },
+        {
+          "id": "eff6a8f6-da62-4b3c-abc4-ffdd6e5ce926",
+          "weight": 1.5026,
+          "from_id": "4312cc24-cd8e-4f42-a302-57628e5921d4",
+          "to_id": "4f831927-79e5-4bb7-bcef-d1d234a85bc4"
+        },
+        {
+          "id": "1a8462d4-a08a-4494-b722-776580277ffd",
+          "weight": 2.5062,
+          "from_id": "4312cc24-cd8e-4f42-a302-57628e5921d4",
+          "to_id": "8e8c2fb1-fb9a-403d-a749-9cdfee445f22"
+        }
+      ]
+    },
+    {
+      "id": "11debed3-7d57-4983-a886-e24e64a096e0",
+      "name": "Body fat",
+      "short_name": "Body fat",
+      "activation_amount": 0.02,
+      "leakage": 0,
+      "max_amount": 0,
+      "group":"Physical",
+      "balance": 0,
+      "connections": [
+        {
+          "id": "95099ceb-5b14-460f-9c7e-b956ebe9cd61",
+          "weight": 1.9314,
+          "from_id": "11debed3-7d57-4983-a886-e24e64a096e0",
+          "to_id": "d3c02659-5d7e-479c-a8db-06b01b60c810"
+        },
+        {
+          "id": "75df5c3a-02d1-4f7d-ac7b-068d5d43c1f7",
+          "weight": 1.317,
+          "from_id": "11debed3-7d57-4983-a886-e24e64a096e0",
+          "to_id": "efc52e16-908a-40fd-a451-a2e9ec9e857b"
+        },
+        {
+          "id": "2b7729dc-cc51-4509-a125-f9546ffa43d5",
+          "weight": 2.391,
+          "from_id": "11debed3-7d57-4983-a886-e24e64a096e0",
+          "to_id": "06148d1e-92df-49ef-9eb0-15a834f7bb1f"
+        },
+        {
+          "id": "e1da08bf-72ba-4f7d-9cd8-bc549896dc2d",
+          "weight": 1.1431,
+          "from_id": "11debed3-7d57-4983-a886-e24e64a096e0",
+          "to_id": "d15aca22-d67b-40df-a56a-a573fcb8bd48"
+        },
+        {
+          "id": "807bb7a2-ad95-4232-8447-d78c00143bd6",
+          "weight": 3.6093,
+          "from_id": "11debed3-7d57-4983-a886-e24e64a096e0",
+          "to_id": "16efa6bd-6c5b-4bcc-a5cb-4a66f44a6eb4"
+        }
+      ]
+    }
+  ]
+}
