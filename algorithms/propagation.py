@@ -3,13 +3,6 @@ from typing import Dict, Callable, List, Set, Sequence, Tuple
 from collections import defaultdict
 from .traversal import BFS
 
-# Typing for Documentation
-WeightMap = Dict[str, Dict[str, float]]
-AggregationFn = Callable[[List[float]], float]
-Edge = Tuple[str, str]
-Path = Sequence[Edge]
-CycleEdges = Set[Edge]
-
 
 def agg_mean(l: List[float]) -> float:
     """Simple implementation of arithmetic Mean.
@@ -19,6 +12,13 @@ def agg_mean(l: List[float]) -> float:
     In future, it would be better to replace this with NumPy.
     """
     return sum(l) / len(l)
+
+# Typing for Documentation
+WeightMap = Dict[str, Dict[str, float]]
+AggregationFn = Callable[[List[float]], float]
+Edge = Tuple[str, str]
+Path = Sequence[Edge]
+CycleEdges = Set[Edge]
 
 
 def propagate(G: nx.DiGraph, n: str, activation: int,
@@ -68,7 +68,7 @@ def propagate(G: nx.DiGraph, n: str, activation: int,
     # BFS on all edges induced by target source node `n`
     # The BFS w. edge colouring algorithm will
     # (1) avoid getting stuck in cycles and self-loops,
-    # i.e. arcs leading to loops will be simply skiped;
+    # i.e. arcs leading to loops will be simply skipped;
     # (2) arcs will be returned so that nodes with
     # the smaller neighbourhood of un-visited nodes will be
     # processed first.
@@ -93,7 +93,10 @@ def propagate(G: nx.DiGraph, n: str, activation: int,
             # divide if the beta is negative.
             beta = 1 / abs(beta)
         weight = node_activations[u]
-        propagation_path[v].append(weight * beta)
+        v_activation = G[v][node_activation_key]
+        propagation_factor = 1 / (weight * beta)
+        updated_activation = v_activation * propagation_factor
+        propagation_path[v].append(updated_activation)
 
     # Finalise the weights for the remaining nodes
     for node, activations in propagation_path.items():
