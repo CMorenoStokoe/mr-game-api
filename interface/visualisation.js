@@ -1,19 +1,47 @@
-  let dataPromise = d3.json("http://127.0.0.1:5000/simulation")
-
-  dataPromise.then(function(data) {
-
-    const svg = d3.select("svg"),
+function FDG (spell,URL,svgId,view) {
+    
+    const svg = d3.select(svgId),
     width = +svg.attr("width"),
     height = +svg.attr("height");
+    
+    //Views - set values
+    var v_strength = -600;
+    var v_swidth = 1;
+    var v_fsize = "18px";
+    var v_class = "shadow_v_normal";
+    var v_nr = 1;
+    if (view=="collapsed"){
+        v_strength = -5000;
+        v_swidth = 5;
+        v_fsize = "30px";
+        v_class = "shadow_v_collapsed";
+        v_nr = 2;
+    };
+    if (view=="compact"){
+        v_strength = -800;
+        v_swidth = 4;
+        v_fsize = "18px";
+        v_class = "shadow_v_compact";
+        v_nr = 1;
+    };
+    
+    /*setTimeout(function() {
+      //your code to be executed after 1 second
+    }, 200);
+    */
+    let dataPromise = d3.json(URL);
 
-    const color = d3.scaleOrdinal(d3.schemeCategory10);
+    dataPromise.then(function draw(data) {
+
+    //const color = d3.scaleSequential(d3.interpolatePiYG);
+    //d3.scaleOrdinal(d3.schemeCategory10);
     const links = data.links.map(d => Object.create(d));
     const nodes = data.nodes.map(d => Object.create(d));
 
 // Set up simulation
     const simulation = d3.forceSimulation(nodes)
         .force("link", d3.forceLink(links).id(d => d.id))
-        .force("charge", d3.forceManyBody().strength(-300))
+        .force("charge", d3.forceManyBody().strength(v_strength))
         .force("center", d3.forceCenter(width / 2, height / 2))
         .force("x", d3.forceX())
         .force("y", d3.forceY());
@@ -23,9 +51,9 @@
       .selectAll("line")
       .data(links)
       .join("line")
-      .attr("stroke-width", 1)
+      .attr("stroke-width", v_swidth)
       .attr("stroke", d => d.color)//edge color as function of beta weight sign//
-      .attr("stroke-opacity", d => Math.abs(d.value)/20)//edge opacity as function of beta weight value//
+      .attr("stroke-opacity", d => Math.abs(d.value)/5)//edge opacity as function of beta weight value//
       .attr("marker-end", "url(#end)");
 
     const node = svg.append("g")
@@ -36,13 +64,17 @@
       .call(drag(simulation));
 
     const circles = node.append("circle")
-      .attr("r", 5)
-      .attr("fill", d => d.grpColor);
+      .attr("r", 10) //d => Math.abs(d.activation)*v_nr
+      .attr("stroke", d => d.grpColor)
+      .attr("fill", d => d.activColor);
 
     node.append("text")
         .text(function(d) {
           return d.shortName;
         })
+        .attr("class", v_class)
+        .style("font-size", v_fsize)
+        .attr("text-anchor", "middle")
         .attr('x', 6)
         .attr('y', 3);
 
@@ -75,7 +107,15 @@
       node
           .attr("transform", d => `translate(${d.x}, ${d.y})`);
     }
-
+    
+    //Clear function
+    if (spell == "destruction"){    
+        svg.selectAll("*").remove();
+    };
+        
+    //var path = svg.selectAll("path"); 
+    //path.exit().remove();
+        
     function drag(simulation) {
 
       function dragstarted(d) {
@@ -99,6 +139,6 @@
           .on("start", dragstarted)
           .on("drag", dragged)
           .on("end", dragended);
-    }
-
+    }     
   });
+};

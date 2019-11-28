@@ -13,6 +13,7 @@ def agg_mean(l: List[float]) -> float:
     """
     return sum(l) / len(l)
 
+
 # Typing for Documentation
 WeightMap = Dict[str, Dict[str, float]]
 AggregationFn = Callable[[List[float]], float]
