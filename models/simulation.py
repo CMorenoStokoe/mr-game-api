@@ -36,6 +36,7 @@ def Change_Values(directive):
     intvValence=directive["valence"]
     intvValue=directive["value"]
     recompiledNodes = []
+    recompiledLinks = []
     with open('models/data.json', 'r') as json_file:
         dat = json.load(json_file)
         for node in dat["nodes"]:
@@ -43,17 +44,26 @@ def Change_Values(directive):
                 nodeAct_init=node["activation"]
                 if intvValence == "+":
                     node["activation"] += intvValue
+                    node["currIntvLvl"] = intvValue/10
+                    node["totalFunds"] += (intvValue/10)*1000
                     newVal=node["activation"]
                 elif intvValence == "-":
                     node["activation"] -= intvValue
+                    node["currIntvLvl"] = 0-(intvValue/10)
+                    node["totalFunds"] += (intvValue/10)*1000
                     newVal=node["activation"]
                 print("Intervention: {} ({}-->{})".format(node["id"],nodeAct_init, node["activation"]))
+            if node["activation"] < 10:
+                node["activColor"] = "rgba(25, 25, 240, {})".format(abs(node["activation"])/100)
+            elif node["activation"] == 10:
+                node["activColor"] = "white"
+            else:
+                node["activColor"] = "rgba(240, 25, 25, {})".format(abs(node["activation"])/100)
             recompiledNodes.append(node)
     changedDat = {"nodes":recompiledNodes, "links":dat["links"]}
     with open('models/data.json', 'w') as json_file:
         json.dump(changedDat, json_file, indent=4, sort_keys=True)
     return(newVal)
-
         
 def Propagation(directive, newVal):
     nodeID=directive["id"]

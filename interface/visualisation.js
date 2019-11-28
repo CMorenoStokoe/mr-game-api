@@ -65,7 +65,8 @@ function FDG (spell,URL,svgId,view) {
 
     const circles = node.append("circle")
       .attr("r", 10) //d => Math.abs(d.activation)*v_nr
-      .attr("fill", d => d.grpColor);
+      .attr("stroke", d => d.grpColor)
+      .attr("fill", d => d.activColor);
 
     node.append("text")
         .text(function(d) {

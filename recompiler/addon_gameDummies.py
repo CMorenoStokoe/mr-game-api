@@ -13,7 +13,7 @@ class Model_GD():
                             "group" : node['group'],
                             "grpColor": node['grpColor'],
                             "activation" : node['activation'],
-                            "activColor" : "Gray",
+                            "activColor" : "white",
                             "currIntvLvl" : 0,
                             "totalFunds" : 0,
                           }

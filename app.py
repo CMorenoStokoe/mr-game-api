@@ -10,7 +10,7 @@ from resources.simulation import *
 from resources.init import *
 
 #Initialise app
-app = Flask(__name__, template_folder='templates') #Flask APP
+app = Flask(__name__, template_folder='interface') #Flask APP
 api = Api(app) #Flask REST API
 CORS(app) #CORS for local testing
 

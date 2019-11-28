@@ -1,7 +1,7 @@
 function loadGUI(){
     
     var numOfSliders=[1,2,3,4,5,6,7,8,9,10];
-    var focus = {'id':null,'shortName':null,'activation':null,'funding':null};
+    var focus = {'id':null,'shortName':null,'activation':null,'funding':null, 'currIntvLvl':null};
     
     /*##################
     MASTER FUNCTIONS
@@ -50,7 +50,7 @@ function loadGUI(){
         }
     }
     
-    function update(elements){
+    function update(){
         /* Retrieve updated data */
         
         var ourRequest = new XMLHttpRequest();
@@ -63,7 +63,6 @@ function loadGUI(){
                 groupData = ourData["groups"];
                 
                 //Update GUI
-                if (elements.includes("centerGUI")){
                     //Home center GUI
                         //Sliders
                         setMainSliders(statsData[0],statsData[1],statsData[2],statsData[3]);
@@ -71,8 +70,8 @@ function loadGUI(){
                         bundles = [];        
                         for(var i in ourData["groups"]){
                             btnName = "btn-"+ourData["groups"][i]["group"];
-                            activColor = ourData["groups"][i]["activColor"];
                             activation = ourData["groups"][i]["activation"];
+                            activColor = ourData["groups"][i]["activColor"];
                             bundles.push({"btnName": btnName, "activColor": activColor, "activation": activation});
                         };
                         bundles.forEach(updateGrpBtns);
@@ -80,8 +79,6 @@ function loadGUI(){
                         //FDG
                         FDG("destruction", "http://127.0.0.1:5000/simulation", "#svgMain", "normal");
                         FDG("creation", "http://127.0.0.1:5000/simulation", "#svgMain", "normal");
-                };
-                if (elements.includes("modal1")){
                     //Modal 1
                         //Title
                         groupId = document.getElementById("modalTitle").innerHTML;
@@ -94,25 +91,38 @@ function loadGUI(){
                                 break; 
                             }
                         }
-                };
-                if (elements.includes("modal2")){
                     //Modal 2
                         //Pop vis
-                        id = focus;
+                        id = focus["id"];
                         for(var i in ourData["nodes"]){
                             if(ourData["nodes"][i]["id"] == id){
-                                funding=0
                                 //funding = ourData["nodes"][i]["funding"];
                                 focus_value = ourData["nodes"][i]["activation"];
-                                setIntvSlider(funding);
+                                focus_fundLvl = ourData["nodes"][i]["currIntvLvl"];
+                                setIntvSlider(focus_fundLvl);
                                 setPopVis(focus_value);
                                 break; 
                             }
                         }
-                };
             };
             ourRequest.send();
+        console.log("update")
     }
+    
+    var timerCallCount = 0
+    function chrono(time){
+        if (time == "stop"){
+            clearInterval(timer);
+            console.log("timer stopped")
+            timerCallCount = -1;
+        } else if (timerCallCount == 0){
+            timer = setInterval(function() {update();}, time)
+            console.log("timer set")
+        } else {
+            pass;
+        }
+        timerCallCount++;
+    };
 
     /*##################
     SLAVE FUNCTIONS 
@@ -133,11 +143,10 @@ function loadGUI(){
         btn.setAttribute("data-toggle", "dropdown");
         
         document.getElementById("div-dropdown").appendChild(btn); 
-        $("#"+btnName).data("myAttribute");
         //document.getElementById(btnName).style.border = "1px solid "+group["grpColor"];
         document.getElementById(btnName).addEventListener("click", function(e) {   
             render("modal1",group);
-            update(["centerGUI","modal1"]);
+            //update(["centerGUI","modal1"]);
             $('.dropdown-toggle').dropdown();
         });
         
@@ -151,6 +160,7 @@ function loadGUI(){
     }
     
     function setMainSliders(total, goal, goalPct, totalPct){
+        
         totalRnd = Number(total);
         totalPctRnd = Number(totalPct);
         goalPctRnd = Number(goalPct);
@@ -216,8 +226,7 @@ function loadGUI(){
         //Assign progress color
         if (progressVal > 100 || progressVal < 0){
             color = "black";
-        }
-        else if (progressVal > 75 || progressVal < 25){
+        } else if (progressVal > 75 || progressVal < 25){
             color = "red";
         } else if (progressVal > 60 || progressVal < 40) {
             color = "orange";
@@ -232,6 +241,7 @@ function loadGUI(){
         
         $(btnId).attr('data-id', node["id"]);
         $(btnId).attr('data-activation', node["activation"]);
+        $(btnId).attr('data-currIntvLvl', node["currIntvLvl"]);
         
         document.getElementById("dropdown-menu").appendChild(sliderDiv);
         
@@ -252,6 +262,7 @@ function loadGUI(){
         
         nodeId = document.getElementById(btnId).getAttribute('data-id');
         nodeName = document.getElementById(btnId).innerText;
+        nodeIntvLvl = document.getElementById(btnId).getAttribute('data-currIntvLvl');
         
         focus['id']=nodeId;
         focus['shortName']=nodeName;
@@ -264,11 +275,10 @@ function loadGUI(){
         //Set sliderBtn data-id
         document.getElementById("intvSlider").setAttribute('data-id', nodeId);
         
-        //Set slider
-        setIntvSlider(0);
+        //Set intv slider
+        setIntvSlider(nodeIntvLvl);
         
         //Set pop vis
-        
         progressTxtId = '#'+btnId.replace('Txt','')+"Curr";
         focus_value = $(progressTxtId).html();
         setPopVis(focus_value);
@@ -287,7 +297,6 @@ function loadGUI(){
     function setPopVis(focus_value){
         number = Math.floor(focus_value/10);
         percent = focus_value+'%'
-        
             function resetPops(){
                 count = 1;
                 while (count <= 10) {
@@ -370,16 +379,14 @@ function loadGUI(){
         document.getElementById("intvSlider").value = focus_intv
         document.getElementById("intvSliderValue").value = focus_intv
         
-        header = document.getElementById("rightHeader").appendChild(intvSlider);    
-        
-    };
+        header = document.getElementById("rightHeader").appendChild(intvSlider); 
+    }
     
     function resetModal2(){
         document.getElementById("effectors").innerHTML = "";
         document.getElementById("effecteds").innerHTML = "";
     }
-
-    
+ 
     function intervene(target, funding){
         
         if (funding < 0){
@@ -396,14 +403,16 @@ function loadGUI(){
             xhr.onreadystatechange = function () {
                 if (xhr.readyState === 4 && xhr.status === 200) {
                     //Redraw views
-                    update(["centerGUI","modal1","modal2"]);
+                    //update(["centerGUI","modal1","modal2"]);
+                    chrono(3000);
+                    console.log("intervention")
                 }
             }
             xhr.send(JSON.stringify({
                                         "id": target,
                                         "valence": valence,
-                                        "value": value
-            }));     
+                                        "value": value,
+            }));
     }
     
     //depreciated button code 
@@ -430,7 +439,9 @@ function loadGUI(){
     btn_reset.addEventListener("click", function() {
         resetRequest = new XMLHttpRequest();
         resetRequest.open('GET', "http://127.0.0.1:5000/reset");
-        resetRequest.onload = function(){update(["centerGUI","modal1","modal2"])};
+        resetRequest.onload = function(){
+            chrono("stop");
+        };
         resetRequest.send();
     })
     

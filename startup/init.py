@@ -21,7 +21,7 @@ def Start_Values(): #make copy of original start data
 def Start_Buttons():
     nodeGroups = []
     btnDict = []
-    colors={}
+    colors = {}
     
     with open('models/data.json') as json_file:
         data = json.load(json_file)
@@ -53,14 +53,7 @@ def Start_Buttons():
         nodesInGroup=[]
         for node in data["nodes"]:
             if node["group"]==group:
-                nodesInGroup.append(
-                        {
-                            "id":node["id"],
-                            "shortName":node["shortName"],
-                            "group":node["group"],
-                            "activation":node["activation"]
-                        }
-                )
+                nodesInGroup.append(node)
         btnDict.append({"group":group,"nodes":nodesInGroup,"length":len(nodesInGroup),"grpColor":colors[group],"activColor":groupPrevCols[group],"activation":groupPrevs[group]})
         nodesInGroup = sorted(btnDict, key=lambda k: k['length'], reverse=True)
     return ({"groups":nodesInGroup})
