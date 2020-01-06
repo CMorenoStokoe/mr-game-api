@@ -38,7 +38,7 @@ function FDG (spell,URL,svgId,view) {
     const links = data.links.map(d => Object.create(d));
     const nodes = data.nodes.map(d => Object.create(d));
 
-// Set up simulation 
+// Set up simulation
     const simulation = d3.forceSimulation(nodes)
         .force("link", d3.forceLink(links).id(d => d.id))
         .force("charge", d3.forceManyBody().strength(v_strength))
@@ -49,31 +49,18 @@ function FDG (spell,URL,svgId,view) {
     const link = svg.append("g")
       .attr("class", "links")
       .selectAll("line")
-      .data(links, d => d.id)
-      .join(
-        enter => enter.append("line")
-          .attr("stroke-width", v_swidth)
-          .attr("stroke", d => d.color)//edge color as function of beta weight sign//
-          .attr("stroke-opacity", d => Math.abs(d.value)/5)//edge opacity as function of beta weight value//
-          .attr("marker-end", "url(#end)"),
-        /*
-        update => update
-          .attr("stroke", d => "black")
-         .call(update => update.transition(t)
-            .attr("x", (d, i) => i * 16)),
-        exit => exit
-         .call(exit => exit.transition(t)
-            .remove())
-        */
-      );
+      .data(links)
+      .join("line")
+      .attr("stroke-width", v_swidth)
+      .attr("stroke", d => d.color)//edge color as function of beta weight sign//
+      .attr("stroke-opacity", d => Math.abs(d.value)/5)//edge opacity as function of beta weight value//
+      .attr("marker-end", "url(#end)");
 
     const node = svg.append("g")
       .attr("class", "nodes")
       .selectAll("g")
       .data(nodes)
-      .join(
-        enter => enter.append("g")
-        )
+      .join("g")
       .call(drag(simulation));
 
     const circles = node.append("circle")
