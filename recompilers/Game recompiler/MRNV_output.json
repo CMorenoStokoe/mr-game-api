@@ -1,0 +1,604 @@
+{
+    "links": [
+        {
+            "b": -0.25,
+            "color": "blue",
+            "id": 1,
+            "nsnp": 1,
+            "pval": 0.890720034,
+            "se": 1.79,
+            "source": "1018",
+            "target": "1189"
+        },
+        {
+            "b": -0.37,
+            "color": "blue",
+            "id": 2,
+            "nsnp": 1,
+            "pval": 4.39e-05,
+            "se": 0.09,
+            "source": "1018",
+            "target": "1239"
+        },
+        {
+            "b": -1.29,
+            "color": "blue",
+            "id": 3,
+            "nsnp": 1,
+            "pval": 0.022596491,
+            "se": 0.57,
+            "source": "1018",
+            "target": "22"
+        },
+        {
+            "b": -2.97,
+            "color": "blue",
+            "id": 4,
+            "nsnp": 1,
+            "pval": 0.495023576,
+            "se": 4.35,
+            "source": "1018",
+            "target": "961"
+        },
+        {
+            "b": 0.41,
+            "color": "red",
+            "id": 5,
+            "nsnp": 1,
+            "pval": 0.275904606,
+            "se": 0.38,
+            "source": "1018",
+            "target": "UKB-b:10162"
+        },
+        {
+            "b": 0.01,
+            "color": "red",
+            "id": 6,
+            "nsnp": 1,
+            "pval": 0.631145793,
+            "se": 0.02,
+            "source": "1018",
+            "target": "UKB-b:1585"
+        },
+        {
+            "b": 0.51,
+            "color": "red",
+            "id": 7,
+            "nsnp": 1,
+            "pval": 0.000989996,
+            "se": 0.16,
+            "source": "1018",
+            "target": "UKB-b:17999"
+        },
+        {
+            "b": 0.62,
+            "color": "red",
+            "id": 8,
+            "nsnp": 1,
+            "pval": 3.15e-09,
+            "se": 0.1,
+            "source": "1018",
+            "target": "UKB-b:19953"
+        },
+        {
+            "b": 0.0,
+            "color": "blue",
+            "id": 9,
+            "nsnp": 1,
+            "pval": 0.921218442,
+            "se": 0.05,
+            "source": "1018",
+            "target": "UKB-b:4077"
+        },
+        {
+            "b": -0.05,
+            "color": "blue",
+            "id": 10,
+            "nsnp": 1,
+            "pval": 0.519294728,
+            "se": 0.08,
+            "source": "1018",
+            "target": "UKB-b:4424"
+        },
+        {
+            "b": 0.04,
+            "color": "red",
+            "id": 11,
+            "nsnp": 1,
+            "pval": 0.87336661,
+            "se": 0.26,
+            "source": "1018",
+            "target": "UKB-b:4710"
+        },
+        {
+            "b": 0.12,
+            "color": "red",
+            "id": 12,
+            "nsnp": 1,
+            "pval": 0.031632466,
+            "se": 0.05,
+            "source": "1018",
+            "target": "UKB-b:4779"
+        },
+        {
+            "b": -1.73,
+            "color": "blue",
+            "id": 13,
+            "nsnp": 1,
+            "pval": 1.51e-05,
+            "se": 0.4,
+            "source": "1018",
+            "target": "UKB-b:5238"
+        },
+        {
+            "b": -0.11,
+            "color": "blue",
+            "id": 14,
+            "nsnp": 1,
+            "pval": 0.471892124,
+            "se": 0.16,
+            "source": "1018",
+            "target": "UKB-b:5779"
+        },
+        {
+            "b": -0.06,
+            "color": "blue",
+            "id": 15,
+            "nsnp": 1,
+            "pval": 0.264157911,
+            "se": 0.05,
+            "source": "1018",
+            "target": "UKB-b:6519"
+        },
+        {
+            "b": -0.2,
+            "color": "blue",
+            "id": 16,
+            "nsnp": 1,
+            "pval": 2.32e-06,
+            "se": 0.04,
+            "source": "1018",
+            "target": "UKB-b:8476"
+        },
+        {
+            "b": -0.02,
+            "color": "blue",
+            "id": 17,
+            "nsnp": 60,
+            "pval": 0.004555387,
+            "se": 0.01,
+            "source": "22",
+            "target": "1018"
+        },
+        {
+            "b": 0.27,
+            "color": "red",
+            "id": 18,
+            "nsnp": 4,
+            "pval": 0.106569189,
+            "se": 0.17,
+            "source": "22",
+            "target": "1187"
+        },
+        {
+            "b": 0.32,
+            "color": "red",
+            "id": 19,
+            "nsnp": 72,
+            "pval": 1.3e-05,
+            "se": 0.07,
+            "source": "22",
+            "target": "1189"
+        },
+        {
+            "b": -0.01,
+            "color": "blue",
+            "id": 20,
+            "nsnp": 71,
+            "pval": 0.599989086,
+            "se": 0.01,
+            "source": "22",
+            "target": "1239"
+        },
+        {
+            "b": 0.34,
+            "color": "red",
+            "id": 21,
+            "nsnp": 60,
+            "pval": 0.171877892,
+            "se": 0.25,
+            "source": "22",
+            "target": "961"
+        },
+        {
+            "b": -0.0,
+            "color": "blue",
+            "id": 22,
+            "nsnp": 71,
+            "pval": 0.864637821,
+            "se": 0.01,
+            "source": "22",
+            "target": "UKB-b:10162"
+        },
+        {
+            "b": 0.0,
+            "color": "blue",
+            "id": 23,
+            "nsnp": 71,
+            "pval": 0.451940492,
+            "se": 0.0,
+            "source": "22",
+            "target": "UKB-b:1585"
+        },
+        {
+            "b": -0.01,
+            "color": "blue",
+            "id": 24,
+            "nsnp": 71,
+            "pval": 0.33442764,
+            "se": 0.01,
+            "source": "22",
+            "target": "UKB-b:17999"
+        },
+        {
+            "b": -0.03,
+            "color": "blue",
+            "id": 25,
+            "nsnp": 71,
+            "pval": 0.03522722,
+            "se": 0.01,
+            "source": "22",
+            "target": "UKB-b:19953"
+        },
+        {
+            "b": -0.0,
+            "color": "blue",
+            "id": 26,
+            "nsnp": 71,
+            "pval": 0.341441631,
+            "se": 0.0,
+            "source": "22",
+            "target": "UKB-b:4077"
+        },
+        {
+            "b": 0.02,
+            "color": "red",
+            "id": 27,
+            "nsnp": 71,
+            "pval": 0.001117682,
+            "se": 0.01,
+            "source": "22",
+            "target": "UKB-b:4424"
+        },
+        {
+            "b": 0.05,
+            "color": "red",
+            "id": 28,
+            "nsnp": 71,
+            "pval": 0.000367202,
+            "se": 0.02,
+            "source": "22",
+            "target": "UKB-b:4710"
+        },
+        {
+            "b": -0.02,
+            "color": "blue",
+            "id": 29,
+            "nsnp": 71,
+            "pval": 1.38e-05,
+            "se": 0.0,
+            "source": "22",
+            "target": "UKB-b:4779"
+        },
+        {
+            "b": -0.17,
+            "color": "blue",
+            "id": 30,
+            "nsnp": 71,
+            "pval": 2.57e-09,
+            "se": 0.03,
+            "source": "22",
+            "target": "UKB-b:5238"
+        },
+        {
+            "b": 0.01,
+            "color": "red",
+            "id": 31,
+            "nsnp": 71,
+            "pval": 0.654337762,
+            "se": 0.01,
+            "source": "22",
+            "target": "UKB-b:5779"
+        },
+        {
+            "b": 0.01,
+            "color": "red",
+            "id": 32,
+            "nsnp": 71,
+            "pval": 0.01704265,
+            "se": 0.0,
+            "source": "22",
+            "target": "UKB-b:6519"
+        },
+        {
+            "b": 0.0,
+            "color": "blue",
+            "id": 33,
+            "nsnp": 71,
+            "pval": 0.041599482,
+            "se": 0.0,
+            "source": "22",
+            "target": "UKB-b:8476"
+        },
+        {
+            "b": 0.0,
+            "color": "blue",
+            "id": 34,
+            "nsnp": 1,
+            "pval": 0.61707615,
+            "se": 0.0,
+            "source": "961",
+            "target": "1018"
+        },
+        {
+            "b": -0.03,
+            "color": "blue",
+            "id": 35,
+            "nsnp": 1,
+            "pval": 0.304744747,
+            "se": 0.03,
+            "source": "961",
+            "target": "1189"
+        },
+        {
+            "b": 0.0,
+            "color": "blue",
+            "id": 36,
+            "nsnp": 1,
+            "pval": 0.676573919,
+            "se": 0.0,
+            "source": "961",
+            "target": "1239"
+        },
+        {
+            "b": 0.05,
+            "color": "red",
+            "id": 37,
+            "nsnp": 1,
+            "pval": 1.95e-06,
+            "se": 0.01,
+            "source": "961",
+            "target": "22"
+        },
+        {
+            "b": -0.0,
+            "color": "blue",
+            "id": 38,
+            "nsnp": 1,
+            "pval": 0.499919122,
+            "se": 0.01,
+            "source": "961",
+            "target": "UKB-b:10162"
+        },
+        {
+            "b": 0.0,
+            "color": "blue",
+            "id": 39,
+            "nsnp": 1,
+            "pval": 0.868639895,
+            "se": 0.0,
+            "source": "961",
+            "target": "UKB-b:1585"
+        },
+        {
+            "b": -0.0,
+            "color": "blue",
+            "id": 40,
+            "nsnp": 1,
+            "pval": 0.148025153,
+            "se": 0.0,
+            "source": "961",
+            "target": "UKB-b:17999"
+        },
+        {
+            "b": -0.0,
+            "color": "blue",
+            "id": 41,
+            "nsnp": 1,
+            "pval": 0.018540444,
+            "se": 0.0,
+            "source": "961",
+            "target": "UKB-b:19953"
+        },
+        {
+            "b": 0.0,
+            "color": "blue",
+            "id": 42,
+            "nsnp": 1,
+            "pval": 0.977133523,
+            "se": 0.0,
+            "source": "961",
+            "target": "UKB-b:4077"
+        },
+        {
+            "b": 0.0,
+            "color": "blue",
+            "id": 43,
+            "nsnp": 1,
+            "pval": 0.720278686,
+            "se": 0.0,
+            "source": "961",
+            "target": "UKB-b:4424"
+        },
+        {
+            "b": -0.0,
+            "color": "blue",
+            "id": 44,
+            "nsnp": 1,
+            "pval": 0.597909136,
+            "se": 0.01,
+            "source": "961",
+            "target": "UKB-b:4710"
+        },
+        {
+            "b": 0.0,
+            "color": "blue",
+            "id": 45,
+            "nsnp": 1,
+            "pval": 0.178048688,
+            "se": 0.0,
+            "source": "961",
+            "target": "UKB-b:4779"
+        },
+        {
+            "b": -0.0,
+            "color": "blue",
+            "id": 46,
+            "nsnp": 1,
+            "pval": 0.75822355,
+            "se": 0.01,
+            "source": "961",
+            "target": "UKB-b:5238"
+        },
+        {
+            "b": 0.0,
+            "color": "blue",
+            "id": 47,
+            "nsnp": 1,
+            "pval": 0.325627273,
+            "se": 0.0,
+            "source": "961",
+            "target": "UKB-b:5779"
+        },
+        {
+            "b": 0.0,
+            "color": "blue",
+            "id": 48,
+            "nsnp": 1,
+            "pval": 0.419158137,
+            "se": 0.0,
+            "source": "961",
+            "target": "UKB-b:6519"
+        },
+        {
+            "b": 0.0,
+            "color": "blue",
+            "id": 49,
+            "nsnp": 1,
+            "pval": 0.568983833,
+            "se": 0.0,
+            "source": "961",
+            "target": "UKB-b:8476"
+        }
+    ],
+    "nodes": [
+        {
+            "group": "goal",
+            "id": "1189",
+            "name": "Obsessive Compulsive Disorder",
+            "short_name": "OCD"
+        },
+        {
+            "group": "goal",
+            "id": "1018",
+            "name": "Subjective well being",
+            "short_name": "Well-being"
+        },
+        {
+            "group": "policy",
+            "id": "1239",
+            "name": "Years of schooling",
+            "short_name": "Years of schooling"
+        },
+        {
+            "group": "goal",
+            "id": "22",
+            "name": "Schizophrenia",
+            "short_name": "Schizophrenia"
+        },
+        {
+            "group": "policy",
+            "id": "961",
+            "name": "Cigarettes smoked per day",
+            "short_name": "Smoking(cigs/d)"
+        },
+        {
+            "group": "policy",
+            "id": "UKB-b:10162",
+            "name": "Job involve night shift work",
+            "short_name": "Night shifts"
+        },
+        {
+            "group": "policy",
+            "id": "UKB-b:1585",
+            "name": "Z86.4 Personal history of psychoactive substance abuse",
+            "short_name": "Drug use"
+        },
+        {
+            "group": "policy",
+            "id": "UKB-b:17999",
+            "name": "Weekly usage of mobile phone in last 3 months",
+            "short_name": "Phone use"
+        },
+        {
+            "group": "policy",
+            "id": "UKB-b:19953",
+            "name": "Body mass index (BMI)",
+            "short_name": "BMI"
+        },
+        {
+            "group": "policy",
+            "id": "UKB-b:4077",
+            "name": "Other group activity",
+            "short_name": "Social activity*"
+        },
+        {
+            "group": "policy",
+            "id": "UKB-b:4424",
+            "name": "Sleep duration",
+            "short_name": "Sleep (hrs)"
+        },
+        {
+            "group": "policy",
+            "id": "UKB-b:4710",
+            "name": "Number of days/week of moderate physical activity 10+ minutes",
+            "short_name": "Exercise*"
+        },
+        {
+            "group": "policy",
+            "id": "UKB-b:4779",
+            "name": "Plays computer games",
+            "short_name": "Gaming"
+        },
+        {
+            "group": "goal",
+            "id": "UKB-b:5238",
+            "name": "Fluid intelligence score",
+            "short_name": "Intelligence"
+        },
+        {
+            "group": "policy",
+            "id": "UKB-b:5779",
+            "name": "Alcohol intake frequency.",
+            "short_name": "Alcohol"
+        },
+        {
+            "group": "goal",
+            "id": "UKB-b:6519",
+            "name": "Worrier / anxious feelings",
+            "short_name": "Anxiety"
+        },
+        {
+            "group": "policy",
+            "id": "UKB-b:8476",
+            "name": "Loneliness isolation",
+            "short_name": "Loneliness"
+        },
+        {
+            "group": "goal",
+            "id": "1187",
+            "name": "Major Depressive Disorder",
+            "short_name": "Depression (MDD)"
+        }
+    ]
+}

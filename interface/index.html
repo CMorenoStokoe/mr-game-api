@@ -14,14 +14,20 @@
     <body>  
         
         <!-- navbar -->
-        <nav class="navbar navbar-light bg-light">
+        <nav class="navbar navbar-custom">
+            
+            <!--title-->
             <span class="navbar-brand mb-0 h1">Untitled MR EvE Game <em>alpha</em></span>
+            
+            <!--current goal text-->
             <div class="div-progress-main">
                 <div id="div-goalTxt-title"><strong>Goal</strong></div> 
                 <div id="div-goalTxt">
                     <p id="goalTxt"><em>Increase prevalence of <strong><span id="progress_goalTxt">*Unassigned*</span></strong> to 100 units</em></p>
                 </div>
             </div>
+            
+            <!--goal progress bar-->
             <div class="div-progress-main">
                 <div class="div-progress-main-txt"><strong>Goal progress</strong></div> 
                 <div class="progress progress-main">
@@ -29,7 +35,10 @@
                         <span id="progress_goalVal">*Unassigned*</span>
                     </div>
                 </div>
-            </div><div class="div-progress-main">
+            </div>
+            
+            <!--total health progress bar-->
+            <div class="div-progress-main">
                 <div class="div-progress-main-txt"><strong>Total health</strong></div>
                 <div class="progress progress-main">
                     <div class="progress-bar progress-bar-striped progress-bar-animated bg-warning" id="progress_total" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 75%">
@@ -37,20 +46,25 @@
                     </div>
                 </div>
             </div>
+            
         </nav>
         
         <!--GUIs-->
         <div class="row">
-            <!-- left GUI -->
             
+            <!-- left GUI -->
             <div class="container-fluidd col-sm-2 col-md-2 col-lg-2 col-xl-2">
-                <div class="card">
-                    <div class="card-header">
-                        <h3 class="centerTxts">Domains</h3>
+                <div class="card" id="leftCard">
+                    <div class="card-header" id="leftHead">
+                        <h3 class="centerTxts">Traits</h3>
                     </div>
                     <div class="dropright" id="div-dropdown">
                         <div class="card-body" id="leftBody">
+                            
                             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" id="dropdown-menu"></div>
+                            
+                            <div id="goalsDiv"></div>
+                            
                         </div>
                     </div>
                 </div>
@@ -63,8 +77,8 @@
 
             <!-- right GUI -->   
             <div class="container-fluidd col-sm-4 col-md-4 col-lg-4 col-xl-4">
-                <div class="card">
-                    <div class="card-header">
+                <div class="card" id="rightCard">
+                    <div class="card-header" id="rightHead">
                         <div class="hide-on-startup" id="rightHeader">
                             <h3 id="modal2Title" data-btnId="">Trait view (no trait selected)</h3>
                             <em id="modal2Subtitle">ID</em>
@@ -125,106 +139,202 @@
                     </div>
                 </div>
             </div>
+            
         </div>
         
         <!-- reset btn-->
         <nav class="navbar navbar-light bg-light">
-            <button class="btn btn-danger" id="btn_reset">Reset</button>
+            <button class="btn btn-danger" id="btn_reset">Stop/Reset</button>
         </nav>
         
-        <!-- [hidden] sliders -->    
+        <!-- [hidden] elements -->    
         <div id="hiddenItems" style="display:none">
+            
             <!-- Trait title (used to store intervention target name)-->
             <h3 class="modal-title" id="modalTitle">Modal title</h3>
+            
             <!--Intv Slider-->
             <div id="intvSliderHider"></div>
-            <!--Progress bars-->
-            <div class="sliderDiv" id="div-slider1">
-                <div class="progress vertical progress-mini">
-                    <div class="progress-bar" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" id="slider1">
-                        <span id="slider1Curr"></span>
+            
+            <!--Policy progress bars-->
+            <div id="policyProgHider">
+                <div class="sliderDiv" id="div-slider1">
+                    <div class="progress vertical progress-mini">
+                        <div class="progress-bar" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" id="slider1">
+                            <span id="slider1Curr"></span>
+                        </div>
+                    </div>
+                    <button class="sliderBtn btn" id="slider1Txt" data-id="">Slider 1: </button>
+                </div>
+                <div class="sliderDiv" id="div-slider2">
+                    <div class="progress vertical progress-mini">
+                        <div class="progress-bar" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" id="slider2">
+                            <span id="slider2Curr"></span>
+                        </div>
+                    </div>
+                    <button class="sliderBtn btn" id="slider2Txt" data-id="">Slider 1: </button>
+                </div>
+                <div class="sliderDiv" id="div-slider3">
+                    <div class="progress vertical progress-mini">
+                        <div class="progress-bar" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" id="slider3">
+                            <span id="slider3Curr"></span>
+                        </div>
+                    </div>
+                    <button class="sliderBtn btn" id="slider3Txt" data-id="">Slider 1: </button>
+                </div>
+                <div class="sliderDiv" id="div-slider4">
+                    <div class="progress vertical progress-mini">
+                        <div class="progress-bar" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" id="slider4">
+                            <span id="slider4Curr"></span>
+                        </div>
+                    </div>
+                    <button class="sliderBtn btn" id="slider4Txt" data-id="">Slider 1: </button>
+                </div>
+                <div class="sliderDiv" id="div-slider5">
+                    <div class="progress vertical progress-mini">
+                        <div class="progress-bar" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" id="slider5">
+                            <span id="slider5Curr"></span>
+                        </div>
+                    </div>
+                    <button class="sliderBtn btn" id="slider5Txt" data-id="">Slider 1: </button>
+                </div>
+                <div class="sliderDiv" id="div-slider6">
+                    <div class="progress vertical progress-mini">
+                        <div class="progress-bar" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" id="slider6">
+                            <span id="slider6Curr"></span>
+                        </div>
+                    </div>
+                    <button class="sliderBtn btn" id="slider6Txt" data-id="">Slider 1: </button>
+                </div>
+                <div class="sliderDiv" id="div-slider7">
+                    <div class="progress vertical progress-mini">
+                        <div class="progress-bar" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" id="slider7">
+                            <span id="slider7Curr"></span>
+                        </div>
+                    </div>
+                    <button class="sliderBtn btn" id="slider7Txt" data-id="">Slider 1: </button>
+                </div>
+                <div class="sliderDiv" id="div-slider8">
+                    <div class="progress vertical progress-mini">
+                        <div class="progress-bar" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" id="slider8">
+                            <span id="slider8Curr"></span>
+                        </div>
+                    </div>
+                    <button class="sliderBtn btn" id="slider8Txt" data-id="">Slider 1: </button>
+                </div>
+                <div class="sliderDiv" id="div-slider9">
+                    <div class="progress vertical progress-mini">
+                        <div class="progress-bar" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" id="slider9">
+                            <span id="slider9Curr"></span>
+                        </div>
+                    </div>
+                    <button class="sliderBtn btn" id="slider9Txt" data-id="">Slider 1: </button>
+                </div>
+                <div class="sliderDiv" id="div-slider10">
+                    <div class="progress vertical progress-mini">
+                        <div class="progress-bar" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" id="slider10">
+                            <span id="slider10Curr"></span>
+                        </div>
+                    </div>
+                    <button class="sliderBtn btn" id="slider10Txt" data-id="">Slider 1: </button>
+                </div>
+            </div>
+            
+            <!--Goal progress bars-->
+            <div id="goalProgHider">
+                
+                <div class="goalProgDiv" id="goalProgDiv1">
+                    <p class="goalProgTitle" id="progress_txt_goal1">*Unassigned*</p>
+                    <div class="progress progress-goals" id="progress_div_goal1">
+                        <div class="progress-bar progress-bar-striped progress-bar-animated bg-warning" id="progress_bar_goal1" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 75%">
+                             <span id="progress_barTxt_goal1">*N/A*</span>
+                        </div>
                     </div>
                 </div>
-                <button class="sliderBtn btn" id="slider1Txt" data-id="">Slider 1: </button>
-            </div>
-            <div class="sliderDiv" id="div-slider2">
-                <div class="progress vertical progress-mini">
-                    <div class="progress-bar" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" id="slider2">
-                        <span id="slider2Curr"></span>
+
+                <div class="goalProgDiv" id="goalProgDiv2">
+                    <p class="goalProgTitle" id="progress_txt_goal2">*Unassigned*</p>
+                    <div class="progress progress-goals" id="progress_div_goal2">
+                        <div class="progress-bar progress-bar-striped progress-bar-animated bg-warning" id="progress_bar_goal2" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 75%">
+                             <span id="progress_barTxt_goal2">*N/A*</span>
+                        </div>
                     </div>
                 </div>
-                <button class="sliderBtn btn" id="slider2Txt" data-id="">Slider 1: </button>
-            </div>
-            <div class="sliderDiv" id="div-slider3">
-                <div class="progress vertical progress-mini">
-                    <div class="progress-bar" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" id="slider3">
-                        <span id="slider3Curr"></span>
+
+                <div class="goalProgDiv" id="goalProgDiv3">
+                    <p class="goalProgTitle" id="progress_txt_goal3">*Unassigned*</p>
+                    <div class="progress progress-goals" id="progress_div_goal3">
+                        <div class="progress-bar progress-bar-striped progress-bar-animated bg-warning" id="progress_bar_goal3" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 75%">
+                             <span id="progress_barTxt_goal3">*N/A*</span>
+                        </div>
                     </div>
                 </div>
-                <button class="sliderBtn btn" id="slider3Txt" data-id="">Slider 1: </button>
-            </div>
-            <div class="sliderDiv" id="div-slider4">
-                <div class="progress vertical progress-mini">
-                    <div class="progress-bar" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" id="slider4">
-                        <span id="slider4Curr"></span>
+
+                <div class="goalProgDiv" id="goalProgDiv4">
+                    <p class="goalProgTitle" id="progress_txt_goal4">*Unassigned*</p>
+                    <div class="progress progress-goals" id="progress_div_goal4">
+                        <div class="progress-bar progress-bar-striped progress-bar-animated bg-warning" id="progress_bar_goal4" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 75%">
+                             <span id="progress_barTxt_goal4">*N/A*</span>
+                        </div>
                     </div>
                 </div>
-                <button class="sliderBtn btn" id="slider4Txt" data-id="">Slider 1: </button>
-            </div>
-            <div class="sliderDiv" id="div-slider5">
-                <div class="progress vertical progress-mini">
-                    <div class="progress-bar" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" id="slider5">
-                        <span id="slider5Curr"></span>
+
+                <div class="goalProgDiv" id="goalProgDiv5">
+                    <p class="goalProgTitle" id="progress_txt_goal5">*Unassigned*</p>
+                    <div class="progress progress-goals" id="progress_div_goal5">
+                        <div class="progress-bar progress-bar-striped progress-bar-animated bg-warning" id="progress_bar_goal5" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 75%">
+                             <span id="progress_barTxt_goal5">*N/A*</span>
+                        </div>
                     </div>
                 </div>
-                <button class="sliderBtn btn" id="slider5Txt" data-id="">Slider 1: </button>
-            </div>
-            <div class="sliderDiv" id="div-slider6">
-                <div class="progress vertical progress-mini">
-                    <div class="progress-bar" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" id="slider6">
-                        <span id="slider6Curr"></span>
+
+                <div class="goalProgDiv" id="goalProgDiv6">
+                    <p class="goalProgTitle" id="progress_txt_goal6">*Unassigned*</p>
+                    <div class="progress progress-goals" id="progress_div_goal6">
+                        <div class="progress-bar progress-bar-striped progress-bar-animated bg-warning" id="progress_bar_goal6" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 75%">
+                             <span id="progress_barTxt_goal6">*N/A*</span>
+                        </div>
                     </div>
                 </div>
-                <button class="sliderBtn btn" id="slider6Txt" data-id="">Slider 1: </button>
-            </div>
-            <div class="sliderDiv" id="div-slider7">
-                <div class="progress vertical progress-mini">
-                    <div class="progress-bar" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" id="slider7">
-                        <span id="slider7Curr"></span>
+
+                <div class="goalProgDiv" id="goalProgDiv7">
+                    <p class="goalProgTitle" id="progress_txt_goal7">*Unassigned*</p>
+                    <div class="progress progress-goals" id="progress_div_goal7">
+                        <div class="progress-bar progress-bar-striped progress-bar-animated bg-warning" id="progress_bar_goal7" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 75%">
+                             <span id="progress_barTxt_goal7">*N/A*</span>
+                        </div>
                     </div>
                 </div>
-                <button class="sliderBtn btn" id="slider7Txt" data-id="">Slider 1: </button>
-            </div>
-            <div class="sliderDiv" id="div-slider8">
-                <div class="progress vertical progress-mini">
-                    <div class="progress-bar" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" id="slider8">
-                        <span id="slider8Curr"></span>
+
+                <div class="goalProgDiv" id="goalProgDiv8">
+                    <p class="goalProgTitle" id="progress_txt_goal8">*Unassigned*</p>
+                    <div class="progress progress-goals" id="progress_div_goal8">
+                        <div class="progress-bar progress-bar-striped progress-bar-animated bg-warning" id="progress_bar_goal8" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 75%">
+                             <span id="progress_barTxt_goal8">*N/A*</span>
+                        </div>
                     </div>
                 </div>
-                <button class="sliderBtn btn" id="slider8Txt" data-id="">Slider 1: </button>
-            </div>
-            <div class="sliderDiv" id="div-slider9">
-                <div class="progress vertical progress-mini">
-                    <div class="progress-bar" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" id="slider9">
-                        <span id="slider9Curr"></span>
+
+                <div class="goalProgDiv" id="goalProgDiv9">
+                    <p class="goalProgTitle" id="progress_txt_goal9">*Unassigned*</p>
+                    <div class="progress progress-goals" id="progress_div_goal9">
+                        <div class="progress-bar progress-bar-striped progress-bar-animated bg-warning" id="progress_bar_goal9" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 75%">
+                             <span id="progress_barTxt_goal9">*N/A*</span>
+                        </div>
                     </div>
                 </div>
-                <button class="sliderBtn btn" id="slider9Txt" data-id="">Slider 1: </button>
-            </div>
-            <div class="sliderDiv" id="div-slider10">
-                <div class="progress vertical progress-mini">
-                    <div class="progress-bar" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" id="slider10">
-                        <span id="slider10Curr"></span>
+
+                <div class="goalProgDiv" id="goalProgDiv10">
+                    <p class="goalProgTitle" id="progress_txt_goal10">*Unassigned*</p>
+                    <div class="progress progress-goals" id="progress_div_goal10">
+                        <div class="progress-bar progress-bar-striped progress-bar-animated bg-warning" id="progress_bar_goal10" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 75%">
+                             <span id="progress_barTxt_goal10">*N/A*</span>
+                        </div>
                     </div>
                 </div>
-                <button class="sliderBtn btn" id="slider10Txt" data-id="">Slider 1: </button>
             </div>
-        </div>
-        
-        <style type="text/css">
-	
-</style>
-             
+                                    
+       </div>   
         
     <!-- Scripts -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

@@ -3,12 +3,16 @@ class Model_ClG():
     def coloredGroups(recompiledNodes,colorScheme):
         
         #Define colorschemes
-        if colorScheme == "Strong":
+        if colorScheme == "Binary":
+            colors=["green", "yellow"]
+        elif colorScheme == "Strong":
             colors=["cornflowerblue", "violet", "lightseagreen", "brown", "forestgreen", "red",  "purple", "goldenrod", "crimson", "cadetblue"]
         elif colorScheme == "Pastel":
             colors=["cornflowerblue", "lightcoral", "lightcyan", "lightgreen", "lightgray", "lightpink",  "lightsalmon", "lightgoldenrodyellow", "lightseagreen","black"]
         elif colorScheme == "grayscale":
             colors=["gray", "black", "darkgray", "dimgray", "lightgray", "slategray",  "darkslategray", "lightslategray", "beige", "lightdimgray"]
+        else:
+            colors=["red"]
         
         #Build list of groups in data
         groups={}

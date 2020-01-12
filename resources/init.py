@@ -10,6 +10,6 @@ from models.simulation import Overall_Stats
 class Init_Buttons (Resource):
      def get(self):
         btnInfo = Start_Buttons();
-        statsInfo = Overall_Stats("Intracranial volume",100)
+        statsInfo = Overall_Stats("Subjective well being",100)
         return({"btnInfo":btnInfo, "statsInfo":statsInfo})
     

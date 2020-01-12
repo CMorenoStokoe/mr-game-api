@@ -1,7 +1,23 @@
 function loadGUI(){
     
+    /*##################
+    GLOBAL VARIABLES
+    ##################*/
+    
+    //Debug controls
+    var debug_calls = 'False';
+    var debug_gui_goals = 'False';
+    var debug_gui_policies = 'False';
+    var debug_gui_update = 'False';
+    var debug_gui_intervention = 'False';
+    var debug_fdg_mini = 'False';
+    var debug_gui_detailView = 'False';
+    
+    
+    //GUI variables
     var numOfSliders=[1,2,3,4,5,6,7,8,9,10];
     var focus = {'id':null,'shortName':null,'activation':null,'funding':null, 'currIntvLvl':null};
+    
     
     /*##################
     MASTER FUNCTIONS
@@ -15,27 +31,33 @@ function loadGUI(){
             ourRequest.onload = function() {
                 var ourData = JSON.parse(ourRequest.responseText);
                 
+                if (debug_calls == 'True'){console.log(ourData)} 
+                
                 //Initialise GUI elements
+                
                     //Home center GUI
-                groupData = ourData["btnInfo"];
-                groupData["groups"].forEach(renderGrp);
+                    groupData = ourData["btnInfo"];
+                    groupData["groups"].forEach(renderGrp);
+                
                     //Main sliders and text
-                statsData = ourData["statsInfo"];
-                setMainSliders(statsData[0],statsData[1],statsData[2],statsData[3]);
-                numOfSliders.forEach(renderBtnLinks);
+                    statsData = ourData["statsInfo"];
+                    setMainSliders(statsData[0],statsData[1],statsData[2],statsData[3]);
+                    numOfSliders.forEach(renderBtnLinks);
+                
                     //Main FDG
-                FDG("creation", "http://127.0.0.1:5000/simulation", "#svgMain", "normal");
+                    FDG("creation", "http://127.0.0.1:5000/simulation", "#svgMain", "normal");
+                
                     //Intervention slider /*
-                document.getElementById("intvSlider").addEventListener("change", function() {
-                    intervene(focus["id"], Number(this.value));
-                });
+                    document.getElementById("intvSlider").addEventListener("change", function() {
+                        intervene(focus["id"], Number(this.value));
+                    });
             }
             ourRequest.send();
     }
     init();
     
     function render(element, id){
-        //Update either modal 1 or 2
+        //Update either modal 1 or 2 (legacy names for left/right GUI)
         if (element == "modal1"){
             group = id;
             resetModal1();
@@ -53,36 +75,52 @@ function loadGUI(){
     function update(){
         /* Retrieve updated data */
         
+        //Trigger API simulation tick
         var ourRequest = new XMLHttpRequest();
+            ourRequest.open('GET', "http://127.0.0.1:5000/intervene");
+            ourRequest.onload = function() {
+                
+            //On simulation tick update GUI
+            var ourRequest = new XMLHttpRequest();
             ourRequest.open('GET', "http://127.0.0.1:5000/update");
             ourRequest.onload = function() {
                 var ourData = JSON.parse(ourRequest.responseText);
-
+                
+                if (debug_calls == 'True') {console.log(ourData)};
+                
                 nodeData = ourData["nodes"];
                 statsData = ourData["stats"];
                 groupData = ourData["groups"];
                 
                 //Update GUI
+                
                     //Home center GUI
+                
                         //Sliders
                         setMainSliders(statsData[0],statsData[1],statsData[2],statsData[3]);
+                
                         //Circle group activation colours & label
                         bundles = [];        
                         for(var i in ourData["groups"]){
-                            btnName = "btn-"+ourData["groups"][i]["group"];
-                            activation = ourData["groups"][i]["activation"];
-                            activColor = ourData["groups"][i]["activColor"];
-                            bundles.push({"btnName": btnName, "activColor": activColor, "activation": activation});
+                            if (ourData["groups"][i]["group"] != 'goal'){
+                                btnName = "btn-"+ourData["groups"][i]["group"];
+                                activation = ourData["groups"][i]["activation"];
+                                activColor = ourData["groups"][i]["activColor"];
+                                bundles.push({"btnName": btnName, "activColor": activColor, "activation": activation});
+                            }
                         };
                         bundles.forEach(updateGrpBtns);
-                        //bundles.forEach(colorGrp);
+                
                         //FDG
                         FDG("destruction", "http://127.0.0.1:5000/simulation", "#svgMain", "normal");
                         FDG("creation", "http://127.0.0.1:5000/simulation", "#svgMain", "normal");
+                
                     //Modal 1
+                
                         //Title
                         groupId = document.getElementById("modalTitle").innerHTML;
-                        //Sliders (if modal exists)
+                
+                        //Policy mini-progress bars 'sliders' (if modal exists)
                         group="";
                         for(var i in ourData["groups"]){
                             if(ourData["groups"][i]["group"] == groupId){
@@ -91,7 +129,20 @@ function loadGUI(){
                                 break; 
                             }
                         }
+                        
+                        //Goal progress
+                
+                        for(var i in ourData["groups"]){
+                            if(ourData["groups"][i]["group"] == 'goal'){
+                                ourData["groups"][i]['nodes'].forEach(setGoalProgs)
+                                populateModal1(group);
+                                
+                                if (debug_gui_update == 'True') {console.log("debug_gui_update: Calling goal progress bar update method with payload: ", ourData["groups"][i]['nodes'])}
+                            }
+                        }
+                
                     //Modal 2
+                
                         //Pop vis
                         id = focus["id"];
                         for(var i in ourData["nodes"]){
@@ -104,23 +155,38 @@ function loadGUI(){
                                 break; 
                             }
                         }
-            };
+                };
+                ourRequest.send();
+            }
             ourRequest.send();
-        console.log("update")
+        
+        
+        
+        if (debug_gui_update == 'True') {console.log("update");}
     }
     
     var timerCallCount = 0
     function chrono(time){
+        
+        //If reset/stop command called then clear timer imediately
         if (time == "stop"){
             clearInterval(timer);
-            console.log("timer stopped")
             timerCallCount = -1;
+            
+            if (debug_gui_update == 'True') {console.log("timer stopped");}
+        
+        //If timer not active then start timer 
         } else if (timerCallCount == 0){
             timer = setInterval(function() {update();}, time)
-            console.log("timer set")
+            
+            if (debug_gui_update == 'True') {console.log("timer set");}
+        
+        //If timer already active then pass
         } else {
-            pass;
+            return;
         }
+        
+        //Increment count to indicate timer was requested to start
         timerCallCount++;
     };
 
@@ -131,32 +197,136 @@ function loadGUI(){
     
     //PERSISTANT HOME: CENTER UI
     function renderGrp(group){
-        /*create div holding group of buttons*/
-        btnName = "btn-"+group["group"];
-        btnHTML =  group["group"]+"<br>"+"<span class=\"badge badge-danger btnAlert\" id=\""+btnName+"-alert\">"+group["activation"].toFixed(0)+"</span>";
+        
+        /* For policy node group, create drop-down button */
+        if (group["group"] != "policyREMOVEME"){
             
-        modalId = "#modal-"+group["group"];
-        var btn = document.createElement("BUTTON");
-        btn.id = btnName;
-        btn.className = "btn btn-light grpBtn";
-        btn.innerHTML = btnHTML;
-        btn.setAttribute("data-toggle", "dropdown");
+            //Compose button IDs
+            btnName = "btn-"+group["group"]; //modalId = "#modal-"+group["group"];
+            
+            //Create html for alert badge within button
+            btnHTML =  group["group"]+"<br>"+"<span class=\"badge badge-danger btnAlert\" id=\""+btnName+"-alert\">"+group["activation"].toFixed(0)+"</span>";
+            
+            //Create button element
+            var btn = document.createElement("BUTTON");
+            btn.id = btnName;
+            btn.className = "btn btn-light grpBtn";
+            btn.innerHTML = btnHTML;
+            btn.setAttribute("data-toggle", "dropdown");
+            
+            //Append created button to GUI location in drop-down div
+            document.getElementById("div-dropdown").appendChild(btn); 
+            
+            //Add function to created button using event listener 
+            document.getElementById(btnName).addEventListener("click", function(e) {   
+                render("modal1",group);
+                $('.dropdown-toggle').dropdown();
+                
+                update();
+            });
+            
+            //Show alert badge if total activation of nodes in group is high
+            if (group["activation"] >= 100){
+                document.getElementById(btnName+'-alert').style.visibility = "visible";
+            }
         
-        document.getElementById("div-dropdown").appendChild(btn); 
-        //document.getElementById(btnName).style.border = "1px solid "+group["grpColor"];
-        document.getElementById(btnName).addEventListener("click", function(e) {   
-            render("modal1",group);
-            //update(["centerGUI","modal1"]);
-            $('.dropdown-toggle').dropdown();
-        });
-        
-        if (group["activation"] >= 100){
-            document.getElementById(btnName+'-alert').style.visibility = "visible";
         }
-            
         
-        //bundle = {"btnName":btnName,"activColor":group["activColor"],"activation":group["activation"]};
-        //colorGrp(bundle);
+        /* For goal node group create a progress bar for each node within group */
+        if (group["group"] == "goal"){
+            
+            //For each node in goal group render a progress bar
+            group["nodes"].forEach(renderGoalProgs);
+            
+            if (debug_gui_goals == 'True'){console.log("debug_gui_goals: Goals group identified, attempting to call renderGoalProgs");}
+        }
+    }
+    
+    var goalProgCount = 1;
+    function renderGoalProgs(node){
+        
+        if (debug_gui_goals == 'True'){console.log("debug_gui_goals: Called renderGoalProgs with payload: ", node);}
+        
+        //Currently only supports 10 goals, if this method is called more, then pass to prevent throwing error on not being able to find progress bar template #11 etc.
+        if (goalProgCount <= 10) {
+            
+            //Get template progress bar objects to adapt for each goal
+            div = document.getElementById("goalProgDiv"+goalProgCount);
+            title = document.getElementById("progress_txt_goal"+goalProgCount);
+            bar = document.getElementById("progress_bar_goal"+goalProgCount);
+            barTxt = document.getElementById("progress_barTxt_goal"+goalProgCount);
+            
+            if (debug_gui_goals == 'True'){console.log("debug_gui_goals: Got template elements: ",div,title,bar,barTxt);}
+            
+            //Make new IDs specific to goals in simulation data based on the goal's ID so it can be easily called later with only the goal ID
+            nodeId_safe = node['id'].replace(/ /g, "_");
+            divId_new = "progress_div_" + nodeId_safe;
+            titleId_new = "progress_txt_" + nodeId_safe;
+            barId_new = "progress_bar_" + nodeId_safe;
+            barTxtId_new = "progress_barTxt_" + nodeId_safe;
+            
+            if (debug_gui_goals == 'True'){console.log("debug_gui_goals: Made new IDs: ",divId_new,titleId_new,barId_new,barTxtId_new);}
+            
+            //Replace template IDs with new IDs
+            div.id = divId_new;
+            title.id = titleId_new;
+            bar.id = barId_new;
+            barTxt.id = barTxtId_new;
+            
+            //Set permanent information
+            title.innerText = node["shortName"];
+            
+            if (debug_gui_goals == 'True'){console.log("debug_gui_goals: Set bar title: ", node["shortName"]);}
+
+            //Get progress bar with new ID and move from hiding to GUI location
+            div_new = document.getElementById(divId_new);
+            document.getElementById("goalsDiv").appendChild(div_new);
+
+            //Use update method to set starting values
+            setGoalProgs(node);
+            
+        }
+        else if (goalProgCount >= 11){
+            console.log("WARNING: Over 10 goals detected, not all are displayed");
+        }
+        
+        //Increment count for the next time this method is called
+        goalProgCount ++;
+    }
+    
+    function setGoalProgs(node){
+        
+        //Get goal progress bar and in-bar text
+        nodeId_safe = node['id'].replace(/ /g, "_")
+        
+        bar = document.getElementById("progress_bar_"+nodeId_safe);
+        barTxt = document.getElementById("progress_barTxt_"+nodeId_safe);
+        
+        //Get activation of node to set the fill of the progress bar
+        activation = Number(node["activation"])
+        
+        //Assign progress color
+        if (activation > 100 || activation < 0){
+            color = "black";
+        } else if (activation < 25) {
+            color = "green";
+        } else if (activation > 50) {
+            color = "orange";
+        } else if (activation > 75) {
+            color = "red";       
+        }
+        
+        //Update value and color for progress bar, text for in-bar text
+        $(bar).css('width', activation+"%").attr('aria-valuenow', activation);
+        $(bar).css('background-color', color);         
+        $(barTxt).text(activation.toFixed(0));
+        
+        if (debug_gui_goals == 'True'){
+            console.log("debug_gui_goals: Called setGoalProgs with payload: ", node);
+            console.log("debug_gui_goals: Goal id found: ", node['id']);
+            console.log("debug_gui_goals: Goal progress value set: ", $(bar).css('width'), $(bar).attr('aria-valuenow'));
+            
+        }
     }
     
     function setMainSliders(total, goal, goalPct, totalPct){
@@ -217,33 +387,45 @@ function loadGUI(){
     
     function setSlider(node){
         
-        btnId = "#slider"+sliderCount+"Txt";
-        progressId = "#slider"+sliderCount;
-        progressTextId = "#slider"+sliderCount+"Curr";
-        sliderDiv =  document.getElementById("div-slider"+sliderCount);
-        progressVal = Number(node["activation"]);
+        //Set progress bars for up to 10 nodes per group e.g., policies
+        if (sliderCount <= 10) {
+            
+            btnId = "#slider"+sliderCount+"Txt";
+            progressId = "#slider"+sliderCount;
+            progressTextId = "#slider"+sliderCount+"Curr";
+            sliderDiv =  document.getElementById("div-slider"+sliderCount);
+            progressVal = Number(node["activation"]);
+            
+            if (debug_gui_policies == 'True') {console.log("debug_gui_miniProgs: Got progress element: ", sliderDiv);}
+            
+            //Assign progress color
+            if (progressVal > 100 || progressVal < 0){
+                color = "black";
+            } else if (progressVal > 75 || progressVal < 25){
+                color = "red";
+            } else if (progressVal > 60 || progressVal < 40) {
+                color = "orange";
+            } else {
+                color = "green";       
+            }
+
+            $(progressId).css('width', progressVal.toFixed(2)+"%").attr('aria-valuenow', progressVal.toFixed(2));
+            $(progressId).css('background-color', color); 
+            $(progressTextId).text(progressVal.toFixed(0));
+            $(btnId).text(node["shortName"]);
+
+            $(btnId).attr('data-id', node["id"]);
+            $(btnId).attr('data-activation', node["activation"]);
+            $(btnId).attr('data-currIntvLvl', node["currIntvLvl"]);
+
+            document.getElementById("dropdown-menu").appendChild(sliderDiv);
         
-        //Assign progress color
-        if (progressVal > 100 || progressVal < 0){
-            color = "black";
-        } else if (progressVal > 75 || progressVal < 25){
-            color = "red";
-        } else if (progressVal > 60 || progressVal < 40) {
-            color = "orange";
-        } else {
-            color = "green";       
         }
         
-        $(progressId).css('width', progressVal.toFixed(2)+"%").attr('aria-valuenow', progressVal.toFixed(2));
-        $(progressId).css('background-color', color); 
-        $(progressTextId).text(progressVal.toFixed(0));
-        $(btnId).text(node["shortName"]);
-        
-        $(btnId).attr('data-id', node["id"]);
-        $(btnId).attr('data-activation', node["activation"]);
-        $(btnId).attr('data-currIntvLvl', node["currIntvLvl"]);
-        
-        document.getElementById("dropdown-menu").appendChild(sliderDiv);
+        //If more than 10
+        else if (sliderCount >= 11) {
+            console.log("WARNING: Over 10 policies detected in this group, not all are displayed");
+        }
         
         sliderCount ++;
     }
@@ -260,6 +442,7 @@ function loadGUI(){
     //MODAL2: RENDER & RESET    
     function populateModal2(btnId){
         
+        //Get stats for currently viewed trait from memory in their button
         nodeId = document.getElementById(btnId).getAttribute('data-id');
         nodeName = document.getElementById(btnId).innerText;
         nodeIntvLvl = document.getElementById(btnId).getAttribute('data-currIntvLvl');
@@ -283,12 +466,20 @@ function loadGUI(){
         focus_value = $(progressTxtId).html();
         setPopVis(focus_value);
         
-        //Set FDG      
-        URL = "http://127.0.0.1:5000/simulation/" + nodeId;
+        //Right mini FDG      
+        URL = "http://127.0.0.1:5000/simulation/" + nodeId;        
         FDG("destruction", URL, "#svgM2", "compact");
         FDG("creation", URL,"#svgM2", "compact");
         renderFdgTxt(nodeId);
         
+        //Debug console
+        if (debug_fdg_mini == 'True'){
+            console.log("debug_fdg_mini: URL for calling API assembled: ", URL);
+            console.log("debug_fdg_mini: FDG destroyed: ", FDG("destruction", URL, "#svgM2", "compact"));
+            console.log("debug_fdg_mini: FDG created: ", FDG("creation", URL, "#svgM2", "compact"));
+        }
+        
+        //Make right panel elements visible after first call of this method
         document.getElementById("rightHeader").style.visibility = "visible";
         document.getElementById("rightBody").style.visibility = "visible";
         document.getElementById("rightFooter").style.visibility = "visible";
@@ -314,7 +505,13 @@ function loadGUI(){
         resetPops();
         colorPops(number);
         
-        document.getElementById("prevalenceTxt").innerText = percent;
+        prevalence_displaySafe = Number(focus_value)
+        
+        if (debug_gui_detailView == 'True'){
+            console.log("debug_gui_detailView: Currently viewed trait activation level ", prevalence_displaySafe.toFixed(2));
+        }
+        
+        document.getElementById("prevalenceTxt").innerText = prevalence_displaySafe.toFixed(2);
     }
     
     function renderFdgTxt(nodeId){
@@ -398,14 +595,15 @@ function loadGUI(){
         
         var xhr = new XMLHttpRequest();        
 
-            xhr.open("POST", "http://127.0.0.1:5000/intervene", true);
+            xhr.open("POST", "http://127.0.0.1:5000/intervene", 'True');
             xhr.setRequestHeader('Content-Type', 'application/json');
             xhr.onreadystatechange = function () {
                 if (xhr.readyState === 4 && xhr.status === 200) {
                     //Redraw views
                     //update(["centerGUI","modal1","modal2"]);
-                    chrono(3000);
-                    console.log("intervention")
+                    chrono(5000);
+                    
+                    if (debug_gui_intervention == 'True') {console.log("intervention");}
                 }
             }
             xhr.send(JSON.stringify({
@@ -414,25 +612,6 @@ function loadGUI(){
                                         "value": value,
             }));
     }
-    
-    //depreciated button code 
-    /*
-    //BUTTON: INTERVENE    
-       function setIntvBtns(btnId){
-        btn = document.getElementById(btnId);
-        btn.onclick = function(){
-        me = document.getElementById(this.id);
-            target = me.getAttribute('data-id');
-            valence = me.getAttribute("data-vale");
-            value = me.getAttribute("data-value");
-            
-            //Send intervention request to API
-                   
-        };
-    }
-    var intvBtnIds=["btn-intv+","btn-intv-"];
-    intvBtnIds.forEach(setIntvBtns);
-    */
     
     //GLOBAL BUTTON: RESET 
     var btn_reset = document.getElementById("btn_reset");

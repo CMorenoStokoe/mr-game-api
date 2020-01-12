@@ -7,7 +7,11 @@ import networkx as nx #Network graph
 from networkx import json_graph
 from algorithms.propagation import propagate
 
-#from models.data import data
+#Debug options
+debug_api_changeValues = False
+
+
+#Models callable by resources
 
 def Overall_Stats(goalId, goalValue):
     OverallActivation = 0
@@ -31,17 +35,29 @@ def Overall_Stats(goalId, goalValue):
         GoalHealth = GoalActivation/goalValue*100 #FIX SO ACCURATE
     return(str(OverallHealth), goalId, str(GoalHealth), str(OH_sliderVal))
 
-def Change_Values(directive):
-    nodeID=directive["id"]
-    intvValence=directive["valence"]
-    intvValue=directive["value"]
+def Change_Values(intervention):
+    
+    #Debug console            
+    if debug_api_changeValues == True:
+        print("debug_api_changeValues: Change values method called with payload {} ", intervention)
+      
+    #Parse args create dummy variables for assignment
+    nodeID=intervention["id"]
+    intvValence=intervention["valence"]
+    intvValue=intervention["value"]
     recompiledNodes = []
     recompiledLinks = []
+    
+    #Read data
     with open('models/data.json', 'r') as json_file:
         dat = json.load(json_file)
+        
+        #Change nodes
         for node in dat["nodes"]:
             if node["id"] == nodeID:
                 nodeAct_init=node["activation"]
+                
+                #Update node activation stats
                 if intvValence == "+":
                     node["activation"] += intvValue
                     node["currIntvLvl"] = intvValue/10
@@ -52,7 +68,11 @@ def Change_Values(directive):
                     node["currIntvLvl"] = 0-(intvValue/10)
                     node["totalFunds"] += (intvValue/10)*1000
                     newVal=node["activation"]
-                print("Intervention: {} ({}-->{})".format(node["id"],nodeAct_init, node["activation"]))
+                    
+                if debug_api_changeValues == True: 
+                    print("debug_api_changeValues: Intervention: {} ({}-->{})".format(node["id"],nodeAct_init, node["activation"]))
+                
+            #Colour nodes 
             if node["activation"] < 10:
                 node["activColor"] = "rgba(25, 25, 240, {})".format(abs(node["activation"])/100)
             elif node["activation"] == 10:
@@ -61,13 +81,16 @@ def Change_Values(directive):
                 node["activColor"] = "rgba(240, 25, 25, {})".format(abs(node["activation"])/100)
             recompiledNodes.append(node)
     changedDat = {"nodes":recompiledNodes, "links":dat["links"]}
+    
+    #Write changes to data file
     with open('models/data.json', 'w') as json_file:
         json.dump(changedDat, json_file, indent=4, sort_keys=True)
+    
     return(newVal)
         
-def Propagation(directive, newVal):
-    nodeID=directive["id"]
-    intvValence=directive["valence"]
+def Propagation(intervention, newVal):
+    nodeID=intervention["id"]
+    intvValence=intervention["valence"]
     intvValue= newVal #Pass through updated node value from change_values
     recompiledNodes=[]
     
@@ -95,5 +118,5 @@ def Propagation(directive, newVal):
 #            node["activation"]=propDict[node["id"]]
 #            print(node["id"],node["activation"])
 #        json.dump(dat, json_file, indent=4, sort_keys=True)
-        
-    print("Intervention effects propagated through network: ",directive["id"]," > ",newVal)
+
+    return('{}(->{})'.format(intervention["id"],round(newVal,2)))

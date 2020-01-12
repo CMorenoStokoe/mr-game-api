@@ -1,11 +1,21 @@
 function FDG (spell,URL,svgId,view) {
     
+    //Debug controls
+    var debug_visualisation = 'False';
+
+    
+    //Select SVG DOM element
     const svg = d3.select(svgId),
     width = +svg.attr("width"),
     height = +svg.attr("height");
     
+    if (debug_visualisation == 'True'){
+        console.log("debug_visualisation: FDG function called with payloads: ", spell,URL,svgId,view);
+        console.log("debug_visualisation: SVG id selected: ", d3.select(svgId));
+    }
+    
     //Views - set values
-    var v_strength = -600;
+    var v_strength = -2000;
     var v_swidth = 1;
     var v_fsize = "18px";
     var v_class = "shadow_v_normal";
@@ -19,7 +29,7 @@ function FDG (spell,URL,svgId,view) {
     };
     if (view=="compact"){
         v_strength = -800;
-        v_swidth = 4;
+        v_swidth = 2;
         v_fsize = "18px";
         v_class = "shadow_v_compact";
         v_nr = 1;
@@ -30,6 +40,10 @@ function FDG (spell,URL,svgId,view) {
     }, 200);
     */
     let dataPromise = d3.json(URL);
+    
+    if (debug_visualisation == 'True'){
+        console.log("debug_visualisation: Data promise made: ", d3.json(URL))
+    }
 
     dataPromise.then(function draw(data) {
 
@@ -37,6 +51,11 @@ function FDG (spell,URL,svgId,view) {
     //d3.scaleOrdinal(d3.schemeCategory10);
     const links = data.links.map(d => Object.create(d));
     const nodes = data.nodes.map(d => Object.create(d));
+        
+    if (debug_visualisation == 'True'){
+        console.log("debug_visualisation: Link data selected: ", data.links);
+        console.log("debug_visualisation: Node data selected: ", data.nodes);
+    }
 
 // Set up simulation 
     const simulation = d3.forceSimulation(nodes)
@@ -54,7 +73,7 @@ function FDG (spell,URL,svgId,view) {
         enter => enter.append("line")
           .attr("stroke-width", v_swidth)
           .attr("stroke", d => d.color)//edge color as function of beta weight sign//
-          .attr("stroke-opacity", d => Math.abs(d.value)/5)//edge opacity as function of beta weight value//
+          .attr("stroke-opacity", d => Math.abs(d.value))//edge opacity as function of beta weight value//
           .attr("marker-end", "url(#end)"),
         /*
         update => update
