@@ -85,7 +85,7 @@
             "currIntvLvl": 0,
             "id": 11,
             "source": "Subjective well being",
-            "target": "Number of days/week of moderate physical activity 10+ minutes",
+            "target": "Number of days per week of moderate physical activity 10+ minutes",
             "value": 0.04
         },
         {
@@ -117,7 +117,7 @@
             "currIntvLvl": 0,
             "id": 15,
             "source": "Subjective well being",
-            "target": "Worrier / anxious feelings",
+            "target": "Worrier or anxious feelings",
             "value": -0.06
         },
         {
@@ -221,7 +221,7 @@
             "currIntvLvl": 0,
             "id": 28,
             "source": "Schizophrenia",
-            "target": "Number of days/week of moderate physical activity 10+ minutes",
+            "target": "Number of days per week of moderate physical activity 10+ minutes",
             "value": 0.05
         },
         {
@@ -253,7 +253,7 @@
             "currIntvLvl": 0,
             "id": 32,
             "source": "Schizophrenia",
-            "target": "Worrier / anxious feelings",
+            "target": "Worrier or anxious feelings",
             "value": 0.01
         },
         {
@@ -349,7 +349,7 @@
             "currIntvLvl": 0,
             "id": 44,
             "source": "Cigarettes smoked per day",
-            "target": "Number of days/week of moderate physical activity 10+ minutes",
+            "target": "Number of days per week of moderate physical activity 10+ minutes",
             "value": -0.0
         },
         {
@@ -381,7 +381,7 @@
             "currIntvLvl": 0,
             "id": 48,
             "source": "Cigarettes smoked per day",
-            "target": "Worrier / anxious feelings",
+            "target": "Worrier or anxious feelings",
             "value": 0.0
         },
         {
@@ -401,6 +401,7 @@
             "group": "goal",
             "grpColor": "green",
             "id": "Obsessive Compulsive Disorder",
+            "id_MRBase": "1189",
             "shortName": "OCD",
             "totalFunds": 0
         },
@@ -411,6 +412,7 @@
             "group": "goal",
             "grpColor": "green",
             "id": "Subjective well being",
+            "id_MRBase": "1018",
             "shortName": "Well-being",
             "totalFunds": 0
         },
@@ -419,8 +421,9 @@
             "activation": 10,
             "currIntvLvl": 0,
             "group": "policy",
-            "grpColor": "yellow",
+            "grpColor": "lightgray",
             "id": "Years of schooling",
+            "id_MRBase": "1239",
             "shortName": "Years of schooling",
             "totalFunds": 0
         },
@@ -431,6 +434,7 @@
             "group": "goal",
             "grpColor": "green",
             "id": "Schizophrenia",
+            "id_MRBase": "22",
             "shortName": "Schizophrenia",
             "totalFunds": 0
         },
@@ -439,8 +443,9 @@
             "activation": 10,
             "currIntvLvl": 0,
             "group": "policy",
-            "grpColor": "yellow",
+            "grpColor": "lightgray",
             "id": "Cigarettes smoked per day",
+            "id_MRBase": "961",
             "shortName": "Smoking(cigs/d)",
             "totalFunds": 0
         },
@@ -449,8 +454,9 @@
             "activation": 10,
             "currIntvLvl": 0,
             "group": "policy",
-            "grpColor": "yellow",
+            "grpColor": "lightgray",
             "id": "Job involve night shift work",
+            "id_MRBase": "UKB-b:10162",
             "shortName": "Night shifts",
             "totalFunds": 0
         },
@@ -459,8 +465,9 @@
             "activation": 10,
             "currIntvLvl": 0,
             "group": "policy",
-            "grpColor": "yellow",
+            "grpColor": "lightgray",
             "id": "Z86.4 Personal history of psychoactive substance abuse",
+            "id_MRBase": "UKB-b:1585",
             "shortName": "Drug use",
             "totalFunds": 0
         },
@@ -469,8 +476,9 @@
             "activation": 10,
             "currIntvLvl": 0,
             "group": "policy",
-            "grpColor": "yellow",
+            "grpColor": "lightgray",
             "id": "Weekly usage of mobile phone in last 3 months",
+            "id_MRBase": "UKB-b:17999",
             "shortName": "Phone use",
             "totalFunds": 0
         },
@@ -479,8 +487,9 @@
             "activation": 10,
             "currIntvLvl": 0,
             "group": "policy",
-            "grpColor": "yellow",
+            "grpColor": "lightgray",
             "id": "Body mass index (BMI)",
+            "id_MRBase": "UKB-b:19953",
             "shortName": "BMI",
             "totalFunds": 0
         },
@@ -489,8 +498,9 @@
             "activation": 10,
             "currIntvLvl": 0,
             "group": "policy",
-            "grpColor": "yellow",
+            "grpColor": "lightgray",
             "id": "Other group activity",
+            "id_MRBase": "UKB-b:4077",
             "shortName": "Social activity*",
             "totalFunds": 0
         },
@@ -499,8 +509,9 @@
             "activation": 10,
             "currIntvLvl": 0,
             "group": "policy",
-            "grpColor": "yellow",
+            "grpColor": "lightgray",
             "id": "Sleep duration",
+            "id_MRBase": "UKB-b:4424",
             "shortName": "Sleep (hrs)",
             "totalFunds": 0
         },
@@ -509,8 +520,9 @@
             "activation": 10,
             "currIntvLvl": 0,
             "group": "policy",
-            "grpColor": "yellow",
-            "id": "Number of days/week of moderate physical activity 10+ minutes",
+            "grpColor": "lightgray",
+            "id": "Number of days per week of moderate physical activity 10+ minutes",
+            "id_MRBase": "UKB-b:4710",
             "shortName": "Exercise*",
             "totalFunds": 0
         },
@@ -519,8 +531,9 @@
             "activation": 10,
             "currIntvLvl": 0,
             "group": "policy",
-            "grpColor": "yellow",
+            "grpColor": "lightgray",
             "id": "Plays computer games",
+            "id_MRBase": "UKB-b:4779",
             "shortName": "Gaming",
             "totalFunds": 0
         },
@@ -531,6 +544,7 @@
             "group": "goal",
             "grpColor": "green",
             "id": "Fluid intelligence score",
+            "id_MRBase": "UKB-b:5238",
             "shortName": "Intelligence",
             "totalFunds": 0
         },
@@ -539,8 +553,9 @@
             "activation": 10,
             "currIntvLvl": 0,
             "group": "policy",
-            "grpColor": "yellow",
+            "grpColor": "lightgray",
             "id": "Alcohol intake frequency.",
+            "id_MRBase": "UKB-b:5779",
             "shortName": "Alcohol",
             "totalFunds": 0
         },
@@ -550,7 +565,8 @@
             "currIntvLvl": 0,
             "group": "goal",
             "grpColor": "green",
-            "id": "Worrier / anxious feelings",
+            "id": "Worrier or anxious feelings",
+            "id_MRBase": "UKB-b:6519",
             "shortName": "Anxiety",
             "totalFunds": 0
         },
@@ -559,8 +575,9 @@
             "activation": 10,
             "currIntvLvl": 0,
             "group": "policy",
-            "grpColor": "yellow",
+            "grpColor": "lightgray",
             "id": "Loneliness isolation",
+            "id_MRBase": "UKB-b:8476",
             "shortName": "Loneliness",
             "totalFunds": 0
         },
@@ -571,6 +588,7 @@
             "group": "goal",
             "grpColor": "green",
             "id": "Major Depressive Disorder",
+            "id_MRBase": "1187",
             "shortName": "Depression (MDD)",
             "totalFunds": 0
         }

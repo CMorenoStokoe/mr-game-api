@@ -4,7 +4,7 @@ class Model_ClG():
         
         #Define colorschemes
         if colorScheme == "Binary":
-            colors=["green", "yellow"]
+            colors=["green", "lightgray"]
         elif colorScheme == "Strong":
             colors=["cornflowerblue", "violet", "lightseagreen", "brown", "forestgreen", "red",  "purple", "goldenrod", "crimson", "cadetblue"]
         elif colorScheme == "Pastel":
@@ -31,7 +31,8 @@ class Model_ClG():
                                 "group": node["group"],
                                 "id": node["id"],
                                 "shortName": node["shortName"],
-                                "grpColor": groups[node["group"]]
+                                "grpColor": groups[node["group"]],
+                                "id_MRBase":node["id_MRBase"]
                             }
             )
         

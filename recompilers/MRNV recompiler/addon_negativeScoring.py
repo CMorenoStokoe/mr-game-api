@@ -35,6 +35,6 @@ class Model_NS():
 
         #messages
         negativelyScored=(len(negativelyScoredIDs))
-        message="**:  {} negatively scored traits identified ({}). {} links corrected, {} double-negative links identified, and {} normal links identified (see code)".format(negativelyScored,negativelyScoredIDs,correctedLinks,ignoredLinks,normalLinks)
+        message="**:  {} negatively scored traits identified ({} corrected, {} double-negatives)".format(negativelyScored,correctedLinks,ignoredLinks)
         
         return(nodeList,linkList,message)

@@ -10,7 +10,8 @@ from models.views import Collapse_Groups
 
 #Debug console
 debug_api_viewNode = False
-debug_api_intervene = False
+debug_api_intervene = True
+debug_api_viewNodeSingle = False
 
 
 #Available methods callable as resources
@@ -35,12 +36,13 @@ class View_Data(Resource):
             return data
         elif view == "activeLinks":
             return data
-
-class View_DataNormal(Resource):
-    def get(self):
-        with open('models/data.json', 'r') as json_file:    
-            data = json.load(json_file)
-        return data
+        
+#Placeholder for individual functions for different views
+#class View_DataNormal(Resource):
+#    def get(self):
+#        with open('models/data.json', 'r') as json_file:    
+#            data = json.load(json_file)
+#        return data
 
 class View_Node(Resource):
     def get(self, centerNode):
@@ -96,11 +98,22 @@ class View_Node(Resource):
         #Return nodes/links for view
         print("INFO: Viewing: "+centerNode)
         return spotted
+
+class View_Node_Single(Resource):
+    def get(self, node):
+        with open('models/data.json') as json_file:    
+            data = json.load(json_file)
+        spottedNode = [i for i in data["nodes"] if i["id"]==node]
         
+        if (debug_api_viewNodeSingle == True):
+            print("debug_api_viewNodeSingle: View_Node_Single resource called with payload: ", node)
+            print("debug_api_viewNodeSingle: Found {} nodes in data matching given id payload: {}".format(len(spottedNode),spottedNode))
+            print("debug_api_viewNodeSingle: Jsonified output: ", spottedNode[0])
+        
+        return spottedNode[0]
+    
 class Intervene(Resource):
-    
     currentInterventions = {}
-    
     def get(self):
         
         #Method called when there is no new intervention but another tick of further simulating existing intervention effects has been requested

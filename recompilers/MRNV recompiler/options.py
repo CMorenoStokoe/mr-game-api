@@ -8,7 +8,14 @@ bonferroniCorrect = False
 
 #Addons enabled:
 betterNames_enabled = True
+#Info:
+#betterNames shortens and makes more easily understandable trait names
 negativeScoring_enabled = True
+#Info:
+#Reverses the beta of links to/from nodes which are negatively scored (i.e., higher scores actually indicate lower trait level)
+safeNames_enabled = True
+#Info:
+#safeNames converts trait names into names safe for processing (i.e., removes / which is confused for breka characters and * which is confused for wildcards)
 
 #Grouping mode:
 grouping_mode = 'Game'

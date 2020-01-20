@@ -9,14 +9,14 @@ function loadGUI(){
     var debug_gui_goals = 'False';
     var debug_gui_policies = 'False';
     var debug_gui_update = 'False';
-    var debug_gui_intervention = 'False';
+    var debug_gui_intervention = 'True';
     var debug_fdg_mini = 'False';
     var debug_gui_detailView = 'False';
+    var debug_update_focus = 'True';
     
     
     //GUI variables
     var numOfSliders=[1,2,3,4,5,6,7,8,9,10];
-    var focus = {'id':null,'shortName':null,'activation':null,'funding':null, 'currIntvLvl':null};
     
     
     /*##################
@@ -49,7 +49,12 @@ function loadGUI(){
                 
                     //Intervention slider /*
                     document.getElementById("intvSlider").addEventListener("change", function() {
-                        intervene(focus["id"], Number(this.value));
+                        id=document.getElementById("intvSlider").getAttribute("data-nodeid");
+                        intervene(this.getAttribute("data-nodeid"), Number(this.value));
+                        if (debug_gui_intervention == 'True'){
+                            
+                            console.log("debug_gui_intervention: Accessed node id stored in slider: ", this.getAttribute("data-nodeid"));
+            }
                     });
             }
             ourRequest.send();
@@ -57,18 +62,20 @@ function loadGUI(){
     init();
     
     function render(element, id){
+        
         //Update either modal 1 or 2 (legacy names for left/right GUI)
         if (element == "modal1"){
             group = id;
             resetModal1();
             populateModal1(group);
             //$("#modalTmpl").modal();
+            
         } else if (element == "modal2") {
             btnId = id;
             focus["id"] = $('#'+btnId).attr('data-id');
             resetModal2();
             populateModal2(btnId);
-            //$("#modalTmpl2").modal();       
+            //$("#modalTmpl2").modal();           
         }
     }
     
@@ -82,81 +89,81 @@ function loadGUI(){
                 
             //On simulation tick update GUI
             var ourRequest = new XMLHttpRequest();
-            ourRequest.open('GET', "http://127.0.0.1:5000/update");
-            ourRequest.onload = function() {
-                var ourData = JSON.parse(ourRequest.responseText);
-                
-                if (debug_calls == 'True') {console.log(ourData)};
-                
-                nodeData = ourData["nodes"];
-                statsData = ourData["stats"];
-                groupData = ourData["groups"];
-                
-                //Update GUI
-                
-                    //Home center GUI
-                
-                        //Sliders
-                        setMainSliders(statsData[0],statsData[1],statsData[2],statsData[3]);
-                
-                        //Circle group activation colours & label
-                        bundles = [];        
-                        for(var i in ourData["groups"]){
-                            if (ourData["groups"][i]["group"] != 'goal'){
-                                btnName = "btn-"+ourData["groups"][i]["group"];
-                                activation = ourData["groups"][i]["activation"];
-                                activColor = ourData["groups"][i]["activColor"];
-                                bundles.push({"btnName": btnName, "activColor": activColor, "activation": activation});
+                ourRequest.open('GET', "http://127.0.0.1:5000/update");
+                ourRequest.onload = function() {
+                    var ourData = JSON.parse(ourRequest.responseText);
+
+                    if (debug_calls == 'True') {console.log(ourData)};
+
+                    nodeData = ourData["nodes"];
+                    statsData = ourData["stats"];
+                    groupData = ourData["groups"];
+
+                    //Update GUI
+
+                        //Home center GUI
+
+                            //Sliders
+                            setMainSliders(statsData[0],statsData[1],statsData[2],statsData[3]);
+
+                            //Circle group activation colours & label
+                            bundles = [];        
+                            for(var i in ourData["groups"]){
+                                if (ourData["groups"][i]["group"] != 'goal'){
+                                    btnName = "btn-"+ourData["groups"][i]["group"];
+                                    activation = ourData["groups"][i]["activation"];
+                                    activColor = ourData["groups"][i]["activColor"];
+                                    bundles.push({"btnName": btnName, "activColor": activColor, "activation": activation});
+                                }
+                            };
+                            //bundles.forEach(updateGrpBtns);
+
+                            //FDG
+                            FDG("destruction", "http://127.0.0.1:5000/simulation", "#svgMain", "normal");
+                            FDG("creation", "http://127.0.0.1:5000/simulation", "#svgMain", "normal");
+
+                        //Modal 1
+
+                            //Title
+                            groupId = document.getElementById("modalTitle").innerHTML;
+
+                            //Policy mini-progress bars 'sliders' (if modal exists)
+                            group="";
+                            for(var i in ourData["groups"]){
+                                if(ourData["groups"][i]["group"] == groupId){
+                                    group = ourData["groups"][i];
+                                    populateModal1(group);
+                                    break; 
+                                }
                             }
-                        };
-                        bundles.forEach(updateGrpBtns);
-                
-                        //FDG
-                        FDG("destruction", "http://127.0.0.1:5000/simulation", "#svgMain", "normal");
-                        FDG("creation", "http://127.0.0.1:5000/simulation", "#svgMain", "normal");
-                
-                    //Modal 1
-                
-                        //Title
-                        groupId = document.getElementById("modalTitle").innerHTML;
-                
-                        //Policy mini-progress bars 'sliders' (if modal exists)
-                        group="";
-                        for(var i in ourData["groups"]){
-                            if(ourData["groups"][i]["group"] == groupId){
-                                group = ourData["groups"][i];
-                                populateModal1(group);
-                                break; 
+
+                            //Goal progress
+
+                            for(var i in ourData["groups"]){
+                                if(ourData["groups"][i]["group"] == 'goal'){
+                                    ourData["groups"][i]['nodes'].forEach(setGoalProgs)
+                                    populateModal1(group);
+
+                                    if (debug_gui_update == 'True') {console.log("debug_gui_update: Calling goal progress bar update method with payload: ", ourData["groups"][i]['nodes'])}
+                                }
                             }
-                        }
-                        
-                        //Goal progress
-                
-                        for(var i in ourData["groups"]){
-                            if(ourData["groups"][i]["group"] == 'goal'){
-                                ourData["groups"][i]['nodes'].forEach(setGoalProgs)
-                                populateModal1(group);
-                                
-                                if (debug_gui_update == 'True') {console.log("debug_gui_update: Calling goal progress bar update method with payload: ", ourData["groups"][i]['nodes'])}
+
+                        //Modal 2
+
+                            //Pop vis
+                            id = focus["id"];
+                            for(var i in ourData["nodes"]){
+                                if(ourData["nodes"][i]["id"] == id){
+                                    //funding = ourData["nodes"][i]["funding"];
+                                    focus_value = ourData["nodes"][i]["activation"];
+                                    focus_fundLvl = ourData["nodes"][i]["currIntvLvl"];
+                                    setIntvSlider(focus_fundLvl);
+                                    setPopVis(focus_value);
+                                    break; 
+                                }
                             }
-                        }
-                
-                    //Modal 2
-                
-                        //Pop vis
-                        id = focus["id"];
-                        for(var i in ourData["nodes"]){
-                            if(ourData["nodes"][i]["id"] == id){
-                                //funding = ourData["nodes"][i]["funding"];
-                                focus_value = ourData["nodes"][i]["activation"];
-                                focus_fundLvl = ourData["nodes"][i]["currIntvLvl"];
-                                setIntvSlider(focus_fundLvl);
-                                setPopVis(focus_value);
-                                break; 
-                            }
-                        }
-                };
-                ourRequest.send();
+                    };
+                    ourRequest.send();
             }
             ourRequest.send();
         
@@ -199,7 +206,7 @@ function loadGUI(){
     function renderGrp(group){
         
         /* For policy node group, create drop-down button */
-        if (group["group"] != "policyREMOVEME"){
+        if (group["group"] == "ENABLED"){
             
             //Compose button IDs
             btnName = "btn-"+group["group"]; //modalId = "#modal-"+group["group"];
@@ -601,9 +608,9 @@ function loadGUI(){
                 if (xhr.readyState === 4 && xhr.status === 200) {
                     //Redraw views
                     //update(["centerGUI","modal1","modal2"]);
-                    chrono(5000);
                     
-                    if (debug_gui_intervention == 'True') {console.log("intervention");}
+                    //chrono(5000);
+                    //if (debug_gui_intervention == 'True') {console.log("intervention");}
                 }
             }
             xhr.send(JSON.stringify({
@@ -613,15 +620,22 @@ function loadGUI(){
             }));
     }
     
-    //GLOBAL BUTTON: RESET 
+    //Global buttons
+    //Reset 
     var btn_reset = document.getElementById("btn_reset");
     btn_reset.addEventListener("click", function() {
         resetRequest = new XMLHttpRequest();
         resetRequest.open('GET', "http://127.0.0.1:5000/reset");
         resetRequest.onload = function(){
-            chrono("stop");
+            //chrono("stop");
         };
         resetRequest.send();
+    })
+    //End turn
+        //GLOBAL BUTTON: RESET 
+    var btn_endTurn = document.getElementById("btn_endTurn");
+    btn_endTurn.addEventListener("click", function() {
+        update();
     })
     
 

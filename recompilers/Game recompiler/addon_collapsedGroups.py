@@ -38,7 +38,8 @@ class Model_CG():
                                     "id" : node['group'],
                                     "shortName" : node['group'],
                                     "group" : node['group'],
-                                    "activation" : node['activation']
+                                    "activation" : node['activation'],
+                                    "id_MRBase":node["id_MRBase"]
                                 }
                         )
         for node in d:

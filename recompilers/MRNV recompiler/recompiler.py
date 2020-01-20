@@ -14,6 +14,9 @@ info_optional=None
 flag_noName=0
 err_noName=None
 groupMessage=None
+
+#debug options
+debug_MRNV = False
  
 #open files for transformation
 with open('MRNV_input.json') as json_file:
@@ -29,12 +32,18 @@ if negativeScoring_enabled == True:
     ao_negativeScoring = os.path.exists("addon_negativeScoring.py")
     if (ao_negativeScoring==True):
         from addon_negativeScoring import Model_NS
+if safeNames_enabled == True:
+    ao_safeNames = os.path.exists("addon_safeNames.py")
+    if (ao_safeNames==True):
+        from addon_safeNames import Model_SafN
+#support for legacy addons:
 ao_exclusionCriteria = os.path.exists("addon_exclusionCriteria.py")
 if (ao_exclusionCriteria==True):
-    from addon_exclusionCriteria import Model_EC #support for legacy addon
+    from addon_exclusionCriteria import Model_EC
 ao_collapsedGroups = os.path.exists("addon_collapsedGroups.py")
 if (ao_collapsedGroups==True):
-    from addon_collapsedGroups import Model_CG #support for legacy addon
+    from addon_collapsedGroups import Model_CG
+
 
 #initialise variables for dictionary lists, data linkss and counter for automatically incrementing ID#s
 print("***Start***")#delinieates start of print out in console because printout is messy
@@ -250,7 +259,6 @@ for node in nodes:
         noNameErrNodes+=node["id"]
 
 print("*60% Done: Nodes produced")
-print("**: ", len(nodes), " unique nodes identified")
 
 #Exclusion criteria [if addon available]
 if ao_exclusionCriteria == True:
@@ -284,6 +292,22 @@ if ao_collapsedGroups == True:
     links_corrected=AO[1]
     print(AO[2])
     print(AO[3])
+
+#Safenames [if addon available]
+#Info: Ensure names are safe for future py/js/API calls
+if (ao_safeNames==True):
+    #call addon method
+    SafN = Model_SafN.safeNames(nodes)   
+    #debug
+    if debug_MRNV == True:
+        print("debug_MRNV: Called safeNames method with payload: nodes: {}".format(nodes))
+        print("debug_MRNV: Output from safeNames method: nodes: {}".format(SafN[0]))
+    
+    #update node and link lists with method output
+    nodes=SafN[0]
+    print(SafN[1])
+
+print("**:  {} nodes and {} links remain".format(len(nodes),len(links_corrected)))
 
 #Comining nodes and links, writing to JSON
 combined = {"nodes":nodes,"links":links_corrected}

@@ -8,7 +8,7 @@ from networkx import json_graph
 from algorithms.propagation import propagate
 
 #Debug options
-debug_api_changeValues = False
+debug_api_changeValues = True
 
 
 #Models callable by resources
@@ -59,12 +59,12 @@ def Change_Values(intervention):
                 
                 #Update node activation stats
                 if intvValence == "+":
-                    node["activation"] += intvValue
+                    node["activation"] += intvValue/10
                     node["currIntvLvl"] = intvValue/10
                     node["totalFunds"] += (intvValue/10)*1000
                     newVal=node["activation"]
                 elif intvValence == "-":
-                    node["activation"] -= intvValue
+                    node["activation"] -= intvValue/10
                     node["currIntvLvl"] = 0-(intvValue/10)
                     node["totalFunds"] += (intvValue/10)*1000
                     newVal=node["activation"]

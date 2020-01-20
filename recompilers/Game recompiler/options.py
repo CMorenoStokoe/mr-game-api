@@ -35,7 +35,7 @@ count_links_per_node = False
 
 #Color scheme
 colorScheme = "Binary"
-#Change value to set colour scheme. Choices: Binary (two colors, green yellow), Strong (strongly colored), Pastel (lightly colored) and Greyscale (largely non-colored)
+#Change value to set colour scheme. Choices: Binary (two colors, green, grey), Strong (strongly colored), Pastel (lightly colored) and Greyscale (largely non-colored)
 
 #Selected nodes
 selected_nodes = ['ALL', None]

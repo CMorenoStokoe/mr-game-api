@@ -14,6 +14,7 @@ class Model_GD():
                     'id': node['id'], 
                     'shortName': node['shortName'], 
                     'grpColor': node['grpColor'],
+                    "id_MRBase":node["id_MRBase"],
                     "activColor" : "white",
                     "currIntvLvl" : 0,
                     "totalFunds" : 0
@@ -21,7 +22,7 @@ class Model_GD():
                 
             )
         
-        dummyCount_nodes = len(paddedNodes[0])-5
+        dummyCount_nodes = len(paddedNodes[0])-6
         
         #2) Add to links dummmy properties for game to use
         

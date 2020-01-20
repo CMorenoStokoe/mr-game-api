@@ -1,3 +1,6 @@
+#Debug options
+debug_MRG = False
+
 #0) Initialise
 
 print("***Start***")
@@ -32,7 +35,7 @@ with open('MRNV_output.json') as json_file:
     data = json.load(json_file)
 
 print("*: 20% Complete - Original data read and selected ***")
-
+if debug_MRG == True: print("debug_MRG: Nodes found in data: {}, Edges found in data: {}".format(len(data['nodes']),len(data['nodes'])))
 
 #1 & 2) Recompile nodes into d3-readable array & populate ID:name mapping dictionary & then Recompile edges into de3-readable format
 
@@ -56,7 +59,8 @@ if jsonFormat == 'PD4HH':
                 "id":node["name"],
                 "activation":default_node_activation,
                 "group":node["group"],
-                "shortName":node["short_name"]
+                "shortName":node["short_name"],
+                "id_MRBase":node["id"]
             }
         )
     for node in selector2:#iterates over 'policies'
@@ -66,7 +70,8 @@ if jsonFormat == 'PD4HH':
                 "id":node["name"],
                 "activation":default_node_activation,
                 "group":node["group"],
-                "shortName":node["short_name"]
+                "shortName":node["short_name"],
+                "id_MRBase":node["id"]
             }
         )
         
@@ -121,6 +126,7 @@ if jsonFormat == 'PD4HH':
 if jsonFormat == 'MRNV':
     
     #Nodes
+    #'id' field renamed to 'id_MRBase'
     for node in data['nodes']:
         dictID[node["id"]]=node["name"]
         recompiledNodes.append(
@@ -128,7 +134,8 @@ if jsonFormat == 'MRNV':
                 "id":node["name"],
                 "activation":default_node_activation,
                 "group":node["group"],
-                "shortName":node["short_name"]
+                "shortName":node["short_name"],
+                "id_MRBase":node["id"]
             }
         )
     
@@ -152,7 +159,8 @@ if jsonFormat == 'MRNV':
             }
         )
         
-print("*: 50% complete - Vanilla dataset recompiled ***")           
+print("*: 50% complete - Vanilla dataset recompiled ***")
+if debug_MRG == True: print("debug_MRG: Nodes recompiled: {}, Edges recompiled: {}".format(len(recompiledNodes),len(recompiledEdges)))
         
         
 #3) Perform select addon operations
@@ -188,6 +196,7 @@ if (ao_coloredGroups==True):
     ClG = Model_ClG.coloredGroups(recompiledNodes,colorScheme)
     recompiledNodes=ClG[0]
     print(ClG[1])
+
 #Add dummy poperties for game use
 if (ao_gameDummies==True):
     GD = Model_GD.gameDummies(recompiledNodes, recompiledEdges)
@@ -196,12 +205,13 @@ if (ao_gameDummies==True):
     print(GD[2])
 
 print("*: 80% complete - Addon dataset recompiled ***")
+print("**:  {} nodes and {} links identified".format(len(recompiledNodes),len(recompiledEdges)))
     
 #4) Write d3-ready JSON file
-
 recompiledJson = {"nodes":recompiledNodes, "links":recompiledEdges}
-    
-print("***End***")
 
 with open('../../startup/MRG_output.json', 'w') as json_file:
     json.dump(recompiledJson, json_file, indent=4, sort_keys=True)
+    
+print("*: 100% complete - Output saved to game init ***")
+print("***End***")

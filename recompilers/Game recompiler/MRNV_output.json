@@ -561,7 +561,7 @@
         {
             "group": "policy",
             "id": "UKB-b:4710",
-            "name": "Number of days/week of moderate physical activity 10+ minutes",
+            "name": "Number of days per week of moderate physical activity 10+ minutes",
             "short_name": "Exercise*"
         },
         {
@@ -585,7 +585,7 @@
         {
             "group": "goal",
             "id": "UKB-b:6519",
-            "name": "Worrier / anxious feelings",
+            "name": "Worrier or anxious feelings",
             "short_name": "Anxiety"
         },
         {

@@ -83,7 +83,7 @@
                             <h3 id="modal2Title" data-btnId="">Trait view (no trait selected)</h3>
                             <em id="modal2Subtitle">ID</em>
                             <div class="intvSliderDiv" id="div-intvSlider">
-                                <input type="range" class="custom-range" value="0" min="-3" max="3" step="1" id="intvSlider" oninput="intvSliderValue.value=this.value" />
+                                <input type="range" class="custom-range" value="0" min="-3" max="3" step="1" id="intvSlider" oninput="intvSliderValue.value=this.value" data-nodeid="" />
                                 <input id="intvSliderValue" type="number" disabled="true" value="0" min="-3" max="3" />
                             </div>
                         </div>
@@ -142,9 +142,19 @@
             
         </div>
         
-        <!-- reset btn-->
+        <!-- options buttons -->
         <nav class="navbar navbar-light bg-light">
+            <!-- reset btn-->
             <button class="btn btn-danger" id="btn_reset">Stop/Reset</button>
+            <!-- arrows off btn-->
+            <button class="btn btn-info" id="btn_toggleArrows">Toggle arrows</button>
+            <!-- end turn btn-->
+            <button class="btn btn-safe" id="btn_endTurn">End turn</button>
+        </nav>
+        
+        <!-- view btn(s)-->
+        <nav class="navbar navbar-light bg-light">
+            
         </nav>
         
         <!-- [hidden] elements -->    
@@ -343,9 +353,10 @@
     <script src="https://d3js.org/d3.v5.min.js"></script>
     <script src="https://d3js.org/d3-color.v1.min.js"></script>
     <script src="https://d3js.org/d3-interpolate.v1.min.js"></script>
-    <script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>    
-    <script src="visualisation.js"></script>
-    <script src="GUI.js"></script>
+    <script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>  
+    <script src="GUI_module_focus.js"></script>
+    <script src="GUI_module_visualisation.js"></script>
+    <script src="GUI_master.js"></script>
     
     </body>
     
