@@ -1,43 +1,58 @@
+//Debug options
+debug_FDG_focus = 'False'
+
 // Global variables (sorry)
 arrowColorStatus='#999'
+
+//Set up function to toggle whether arrows display in FDG and listen out for btn press
 function toggleArrows(){
     if(arrowColorStatus=='#999'){
         arrowColorStatus='none';
+        console.log("Arrows toggled: ", arrowColorStatus);
     } else if(arrowColorStatus=='none'){
         arrowColorStatus='#999';
+        console.log("Arrows toggled: ", arrowColorStatus);
     };
 }
-//Listen out for view button(s) being pressed to change FDG view
-document.getElementById('btn_toggleArrows').addEventListener("click", function(e) {   
+var btn_toggleArrows = document.getElementById('btn_toggleArrows')
+btn_toggleArrows.addEventListener("click", function(e) {
+    btn_toggleArrows.disabled = true;
     toggleArrows();
-    console.log(arrowColorStatus);
+    if (debug_FDG_focus=='True'){console.log(arrowColorStatus);}
+    setTimeout(function(){btn_toggleArrows.disabled = false;},1000);
 });
+
 
 //Force-directed graph function (builder for both main and mini-fdgs)
 function FDG (spell,URL,svgId,view) {
     
     //Debug controls
     var debug_visualisation = 'False';
+        
+    if (debug_visualisation == 'True'){
+        console.log("debug_visualisation: FDG function called with payloads: ", spell,URL,svgId,view);
+        console.log("debug_visualisation: SVG id selected: ", d3.select(svgId));
+    }
     
     //Select SVG DOM element
     const svg = d3.select(svgId),
     width = +svg.attr("width"),
     height = +svg.attr("height");
     
-    if (debug_visualisation == 'True'){
-        console.log("debug_visualisation: FDG function called with payloads: ", spell,URL,svgId,view);
-        console.log("debug_visualisation: SVG id selected: ", d3.select(svgId));
-    }
+    //Clear function
+    if (spell == "destruction"){    
+        svg.selectAll("*").remove();
+        return;
+    };
     
     //Views - set scale factors and classes
     var graphCohesion = -2000;
     var edgeWidth = 1;
     var fontSize = "18px";
     var textShadowClass = "shadow_v_normal";
-    var scaleFactor = 0.75;
-    var circleRadius = 5*scaleFactor;
-    var arrowPlacement = circleRadius*7*scaleFactor*2; circleRadius*7;
-    var arrowSize = circleRadius*2*scaleFactor;
+    var circleRadius = 5;
+    var arrowPlacement = 60;
+    var arrowSize = 5;
     var arrowColor = arrowColorStatus;
     if (view=="collapsed"){
         graphCohesion = -5000;
@@ -48,15 +63,14 @@ function FDG (spell,URL,svgId,view) {
         arrowPlacement = circleRadius*7;
         arrowSize = circleRadius*2;
         arrowColor = '#999';
-    };
-    if (view=="compact"){
+    } else if (view=="compact"){
         graphCohesion = -800;
-        edgeWidth = 2;
-        fontSize = "18px";
+        edgeWidth = 1;
+        fontSize = "12px";
         textShadowClass = "shadow_v_compact";
-        circleRadius = 1;
-        arrowPlacement = circleRadius*7;
-        arrowSize = circleRadius*2;
+        circleRadius = 2;
+        arrowPlacement = 15;
+        arrowSize = 0.25;
         arrowColor = '#999';
     };
     
@@ -123,13 +137,9 @@ function FDG (spell,URL,svgId,view) {
     const circles = node.append("circle")
       .attr("r", 5 * circleRadius) //d => Math.abs(d.activation)*circleRadius
       .attr("stroke", d => d.grpColor)
-      .attr("fill", d => d.activColor)
-      .attr("dataHolder", d => d.id)
-      .on("click", function(){
-          render_alt("modal2_alt",this.getAttribute("dataHolder"));
-      });
-
-    node.append("text")
+      .attr("fill", d => d.activColor);
+        
+    /*var nodeText = node.append("text")
         .text(function(d) {
           return d.shortName;
         })
@@ -137,8 +147,24 @@ function FDG (spell,URL,svgId,view) {
         .style("font-size", fontSize)
         .attr("text-anchor", "middle")
         .attr('x', 6)
-        .attr('y', 3);
-        
+        .attr('y', 3);*/
+    
+     var nodeImage = node.append("image")
+         .attr("xlink:href", d => d.iconId)
+         .attr("height", "50")
+         .attr("width", "50")
+         .attr("x", -25) //default=-20
+         .attr("y", -25) //default=-20
+         .attr("dataHolder", d => d.id)
+         .on("click", function(){
+              nodeId = this.getAttribute("dataHolder")
+              render_alt("modal2_alt", nodeId);
+              URL = "http://127.0.0.1:5000/simulation/" + nodeId;
+              FDG("destruction", URL, "#svgM2", "compact");
+              FDG("creation", URL,"#svgM2", "compact");
+              if (debug_FDG_focus=='True'){console.log("debug_FDG_focus: circle.onclick called, retrieved node id: ", nodeId)}
+      });
+
     // From https://stackoverflow.com/questions/28050434/introducing-arrowdirected-in-force-directed-graph-d3
     svg.append("svg:defs").selectAll("marker")//edge color as function of beta weight sign//
         .data(["end"])      // Different link/path types can be defined here
@@ -168,11 +194,6 @@ function FDG (spell,URL,svgId,view) {
       node
           .attr("transform", d => `translate(${d.x}, ${d.y})`);
     }
-    
-    //Clear function
-    if (spell == "destruction"){    
-        svg.selectAll("*").remove();
-    };
         
     //var path = svg.selectAll("path"); 
     //path.exit().remove();

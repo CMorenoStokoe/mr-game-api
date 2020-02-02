@@ -9,10 +9,10 @@ function loadGUI(){
     var debug_gui_goals = 'False';
     var debug_gui_policies = 'False';
     var debug_gui_update = 'False';
-    var debug_gui_intervention = 'True';
+    var debug_gui_intervention = 'False';
     var debug_fdg_mini = 'False';
     var debug_gui_detailView = 'False';
-    var debug_update_focus = 'True';
+    var debug_update_focus = 'False';
     
     
     //GUI variables
@@ -31,7 +31,7 @@ function loadGUI(){
             ourRequest.onload = function() {
                 var ourData = JSON.parse(ourRequest.responseText);
                 
-                if (debug_calls == 'True'){console.log(ourData)} 
+                if (debug_calls == 'True'){console.log("debug_calls: GET init_buttons, got: ",ourData)} 
                 
                 //Initialise GUI elements
                 
@@ -49,12 +49,10 @@ function loadGUI(){
                 
                     //Intervention slider /*
                     document.getElementById("intvSlider").addEventListener("change", function() {
-                        id=document.getElementById("intvSlider").getAttribute("data-nodeid");
-                        intervene(this.getAttribute("data-nodeid"), Number(this.value));
-                        if (debug_gui_intervention == 'True'){
-                            
-                            console.log("debug_gui_intervention: Accessed node id stored in slider: ", this.getAttribute("data-nodeid"));
-            }
+                        nodeId=this.getAttribute("data-nodeid")
+                        id = document.getElementById("intvSlider").getAttribute("data-nodeid");
+                        intervene(nodeId, Number(this.value));
+                        if (debug_gui_intervention == 'True'){console.log("debug_gui_intervention: Accessed node id in slider: ", nodeId);}
                     });
             }
             ourRequest.send();
@@ -82,18 +80,12 @@ function loadGUI(){
     function update(){
         /* Retrieve updated data */
         
-        //Trigger API simulation tick
-        var ourRequest = new XMLHttpRequest();
-            ourRequest.open('GET', "http://127.0.0.1:5000/intervene");
-            ourRequest.onload = function() {
-                
-            //On simulation tick update GUI
             var ourRequest = new XMLHttpRequest();
                 ourRequest.open('GET', "http://127.0.0.1:5000/update");
                 ourRequest.onload = function() {
                     var ourData = JSON.parse(ourRequest.responseText);
 
-                    if (debug_calls == 'True') {console.log(ourData)};
+                    if (debug_calls == 'True') {console.log("debug_calls: GET update, got: ", ourData)};
 
                     nodeData = ourData["nodes"];
                     statsData = ourData["stats"];
@@ -164,38 +156,9 @@ function loadGUI(){
                             }
                     };
                     ourRequest.send();
-            }
-            ourRequest.send();
-        
-        
         
         if (debug_gui_update == 'True') {console.log("update");}
     }
-    
-    var timerCallCount = 0
-    function chrono(time){
-        
-        //If reset/stop command called then clear timer imediately
-        if (time == "stop"){
-            clearInterval(timer);
-            timerCallCount = -1;
-            
-            if (debug_gui_update == 'True') {console.log("timer stopped");}
-        
-        //If timer not active then start timer 
-        } else if (timerCallCount == 0){
-            timer = setInterval(function() {update();}, time)
-            
-            if (debug_gui_update == 'True') {console.log("timer set");}
-        
-        //If timer already active then pass
-        } else {
-            return;
-        }
-        
-        //Increment count to indicate timer was requested to start
-        timerCallCount++;
-    };
 
     /*##################
     SLAVE FUNCTIONS 
@@ -389,7 +352,7 @@ function loadGUI(){
     function populateModal1(group){
         document.getElementById("modalTitle").innerHTML = group["group"];
         sliderCount = 1;
-        group["nodes"].forEach(setSlider);
+        //group["nodes"].forEach(setSlider);
     };
     
     function setSlider(node){
@@ -606,11 +569,7 @@ function loadGUI(){
             xhr.setRequestHeader('Content-Type', 'application/json');
             xhr.onreadystatechange = function () {
                 if (xhr.readyState === 4 && xhr.status === 200) {
-                    //Redraw views
-                    //update(["centerGUI","modal1","modal2"]);
-                    
-                    //chrono(5000);
-                    //if (debug_gui_intervention == 'True') {console.log("intervention");}
+                    if (debug_gui_intervention == 'True'){console.log("debug_gui_intervention: Intervention made with payloads: ", target, valence, value)}
                 }
             }
             xhr.send(JSON.stringify({
@@ -624,18 +583,22 @@ function loadGUI(){
     //Reset 
     var btn_reset = document.getElementById("btn_reset");
     btn_reset.addEventListener("click", function() {
+        btn_reset.disabled = true;
         resetRequest = new XMLHttpRequest();
-        resetRequest.open('GET', "http://127.0.0.1:5000/reset");
+        resetRequest.open('HEAD', "http://127.0.0.1:5000/intervene");
         resetRequest.onload = function(){
-            //chrono("stop");
+            if (debug_calls = 'True'){console.log("debug_calls: reset request made ")}
+            update();
+            btn_reset.disabled = false;
         };
         resetRequest.send();
     })
     //End turn
-        //GLOBAL BUTTON: RESET 
     var btn_endTurn = document.getElementById("btn_endTurn");
     btn_endTurn.addEventListener("click", function() {
+        btn_endTurn.disabled = true;
         update();
+        setTimeout(function(){btn_endTurn.disabled = false;},2000);
     })
     
 

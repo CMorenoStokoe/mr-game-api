@@ -10,8 +10,9 @@ from models.views import Collapse_Groups
 
 #Debug console
 debug_api_viewNode = False
-debug_api_intervene = True
+debug_api_intervene = False
 debug_api_viewNodeSingle = False
+debug_api_reset = False
 
 
 #Available methods callable as resources
@@ -114,6 +115,7 @@ class View_Node_Single(Resource):
     
 class Intervene(Resource):
     currentInterventions = {}
+    
     def get(self):
         
         #Method called when there is no new intervention but another tick of further simulating existing intervention effects has been requested
@@ -128,11 +130,15 @@ class Intervene(Resource):
     def post(self):
         
         #Parse posted json file
-        parser = reqparse.RequestParser()
-        parser.add_argument('id', type=str, help='id cannot be converted')
-        parser.add_argument('valence', type=str, help='valence cannot be converted')
-        parser.add_argument('value', type=int, help='value cannot be converted')
-        newIntervention = parser.parse_args() 
+        try:
+            parser = reqparse.RequestParser()
+            parser.add_argument('id', type=str, help='id cannot be converted')
+            parser.add_argument('valence', type=str, help='valence cannot be converted')
+            parser.add_argument('value', type=int, help='value cannot be converted')
+            newIntervention = parser.parse_args() 
+        except ValueError:  # includes simplejson.decoder.JSONDecodeError
+            print ('ERROR: Decoding JSON has failed')
+            return
         
         #Save interventions to list of current interventions if intervention level != 0
         if newIntervention['value'] != 0:
@@ -156,6 +162,14 @@ class Intervene(Resource):
         
         print("Interventions propagated :", interventionLog)
     
+    def head(self):
+        #Reset method
+        if (debug_api_reset==True):
+            print("debug_API_reset: Reset method called, self.currentInterventions set to: ", self.currentInterventions)
+        self.currentInterventions = {}
+        Start_Values()
+        
+    
 class Update(Resource):
     def get(self):
         with open('models/data.json', 'r') as json_file:    
@@ -164,6 +178,3 @@ class Update(Resource):
         groups = Start_Buttons()
         return ({"nodes":data["nodes"],"stats":stats,"groups":groups["groups"]})
         
-class Reset(Resource):
-    def get(self):
-        Start_Values()

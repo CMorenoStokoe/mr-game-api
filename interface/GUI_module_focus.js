@@ -41,6 +41,7 @@ function populateModal2_alt(node){
     //Get stats for currently viewed trait from memory in their button
     nodeId = node['id']
     nodeName = node['shortName']
+    nodeMRBaseId = node['id_MRBase']
     nodeIntvLvl = node['currIntvLvl'];
     nodeActivation = node['activation'];
     
@@ -50,7 +51,7 @@ function populateModal2_alt(node){
 
     //Set title and subtitle
     document.getElementById("modal2Title").innerHTML = nodeName;
-    document.getElementById("modal2Subtitle").innerHTML = nodeId;
+    document.getElementById("modal2Subtitle").innerHTML = nodeId + '<br> ID: ' + nodeMRBaseId;
 
     //Set intv slider
     setIntvSlider_alt(nodeIntvLvl, nodeId);

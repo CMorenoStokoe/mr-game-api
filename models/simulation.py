@@ -8,7 +8,7 @@ from networkx import json_graph
 from algorithms.propagation import propagate
 
 #Debug options
-debug_api_changeValues = True
+debug_api_changeValues = False
 
 
 #Models callable by resources
@@ -39,7 +39,7 @@ def Change_Values(intervention):
     
     #Debug console            
     if debug_api_changeValues == True:
-        print("debug_api_changeValues: Change values method called with payload {} ", intervention)
+        print("debug_api_changeValues: Change values method called with payload {} ".format(intervention))
       
     #Parse args create dummy variables for assignment
     nodeID=intervention["id"]

@@ -171,12 +171,14 @@ if (ao_exclusionCriteria==True):
     recompiledNodes=EC[0]
     recompiledEdges=EC[1]
     print(EC[2])
+    
 #Select only certain nodes
 if (ao_selectedNodes==True):
     SN = Model_SN.selectedNodes(recompiledNodes, recompiledEdges, selected_nodes)
     recompiledNodes=SN[0]
     recompiledEdges=SN[1]
     print(SN[2])
+    
 #Add nodes representing groups in data
 if (ao_collapsedGroups==True):
     if collapse_all_groups==True:
@@ -185,12 +187,14 @@ if (ao_collapsedGroups==True):
         recompiledEdges=CG[1]
         print(CG[2])
         print(CG[3])
+        
 #Add count of links per node (used in ordering GUI)
 if (ao_linkCount==True):
     if count_links_per_node == True:
         LC = Model_LC.linkCount(recompiledEdges)
         for count in LC[1]:
             print(count['count']," : ",count['node'])
+            
 #Add colours to groups
 if (ao_coloredGroups==True):
     ClG = Model_ClG.coloredGroups(recompiledNodes,colorScheme)
@@ -202,7 +206,8 @@ if (ao_gameDummies==True):
     GD = Model_GD.gameDummies(recompiledNodes, recompiledEdges)
     recompiledNodes=GD[0]
     recompiledEdges=GD[1]
-    print(GD[2])
+    for message in GD[2]:
+        print(message)
 
 print("*: 80% complete - Addon dataset recompiled ***")
 print("**:  {} nodes and {} links identified".format(len(recompiledNodes),len(recompiledEdges)))
