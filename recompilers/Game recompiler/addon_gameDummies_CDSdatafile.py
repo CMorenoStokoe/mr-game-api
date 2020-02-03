@@ -14,6 +14,10 @@ inCDS = [
             "UKB-b:4077",
             "1189",
             "UKB-b:5238",
+            "UKB-b:10162",
+            "1018",
+            "UKB-b:4424",
+            "UKB-b:8476",
         ]
 
 CDS = { 
@@ -159,6 +163,47 @@ CDS = {
                     "negative" : "False",
                     "units" : "Test score",
                     "units_type" : "int",
+                    "units_mapping" : None
+        },        
+        "UKB-b:10162": {
+                    "activation" : 0.5,
+                    "activation_min" : 1,
+                    "activation_max" : 4,
+                    "negative" : "False",
+                    "units" : "Category",
+                    "units_type" : "nominal",
+                    "units_mapping" : {
+                        1:	"Never/rarely",
+                        2:	"Sometimes",
+                        3:	"Usually",
+                        4:	"Always",
+                    }
+        },        
+        "1018": {
+                    "activation" : 10,
+                    "activation_min" : 0,
+                    "activation_max" : 15,
+                    "negative" : "False",
+                    "units" : "Questionnaire score",
+                    "units_type" : "float",
+                    "units_mapping" : None
+        },        
+        "UKB-b:4424": {
+                    "activation" : 7.15,
+                    "activation_min" : 1,
+                    "activation_max" : 23,
+                    "negative" : "False",
+                    "units" : "Hours per day",
+                    "units_type" : "int",
+                    "units_mapping" : None
+        },        
+        "UKB-b:8476": {
+                    "activation" : 0.22,
+                    "activation_min" : 0,
+                    "activation_max" : 1,
+                    "negative" : "False",
+                    "units" : "Prevalence (%)",
+                    "units_type" : "binary",
                     "units_mapping" : None
         },
 }

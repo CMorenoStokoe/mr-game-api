@@ -44,6 +44,7 @@ function populateModal2_alt(node){
     nodeMRBaseId = node['id_MRBase']
     nodeIntvLvl = node['currIntvLvl'];
     nodeActivation = node['activation'];
+    nodeUnits = node["units"];
     
     if (debug_update_focus == 'True'){
             console.log("debug_update_focus: populateModal2_alt function called, now delegating tasks with extracted data: ",nodeId,nodeName,nodeIntvLvl);
@@ -52,12 +53,13 @@ function populateModal2_alt(node){
     //Set title and subtitle
     document.getElementById("modal2Title").innerHTML = nodeName;
     document.getElementById("modal2Subtitle").innerHTML = nodeId + '<br> ID: ' + nodeMRBaseId;
+    document.getElementById("unitsTxt").innerText = nodeUnits;
 
     //Set intv slider
     setIntvSlider_alt(nodeIntvLvl, nodeId);
 
     //Set pop vis
-    setPopVis_alt(nodeActivation);
+    setPopVis_alt(node);
     
     //Right mini text read-out of FDG
     renderFdgTxt_alt(nodeId)
@@ -103,34 +105,75 @@ function setIntvSlider_alt(nodeIntvLvl, nodeId){
     header = document.getElementById("rightHeader").appendChild(intvSlider); 
 }
 
-function setPopVis_alt(nodeActivation){
+function setPopVis_alt(node){
     
-    if (debug_update_focus == 'True'){
-            console.log("debug_update_focus: setPopVis method called with payload: ",nodeActivation);
+    //Parse variables from payload
+    activation = node['activation'];
+    units = node['units'];
+    units_type = node['units_type'];
+    min = node['activation_min'];
+    max = node['activation_max'];
+    
+    //Compute inferred variables
+    activation_pct = activation/max*100;
+    activation_pops = Math.floor(activation_pct/10);
+   if (node["units_type"] == "binary") {
+            activation_pct = activation*100
+            if (activation_pct >=100) {
+                activation_text = activation_pct.toFixed(0)+'%';
+            } else if (activation_pct >=1) {
+                activation_text = activation_pct.toFixed(1)+'%';
+            } else if (activation_pct >=0.1){
+                activation_text = activation_pct.toFixed(2)+'%';
+            } else if (activation_pct >=0.01){
+                activation_text = activation_pct.toFixed(3)+'%';
+            } else {
+                activation_text = activation_pct.toFixed(4)+'%';
+            }
+        } else {
+            if (activation >=100) {
+                activation_text = activation.toFixed(0);
+            } else if (activation >=0.1) {
+                activation_text = activation.toFixed(1);
+            } else if (activation >=0.01){
+                activation_text = activation.toFixed(2);
+            } else if (activation >=0.001){
+                activation_text = activation.toFixed(3);
+            } else {
+                activation_text = activation.toFixed(4);
+            }
     }
     
-    activation_pops = Math.floor(nodeActivation/10);
-    activation_pct = nodeActivation+'%'
+    if (debug_update_focus == 'True'){
+            console.log("debug_update_focus: setPopVis method called with payload: ",node);
+            console.log("debug_update_focus: calculated from activation: activation_pct and activation_pops: ", activation, activation_pct, activation_pops);
+    }
     
-        function resetPops(){
-            count = 1;
-            while (count <= 10) {
-                document.getElementById("prevPop"+count).style.color = "black";
-                count++;
-            } 
+    //Function to reset pops display
+    function resetPops(){
+        count = 1;
+        while (count <= 10) {
+            document.getElementById("prevPop"+count).style.color = "black";
+            count++;
+        } 
+    }
+    
+    //Function to set pops display
+    function colorPops(affected){
+        while (affected >= 1) {
+            $('#prevPop'+affected).css('color', 'red');
+            affected--;
         }
-    
-        function colorPops(affected){
-            while (affected >= 1) {
-                $('#prevPop'+affected).css('color', 'red');
-                affected--;
-            }
-        }
-    
-    document.getElementById("prevalenceTxt").innerText = activation_pct;
-    
+    }
+       
+    //Set pop display
     resetPops();
     colorPops(activation_pops);
+    
+    //Set text to display on trait focus
+    document.getElementById("prevalenceTxt").innerText = activation_text;
+    document.getElementById("prevalenceTxt_min").innerText = min;
+    document.getElementById("prevalenceTxt_max").innerText = max;
 
 }
 
@@ -153,11 +196,12 @@ function renderFdgTxt_alt(nodeId){
             effecteds_done=[nodeId,];
             ourData["links"].forEach(scribe);
 
-            function scribe (link){
+            function scribe(link){
                 //Identify whether link affects, or is affected by, the node
                 if (link["source"] == nodeId){
                     txtDiv = document.getElementById("effectors");
                     node = link["target"];
+                    image = "<img src=\"" + link["target_iconId"] + " \"style=\" height:35px; width:35px; \" >"
                     if (effectors_done.includes(node)){
                         link["color"]="";
                     }   
@@ -166,6 +210,7 @@ function renderFdgTxt_alt(nodeId){
                 else if (link["target"] == nodeId){
                     txtDiv = document.getElementById("effecteds");
                     node = link["source"];
+                    image = "<img src=\"" + link["source_iconId"] + " \"style=\" height:35px; width:35px; \" >"
                     if (effecteds_done.includes(node)){
                         link["color"]="";
                     }
@@ -175,9 +220,9 @@ function renderFdgTxt_alt(nodeId){
 
                 //Render HTML
                 if (link["color"] == "blue"){
-                    html = "<span style=\"color:blue\"><i class=\"fas fa-chevron-circle-down\"></i>"+node+"</span><br>";
+                    html = "<span style=\"color:blue\"><i class=\"fas fa-chevron-circle-down\"></i>"+image+"</span><br>";
                 } else if (link["color"] == "red"){
-                    html = "<span style=\"color:red\"><i class=\"fas fa-chevron-circle-up\"></i>"+node+"</span><br>";
+                    html = "<span style=\"color:red\"><i class=\"fas fa-chevron-circle-up\"></i>"+image+"</span><br>";
                 } else {
                     return;   
                 }

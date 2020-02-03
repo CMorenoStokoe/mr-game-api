@@ -158,7 +158,7 @@ for row in data:
 
 print("*30% Done: Links produced")
 print("**: ", len(links), " IVW/Wald links identified from ", len(data), " rows of JSON data.")
-print("**: ", selfRefs, " self-references identified and ignored (e.g., BMI-->BMI) ")
+print("**: ", selfRefs, " self-references identified and removed (e.g., BMI-->BMI) ")
 
 
 #Produce nodes 

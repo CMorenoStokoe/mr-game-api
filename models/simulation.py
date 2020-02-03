@@ -8,7 +8,7 @@ from networkx import json_graph
 from algorithms.propagation import propagate
 
 #Debug options
-debug_api_changeValues = False
+debug_api_changeValues = True
 
 
 #Models callable by resources
@@ -54,32 +54,39 @@ def Change_Values(intervention):
         
         #Change nodes
         for node in dat["nodes"]:
+            
             if node["id"] == nodeID:
                 nodeAct_init=node["activation"]
                 
+                if node["activation"] == node["activation_max"] or node["activation"] == node["activation_min"] :
+                    return(999) #Return code 999 (value at maximum/minimum)
+                
                 #Update node activation stats
+                intervention_value = intervention["value"]
+                
                 if intvValence == "+":
-                    node["activation"] += intvValue/10
-                    node["currIntvLvl"] = intvValue/10
-                    node["totalFunds"] += (intvValue/10)*1000
-                    newVal=node["activation"]
+                    activationAfterIntervention = node["activation"] + intervention_value
+                    node["activation"] = DynamicallyRoundValue(activationAfterIntervention)
+                    node["currIntvLvl"] = intvValue
+                    node["totalFunds"] += (intvValue)*1000
+                    if (activationAfterIntervention > node["activation_max"]):
+                        newVal = node["activation_max"]
+                    else:
+                        newVal=DynamicallyRoundValue(activationAfterIntervention)
                 elif intvValence == "-":
-                    node["activation"] -= intvValue/10
-                    node["currIntvLvl"] = 0-(intvValue/10)
-                    node["totalFunds"] += (intvValue/10)*1000
-                    newVal=node["activation"]
+                    activationAfterIntervention = node["activation"] - intervention_value
+                    node["currIntvLvl"] = 0-(intvValue)
+                    node["totalFunds"] += (intvValue)*1000
+                    if (activationAfterIntervention < node["activation_min"]):
+                        newVal = node["activation_min"]
+                    else:
+                        newVal=DynamicallyRoundValue(activationAfterIntervention)
                     
                 if debug_api_changeValues == True: 
                     print("debug_api_changeValues: Intervention: {} ({}-->{})".format(node["id"],nodeAct_init, node["activation"]))
                 
-            #Colour nodes 
-            if node["activation"] < 10:
-                node["activColor"] = "rgba(25, 25, 240, {})".format(abs(node["activation"])/100)
-            elif node["activation"] == 10:
-                node["activColor"] = "white"
-            else:
-                node["activColor"] = "rgba(240, 25, 25, {})".format(abs(node["activation"])/100)
             recompiledNodes.append(node)
+            
     changedDat = {"nodes":recompiledNodes, "links":dat["links"]}
     
     #Write changes to data file
@@ -120,3 +127,63 @@ def Propagation(intervention, newVal):
 #        json.dump(dat, json_file, indent=4, sort_keys=True)
 
     return('{}(->{})'.format(intervention["id"],round(newVal,2)))
+
+def CleanData():
+    
+    recompiledNodes = []
+    
+    with open('models/data.json', 'r') as json_file:
+        dat = json.load(json_file)
+        
+        #Change nodes
+        for node in dat["nodes"]:
+                
+            #Colour nodes 
+            activation_pct = node["activation"]/node["activation_max"]*100
+            activation_pct_rd = DynamicallyRoundValue(activation_pct)
+            if activation_pct < 50:
+                node["activColor"] = "rgba(25, 25, 240, {})".format(100-activation_pct_rd/100)
+                if debug_api_changeValues == True: 
+                    print("debug_api_changeValues: Node coloured: {} : {})".format(node["id"], node["activColor"]))
+            elif activation_pct == 50:
+                node["activColor"] = "white"
+                if debug_api_changeValues == True: 
+                    print("debug_api_changeValues: Node coloured: {} : {})".format(node["id"], node["activColor"]))
+            else:
+                node["activColor"] = "rgba(240, 25, 25, {})".format(activation_pct_rd/100)
+                if debug_api_changeValues == True: 
+                    print("debug_api_changeValues: Node coloured: {} : {})".format(node["id"], node["activColor"]))
+            
+            #Round activations
+            activation = node['activation']
+            node['activation'] = DynamicallyRoundValue(activation)
+            
+            #Cap min/max (crude retro capping, reduces simulation accuracy while propagation model still does not respect min/max)
+            if activation > node['activation_max']:
+                node['activation'] = node['activation_max']
+            elif activation < node["activation_min"]:
+                node['activation'] = node["activation_min"]
+                
+            recompiledNodes.append(node)
+            
+    changedDat = {"nodes":recompiledNodes, "links":dat["links"]}
+    
+    #Write changes to data file
+    with open('models/data.json', 'w') as json_file:
+        json.dump(changedDat, json_file, indent=4, sort_keys=True)
+        
+    return()
+
+def DynamicallyRoundValue(value):
+    if (value >=100):
+        return round(value, 0)
+    elif (value >=1):
+        return round(value, 1)
+    elif (value >=0.1):
+        return round(value, 2)
+    elif (value >=0.01):
+        return round(value, 3)
+    elif (value >=0.001):
+        return round(value, 4)
+    else:
+        return round(value, 5)

@@ -10,7 +10,7 @@ from models.views import Collapse_Groups
 
 #Debug console
 debug_api_viewNode = False
-debug_api_intervene = False
+debug_api_intervene = True
 debug_api_viewNodeSingle = False
 debug_api_reset = False
 
@@ -123,7 +123,10 @@ class Intervene(Resource):
         interventionLog = []
         for intervention in self.currentInterventions:
             newVal=Change_Values(self.currentInterventions[intervention])
-            interventionLog.append(Propagation(self.currentInterventions[intervention],newVal))
+            if newVal != 999: #If value is not at maximum/minimum already
+                logme = Propagation(self.currentInterventions[intervention],newVal)
+                interventionLog.append(logme)
+                CleanData()
         
         print("*Tick* Propagation :", interventionLog)
         
@@ -137,8 +140,8 @@ class Intervene(Resource):
             parser.add_argument('value', type=int, help='value cannot be converted')
             newIntervention = parser.parse_args() 
         except ValueError:  # includes simplejson.decoder.JSONDecodeError
-            print ('ERROR: Decoding JSON has failed')
-            return
+            print('ERROR: Decoding JSON has failed')
+            return()
         
         #Save interventions to list of current interventions if intervention level != 0
         if newIntervention['value'] != 0:
@@ -158,7 +161,10 @@ class Intervene(Resource):
         interventionLog = []
         for intervention in self.currentInterventions:
             newVal=Change_Values(self.currentInterventions[intervention])
-            interventionLog.append(Propagation(self.currentInterventions[intervention],newVal))
+            if newVal != 999: #If value is not at maximum/minimum already
+                logme = Propagation(self.currentInterventions[intervention],newVal)
+                interventionLog.append(logme)
+                CleanData()
         
         print("Interventions propagated :", interventionLog)
     

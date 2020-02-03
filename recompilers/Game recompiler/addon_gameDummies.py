@@ -22,9 +22,13 @@ class Model_GD():
         
         #1) Add to nodes dummmy properties for game to use
         
+        idToMrbaseIdDict = {}
+        
         paddedNodes = []
         
         for node in nodeList:
+            
+            idToMrbaseIdDict[node["id"]]= node["id_MRBase"]
             
             if (node["id_MRBase"] in nodesForCustomScoring):
                 activationValues = CDS[node["id_MRBase"]]
@@ -45,8 +49,8 @@ class Model_GD():
                     "currIntvLvl" : 0,
                     "totalFunds" : 0,
                     "iconId" : 'icons/'+node["id_MRBase"].replace(":", "")+'.png',
-                    "activation_max" : activationValues['activation_max'],
-                    "activation_min" : activationValues['activation_min'],
+                    "activation_max" : activationValues['activation']*2,
+                    "activation_min" : 0,
                     "negative" : activationValues["negative"],
                     "units" : activationValues["units"],
                     "units_type" : activationValues["units_type"],
@@ -69,6 +73,8 @@ class Model_GD():
                     'value': link['value'], 
                     'color': link['color'],
                     "currIntvLvl" : 0,
+                    "source_iconId": 'icons/'+idToMrbaseIdDict[link["source"]].replace(":", "")+'.png',
+                    "target_iconId": 'icons/'+idToMrbaseIdDict[link["target"]].replace(":", "")+'.png',
                 }
                 
             )
@@ -80,7 +86,7 @@ class Model_GD():
         
         messages=[
             "**:  {} game dummy properties added to nodes and {} added to links".format(dummyCount_nodes, dummyCount_links),
-            "**:  Custom scoring paramaters found for {} nodes. Succesfully configured {} nodes. {} remaining nodes default".format(len(inCDS), count_CDSuse, count_default)
+            "**:  Custom scoring paramaters found for {} nodes (mode: Auto min/max). Succesfully configured {} nodes. {} remaining nodes default".format(len(inCDS), count_CDSuse, count_default)
         ]
         
         return (paddedNodes, paddedLinks, messages)

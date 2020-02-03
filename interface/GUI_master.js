@@ -18,7 +18,6 @@ function loadGUI(){
     //GUI variables
     var numOfSliders=[1,2,3,4,5,6,7,8,9,10];
     
-    
     /*##################
     MASTER FUNCTIONS
     (call slave functions)
@@ -114,7 +113,7 @@ function loadGUI(){
                             FDG("destruction", "http://127.0.0.1:5000/simulation", "#svgMain", "normal");
                             FDG("creation", "http://127.0.0.1:5000/simulation", "#svgMain", "normal");
 
-                        //Modal 1
+                        //Modal 1 
 
                             //Title
                             groupId = document.getElementById("modalTitle").innerHTML;
@@ -191,7 +190,6 @@ function loadGUI(){
             document.getElementById(btnName).addEventListener("click", function(e) {   
                 render("modal1",group);
                 $('.dropdown-toggle').dropdown();
-                
                 update();
             });
             
@@ -225,6 +223,7 @@ function loadGUI(){
             title = document.getElementById("progress_txt_goal"+goalProgCount);
             bar = document.getElementById("progress_bar_goal"+goalProgCount);
             barTxt = document.getElementById("progress_barTxt_goal"+goalProgCount);
+            inBarTxt = document.getElementById("progress_inBarTxt"+goalProgCount);
             
             if (debug_gui_goals == 'True'){console.log("debug_gui_goals: Got template elements: ",div,title,bar,barTxt);}
             
@@ -234,14 +233,25 @@ function loadGUI(){
             titleId_new = "progress_txt_" + nodeId_safe;
             barId_new = "progress_bar_" + nodeId_safe;
             barTxtId_new = "progress_barTxt_" + nodeId_safe;
+            inBarTxt_new = "progress_inBarTxt_" + nodeId_safe;
             
-            if (debug_gui_goals == 'True'){console.log("debug_gui_goals: Made new IDs: ",divId_new,titleId_new,barId_new,barTxtId_new);}
+            if (debug_gui_goals == 'True'){console.log("debug_gui_goals: Made new IDs: ", divId_new, titleId_new, barId_new, barTxtId_new);}
             
             //Replace template IDs with new IDs
             div.id = divId_new;
             title.id = titleId_new;
             bar.id = barId_new;
             barTxt.id = barTxtId_new;
+            inBarTxt.id = inBarTxt_new;
+            
+            div_new = document.getElementById(divId_new)
+            bar_new = document.getElementById(barId_new)
+            
+            //Set min-max for goal progress bars (done here instead of update because this is before display: set to visible because otherwise sometimes don't change)
+            bar_new.setAttribute("aria-valuemin", node["activation_min"]);
+            bar_new.setAttribute("aria-valuemax", node["activation_max"]);
+            
+            if (debug_gui_goals == 'True'){console.log("debug_gui_goals: Set progress min/max: ", node["activation_min"], node["activation_max"]);}
             
             //Set permanent information
             title.innerText = node["shortName"];
@@ -249,7 +259,6 @@ function loadGUI(){
             if (debug_gui_goals == 'True'){console.log("debug_gui_goals: Set bar title: ", node["shortName"]);}
 
             //Get progress bar with new ID and move from hiding to GUI location
-            div_new = document.getElementById(divId_new);
             document.getElementById("goalsDiv").appendChild(div_new);
 
             //Use update method to set starting values
@@ -271,29 +280,72 @@ function loadGUI(){
         
         bar = document.getElementById("progress_bar_"+nodeId_safe);
         barTxt = document.getElementById("progress_barTxt_"+nodeId_safe);
+        inBarTxt = document.getElementById("progress_inBarTxt_"+nodeId_safe);
         
         //Get activation of node to set the fill of the progress bar
         activation = Number(node["activation"])
+        activation_width = activation / node["activation_max"] * 100
         
-        //Assign progress color
-        if (activation > 100 || activation < 0){
-            color = "black";
-        } else if (activation < 25) {
-            color = "green";
-        } else if (activation > 50) {
+        //Set DPs for activation value display; If binary, display activation values as prevalence % instead
+        if (node["units_type"] == "binary") {
+            activation_pct = activation*100
+            if (activation_pct >=100) {
+                activation_text = activation_pct.toFixed(0)+'%';
+            } else if (activation_pct >=1) {
+                activation_text = activation_pct.toFixed(1)+'%';
+            } else if (activation_pct >=0.1){
+                activation_text = activation_pct.toFixed(2)+'%';
+            } else if (activation_pct >=0.01){
+                activation_text = activation_pct.toFixed(3)+'%';
+            } else {
+                activation_text = activation_pct.toFixed(4)+'%';
+            }
+        } else {
+            if (activation >=100) {
+                activation_text = activation.toFixed(0);
+            } else if (activation >=0.1) {
+                activation_text = activation.toFixed(1);
+            } else if (activation >=0.01){
+                activation_text = activation.toFixed(2);
+            } else if (activation >=0.001){
+                activation_text = activation.toFixed(3);
+            } else {
+                activation_text = activation.toFixed(4);
+            }
+        }
+        
+        //
+        
+        
+        //Dual-function depending on activation: Assign progress color & place text           
+        if (activation_width >= 75) {
+            color = "red";
+            $(inBarTxt).text("");
+            $(barTxt).text(activation_text);
+        } else if (activation_width >= 50) {
             color = "orange";
-        } else if (activation > 75) {
-            color = "red";       
+            $(inBarTxt).text("");
+            $(barTxt).text(activation_text);
+        } else if (activation_width >= 25) {
+            color = "green";  
+            $(inBarTxt).text("");
+            $(barTxt).text(activation_text);     
+        } else {
+            $(inBarTxt).text(activation_text);
+            $(barTxt).text(""); 
+            color = "green";
         }
         
         //Update value and color for progress bar, text for in-bar text
-        $(bar).css('width', activation+"%").attr('aria-valuenow', activation);
-        $(bar).css('background-color', color);         
-        $(barTxt).text(activation.toFixed(0));
+        $(bar).css('width', activation_width+'%').attr('aria-valuenow', activation);
+        $(bar).css('background-color', color);
         
         if (debug_gui_goals == 'True'){
             console.log("debug_gui_goals: Called setGoalProgs with payload: ", node);
             console.log("debug_gui_goals: Goal id found: ", node['id']);
+            console.log("debug_gui_goals: Attempting goal progress text set: ", activation.toFixed(3), activation.toFixed(1));
+            console.log("debug_gui_goals: Goal progress text set: ", $(inBarTxt).text(), $(barTxt).text());
+            console.log("debug_gui_goals: Attempting goal progress val set: ", activation_width+'%', activation);
             console.log("debug_gui_goals: Goal progress value set: ", $(bar).css('width'), $(bar).attr('aria-valuenow'));
             
         }
@@ -561,7 +613,7 @@ function loadGUI(){
         }else if (funding >= 0){
             valence = '+';
         }
-        value = Math.abs(funding * 10);
+        value = Math.abs(funding);
         
         var xhr = new XMLHttpRequest();        
 

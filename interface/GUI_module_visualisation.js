@@ -54,6 +54,8 @@ function FDG (spell,URL,svgId,view) {
     var arrowPlacement = 60;
     var arrowSize = 5;
     var arrowColor = arrowColorStatus;
+    var iconSize = "50";
+    var iconPlacement = -25;
     if (view=="collapsed"){
         graphCohesion = -5000;
         edgeWidth = 5;
@@ -63,6 +65,8 @@ function FDG (spell,URL,svgId,view) {
         arrowPlacement = circleRadius*7;
         arrowSize = circleRadius*2;
         arrowColor = '#999';
+        iconSize = "20";
+        iconPlacement = -10;
     } else if (view=="compact"){
         graphCohesion = -800;
         edgeWidth = 1;
@@ -72,6 +76,8 @@ function FDG (spell,URL,svgId,view) {
         arrowPlacement = 15;
         arrowSize = 0.25;
         arrowColor = '#999';
+        iconSize = "20";
+        iconPlacement = -10;
     };
     
     /*setTimeout(function() {
@@ -151,10 +157,10 @@ function FDG (spell,URL,svgId,view) {
     
      var nodeImage = node.append("image")
          .attr("xlink:href", d => d.iconId)
-         .attr("height", "50")
-         .attr("width", "50")
-         .attr("x", -25) //default=-20
-         .attr("y", -25) //default=-20
+         .attr("height", iconSize)
+         .attr("width", iconSize)
+         .attr("x", iconPlacement) //default=-20
+         .attr("y", iconPlacement) //default=-20
          .attr("dataHolder", d => d.id)
          .on("click", function(){
               nodeId = this.getAttribute("dataHolder")
