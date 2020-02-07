@@ -1,0 +1,682 @@
+[
+    {
+        "group": "Personality",
+        "id": null,
+        "name": "Neuroticism",
+        "short_name": "Neuroticism"
+    },
+    {
+        "group": null,
+        "id": null,
+        "name": "Gout",
+        "short_name": "Gout"
+    },
+    {
+        "group": null,
+        "id": "22",
+        "name": "Schizophrenia",
+        "short_name": "Schizophrenia"
+    },
+    {
+        "group": "Diabetes",
+        "id": null,
+        "name": "Type 2 diabetes",
+        "short_name": "Diabetes(T2)"
+    },
+    {
+        "group": null,
+        "id": null,
+        "name": "Juvenile idiopathic arthritis",
+        "short_name": "Arthritis(JIA)"
+    },
+    {
+        "group": null,
+        "id": null,
+        "name": "Psoriasis",
+        "short_name": "Psoriasis"
+    },
+    {
+        "group": null,
+        "id": null,
+        "name": "Liver Disease(PBC)",
+        "short_name": ""
+    },
+    {
+        "group": null,
+        "id": null,
+        "name": "Systemic lupus erythematosus",
+        "short_name": "Lupus(SLE)"
+    },
+    {
+        "group": "Diabetes",
+        "id": null,
+        "name": "Type 1 diabetes",
+        "short_name": "Diabetes(T1)"
+    },
+    {
+        "group": null,
+        "id": null,
+        "name": "Alzheimer's disease",
+        "short_name": "Alzheimer's"
+    },
+    {
+        "group": null,
+        "id": null,
+        "name": "Crohn's disease",
+        "short_name": "Crohn's"
+    },
+    {
+        "group": "Heart disease",
+        "id": null,
+        "name": "Coronary heart disease",
+        "short_name": "Heart disease(CHD)"
+    },
+    {
+        "group": "Cancer",
+        "id": null,
+        "name": "Melanoma",
+        "short_name": "Melanoma"
+    },
+    {
+        "group": "Heart disease",
+        "id": null,
+        "name": "Myocardial infarction",
+        "short_name": "Heart disease(MCI)"
+    },
+    {
+        "group": null,
+        "id": null,
+        "name": "Psychiatric disorders",
+        "short_name": "Psychiatric disorders"
+    },
+    {
+        "group": null,
+        "id": null,
+        "name": "Pancreatic cancer",
+        "short_name": "Pancreatic cancer"
+    },
+    {
+        "group": "Lung cancer",
+        "id": null,
+        "name": "Lung adenocarcinoma",
+        "short_name": "Lung cancer(Adeno.)"
+    },
+    {
+        "group": "Lung cancer",
+        "id": null,
+        "name": "Lung cancer",
+        "short_name": "Lung cancer(NOS)"
+    },
+    {
+        "group": "Lung cancer",
+        "id": null,
+        "name": "Squamous cell lung cancer",
+        "short_name": "Lung cancer(Squam.)"
+    },
+    {
+        "group": null,
+        "id": null,
+        "name": "Depressive symptoms",
+        "short_name": "Depression(symps.)"
+    },
+    {
+        "group": "Education",
+        "id": null,
+        "name": "Years of schooling",
+        "short_name": "Education(Yrs)"
+    },
+    {
+        "group": null,
+        "id": null,
+        "name": "Mean platelet volume",
+        "short_name": "Platelets(vol)"
+    },
+    {
+        "group": "Personality",
+        "id": null,
+        "name": "Neuroticism",
+        "short_name": "Neuroticism"
+    },
+    {
+        "group": null,
+        "id": null,
+        "name": "Platelet count",
+        "short_name": "Platelets(#)"
+    },
+    {
+        "group": null,
+        "id": null,
+        "name": "Subjective well being",
+        "short_name": "Well-being"
+    },
+    {
+        "group": null,
+        "id": null,
+        "name": "C-reactive protein",
+        "short_name": "CRP"
+    },
+    {
+        "group": "Height",
+        "id": null,
+        "name": "Difference in height between childhood and adulthood",
+        "short_name": "Height growth(3-adult)"
+    },
+    {
+        "group": "Height",
+        "id": null,
+        "name": "Difference in height between adolescence and adulthood",
+        "short_name": "Height growth(13-adult)"
+    },
+    {
+        "group": null,
+        "id": null,
+        "name": "Intracranial volume",
+        "short_name": "Brain volume(ICV)"
+    },
+    {
+        "group": "Iron",
+        "id": null,
+        "name": "Iron",
+        "short_name": "Iron"
+    },
+    {
+        "group": "Iron",
+        "id": null,
+        "name": "Ferritin",
+        "short_name": "Iron(Ferratin)"
+    },
+    {
+        "group": "Iron",
+        "id": null,
+        "name": "Transferrin Saturation",
+        "short_name": "Iron(Transferrin sat.)"
+    },
+    {
+        "group": "Iron",
+        "id": null,
+        "name": "Transferrin",
+        "short_name": "Iron(Transferrin)"
+    },
+    {
+        "group": null,
+        "id": null,
+        "name": "Urate",
+        "short_name": "Urate"
+    },
+    {
+        "group": "Height",
+        "id": null,
+        "name": "Sitting height ratio",
+        "short_name": "Head/Trunk length(SHR)"
+    },
+    {
+        "group": null,
+        "id": null,
+        "name": "Zinc",
+        "short_name": "Zinc"
+    },
+    {
+        "group": null,
+        "id": null,
+        "name": "Birth weight",
+        "short_name": "Weight(birth)"
+    },
+    {
+        "group": null,
+        "id": null,
+        "name": "Father's age at death",
+        "short_name": "Paternal longevity(age)"
+    },
+    {
+        "group": null,
+        "id": null,
+        "name": "Age at menarche",
+        "short_name": "Age at menarche"
+    },
+    {
+        "group": "Obesity",
+        "id": null,
+        "name": "Childhood obesity",
+        "short_name": "Childhood obesity"
+    },
+    {
+        "group": "Microalbuminuria",
+        "id": null,
+        "name": "Microalbuminuria",
+        "short_name": "Microalbuminuria"
+    },
+    {
+        "group": "Microalbuminuria",
+        "id": null,
+        "name": "Serum creatinine (eGFRcrea)",
+        "short_name": "Creatanine(eGFR)"
+    },
+    {
+        "group": "Microalbuminuria",
+        "id": null,
+        "name": "Serum cystatin C (eGFRcys)",
+        "short_name": "Cystatin C(eGFR)"
+    },
+    {
+        "group": "Microalbuminuria",
+        "id": null,
+        "name": "Urinary albumin-to-creatinine ratio",
+        "short_name": "Albumin:Creatinine ratio"
+    },
+    {
+        "group": "Personality",
+        "id": null,
+        "name": "Conscientiousness",
+        "short_name": "Conscientiousness"
+    },
+    {
+        "group": "Obesity",
+        "id": null,
+        "name": "Body mass index",
+        "short_name": "BMI"
+    },
+    {
+        "group": "Haemoglobin",
+        "id": null,
+        "name": "Haemoglobin concentration",
+        "short_name": "Haemoglobin(conc.)"
+    },
+    {
+        "group": "Haemoglobin",
+        "id": null,
+        "name": "Mean cell haemoglobin",
+        "short_name": "Haemoglobin(mean cell)"
+    },
+    {
+        "group": "Haemoglobin",
+        "id": null,
+        "name": "Mean cell haemoglobin concentration",
+        "short_name": "Haemoglobin(mean cell conc.)"
+    },
+    {
+        "group": null,
+        "id": null,
+        "name": "Mean cell volume",
+        "short_name": "Cell volume(mean)"
+    },
+    {
+        "group": null,
+        "id": null,
+        "name": "Packed cell volume",
+        "short_name": "Cell colume(packed)"
+    },
+    {
+        "group": null,
+        "id": null,
+        "name": "Red blood cell count",
+        "short_name": "Erythrocytes"
+    },
+    {
+        "group": "Cholesterol",
+        "id": null,
+        "name": "HDL cholesterol",
+        "short_name": "Cholesterol(HDL)"
+    },
+    {
+        "group": "Cholesterol",
+        "id": null,
+        "name": "LDL cholesterol",
+        "short_name": "Cholesterol(LDL)"
+    },
+    {
+        "group": "Cholesterol",
+        "id": null,
+        "name": "Total cholesterol",
+        "short_name": "Cholesterol(Total)"
+    },
+    {
+        "group": null,
+        "id": null,
+        "name": "Triglycerides",
+        "short_name": "Triglycerides"
+    },
+    {
+        "group": "Waist",
+        "id": null,
+        "name": "Hip circumference",
+        "short_name": "Hip size(circ.)"
+    },
+    {
+        "group": "Waist",
+        "id": null,
+        "name": "Waist circumference",
+        "short_name": "Waist size(circ.)"
+    },
+    {
+        "group": "Waist",
+        "id": null,
+        "name": "Waist-to-hip ratio",
+        "short_name": "Waist:Hip ratio"
+    },
+    {
+        "group": "Diabetes",
+        "id": null,
+        "name": "2hr Glucose",
+        "short_name": "Glucose tolerance(2hrGTT)"
+    },
+    {
+        "group": "Diabetes",
+        "id": null,
+        "name": "HbA1C",
+        "short_name": "Glucose(HbA1C)"
+    },
+    {
+        "group": "Diabetes",
+        "id": null,
+        "name": "Corrected insulin response",
+        "short_name": "Glucose tolerance(insulin resp.)"
+    },
+    {
+        "group": "Diabetes",
+        "id": null,
+        "name": "Fasting proinsulin",
+        "short_name": "Glucose tolerance(Proinsulin)"
+    },
+    {
+        "group": "Diabetes",
+        "id": null,
+        "name": "HOMA-B",
+        "short_name": "Glucose tolerance(HOMA-B)"
+    },
+    {
+        "group": "Diabetes",
+        "id": null,
+        "name": "Fasting glucose",
+        "short_name": "Glucose(fasting)"
+    },
+    {
+        "group": "Diabetes",
+        "id": null,
+        "name": "Fasting insulin",
+        "short_name": "Insulin(fasting)"
+    },
+    {
+        "group": "Education",
+        "id": null,
+        "name": "College completion",
+        "short_name": "Education(college)"
+    },
+    {
+        "group": "Obesity",
+        "id": null,
+        "name": "Extreme body mass index",
+        "short_name": "BMI(extreme)"
+    },
+    {
+        "group": "Height",
+        "id": null,
+        "name": "Extreme height",
+        "short_name": "Height(extreme)"
+    },
+    {
+        "group": "Waist",
+        "id": null,
+        "name": "Extreme waist-to-hip ratio",
+        "short_name": "Waist:Hip ratio(extreme)"
+    },
+    {
+        "group": "Height",
+        "id": null,
+        "name": "Height",
+        "short_name": "Height"
+    },
+    {
+        "group": "Obesity",
+        "id": null,
+        "name": "Obesity class 1",
+        "short_name": "BMI(30-35)"
+    },
+    {
+        "group": "Obesity",
+        "id": null,
+        "name": "Obesity class 2",
+        "short_name": "BMI(35-40)"
+    },
+    {
+        "group": "Obesity",
+        "id": null,
+        "name": "Obesity class 3",
+        "short_name": "BMI(40+)"
+    },
+    {
+        "group": "Obesity",
+        "id": null,
+        "name": "Overweight",
+        "short_name": "BMI(25-30)"
+    },
+    {
+        "group": "Smoking",
+        "id": "961",
+        "name": "Cigarettes smoked per day",
+        "short_name": "Smoking(cigs/d)"
+    },
+    {
+        "group": "Obesity",
+        "id": null,
+        "name": "Body fat",
+        "short_name": "Body fat"
+    },
+    {
+        "group": "Well-being",
+        "id": "1009",
+        "name": "Subjective well being ",
+        "short_name": "Well-being"
+    },
+    {
+        "group": "Well-being",
+        "id": "1018",
+        "name": "Subjective well being ",
+        "short_name": "Well-being"
+    },
+    {
+        "group": "Sleep",
+        "id": "1087",
+        "name": "Chronotype ",
+        "short_name": "Chronotype"
+    },
+    {
+        "group": "Personality",
+        "id": "113",
+        "name": "Neo-agreeableness ",
+        "short_name": "Agreeableness"
+    },
+    {
+        "group": "Personality",
+        "id": "114",
+        "name": "Neo-conscientiousness ",
+        "short_name": "Conscientiousness"
+    },
+    {
+        "group": "Personality",
+        "id": "115",
+        "name": "Neo-extraversion ",
+        "short_name": "Extraversion"
+    },
+    {
+        "group": "Personality",
+        "id": "117",
+        "name": "Neo-openness to experience ",
+        "short_name": "Openness"
+    },
+    {
+        "group": "Sleep",
+        "id": "UKB-a:13",
+        "name": "Sleeplessness / insomnia ",
+        "short_name": "Sleeplessness"
+    },
+    {
+        "group": "Sleep",
+        "id": "UKB-a:527",
+        "name": "G47 Sleep disorders ",
+        "short_name": "Sleep d/o"
+    },
+    {
+        "group": "Work hrs",
+        "id": "UKB-b:10162",
+        "name": "Job involve night shift work ",
+        "short_name": "Night shifts"
+    },
+    {
+        "group": "Exercise",
+        "id": "UKB-b:13702",
+        "name": "Time spent doing vigorous physical activity ",
+        "short_name": "Vigrious exercise (time)"
+    },
+    {
+        "group": "Exercise",
+        "id": "UKB-b:151",
+        "name": "Number of days/week of vigorous physical activity 10+ minutes ",
+        "short_name": "Vigrious exercise (days/wk)"
+    },
+    {
+        "group": "Socialisation",
+        "id": "UKB-b:1553",
+        "name": "Adult education class ",
+        "short_name": null
+    },
+    {
+        "group": "Work hrs",
+        "id": "UKB-b:1712",
+        "name": "Job involves shift work ",
+        "short_name": "Shift work"
+    },
+    {
+        "group": "Exercise",
+        "id": "UKB-b:2115",
+        "name": "Time spent doing moderate physical activity ",
+        "short_name": "Moderate exercise (time)"
+    },
+    {
+        "group": "Sleep",
+        "id": "UKB-b:3957",
+        "name": "Sleeplessness / insomnia ",
+        "short_name": "Sleeplessness"
+    },
+    {
+        "group": "Socialisation",
+        "id": "UKB-b:4000",
+        "name": "Sports club or gym ",
+        "short_name": "Sports club/Gym"
+    },
+    {
+        "group": "Well-being",
+        "id": "UKB-b:4062",
+        "name": "Happiness ",
+        "short_name": null
+    },
+    {
+        "group": "Socialisation",
+        "id": "UKB-b:4077",
+        "name": "Other group activity ",
+        "short_name": "Social activity*",
+        "note": "Social activity group which is not going to the pub (drinking confounder), sports or gym (exercise confounder), or religious service (religion confounder)"
+    },
+    {
+        "group": "Socialisation",
+        "id": "UKB-b:4171",
+        "name": "Pub or social club ",
+        "short_name": "Pub/Social club"
+    },
+    {
+        "group": "Sleep",
+        "id": "UKB-b:4424",
+        "name": "Sleep duration ",
+        "short_name": null
+    },
+    {
+        "group": "Socialisation",
+        "id": "UKB-b:4667",
+        "name": "Religious group ",
+        "short_name": null
+    },
+    {
+        "group": "Exercise",
+        "id": "UKB-b:4710",
+        "name": "Number of days/week of moderate physical activity 10+ minutes ",
+        "short_name": "Exercise*",
+        "note": "Measure had even distribution across groups, whereas vigorous exercise tended towards 0/1 with very few datapoints at the right tail, whereas time exercising measures did not include individuals who indicated they did not exercise"
+    },
+    {
+        "group": "Socialisation",
+        "id": "UKB-b:5076",
+        "name": "None of the above ",
+        "short_name": "No social activities"
+    },
+    {
+        "group": null,
+        "id": "UKB-b:8476",
+        "name": "Loneliness/isolation ",
+        "short_name": "Loneliness"
+    },
+    {
+        "group": "Exercise",
+        "id": "UKB-b:8865",
+        "name": "Time spent doing light physical activity ",
+        "short_name": "Light exercise (time)"
+    },
+    {
+        "group": "null",
+        "id": "1189",
+        "name": "Obsessive Compulsive Disorder ",
+        "short_name": "OCD"
+    },
+    {
+        "group": "null",
+        "id": "UKB-b:1585",
+        "name": "Z86.4 Personal history of psychoactive substance abuse ",
+        "short_name": "Drug use"
+    },
+    {
+        "group": "null",
+        "id": "UKB-b:17999",
+        "name": "Weekly usage of mobile phone in last 3 months ",
+        "short_name": "Phone use"
+    },
+    {
+        "group": "null",
+        "id": "UKB-b:19953",
+        "name": "Body mass index (BMI) ",
+        "short_name": "BMI"
+    },
+    {
+        "group": "null",
+        "id": "UKB-b:4424",
+        "name": "Sleep duration ",
+        "short_name": "Sleep (hrs)"
+    },
+    {
+        "group": "null",
+        "id": "UKB-b:4779",
+        "name": "Plays computer games ",
+        "short_name": "Gaming"
+    },
+    {
+        "group": "null",
+        "id": "UKB-b:5238",
+        "name": "Fluid intelligence score ",
+        "short_name": "Intelligence"
+    },
+    {
+        "group": "null",
+        "id": "UKB-b:5779",
+        "name": "Alcohol intake frequency. ",
+        "short_name": "Alcohol"
+    },
+    {
+        "group": "null",
+        "id": "UKB-b:6519",
+        "name": "Worrier / anxious feelings ",
+        "short_name": "Anxiety"
+    },
+    {
+        "group": "null",
+        "id": "1187",
+        "name": "Major Depressive Disorder ",
+        "short_name": "Depression (MDD)"
+    }
+]

@@ -10,7 +10,7 @@ from models.simulation import Change_Values, Propagation
 #from models.data import data
 
 def Start_Values(): #make copy of original start data
-    with open("startup/playable_health_v6.json", "r") as json_file:
+    with open("startup/MRG_output.json", "r") as json_file:
         dat = json.load(json_file) 
 
     # Pre-propagate - add me here (currently doesn't work because propagation gives different values depending on the path taken) 
