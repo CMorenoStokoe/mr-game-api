@@ -137,7 +137,7 @@ function FDG (spell,URL,svgId,view) {
       .data(nodes)
       .join(
         enter => enter.append("g")
-        )
+      )
       .call(drag(simulation));
 
     const circles = node.append("circle")
@@ -169,7 +169,7 @@ function FDG (spell,URL,svgId,view) {
               FDG("destruction", URL, "#svgM2", "compact");
               FDG("creation", URL,"#svgM2", "compact");
               if (debug_FDG_focus=='True'){console.log("debug_FDG_focus: circle.onclick called, retrieved node id: ", nodeId)}
-      });
+        });
 
     // From https://stackoverflow.com/questions/28050434/introducing-arrowdirected-in-force-directed-graph-d3
     svg.append("svg:defs").selectAll("marker")//edge color as function of beta weight sign//
@@ -178,7 +178,7 @@ function FDG (spell,URL,svgId,view) {
         .attr("id", String)
         .attr("viewBox", "0 -5 10 10")
         .attr("refX", arrowPlacement) // original val: 15
-        .attr("refY", -1.5) // original val: -1.5
+        .attr("refY", 0) // original val: -1.5
         .attr("markerWidth", arrowSize)  // original val: 5
         .attr("markerHeight", arrowSize) // original val: 5
         .attr("stroke", arrowColor)
@@ -189,7 +189,7 @@ function FDG (spell,URL,svgId,view) {
 
     simulation
         .on("tick", ticked);
-
+        
     function ticked() {
       link
           .attr("x1", d => d.source.x)
@@ -204,23 +204,34 @@ function FDG (spell,URL,svgId,view) {
     //var path = svg.selectAll("path"); 
     //path.exit().remove();
         
+    function dblclick(d) {
+      d3.select(this).classed("fixed", d.fixed = false);
+    }
+
+    function dragstart(d) {
+      d3.select(this).classed("fixed", d.fixed = true);
+    }
+        
     function drag(simulation) {
 
       function dragstarted(d) {
         if (!d3.event.active) simulation.alphaTarget(0.3).restart();
         d.fx = d.x;
         d.fy = d.y;
+        d3.select(this).classed("fixed", d.fixed = true);
       }
 
       function dragged(d) {
         d.fx = d3.event.x;
         d.fy = d3.event.y;
+        d3.select(this).classed("fixed", d.fixed = true);
       }
 
       function dragended(d) {
         if (!d3.event.active) simulation.alphaTarget(0);
-        d.fx = null;
-        d.fy = null;
+        d.fx = d3.event.x;
+        d.fy = d3.event.y;
+        d3.select(this).classed("fixed", d.fixed = true);   
       }
 
       return d3.drag()

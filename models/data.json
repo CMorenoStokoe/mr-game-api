@@ -625,7 +625,7 @@
         },
         {
             "activColor": "white",
-            "activation": 1.95,
+            "activation": 1.9,
             "activation_max": 3.9,
             "activation_min": 0,
             "currIntvLvl": 0,
@@ -686,7 +686,7 @@
         },
         {
             "activColor": "white",
-            "activation": 7.15,
+            "activation": 7.2,
             "activation_max": 14.3,
             "activation_min": 0,
             "currIntvLvl": 0,
@@ -786,11 +786,11 @@
             "units_type": "nominal"
         },
         {
-            "activColor": "white",
-            "activation": 0.75,
+            "activColor": "rgba(240, 25, 25, 1.0)",
+            "activation": 1.5,
             "activation_max": 1.5,
             "activation_min": 0,
-            "currIntvLvl": 0,
+            "currIntvLvl": 2,
             "group": "goal",
             "grpColor": "green",
             "iconId": "icons/UKB-b6519.png",
@@ -798,7 +798,7 @@
             "id_MRBase": "UKB-b:6519",
             "negative": "False",
             "shortName": "Anxiety",
-            "totalFunds": 0,
+            "totalFunds": 2000,
             "units": "Prevalence (%)",
             "units_mapping": null,
             "units_type": "binary"
