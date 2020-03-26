@@ -487,3 +487,4 @@ venv
 venv/
 venv/*
 models/data.json
+*.pyc
