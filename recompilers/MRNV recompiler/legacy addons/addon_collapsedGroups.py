@@ -1,6 +1,6 @@
 class Model_CG():
         
-    def collapsedGroups(nodeList,linkList):
+    def collapsedGroups(nodeList,linkList,groupDict):
         collapsedNodesN=0
         collapsedLinksN=0
         counter3 = 1
@@ -9,10 +9,11 @@ class Model_CG():
         #optional group collapse criteria
             #(edit this list to change which groups collapse)
             #(find group numbers from python console output from running main script once first)
-        collapsedGroupNumbers = []
-        for node in nodeList:
-            if node["group"] not in collapsedGroupNumbers:
-                collapsedGroupNumbers.append(node["group"])
+        collapsedGroupNumbers = [
+                                    2,
+                                    6,
+                                    8
+                                ]
         #iterate over nodes to identify target group members
         nodes=[]
         links=[]
@@ -20,8 +21,8 @@ class Model_CG():
         collapsedIDs=[]
         collapsedGRPs=[]
         dictNewIDs={}
-        #for group,num in groupDict.items():
-        #    groupNames[num]=group
+        for group,num in groupDict.items():
+            groupNames[num]=group
         
         #Identify nodes to collapse and collapse them
         nodes=([i for i in nodeList if i["group"] not in collapsedGroupNumbers])
@@ -30,15 +31,14 @@ class Model_CG():
         d=[]
         for node in nodesCollapsable:
             collapseGroupMembers.append(node["id"])
-            dictNewIDs[node["id"]]=node['group']
+            dictNewIDs[node["id"]]="MNRV_GRP:{}".format(node['group'])
             if node["group"] not in c:#Build one new node which represents all traits in a collapsed group
                 c.append(node["group"])
                 d.append(
                                 {
-                                    "id" : node['group'],
-                                    "shortName" : node['group'],
+                                    "id" : "MNRV_GRP:{}".format(node['group']),
+                                    "short_name" : groupNames[node['group']],
                                     "group" : node['group'],
-                                    "activation" : node['activation']
                                 }
                         )
         for node in d:
@@ -58,9 +58,12 @@ class Model_CG():
                 target = link['target']
             links.append(
                 {
-                    "value": link['value'],
+                    "b": link['b'],
                     "color": link['color'],
                     "id": link['id'],
+                    "nsnp": link['nsnp'],
+                    "pval": link['pval'],
+                    "se": link['se'],
                     "source": source,
                     "target": target
                 }

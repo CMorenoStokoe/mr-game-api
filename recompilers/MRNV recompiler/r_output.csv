@@ -1,0 +1,125 @@
+id.exposure,id.outcome,outcome,exposure,method,nsnp,b,se,pval
+1018,1018,Subjective well being || id:1018,Subjective well being || id:1018,Wald ratio,1,1,0.173611111,8.41E-09
+1018,1189,Obsessive Compulsive Disorder || id:1189,Subjective well being || id:1018,Wald ratio,1,-0.245318185,1.785519573,0.890720034
+1018,1239,Years of schooling || id:1239,Subjective well being || id:1018,Wald ratio,1,-0.36755352,0.089957475,4.39E-05
+1018,22,Schizophrenia || id:22,Subjective well being || id:1018,Wald ratio,1,-1.294949682,0.56791335,0.022596491
+1018,961,Cigarettes smoked per day || id:961,Subjective well being || id:1018,Wald ratio,1,-2.966779341,4.347944608,0.495023576
+1018,UKB-b:10162,Job involve night shift work || id:UKB-b:10162,Subjective well being || id:1018,Wald ratio,1,0.411359176,0.377544252,0.275904606
+1018,UKB-b:1585,Diagnoses - secondary ICD10: Z86.4 Personal history of psychoactive substance abuse || id:UKB-b:1585,Subjective well being || id:1018,Wald ratio,1,0.00827209,0.017229401,0.631145793
+1018,UKB-b:17999,Weekly usage of mobile phone in last 3 months || id:UKB-b:17999,Subjective well being || id:1018,Wald ratio,1,0.511621779,0.155349744,0.000989996
+1018,UKB-b:19953,Body mass index (BMI) || id:UKB-b:19953,Subjective well being || id:1018,Wald ratio,1,0.618294079,0.104382474,3.15E-09
+1018,UKB-b:4077,Leisure/social activities: Other group activity || id:UKB-b:4077,Subjective well being || id:1018,Wald ratio,1,0.004465235,0.045149429,0.921218442
+1018,UKB-b:4424,Sleep duration || id:UKB-b:4424,Subjective well being || id:1018,Wald ratio,1,-0.054307055,0.084271072,0.519294728
+1018,UKB-b:4710,Number of days/week of moderate physical activity 10+ minutes || id:UKB-b:4710,Subjective well being || id:1018,Wald ratio,1,0.041743857,0.261908007,0.87336661
+1018,UKB-b:4779,Plays computer games || id:UKB-b:4779,Subjective well being || id:1018,Wald ratio,1,0.117492186,0.054672337,0.031632466
+1018,UKB-b:5238,Fluid intelligence score || id:UKB-b:5238,Subjective well being || id:1018,Wald ratio,1,-1.728978119,0.399601552,1.51E-05
+1018,UKB-b:5779,Alcohol intake frequency. || id:UKB-b:5779,Subjective well being || id:1018,Wald ratio,1,-0.114784829,0.159555483,0.471892124
+1018,UKB-b:6519,Worrier / anxious feelings || id:UKB-b:6519,Subjective well being || id:1018,Wald ratio,1,-0.060346473,0.054043997,0.264157911
+1018,UKB-b:8476,Loneliness isolation || id:UKB-b:8476,Subjective well being || id:1018,Wald ratio,1,-0.199884146,0.042317177,2.32E-06
+22,1018,Subjective well being || id:1018,Schizophrenia || id:22,MR Egger,60,-0.064606501,0.034002003,0.062397605
+22,1018,Subjective well being || id:1018,Schizophrenia || id:22,Weighted median,60,-0.008166662,0.00898004,0.363126466
+22,1018,Subjective well being || id:1018,Schizophrenia || id:22,Inverse variance weighted,60,-0.021319319,0.007515005,0.004555387
+22,1018,Subjective well being || id:1018,Schizophrenia || id:22,Simple mode,60,0.003496139,0.023880089,0.884101625
+22,1018,Subjective well being || id:1018,Schizophrenia || id:22,Weighted mode,60,0.003496139,0.022665165,0.877937771
+22,1187,Major Depressive Disorder || id:1187,Schizophrenia || id:22,MR Egger,4,4.723089343,2.43048565,0.191447315
+22,1187,Major Depressive Disorder || id:1187,Schizophrenia || id:22,Weighted median,4,0.364399941,0.059905023,1.18E-09
+22,1187,Major Depressive Disorder || id:1187,Schizophrenia || id:22,Inverse variance weighted,4,0.269308329,0.166877605,0.106569189
+22,1187,Major Depressive Disorder || id:1187,Schizophrenia || id:22,Simple mode,4,0.384834861,0.05887081,0.007276427
+22,1187,Major Depressive Disorder || id:1187,Schizophrenia || id:22,Weighted mode,4,0.377440155,0.058525736,0.007561319
+22,1189,Obsessive Compulsive Disorder || id:1189,Schizophrenia || id:22,MR Egger,72,0.139429572,0.292131714,0.634647289
+22,1189,Obsessive Compulsive Disorder || id:1189,Schizophrenia || id:22,Weighted median,72,0.247239365,0.091913193,0.007146861
+22,1189,Obsessive Compulsive Disorder || id:1189,Schizophrenia || id:22,Inverse variance weighted,72,0.31996248,0.073392929,1.30E-05
+22,1189,Obsessive Compulsive Disorder || id:1189,Schizophrenia || id:22,Simple mode,72,0.158763443,0.240505188,0.511309653
+22,1189,Obsessive Compulsive Disorder || id:1189,Schizophrenia || id:22,Weighted mode,72,0.295765172,0.229604604,0.201876084
+22,1239,Years of schooling || id:1239,Schizophrenia || id:22,MR Egger,71,0.019609413,0.037564501,0.603328407
+22,1239,Years of schooling || id:1239,Schizophrenia || id:22,Weighted median,71,-0.003588476,0.005801722,0.536233223
+22,1239,Years of schooling || id:1239,Schizophrenia || id:22,Inverse variance weighted,71,-0.005207316,0.009929738,0.599989086
+22,1239,Years of schooling || id:1239,Schizophrenia || id:22,Simple mode,71,-0.005776584,0.009859992,0.559853215
+22,1239,Years of schooling || id:1239,Schizophrenia || id:22,Weighted mode,71,-0.006901626,0.007742862,0.375793283
+22,22,Schizophrenia || id:22,Schizophrenia || id:22,MR Egger,73,1,0.069923566,1.35E-22
+22,22,Schizophrenia || id:22,Schizophrenia || id:22,Weighted median,73,1,0.031675296,9.43E-219
+22,22,Schizophrenia || id:22,Schizophrenia || id:22,Inverse variance weighted,73,1,0.0181626,0
+22,22,Schizophrenia || id:22,Schizophrenia || id:22,Simple mode,73,1,0.068956399,4.70E-23
+22,22,Schizophrenia || id:22,Schizophrenia || id:22,Weighted mode,73,1,0.063976368,7.68E-25
+22,961,Cigarettes smoked per day || id:961,Schizophrenia || id:22,MR Egger,60,-0.178381452,1.129707057,0.875083563
+22,961,Cigarettes smoked per day || id:961,Schizophrenia || id:22,Weighted median,60,-0.211277891,0.222661398,0.342684061
+22,961,Cigarettes smoked per day || id:961,Schizophrenia || id:22,Inverse variance weighted,60,0.335978968,0.245923215,0.171877892
+22,961,Cigarettes smoked per day || id:961,Schizophrenia || id:22,Simple mode,60,-0.341214997,0.486844339,0.486138681
+22,961,Cigarettes smoked per day || id:961,Schizophrenia || id:22,Weighted mode,60,-0.341214997,0.409357759,0.407903615
+22,UKB-b:10162,Job involve night shift work || id:UKB-b:10162,Schizophrenia || id:22,MR Egger,71,0.046934138,0.050154951,0.352648721
+22,UKB-b:10162,Job involve night shift work || id:UKB-b:10162,Schizophrenia || id:22,Weighted median,71,-0.006907013,0.018412305,0.707563576
+22,UKB-b:10162,Job involve night shift work || id:UKB-b:10162,Schizophrenia || id:22,Inverse variance weighted,71,-0.002328682,0.013660089,0.864637821
+22,UKB-b:10162,Job involve night shift work || id:UKB-b:10162,Schizophrenia || id:22,Simple mode,71,-0.011506086,0.048173909,0.811923836
+22,UKB-b:10162,Job involve night shift work || id:UKB-b:10162,Schizophrenia || id:22,Weighted mode,71,-0.005137601,0.037590702,0.891682296
+22,UKB-b:1585,Diagnoses - secondary ICD10: Z86.4 Personal history of psychoactive substance abuse || id:UKB-b:1585,Schizophrenia || id:22,MR Egger,71,0.001731767,0.002406788,0.474241766
+22,UKB-b:1585,Diagnoses - secondary ICD10: Z86.4 Personal history of psychoactive substance abuse || id:UKB-b:1585,Schizophrenia || id:22,Weighted median,71,0.00053256,0.000893373,0.551093579
+22,UKB-b:1585,Diagnoses - secondary ICD10: Z86.4 Personal history of psychoactive substance abuse || id:UKB-b:1585,Schizophrenia || id:22,Inverse variance weighted,71,0.000490182,0.000651678,0.451940492
+22,UKB-b:1585,Diagnoses - secondary ICD10: Z86.4 Personal history of psychoactive substance abuse || id:UKB-b:1585,Schizophrenia || id:22,Simple mode,71,-0.003847912,0.002449285,0.12068395
+22,UKB-b:1585,Diagnoses - secondary ICD10: Z86.4 Personal history of psychoactive substance abuse || id:UKB-b:1585,Schizophrenia || id:22,Weighted mode,71,0.000287603,0.001901144,0.880190825
+22,UKB-b:17999,Weekly usage of mobile phone in last 3 months || id:UKB-b:17999,Schizophrenia || id:22,MR Egger,71,-0.017541497,0.032936194,0.596028263
+22,UKB-b:17999,Weekly usage of mobile phone in last 3 months || id:UKB-b:17999,Schizophrenia || id:22,Weighted median,71,-0.01743495,0.008702729,0.045135574
+22,UKB-b:17999,Weekly usage of mobile phone in last 3 months || id:UKB-b:17999,Schizophrenia || id:22,Inverse variance weighted,71,-0.008597515,0.008907183,0.33442764
+22,UKB-b:17999,Weekly usage of mobile phone in last 3 months || id:UKB-b:17999,Schizophrenia || id:22,Simple mode,71,-0.026756271,0.021169913,0.210465121
+22,UKB-b:17999,Weekly usage of mobile phone in last 3 months || id:UKB-b:17999,Schizophrenia || id:22,Weighted mode,71,-0.021798839,0.016459831,0.189689474
+22,UKB-b:19953,Body mass index (BMI) || id:UKB-b:19953,Schizophrenia || id:22,MR Egger,71,0.045632393,0.044953986,0.313608672
+22,UKB-b:19953,Body mass index (BMI) || id:UKB-b:19953,Schizophrenia || id:22,Weighted median,71,-0.02897482,0.006880623,2.54E-05
+22,UKB-b:19953,Body mass index (BMI) || id:UKB-b:19953,Schizophrenia || id:22,Inverse variance weighted,71,-0.026093338,0.012391548,0.03522722
+22,UKB-b:19953,Body mass index (BMI) || id:UKB-b:19953,Schizophrenia || id:22,Simple mode,71,-0.045411699,0.01621788,0.006597892
+22,UKB-b:19953,Body mass index (BMI) || id:UKB-b:19953,Schizophrenia || id:22,Weighted mode,71,-0.039025498,0.011921216,0.001651637
+22,UKB-b:4077,Leisure/social activities: Other group activity || id:UKB-b:4077,Schizophrenia || id:22,MR Egger,71,-0.001613659,0.007835165,0.837435769
+22,UKB-b:4077,Leisure/social activities: Other group activity || id:UKB-b:4077,Schizophrenia || id:22,Weighted median,71,0.001344842,0.002414805,0.577585141
+22,UKB-b:4077,Leisure/social activities: Other group activity || id:UKB-b:4077,Schizophrenia || id:22,Inverse variance weighted,71,-0.002014292,0.002117364,0.341441631
+22,UKB-b:4077,Leisure/social activities: Other group activity || id:UKB-b:4077,Schizophrenia || id:22,Simple mode,71,0.004756911,0.006017952,0.431932838
+22,UKB-b:4077,Leisure/social activities: Other group activity || id:UKB-b:4077,Schizophrenia || id:22,Weighted mode,71,0.003615108,0.004892624,0.462444572
+22,UKB-b:4424,Sleep duration || id:UKB-b:4424,Schizophrenia || id:22,MR Egger,71,0.016224431,0.020415823,0.429513722
+22,UKB-b:4424,Sleep duration || id:UKB-b:4424,Schizophrenia || id:22,Weighted median,71,0.01468708,0.004573727,0.001321891
+22,UKB-b:4424,Sleep duration || id:UKB-b:4424,Schizophrenia || id:22,Inverse variance weighted,71,0.017980975,0.005517168,0.001117682
+22,UKB-b:4424,Sleep duration || id:UKB-b:4424,Schizophrenia || id:22,Simple mode,71,0.01042976,0.011813004,0.380309719
+22,UKB-b:4424,Sleep duration || id:UKB-b:4424,Schizophrenia || id:22,Weighted mode,71,0.0080933,0.014704407,0.583797477
+22,UKB-b:4710,Number of days/week of moderate physical activity 10+ minutes || id:UKB-b:4710,Schizophrenia || id:22,MR Egger,71,0.046911034,0.056279897,0.407421565
+22,UKB-b:4710,Number of days/week of moderate physical activity 10+ minutes || id:UKB-b:4710,Schizophrenia || id:22,Weighted median,71,0.037596802,0.014243716,0.008301958
+22,UKB-b:4710,Number of days/week of moderate physical activity 10+ minutes || id:UKB-b:4710,Schizophrenia || id:22,Inverse variance weighted,71,0.054190719,0.01521101,0.000367202
+22,UKB-b:4710,Number of days/week of moderate physical activity 10+ minutes || id:UKB-b:4710,Schizophrenia || id:22,Simple mode,71,0.052326435,0.038376082,0.177088884
+22,UKB-b:4710,Number of days/week of moderate physical activity 10+ minutes || id:UKB-b:4710,Schizophrenia || id:22,Weighted mode,71,0.04478343,0.039192652,0.257077707
+22,UKB-b:4779,Plays computer games || id:UKB-b:4779,Schizophrenia || id:22,MR Egger,71,-0.001489763,0.014896109,0.920626249
+22,UKB-b:4779,Plays computer games || id:UKB-b:4779,Schizophrenia || id:22,Weighted median,71,-0.013991715,0.003313881,2.42E-05
+22,UKB-b:4779,Plays computer games || id:UKB-b:4779,Schizophrenia || id:22,Inverse variance weighted,71,-0.017659866,0.004062425,1.38E-05
+22,UKB-b:4779,Plays computer games || id:UKB-b:4779,Schizophrenia || id:22,Simple mode,71,-0.026548075,0.007307205,0.000529852
+22,UKB-b:4779,Plays computer games || id:UKB-b:4779,Schizophrenia || id:22,Weighted mode,71,-0.017940589,0.00522463,0.001003682
+22,UKB-b:5238,Fluid intelligence score || id:UKB-b:5238,Schizophrenia || id:22,MR Egger,71,-0.161586103,0.106352791,0.133245985
+22,UKB-b:5238,Fluid intelligence score || id:UKB-b:5238,Schizophrenia || id:22,Weighted median,71,-0.135424793,0.024086296,1.88E-08
+22,UKB-b:5238,Fluid intelligence score || id:UKB-b:5238,Schizophrenia || id:22,Inverse variance weighted,71,-0.171322178,0.028760401,2.57E-09
+22,UKB-b:5238,Fluid intelligence score || id:UKB-b:5238,Schizophrenia || id:22,Simple mode,71,-0.146401802,0.062666493,0.022349562
+22,UKB-b:5238,Fluid intelligence score || id:UKB-b:5238,Schizophrenia || id:22,Weighted mode,71,-0.107921389,0.052251515,0.042587525
+22,UKB-b:5779,Alcohol intake frequency. || id:UKB-b:5779,Schizophrenia || id:22,MR Egger,71,0.033585246,0.046871883,0.476080687
+22,UKB-b:5779,Alcohol intake frequency. || id:UKB-b:5779,Schizophrenia || id:22,Weighted median,71,0.013886346,0.009647237,0.150033925
+22,UKB-b:5779,Alcohol intake frequency. || id:UKB-b:5779,Schizophrenia || id:22,Inverse variance weighted,71,0.005686713,0.012700805,0.654337762
+22,UKB-b:5779,Alcohol intake frequency. || id:UKB-b:5779,Schizophrenia || id:22,Simple mode,71,0.063740416,0.027416099,0.022981269
+22,UKB-b:5779,Alcohol intake frequency. || id:UKB-b:5779,Schizophrenia || id:22,Weighted mode,71,0.051463351,0.026874167,0.059582417
+22,UKB-b:6519,Worrier / anxious feelings || id:UKB-b:6519,Schizophrenia || id:22,MR Egger,71,0.01527814,0.017897811,0.396262844
+22,UKB-b:6519,Worrier / anxious feelings || id:UKB-b:6519,Schizophrenia || id:22,Weighted median,71,0.011149974,0.003524003,0.001556127
+22,UKB-b:6519,Worrier / anxious feelings || id:UKB-b:6519,Schizophrenia || id:22,Inverse variance weighted,71,0.011542487,0.004838022,0.01704265
+22,UKB-b:6519,Worrier / anxious feelings || id:UKB-b:6519,Schizophrenia || id:22,Simple mode,71,0.020582061,0.011356599,0.074221577
+22,UKB-b:6519,Worrier / anxious feelings || id:UKB-b:6519,Schizophrenia || id:22,Weighted mode,71,0.023878873,0.011335874,0.038748489
+22,UKB-b:8476,Loneliness isolation || id:UKB-b:8476,Schizophrenia || id:22,MR Egger,71,0.010255114,0.00877345,0.246474214
+22,UKB-b:8476,Loneliness isolation || id:UKB-b:8476,Schizophrenia || id:22,Weighted median,71,0.008141292,0.002229928,0.000261301
+22,UKB-b:8476,Loneliness isolation || id:UKB-b:8476,Schizophrenia || id:22,Inverse variance weighted,71,0.004845006,0.002377911,0.041599482
+22,UKB-b:8476,Loneliness isolation || id:UKB-b:8476,Schizophrenia || id:22,Simple mode,71,0.013232622,0.004876683,0.008375629
+22,UKB-b:8476,Loneliness isolation || id:UKB-b:8476,Schizophrenia || id:22,Weighted mode,71,0.013810267,0.004775699,0.005099736
+961,1018,Subjective well being || id:1018,Cigarettes smoked per day || id:961,Wald ratio,1,0.001603547,0.003207103,0.61707615
+961,1189,Obsessive Compulsive Disorder || id:1189,Cigarettes smoked per day || id:961,Wald ratio,1,-0.034293948,0.033414753,0.304744747
+961,1239,Years of schooling || id:1239,Cigarettes smoked per day || id:961,Wald ratio,1,0.000713239,0.001709819,0.676573919
+961,22,Schizophrenia || id:22,Cigarettes smoked per day || id:961,Wald ratio,1,0.050216208,0.010552027,1.95E-06
+961,961,Cigarettes smoked per day || id:961,Cigarettes smoked per day || id:961,Wald ratio,1,1,0.080898876,4.24E-35
+961,UKB-b:10162,Job involve night shift work || id:UKB-b:10162,Cigarettes smoked per day || id:961,Wald ratio,1,-0.004812389,0.007133512,0.499919122
+961,UKB-b:1585,Diagnoses - secondary ICD10: Z86.4 Personal history of psychoactive substance abuse || id:UKB-b:1585,Cigarettes smoked per day || id:961,Wald ratio,1,5.44E-05,0.000328957,0.868639895
+961,UKB-b:17999,Weekly usage of mobile phone in last 3 months || id:UKB-b:17999,Cigarettes smoked per day || id:961,Wald ratio,1,-0.004286966,0.002963596,0.148025153
+961,UKB-b:19953,Body mass index (BMI) || id:UKB-b:19953,Cigarettes smoked per day || id:961,Wald ratio,1,-0.004691275,0.00199235,0.018540444
+961,UKB-b:4077,Leisure/social activities: Other group activity || id:UKB-b:4077,Cigarettes smoked per day || id:961,Wald ratio,1,2.47E-05,0.000862138,0.977133523
+961,UKB-b:4424,Sleep duration || id:UKB-b:4424,Cigarettes smoked per day || id:961,Wald ratio,1,0.000576087,0.001608793,0.720278686
+961,UKB-b:4710,Number of days/week of moderate physical activity 10+ minutes || id:UKB-b:4710,Cigarettes smoked per day || id:961,Wald ratio,1,-0.00263829,0.005002355,0.597909136
+961,UKB-b:4779,Plays computer games || id:UKB-b:4779,Cigarettes smoked per day || id:961,Wald ratio,1,0.001405765,0.001043791,0.178048688
+961,UKB-b:5238,Fluid intelligence score || id:UKB-b:5238,Cigarettes smoked per day || id:961,Wald ratio,1,-0.002347347,0.007625852,0.75822355
+961,UKB-b:5779,Alcohol intake frequency. || id:UKB-b:5779,Cigarettes smoked per day || id:961,Wald ratio,1,0.002994968,0.003046888,0.325627273
+961,UKB-b:6519,Worrier / anxious feelings || id:UKB-b:6519,Cigarettes smoked per day || id:961,Wald ratio,1,0.000833828,0.001032115,0.419158137
+961,UKB-b:8476,Loneliness isolation || id:UKB-b:8476,Cigarettes smoked per day || id:961,Wald ratio,1,0.000460304,0.000808191,0.568983833

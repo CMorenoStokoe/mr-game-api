@@ -1,1 +1,0 @@
-This utility formats the JSON data file for read-in to the game API.

@@ -3,6 +3,11 @@
 #(edit these values to change recompiler function)
 ################################
 
+#Data format:
+jsonFormat = "MRNV"
+#Info:
+#Change this value to specify the format of the JSON. 'PD4HH' specifies a json dictionary with 'goals' and 'policies' keys (i.e., PD4HH / Hivemind2020 legacy input). 'MRNV' specifies a json dictionary with 'nodes' and 'links' as in the MRNV reocmpiler output.
+
 #Default node activation value:
 default_node_activation = 10 
 #Info:
@@ -29,11 +34,11 @@ count_links_per_node = False
 #Change to 'True' to print in console the number of links each node has
 
 #Color scheme
-colorScheme = "Strong"
-#Change value to set colour scheme. Choices: Strong (strongly colored), Pastel (lightly colored) and Greyscale (largely non-colored)
+colorScheme = "Binary"
+#Change value to set colour scheme. Choices: Binary (two colors, green, grey), Strong (strongly colored), Pastel (lightly colored) and Greyscale (largely non-colored)
 
 #Selected nodes
-selected_nodes = ['N_NAMED',['Body mass index','Height','Well-being','Intracranial volume','Years of schooling', 'Red blood cell count', 'Total cholesterol', 'Fasting insulin', 'Cigarettes smoked per day', 'Coronary heart disease', 'Extreme height', 'Platelet count', 'Iron', 'Lung cancer','Urate','HbA1C','Birth weight','Mean cell volume','Conscientiousness','Lung cancer','Schizophrenia','Sleep duration',"Alzheimer's disease","Liver Disease(PBC)",'Zinc']]
+selected_nodes = ['ALL', None]
 #Info:
 #Change to select nodes.
 #(1)For first item in list, options are: 'ALL' (select all nodes), 'N_RANDOM' (select x nodes at random), 'N_NAMED' (select x nodes by ID), 'N_RELATED' (selects node(s) and all related).
